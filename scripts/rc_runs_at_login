@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#	runs at unit login
+#	called by .bash_login	
+#
+
+# do nothing if this is a ssh session
+if [ "$SSH_CLIENT" != "" ] ; then
+    exit
+fi
+
+rc_starts_pd
+
+if [ "$(pidof rc-visual)" == "" ] ; then
+	echo "runs_at_login: rc-visual starting"
+	rc_starts_visual
+else
+	echo "runs_at_login: rc-visual running, pid: $(pidof rc-visual)"
+fi

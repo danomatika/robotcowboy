@@ -1,0 +1,4 @@
+#! /bin/bash
+
+rc-visual -n 0 -m fullscreen -f ~/Projects/robotcowboy/pd/visual/visual_sprites.xml &
+./rc_pd_control load patch ~/Projects/robotcowboy/pd/visual/4square.pd 

@@ -1,0 +1,34 @@
+#!/bin/sh
+# pd init script
+
+    #required if you use LADSPA plugins in your patch
+    #export LADSPA_HOME=/usr/lib/ladspa
+    #export LADSPA_PATH=/usr/lib/ladspa
+
+    case "$1" in
+    start)
+	    echo -n "puredata: starting pd\n"
+		cd /home/unit/scripts
+	    su unit starts_pd &
+	    ;;
+    stop)
+	    echo -n "puredata: shutting down pd\n"
+        cd /home/unit/scripts
+	    su unit stops_pd &
+	    ;;
+    restart)
+            echo -n "puredata: restarting pd\n"
+	    $0 stop
+		sleep 1
+	    $0 start
+	    ;;
+    *)
+	    echo "usage $0 {start|stop|restart}"
+	    exit 1
+	    ;;
+    esac
+
+    exit 0
+
+    # end
+

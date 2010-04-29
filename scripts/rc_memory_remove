@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#	run the simpleScience set	
+#
+
+# recording off for now
+echo "unit /pd/unitd/removal" | pdsend 3333 localhost udp
+
+# stop current song if playing and unload playlist in pd
+echo "memory_remove: telling pd to unload the current playlist"
+rc_pd_control transport stop
+sleep 1
+rc_pd_control unload playlist
+
+# unmount just make sure
+echo "memory_remove: unmounted /media/MEMORY"
+umount /media/MEMORY
+

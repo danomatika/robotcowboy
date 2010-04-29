@@ -1,0 +1,15 @@
+#
+#	rc-visual rules
+#
+#	add framebuffer and mouse to the plugdev group so SDL can open it
+#
+#	goes in "/etc/udev/rules.d"
+#	named based on the debian udev rules format
+#
+#	Doc: http://reactivated.net/writing_udev_rules.html
+#
+################################################################################
+
+KERNEL=="mice", GROUP="plugdev"
+
+KERNEL=="fb*", GROUP="plugdev"

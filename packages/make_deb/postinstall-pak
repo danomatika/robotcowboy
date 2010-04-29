@@ -1,0 +1,37 @@
+#! /bin/bash
+#
+# run after the pakage is installed
+#
+INSTALL_CMD="cp -xR"
+
+echo "POST-INSTALL"
+
+# copy pdsettings file to every home dir
+echo "Copy pdsettings to all home dirs"
+for i in $( ls /home ); do
+	echo "	/home/$i/.pdsettings"
+	$INSTALL_CMD /usr/local/lib/robotcowboy/pdsettings /home/$i/.pdsettings
+	$INSTALL_CMD /usr/local/lib/robotcowboy/asoundrc /home/$i/.asoundrc
+done
+
+# set file permissions for robotcowboy folder (samples should be readable ...)
+chmod -R +r /usr/local/lib/robotcowboy
+
+# set puredata init script permissions
+#chmod o+x /etc/init.d/puredata
+
+# add auto to login/logout script
+#echo "Add rc_runs_at_login to bash_login"
+#for i in $( ls /home ); do
+#	if [ "$i" != "lost+found" ] ; then
+#		echo "	/home/$i/.bash_login"
+#		touch /home/$i/.bash_login
+#		echo "# start robotcowboy" >> /home/$i/.bash_login
+#		echo "rc_runs_at_login" >> /home/$i/.bash_login
+
+#		echo "	/home/$i/.bash_logout"
+#		echo "# stop robotcowboy" >> /home/$i/.bash_login
+#		echo "rc_runs_at_logout" >> /home/$i/.bash_login
+#	fi
+#done
+

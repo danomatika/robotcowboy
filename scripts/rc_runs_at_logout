@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#	runs at unit logout
+#	called by .bash_logout	
+#
+
+# do nothing if this is a ssh session
+if [ "$SSH_CLIENT" != "" ] ; then
+    exit
+fi
+
+# stop rc-visual
+if [ "$(pidof rc-visual)" != "" ] ; then
+	echo "rc_stops_at_logout: stopping visual"
+	rc_stops_visual
+fi
+
+# stop pd
+if [ "$(pidof pd)" != "" ] ; then
+	echo "rc_stops_at_logout: stoppping pd"
+	rc_stops_pd
+fi
+

@@ -1,0 +1,101 @@
+#/bin/bash
+
+echo "*** robotcowboy unit underway ***"
+echo
+
+# if we are not in the correct dir, then go to it
+cd ~/robotcowboy_pd/bin
+DIR=$(pwd)
+echo "changed w dir $DIR"
+echo
+
+# run serial setup script
+KA=$(ls /dev/ | grep ttyUSB0)
+if [ "$KA" != "" ]
+then
+	echo "setup serial port"
+	python setup_serial.py
+fi
+
+# check if UA-25 is connected and initialized by the kernel,
+# if not then spin and wait until it is ready
+KA=$(ls /proc/asound | grep UA25)
+while [ "$KA" = "" ]
+do
+	sleep 1
+	echo "Where is the UA-25 soundcard??"
+	KA=$(ls /proc/asound | grep UA25)
+done
+echo "UA-25 is connected and ready"
+
+# start jack
+echo "start jack"
+#jackd -R -p128 -dalsa -dhw:1 -r44100 -p256 -n3 -S &
+jackd -R -P2 -p128 -u -dalsa -dhw:1 -r96000 -p512 -n3 -S -i2 -o2 &
+echo
+
+# spawn off pd
+echo "start pd" 
+pd -alsamidi -jack -nogui -alsamidi mididev 1 ../Unit-Control.pd &
+echo
+
+# wait for pd to initialize
+KA=$(aconnect -i -o | grep "Pure Data")
+while [ "$KA" = "" ]
+do
+	sleep 1
+	echo "Pure Data alsamidi not ready"
+	KA=$(aconnect -i -o | grep "Pure Data")
+done
+echo "Pure Data alsmidi is ready"
+
+# connect the UA-25 midi to Pure Data
+echo "alsa midi connect UA-25 -> Pure Data"
+aconnect UA-25 Pure Data
+echo
+
+# start visual
+#echo "start visual"
+#./visual -p 8880 &
+#echo
+
+# go rc-unitd
+echo "start rc-unitd device daemon"
+rc-unitd
+
+# now we sleep as unitd does its magic
+# basically we wait until rc-unitd gets a SIGTERM, etc
+
+# give pd some time to grab rc-unitd's death message
+sleep 3
+
+#  shutdown visual
+V_PID=$(pidof visual)
+if [ "$V_PID" != "" ]
+then
+	echo "shutdown visual"
+	kill -s TERM $V_PID
+fi
+echo
+
+# shutdown pd
+PD_PID=$(pidof pd)
+if [ "$PD_PID" != "" ]
+then
+	echo "shutdown pd"
+	kill -s TERM $PD_PID
+fi
+echo
+
+# shutdown jack
+JACK_PID=$(pidof jackd)
+if [ "$JACK_PID" != "" ]
+then
+	echo "shutdown jack"
+	kill -s KILL $JACK_PID
+fi
+echo
+
+echo "*** robotcowboy unit exited successfully ***"
+
+exit 0

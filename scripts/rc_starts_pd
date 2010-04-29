@@ -1,0 +1,125 @@
+#!/bin/bash
+#
+#	starts up pure data
+
+#### Variables/Definitions
+
+PATCH="/usr/local/lib/robotcowboy/Unit-Control.pd"
+USEJACK=0
+
+HELP="Usage: rc_starts_pd [options]
+
+Starts the robotcowboy audio system 
+
+ Options
+  -p, --patch			pd patch to load on startup
+  -j, --jack			use the jackd audio daemon
+  -h, --help			this usage guide
+"
+
+#### BEGIN commandline parsing
+
+# We need TEMP as the `eval set --' would nuke the return value of getopt.
+TEMP=`getopt -o j::p:h:: --long jack: --long patch: --long help:: \
+	  -n "rc_starts_pd" -- "$@"`
+
+if [ $? != 0 ] ; then echo $HELP >&2 ; exit 1 ; fi
+
+# Note the quotes around `$TEMP': they are essential!
+eval set -- "$TEMP"
+
+while true ; do
+	case "$1" in
+		-j|--jack) # use jackd
+			USEJACK=1 ; shift 2 ;;
+		-p|--patch)	# startup patch
+			PATCH="$2" ; shift 2 ;;
+		-h|--help)	# print help and exit
+			echo "$HELP" ; exit 0 ;;
+		--) shift ; break ;;	# do nothing
+		*) break ;;
+	esac
+done
+
+#### Begin execution
+
+# make sure the programs exist
+#test -x /usr/bin/jackd || exit 5
+test -x /usr/bin/pd || exit 5
+test -x /usr/bin/aconnect || exit 5
+
+# sleep to make sure alsa is running
+#sleep 5
+
+# check if UA-25 is connected and initialized by the kernel,
+# if not then spin and wait until it is ready
+KA=$(ls /proc/asound | grep UA25)
+while [ "$KA" = "" ]
+do
+	sleep 1
+	echo "rc_starts_pd: where is the UA-25 soundcard??"
+	KA=$(ls /proc/asound | grep UA25)
+done
+echo "rc_starts_pd: UA-25 is connected and ready"
+
+# use jack?
+if [ $USEJACK == 1 ] ; then
+
+	# start jack, 16 ms latency
+	jackd -R -dalsa -dhw:UA25 -r48000 -p512 -n3 -S &
+
+	# make sure jack has enough time to get going
+	sleep 5
+
+	echo "rc_starts_pd: starting pd"
+	pd -jack -channels 2 -nogui -r 48000 -alsamidi mididev 1 $PATCH &
+
+# use pd directly
+else
+
+	echo "rc_starts_pd: strating pd"
+	pd -rt -nogui -alsa -audiodev 4 -audiobuf 10 -alsamidi $PATCH &
+
+	# renice pd for much higher priority
+    renice -10 $(pidof pd)
+fi
+
+# wait for pd to initialize
+KA=$(aconnect -i -o | grep "Pure Data")
+while [ "$KA" = "" ]
+do
+	sleep 1
+	echo "rc_starts_pd: pd alsamidi not ready"
+	KA=$(aconnect -i -o | grep "Pure Data")
+done
+echo "rc_starts_pd: pd alsmidi is ready"
+
+# connect the UA-25 midi to Pure Data
+echo "rc_starts_pd: alsa midi connect 'UA-25' <-> 'Pure Data'"
+aconnect 'UA-25' 'Pure Data'
+aconnect 'Pure Data':1 'UA-25':0
+
+# connect the VIEWCON dongle midi to Pure Data
+echo "rc_starts_pd: alsa midi connect 'VIEWCON..' <-> 'Pure Data'"
+aconnect 'VIEWCON..' 'Pure Data'
+aconnect 'Pure Data':1 'VIEWCON..':0
+
+# play the startup sample, pd is running
+echo "unit /pd/unitd/startup" | pdsend 3333 localhost udp
+
+# start rc-unitd
+echo "rc_starts_pd: starting rc-unitd"
+rc-unitd &
+sleep 1
+
+# run the MEMORY mount script if MEMORY is 
+# check if the run script is on MEMORY
+if [ -e "/media/MEMORY/runs_at_mount" ] ; then
+	echo "rc_starts_pd: running mount script on MEMORY"
+	/media/MEMORY/runs_at_mount &
+fi
+
+# play the startup sample, played by rc-unitd
+#echo "unit /pd/unitd/ready" | pdsend 3333 localhost udp
+#sleep 3
+

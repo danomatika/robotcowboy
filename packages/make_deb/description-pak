@@ -1,0 +1,13 @@
+robotcowboy Pure Data patches, run scripts, etc
+
+installs:
+ - rc-patches
+ - rc-drums
+ - rc-util
+ - rc-wip patches
+ - extra pd externals
+ - rc bin scripts
+ - udev rules
+ - pdsettings
+ - visual sprites
+ - Unit-Control patches

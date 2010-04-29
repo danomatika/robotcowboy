@@ -1,0 +1,39 @@
+#
+#	song memory cf card udev rules
+#
+#	goes in "/etc/udev/rules.d"
+#	named based on the debian udev rules format
+#
+#	rules built using:
+#	- sudo udevadm monitor --env /dev/*device* : events and env vars
+#
+#	Doc: http://reactivated.net/writing_udev_rules.html
+#
+# 2GB Sandisk CF
+#	SUBSYSTEM=block
+#	DEVTYPE=disk
+#	ID_VENDOR=ATA
+#	ID_MODEL=SanDisk_SDCFH2-0
+#	ID_REVISION=HDX
+#	ID_SERIAL=1ATA_SanDisk_SDCFH2-002G_116806H0508N3808
+#	ID_SERIAL_SHORT=ATA_SanDisk_SDCFH2-002G_116806H0508N3808
+#	ID_FS_LABEL=MEMORY
+#
+# 1GB Sandisk CF
+#	SUBSYSTEM=block
+#	DEVTYPE=disk
+#	ID_VENDOR=ATA
+#	ID_MODEL=SanDisk_SDCFX-10
+#	ID_REVISION=HDX
+#	ID_SERIAL=1ATA_SanDisk_SDCFX-1024_019308A0507B5509
+#	ID_SERIAL_SHORT=ATA_SanDisk_SDCFX-1024_019308A0507B5509
+#	ID_PATH=pci-0.0-scsi-0:0:0:0
+#	ID_FS_LABEL=MEMORY
+#   
+#
+################################################################################
+
+KERNEL=="sd[b-z]*", ACTION=="add", SUBSYSTEM=="block", ID_FS_LABEL=="MEMORY", RUN="/usr/local/bin/rc_memory_add %k"
+
+#KERNEL=="sd[b-z]*", ACTION=="remove", SUBSYSTEM=="block", ID_FS_LABEL=="MEMORY", RUN="/usr/local/bin/rc_memory_remove"
+

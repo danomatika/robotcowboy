@@ -1,0 +1,25 @@
+# asound rc setup for
+# Roland Edirol UA-25 USD soundcard
+#
+
+# UA25 USB soundcard
+pcm.ua25 {
+    type hw
+    card 1
+    device 0
+}
+
+# 16 bit samples
+pcm_slave.S16 {
+	#pcm ua25
+	type linear
+	format S16
+	#channels 2
+	#rate 48000
+}
+
+# run the UA25 at 16 bit
+pcm.ua25_S16 {
+	type plug
+	slave S16
+}

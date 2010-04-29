@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#	2008 Dan Wilcox
+
+#### Variables/Definitions
+
+UNIT="17.0.0.101"
+USER="unit"
+WHAT=""
+WHERE=""
+DIR="/home/unit/"
+r=""
+
+HELP="Usage: copy_2_unit [options] what where
+
+Copy files to unit 
+
+ Options
+  -a, --address			ip address to send to
+  -p, --port			port to send to
+  -h, --help			this usage guide
+"
+
+#### BEGIN commandline parsing
+
+# We need TEMP as the `eval set --' would nuke the return value of getopt.
+TEMP=`getopt -o r:a:h:: --long recursive: --long address: --long help:: \
+	  -n "copy_2_pd" -- "$@"`
+
+if [ $? != 0 ] ; then echo $HELP >&2 ; exit 1 ; fi
+
+# Note the quotes around `$TEMP': they are essential!
+eval set -- "$TEMP"
+
+while true ; do
+	case "$1" in
+		-h|--help)	# print help and exit
+			echo $HELP; exit 0 ;;
+		-a|--address) # set the ip address
+			UNIT=$2 ; shift 2 ;;
+		-r|--recursive)	# grab library dir
+			r="-r" ; shift 2 ;;
+		--) shift ; break ;;	# do nothing
+		*) break ;;
+	esac
+done
+
+# get program name from commandline
+if [ "$1" != "" ] ; then
+	WHAT=$1
+else
+	echo $HELP
+	exit 0
+fi
+
+if [ "$2" != "" ] ; then
+	WHERE=$2
+fi
+
+#### Begin execution
+
+echo "sending $WHAT to $DIR$WHERE"
+scp $r $WHAT $USER@$UNIT:$DIR$WHERE
+

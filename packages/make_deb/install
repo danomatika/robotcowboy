@@ -1,0 +1,17 @@
+#! /bin/bash
+#
+# main install script
+#
+
+cd ../../
+
+# scripts
+cd scripts/
+./install
+cd ../
+
+# pd
+cd pd/
+./install
+cd ../
+

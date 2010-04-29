@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+#	runs when a compact flash card with the label "MEMORY" is inserted	
+#
+#	takes dev name "/dev/sd##" as argument
+#
+
+# send sound notification
+echo "unit /pd/unitd/insert" | pdsend 3333 localhost udp
+
+# bail if no dev given
+if [ "$1" == "" ] ; then
+	echo "memory_add: no argument given, exiting"
+	exit 0
+fi
+
+# devname given, check if it exists, bail if not
+if [ ! -e "/dev/$1" ] ; then
+	echo "memory_add: \"$1\" does not exist, exiting"
+	exit 0
+fi
+
+# ok it exists mount it
+mkdir -p /media/MEMORY
+chmod 0666 /media/MEMORY
+su unit -c "mount /media/MEMORY"
+#mount /media/MEMORY
+#echo "memory_add: \"$1\" mounted to /media/MEMORY"
+
+# check if the run script is on MEMORY
+if [ ! -e "/media/MEMORY/runs_at_mount" ] ; then
+	exit 0
+fi
+
+# check if pd is running, dont run script if not
+if [ "$(pidof pd)" == "" ] ; then
+	exit 0
+fi
+
+# if so, run it
+#echo "memory_add: running MEMORY mount script"
+#su unit /media/MEMORY/runs_at_mount &
+/media/MEMORY/runs_at_mount &

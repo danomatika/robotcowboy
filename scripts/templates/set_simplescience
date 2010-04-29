@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#	run the simpleScience set	
+#
+
+# recording off for now
+rc_pd_control record 0
+
+# tell pd to load the playlist
+rc_pd_control load playlist "/home/unit/pd/songs/simpleScience/playlist.txt"
+sleep 1
+

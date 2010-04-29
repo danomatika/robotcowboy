@@ -1,0 +1,219 @@
+#!/bin/bash
+#
+#	control the rc puredata system
+#
+
+#### Variables/Definitions
+
+IP="localhost"
+PORT="3333"
+
+CMD=""
+ARG=""
+
+HELP="Usage: rc_pd_control [options] command args
+
+ Send control messages to the main rc puredata control patch
+ using pdsend
+
+ Commands    Command Arguments
+  dsp	   	 '1' or '0'
+  record   	 automatic song recording, '1' or '0'
+  play     	 filename of wav file to play
+  load	   	 'patch' or 'playlist and file to load
+  transport	 'start', 'stop', 'done', 'next', 'pev', 'home'
+ 
+ Options
+  -a, --address   ip address to send to
+  -p, --port	  port to send to
+  -h, --help      this usage guide
+"
+
+#### BEGIN commandline parsing
+
+# We need TEMP as the `eval set --' would nuke the return value of getopt.
+TEMP=`getopt -o a:p:h:: --long address: --long port:  --long help:: \
+	  -n "rc_pd_control" -- "$@"`
+
+# Note the quotes around `$TEMP': they are essential!
+eval set -- "$TEMP"
+
+while true ; do
+	case "$1" in
+		-h|--help)	# print help and exit
+			echo "$HELP"; exit 0 ;;
+		-p|--port) # set the pdsend port
+			PORT=$2 ; shift 2 ;;
+		-a|--address) # set the ip address
+			IP=$2 ; shift 2 ;;
+		--) shift ; break ;;	# do nothing
+		*) break ;;
+	esac
+done
+
+# get command from commandline
+if [ "$1" != "" ] ; then
+	CMD=$1
+else
+	echo $HELP
+	exit 0
+fi
+
+#### Begin execution
+
+function pdSend
+{
+	if [ "$1" == "" ] ; then
+		return
+	fi
+
+	echo "unit $1" | pdsend $PORT $IP udp
+}
+
+# parse commands
+case $CMD in
+
+	# transport controls
+	"transport")
+
+		# get arg
+		if [ "$2" != "" ] ; then
+			ARG=$2
+		else
+			echo "command \"$CMD\" requires an argument: \"start\", \"stop\", \"done\", \"next\", \"prev\", or \"home\""
+			exit 0
+		fi
+		
+		# parse 
+		case $ARG in
+			"start")
+				pdSend "/pd/transport start"
+			;;
+			"stop")
+				pdSend "/pd/transport stop"
+			;;
+			"done")
+				pdSend "/pd/transport done"
+			;;
+			"next")
+				pdSend "/pd/transport next"
+			;;
+			"prev")
+				pdSend "/pd/transport prev"
+			;;
+			"home")
+				pdSend "/pd/transport home"
+			;;
+			*)
+				echo "argument \"$ARG\" not recognized, should be \"start\", \"stop\", \"done\", \"next\", \"prev\", or \"home\""
+				exit 0
+			;;
+		esac
+	;;
+
+	# dsp on or off
+	"dsp")
+
+		# get arg
+		if [ "$2" != "" ] ; then
+			ARG=$2
+		else
+			echo "command \"$CMD\" requires an argument: \"1\" or \"0\""
+			exit 0
+		fi
+	
+		# send command
+		if [ "$ARG" == "1" -o "$ARG" == "0" ] ; then
+			pdSend "/pd/audio dsp $ARG"
+		else
+		 	echo "argument \"$ARG\" not recognized, should be either \"1\" or \"0\""
+			exit 0
+		fi
+	;;
+
+	# recording on or off
+	"record")
+
+		# get arg
+		if [ "$2" != "" ] ; then
+			ARG=$2
+		else
+			echo "command \"$CMD\" requires an argument: \"1\" or \"0\""
+			exit 0
+		fi
+	
+		# send command
+		if [ "$ARG" == "1" -o "$ARG" == "0" ] ; then
+			pdSend "/pd/audio recording $ARG"
+		else
+		 	echo "argument \"$ARG\" not recognized, should be either \"1\" or \"0\""
+			exit 0
+		fi
+	;;
+
+	# play a wave file
+	"play")
+
+		# get arg
+		if [ "$2" != "" ] ; then
+			ARG=$2
+		else
+			echo "command \"$CMD\" requires an argument: filename"
+			exit 0
+		fi
+	
+		pdSend "/pd/audio play $ARG"
+	;;
+
+	# load a patch or playlist
+	"load")
+
+		$FILE
+
+		# get arg
+		if [ "$2" != "" -a "$3" != "" ] ; then
+			ARG=$2
+			FILE=$3	
+		else
+			echo "command \"$CMD\" requires 2 arguments: \"patch\" or \"playlist\" and filename"
+			exit 0
+		fi
+	
+		# send command
+		if [ "$ARG" == "patch" -o "$ARG" == "playlist" ] ; then
+			pdSend "/pd/load $ARG $FILE"
+		else
+		 	echo "argument \"$ARG\" not recognized, should be either \
+				 \"patch\" or \"playlist\""
+			exit 0
+		fi
+		sleep 1
+	;;
+
+	# unload the current patch or filename
+	"unload")
+
+		# get arg
+		if [ "$2" != "" ] ; then
+			ARG=$2
+		else
+			echo "command \"$CMD\" requires an argument: \"patch\" or \"playlist\""
+			exit 0
+		fi
+
+		# send command
+		if [ "$ARG" == "patch" -o "$ARG" == "playlist" ] ; then
+			pdSend "/pd/unload $ARG"
+		else
+		 	echo "argument \"$ARG\" not recognized, should be either \"patch\" or \"playlist\""
+			exit 0
+		fi
+	;;
+
+	#
+
+	*)
+		echo "command \"$CMD\" not recognized"
+		exit 0
+	;;
+esac
