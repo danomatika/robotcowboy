@@ -6,12 +6,17 @@
 cd ../../
 
 # scripts
-cd scripts/
+cd scripts
 ./install
 cd ../
 
 # pd
-cd pd/
+cd pd
+./install
+cd ../
+
+# rc-unitd patches
+cd rc-unitd/data/pd/unit-patches
 ./install
 cd ../
 

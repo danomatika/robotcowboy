@@ -28,6 +28,7 @@ The following scripts are provided to automate the build process:
 
 Note, you will need:
 
+* git, source control system used to checkout code form github
 * checkinstall, a Linux application used to build the Debian packages
 * the individual libs required to build rc-visual & rc-unitd (see their readmes) 
 

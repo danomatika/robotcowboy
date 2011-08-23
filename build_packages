@@ -5,6 +5,9 @@
 # places .debs in /packages
 #
 
+# exit on error
+set -e
+
 WD=$(dirname $0)
 
 ###
@@ -13,21 +16,23 @@ cd $WD
 
 # build visual
 cd rc-visual
+./configure --prefix=/usr/local
 make
-make_deb.sh
+sudo sh make_deb.sh
 cp *.deb ../packages
 
 cd ../
 
 # build unitd
 cd rc-unitd
+./configure --prefix=/usr/local
 make
-make_deb.sh
+sudo sh make_deb.sh
 cp *.deb ../packages
 
 cd ../
 
 # build robotcowboy
 cd packages/make_deb
-make_deb.sh
-cp *.deb ../
+sudo sh make_deb
+
