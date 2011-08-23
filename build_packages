@@ -1,0 +1,33 @@
+#! /bin/bash
+#
+# builds .deb debian packages
+#
+# places .debs in /packages
+#
+
+WD=$(dirname $0)
+
+###
+
+cd $WD
+
+# build visual
+cd rc-visual
+make
+make_deb.sh
+cp *.deb ../packages
+
+cd ../
+
+# build unitd
+cd rc-unitd
+make
+make_deb.sh
+cp *.deb ../packages
+
+cd ../
+
+# build robotcowboy
+cd packages/make_deb
+make_deb.sh
+cp *.deb ../

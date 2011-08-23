@@ -1,0 +1,23 @@
+#! /bin/bash
+
+WD=$(dirname $0)
+
+###
+
+cd $WD
+
+# clean packages
+rm -rf packages/*.deb
+
+# clean visual
+cd rc-visual
+make clean
+
+cd ../
+
+# clean unitd
+cd rc-unitd
+make clean
+
+cd ../
+
