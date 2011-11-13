@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#nice -n 5 
-rc-visual -m fullscreen -n 0 -f /usr/local/lib/robotcowboy/visual_sprites.xml
-

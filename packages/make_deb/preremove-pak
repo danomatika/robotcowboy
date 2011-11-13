@@ -1,9 +1,0 @@
-#! /bin/bash
-#
-# main install script
-#
-INSTALL_DIR=/usr/lib/pd
-BUILD_DIR=./
-INSTALL_CMD="cp -xR"
-
-#

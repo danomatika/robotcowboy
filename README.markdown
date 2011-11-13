@@ -1,34 +1,26 @@
-robotcowboy app: the software framework for the robotcowboy project
+robotcowboy
 ===================================
+
+the software framework for the [robotcowboy project](http://robotcowboy.com)
 
 Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011
 
-This is a very, very minimal readme on the legacy (2007-2011) robotcowboy framework. The new robotcowboy 2.0 app framework will be forthcoming soon ...
-
-[robotcowboy](http://robotcowboy.com)
+See https://github.com/danomatika/PdParty for documentation
 
 DESCRIPTION
 -----------
 
-This is the legacy script and Pure Data framework for [robotcowboy](http://robotcowboy.com), a Linux-based wearable computer musical performance system. The Pure Data patch libraries and run scripts are packaged into .deb Debian package files (using checkinstall) to be deployed on an Ubuntu system.
+Run your Pure Data patches on iOS with native GUIs emulated.
 
-2 external programs can also be packaged:
+Inspired by Chris McCormick's [PdDroidParty](http://mccormick.cx/projects/PdDroidParty/) for Android.
 
-* rc-visual, a simple SDL graphics engine: https://github.com/danomatika/rc-visual
-* rc-unitd, a hid device daemon: https://github.com/danomatika/rc-unitd
+NOTE: THIS IS CURRENTLY IN AN ALPHA STAGE AND LIKELY NOT TO WORK JUST YET ... STAY TUNED.
 
-USAGE
------
+DEVELOPING
+----------
 
-The following scripts are provided to automate the build process:
+You can help develop robotcowboy on GitHub: [https://github.com/danomatika/robotcowboy](https://github.com/danomatika/robotcowboy)
 
-* clone_externals: git clones rc-visual and rc-unitd
-* build_packages: builds rc-visual and rc-unitd, builds debian packages using checkinstall
-* clean_all: cleans sources and built packages
+Create an account, clone or fork the repo, then request a push/merge.
 
-Note, you will need:
-
-* git, source control system used to checkout code form github
-* checkinstall, a Linux application used to build the Debian packages
-* the individual libs required to build rc-visual & rc-unitd (see their readmes) 
-
+If you find any bugs or suggestions please log them to GitHub as well.
