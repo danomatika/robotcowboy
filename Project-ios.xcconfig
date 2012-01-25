@@ -15,8 +15,11 @@ ADDONS_PATH = $(OF_PATH)/addons
 OFX_PD_HEADERS = "$(ADDONS_PATH)/ofxPd/src/pd/pure-data/src"
 OFX_PD_CFLAGS = -DHAVE_UNISTD_H -DUSEAPI_DUMMY -DPD -dynamiclib -ldl -lm
 
+// ofxLua
+OFX_LUA_HEADERS = "$(ADDONS_PATH)/ofxLua/src/" "$(ADDONS_PATH)/ofxLua/src/lua/" "$(ADDONS_PATH)/ofxLua/src/luabind/"
+
 // all addons
-OF_ADDON_HEADERS = $(OFX_PD_HEADERS)
+OF_ADDON_HEADERS = $(OFX_PD_HEADERS) $(OFX_LUA_HEADERS)
 OF_ADDON_LIBS = 
 
 ///////////////////////////////////////////

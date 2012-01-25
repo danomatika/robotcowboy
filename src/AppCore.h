@@ -13,11 +13,12 @@
 #include "ofMain.h"
 
 #include "ofxPd.h"
+#include "ofxLua.h"
 
 // a namespace for the Pd types
 using namespace pd;
 
-class AppCore : public PdReceiver, public PdMidiReceiver {
+class AppCore : public PdReceiver, public PdMidiReceiver, public ofxLuaListener {
 
 	public:
 
@@ -56,6 +57,9 @@ class AppCore : public PdReceiver, public PdMidiReceiver {
 		void receivePolyAftertouch(const int channel, const int pitch, const int value);
 		
 		void receiveMidiByte(const int port, const int byte);
+		
+		// lua error callback
+		void errorReceived(const std::string& msg);
 		
 		ofxPd pd;
 		vector<float> scopeArray;

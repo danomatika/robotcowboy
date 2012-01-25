@@ -368,3 +368,8 @@ void AppCore::receivePolyAftertouch(const int channel, const int pitch, const in
 void AppCore::receiveMidiByte(const int port, const int byte) {
 	cout << "OF MIDI: midi byte: " << port << " " << byte << endl;
 }
+
+//--------------------------------------------------------------
+void AppCore::errorReceived(const std::string& msg) {
+	cout << "got an error: " << msg << endl;
+}
