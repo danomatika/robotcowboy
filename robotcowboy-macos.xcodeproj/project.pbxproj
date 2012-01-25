@@ -159,7 +159,6 @@
 		302EE18614CF9C4E004FFAB8 /* luabind.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = luabind.xcodeproj; path = ../../../addons/ofxLua/lib/luabind.xcodeproj; sourceTree = "<group>"; };
 		308C1BB0146B39350067923E /* PdBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdBase.cpp; sourceTree = "<group>"; };
 		308C1BB4146B39350067923E /* PdTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdTypes.cpp; sourceTree = "<group>"; };
-		308C1BD7146BA5770067923E /* PdParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdParser.h; sourceTree = "<group>"; };
 		30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppCore.cpp; sourceTree = "<group>"; };
 		30B2D0C0142B2C7A000AB5E1 /* AppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCore.h; sourceTree = "<group>"; };
 		30B2D0C4142B2CA5000AB5E1 /* ofxPd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPd.cpp; sourceTree = "<group>"; };
@@ -614,7 +613,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				308C1BD7146BA5770067923E /* PdParser.h */,
 				30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */,
 				30B2D0C0142B2C7A000AB5E1 /* AppCore.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
