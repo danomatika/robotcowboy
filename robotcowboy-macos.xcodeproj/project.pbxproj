@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3005B62C14D27960009FD6CE /* PdReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3005B62B14D27960009FD6CE /* PdReceiver.cpp */; };
 		302EE18514CF9C45004FFAB8 /* ofxLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302EE15314CF9C45004FFAB8 /* ofxLua.cpp */; };
 		302EE21C14CFB727004FFAB8 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EE18F14CF9C4E004FFAB8 /* liblua.a */; };
 		302EE21D14CFB727004FFAB8 /* libluabind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EE19114CF9C4E004FFAB8 /* libluabind.a */; };
@@ -165,6 +166,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3005B62A14D277AA009FD6CE /* PdReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdReceiver.h; sourceTree = "<group>"; };
+		3005B62B14D27960009FD6CE /* PdReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdReceiver.cpp; sourceTree = "<group>"; };
 		302EE0AF14CF9C1E004FFAB8 /* PdBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdBase.hpp; sourceTree = "<group>"; };
 		302EE0B014CF9C1E004FFAB8 /* PdMidiReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdMidiReceiver.hpp; sourceTree = "<group>"; };
 		302EE0B114CF9C1E004FFAB8 /* PdReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdReceiver.hpp; sourceTree = "<group>"; };
@@ -834,6 +837,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				3005B62B14D27960009FD6CE /* PdReceiver.cpp */,
+				3005B62A14D277AA009FD6CE /* PdReceiver.h */,
 				30F6B4A514D21797008096BA /* Global.cpp */,
 				30F6B4A614D21797008096BA /* Global.h */,
 				30F6B43B14D200B2008096BA /* LuaWrapper.h */,
@@ -1045,6 +1050,7 @@
 				30F6B4A314D2110D008096BA /* ofxOscReceiver.cpp in Sources */,
 				30F6B4A414D2110D008096BA /* ofxOscSender.cpp in Sources */,
 				30F6B4A714D21797008096BA /* Global.cpp in Sources */,
+				3005B62C14D27960009FD6CE /* PdReceiver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

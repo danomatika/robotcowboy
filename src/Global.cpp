@@ -20,5 +20,6 @@ Global& Global::instance() {
 
 //--------------------------------------------------------------
 Global::Global() : 
-	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009)
+	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009),
+	visualSendsOut(true), audioSendsOut(true)
 	{}

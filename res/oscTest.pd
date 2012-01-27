@@ -1,0 +1,14 @@
+#N canvas 556 142 608 410 10;
+#X msg 127 152 /visual/test 123.45 test;
+#X obj 145 261 udpsend;
+#X msg 197 208 connect 127.0.0.1 9009;
+#X msg 220 231 disconnect;
+#X obj 127 194 packOSC;
+#X msg 86 111 /audio/test2;
+#X msg 37 140 /test3/test;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;

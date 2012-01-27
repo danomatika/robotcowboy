@@ -31,6 +31,9 @@ class Global {
 		string oscSendAddress;
 		int oscSendPort;
 		int oscReceivePort;
+		
+		bool visualSendsOut;
+		bool audioSendsOut;
 
     private:
         
