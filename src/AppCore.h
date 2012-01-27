@@ -14,6 +14,7 @@
 
 #include "ofxPd.h"
 #include "ofxLua.h"
+#include "ofxOsc.h"
 
 // a namespace for the Pd types
 using namespace pd;
@@ -21,6 +22,8 @@ using namespace pd;
 class AppCore : public PdReceiver, public PdMidiReceiver, public ofxLuaListener {
 
 	public:
+
+		AppCore();
 
 		// main
 		void setup(const int numOutChannels, const int numInChannels,
@@ -67,4 +70,7 @@ class AppCore : public PdReceiver, public PdMidiReceiver, public ofxLuaListener 
 		ofxPd pd;
 		ofxLua lua;
 		string currentScript;
+		
+		ofxOscSender& sender;
+		ofxOscReceiver& receiver;
 };

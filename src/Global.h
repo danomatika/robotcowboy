@@ -24,12 +24,13 @@ class Global {
 
         /// get a reference to the OscSender and OscReceiver
         inline ofxOscSender& getOscSender() {return oscSender;}
-        //inline osc::OscReceiver& getOscReceiver() {return oscReceiver;}
+        inline ofxOscReceiver& getOscReceiver() {return oscReceiver;}
 		
 		/// \section Variables
 		
 		string oscSendAddress;
 		int oscSendPort;
+		int oscReceivePort;
 
     private:
         

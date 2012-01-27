@@ -387,7 +387,20 @@ class LuaWrapper {
 						value("BLOB", OFXOSC_TYPE_BLOB),
 						value("BUNDLE", OFXOSC_TYPE_BUNDLE),
 						value("OUTOFBOUNDS", OFXOSC_TYPE_INDEXOUTOFBOUNDS)
-					]
+					],
+					
+				///////////////////////////////
+				/// \section Bundle
+				
+				class_<ofxOscBundle>("bundle")
+					.def(constructor<>())
+					.def("clear", &ofxOscBundle::clear)
+					.def("addMessage", &ofxOscBundle::addMessage)
+					.def("addBundle", &ofxOscBundle::addBundle)
+					.def("numMessages", &ofxOscBundle::getMessageCount)
+					.def("numBundles", &ofxOscBundle::getBundleCount)
+					.def("getMessage", &ofxOscBundle::getMessageAt)
+					.def("getBundle", &ofxOscBundle::getBundleAt)
 			];
 			
 			///////////////////////////////

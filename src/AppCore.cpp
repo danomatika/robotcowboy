@@ -12,6 +12,10 @@
 
 #include "LuaWrapper.h"
 
+AppCore::AppCore() :
+	sender(Global::instance().getOscSender()),
+	receiver(Global::instance().getOscReceiver()) {}
+
 //--------------------------------------------------------------
 void AppCore::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
@@ -20,8 +24,9 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	
 	// setup osc
-	Global::instance().getOscSender().setup(Global::instance().oscSendAddress,
-											Global::instance().oscSendPort);
+	sender.setup(Global::instance().oscSendAddress,
+				 Global::instance().oscSendPort);
+	receiver.setup(Global::instance().oscReceivePort);
 	
 	// setup pd
 //	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
@@ -40,6 +45,17 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 void AppCore::update() {
 	ofBackground(100, 100, 100);
 	lua.scriptUpdate();
+	
+	// check for waiting osc messages
+	while(receiver.hasWaitingMessages()) {
+		
+		// get the next message
+		ofxOscMessage m;
+		receiver.getNextMessage(&m);
+		
+		// give to lua
+		luabind::call_function<bool>(lua, "oscReceived", boost::ref(m));
+	}
 }
 
 //--------------------------------------------------------------
@@ -148,6 +164,7 @@ void AppCore::errorReceived(const std::string& msg) {
 
 //--------------------------------------------------------------
 void AppCore::reloadScript() {
+	cout << "reloading script" << endl;
 	lua.scriptExit();
 	lua.init();
 	lua.bind<LuaWrapper>();
