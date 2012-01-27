@@ -28,12 +28,10 @@ class AppCore : public PdReceiver, public PdMidiReceiver, public ofxLuaListener 
 		void update();
 		void draw();
         void exit();
-
-		// do something
-		void playTone(int pitch);
 		
 		// input callbacks
 		void keyPressed(int key);
+		void mousePressed(int x, int y, int button);
 		
 		// audio callbacks
 		void audioReceived(float * input, int bufferSize, int nChannels);
@@ -61,8 +59,12 @@ class AppCore : public PdReceiver, public PdMidiReceiver, public ofxLuaListener 
 		// lua error callback
 		void errorReceived(const std::string& msg);
 		
+		// script control
+		
+		// exit, reinit the lua state, and reload the current script
+		void reloadScript();
+		
 		ofxPd pd;
-		vector<float> scopeArray;
-        
-        int midiChan;
+		ofxLua lua;
+		string currentScript;
 };

@@ -51,7 +51,9 @@ void App::mouseMoved(int x, int y) {}
 void App::mouseDragged(int x, int y, int button) {}
 
 //--------------------------------------------------------------
-void App::mousePressed(int x, int y, int button) {}
+void App::mousePressed(int x, int y, int button) {
+	core.mousePressed(x, y, button);
+}
 
 //--------------------------------------------------------------
 void App::mouseReleased(int x, int y, int button) {}
