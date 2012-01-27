@@ -15,8 +15,9 @@
 
 AppCore::AppCore() :
 	sender(Global::instance().getOscSender()),
-	receiver(Global::instance().getOscReceiver()),
-	pdReceiver(*this) {}
+	receiver(Global::instance().getOscReceiver()), pdReceiver(*this) {
+	Global::instance().setApp(this);
+}
 
 //--------------------------------------------------------------
 void AppCore::setup(const int numOutChannels, const int numInChannels,
@@ -31,12 +32,16 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	receiver.setup(Global::instance().oscReceivePort);
 	
 	// setup pd
-//	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
-//		ofLog(OF_LOG_ERROR, "Could not init pd");
-//	}
-//	pd.addReceiver(pdReceiver);
-//	pd.addMidiReceiver(pdReceiver);
-    
+	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
+		ofLog(OF_LOG_ERROR, "Could not init pd");
+	}
+	pd.addReceiver(pdReceiver);
+	pd.addMidiReceiver(pdReceiver);
+	pd.subscribe("OSC_OUT");
+	pd.addToSearchPath("pd");
+	pd.start();
+    pd.openPatch("pd/test.pd");
+	
 	// setup lua
 	currentScript = "scripts/tests/oscTest.lua";
 	lua.init();
@@ -54,23 +59,23 @@ void AppCore::update() {
 	while(receiver.hasWaitingMessages()) {
 		
 		// get the next message
-		ofxOscMessage m;
-		receiver.getNextMessage(&m);
+		ofxOscMessage msg;
+		receiver.getNextMessage(&msg);
 	
-		// get first part of destination address
-		Poco::StringTokenizer tokenizer(m.getAddress(), "/");
+		// get the main destination address
+		Poco::StringTokenizer tokenizer(msg.getAddress(), "/");
 		Poco::StringTokenizer::Iterator iter = tokenizer.begin()+1;
 		string dest = (*iter);
 		
-		// give to lua
+		// give to lua or pd
 		if(dest == "visual") {
-			scriptOscReceived(m);
+			scriptOscReceived(msg);
 		}
 		else if(dest == "audio") {
-			
+			pdSendOsc(msg);
 		}
 		else {
-			cout << "Unhandled osc message: " << m.getAddress() << endl;
+			ofLogWarning() << "Unhandled osc message: " << msg.getAddress();
 		}
 	}
 }
@@ -83,6 +88,7 @@ void AppCore::draw() {
 //--------------------------------------------------------------
 void AppCore::exit() {
 	lua.scriptExit();
+	lua.clear();
 }
 
 //--------------------------------------------------------------
@@ -132,6 +138,38 @@ void AppCore::reloadScript() {
 }
 
 //--------------------------------------------------------------
-bool AppCore::scriptOscReceived(ofxOscMessage& msg) {
+void AppCore::scriptOscReceived(ofxOscMessage& msg) {
+	if(!lua.isValid())
+		return;
 	luabind::call_function<bool>(lua, "oscReceived", boost::ref(msg));
+}
+
+//--------------------------------------------------------------
+void AppCore::pdSendOsc(ofxOscMessage& msg) {
+	
+	// get the sub destination
+	Poco::StringTokenizer tokenizer(msg.getAddress(), "/");
+	Poco::StringTokenizer::Iterator iter;
+	string subDest;
+	for(iter = tokenizer.begin()+1; iter != tokenizer.end(); ++iter) {
+		subDest += "/"+(*iter);
+	}
+	
+	// send to pd as a list
+	pd.startMessage();
+	pd.addSymbol(subDest);
+	for(int i = 0; i < msg.getNumArgs(); ++i) {
+		switch(msg.getArgType(i)) {
+			case OFXOSC_TYPE_INT32:
+				pd.addFloat(msg.getArgAsInt32(i));
+				break;
+			case OFXOSC_TYPE_FLOAT:
+				pd.addFloat(msg.getArgAsInt32(i));
+				break;
+			case OFXOSC_TYPE_STRING:
+				pd.addSymbol(msg.getArgAsString(i));
+				break;
+		}
+	}
+	pd.finishList("OSC_IN");
 }

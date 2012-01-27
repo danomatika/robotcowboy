@@ -88,15 +88,7 @@
 		30B2D17D142B2CA5000AB5E1 /* x_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D132142B2CA5000AB5E1 /* x_net.c */; };
 		30B2D17E142B2CA5000AB5E1 /* x_qlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D133142B2CA5000AB5E1 /* x_qlist.c */; };
 		30B2D17F142B2CA5000AB5E1 /* x_time.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D134142B2CA5000AB5E1 /* x_time.c */; };
-		30F6B49814D2110D008096BA /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B47E14D2110D008096BA /* liboscpack.a */; };
-		30F6B49914D2110D008096BA /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B47F14D2110D008096BA /* liboscpack.a */; };
-		30F6B49A14D2110D008096BA /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48114D2110D008096BA /* osc.a */; };
-		30F6B49B14D2110D008096BA /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48314D2110D008096BA /* liboscpack.a */; };
-		30F6B49C14D2110D008096BA /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48514D2110D008096BA /* liboscpack.a */; };
 		30F6B49D14D2110D008096BA /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48714D2110D008096BA /* osc.a */; };
-		30F6B49E14D2110D008096BA /* oscpack.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48914D2110D008096BA /* oscpack.lib */; };
-		30F6B49F14D2110D008096BA /* oscpackd.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48A14D2110D008096BA /* oscpackd.lib */; };
-		30F6B4A014D2110D008096BA /* oscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F6B48C14D2110D008096BA /* oscpack.a */; };
 		30F6B4A114D2110D008096BA /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49014D2110D008096BA /* ofxOscBundle.cpp */; };
 		30F6B4A214D2110D008096BA /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49214D2110D008096BA /* ofxOscMessage.cpp */; };
 		30F6B4A314D2110D008096BA /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49414D2110D008096BA /* ofxOscReceiver.cpp */; };
@@ -295,15 +287,7 @@
 		30F6B47814D2110D008096BA /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
 		30F6B47914D2110D008096BA /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		30F6B47A14D2110D008096BA /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
-		30F6B47E14D2110D008096BA /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboscpack.a; sourceTree = "<group>"; };
-		30F6B47F14D2110D008096BA /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboscpack.a; sourceTree = "<group>"; };
-		30F6B48114D2110D008096BA /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
-		30F6B48314D2110D008096BA /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboscpack.a; sourceTree = "<group>"; };
-		30F6B48514D2110D008096BA /* liboscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboscpack.a; sourceTree = "<group>"; };
 		30F6B48714D2110D008096BA /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
-		30F6B48914D2110D008096BA /* oscpack.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = oscpack.lib; sourceTree = "<group>"; };
-		30F6B48A14D2110D008096BA /* oscpackd.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = oscpackd.lib; sourceTree = "<group>"; };
-		30F6B48C14D2110D008096BA /* oscpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = oscpack.a; sourceTree = "<group>"; };
 		30F6B48E14D2110D008096BA /* ofxOsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOsc.h; sourceTree = "<group>"; };
 		30F6B48F14D2110D008096BA /* ofxOscArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscArg.h; sourceTree = "<group>"; };
 		30F6B49014D2110D008096BA /* ofxOscBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscBundle.cpp; sourceTree = "<group>"; };
@@ -360,15 +344,7 @@
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
-				30F6B49814D2110D008096BA /* liboscpack.a in Frameworks */,
-				30F6B49914D2110D008096BA /* liboscpack.a in Frameworks */,
-				30F6B49A14D2110D008096BA /* osc.a in Frameworks */,
-				30F6B49B14D2110D008096BA /* liboscpack.a in Frameworks */,
-				30F6B49C14D2110D008096BA /* liboscpack.a in Frameworks */,
 				30F6B49D14D2110D008096BA /* osc.a in Frameworks */,
-				30F6B49E14D2110D008096BA /* oscpack.lib in Frameworks */,
-				30F6B49F14D2110D008096BA /* oscpackd.lib in Frameworks */,
-				30F6B4A014D2110D008096BA /* oscpack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,56 +649,9 @@
 		30F6B47B14D2110D008096BA /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				30F6B47C14D2110D008096BA /* android */,
-				30F6B48014D2110D008096BA /* iphone */,
-				30F6B48214D2110D008096BA /* linux */,
-				30F6B48414D2110D008096BA /* linux64 */,
 				30F6B48614D2110D008096BA /* osx */,
-				30F6B48814D2110D008096BA /* vs2010 */,
-				30F6B48B14D2110D008096BA /* win_cb */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		30F6B47C14D2110D008096BA /* android */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B47D14D2110D008096BA /* arm7 */,
-				30F6B47F14D2110D008096BA /* liboscpack.a */,
-			);
-			path = android;
-			sourceTree = "<group>";
-		};
-		30F6B47D14D2110D008096BA /* arm7 */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B47E14D2110D008096BA /* liboscpack.a */,
-			);
-			path = arm7;
-			sourceTree = "<group>";
-		};
-		30F6B48014D2110D008096BA /* iphone */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B48114D2110D008096BA /* osc.a */,
-			);
-			path = iphone;
-			sourceTree = "<group>";
-		};
-		30F6B48214D2110D008096BA /* linux */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B48314D2110D008096BA /* liboscpack.a */,
-			);
-			path = linux;
-			sourceTree = "<group>";
-		};
-		30F6B48414D2110D008096BA /* linux64 */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B48514D2110D008096BA /* liboscpack.a */,
-			);
-			path = linux64;
 			sourceTree = "<group>";
 		};
 		30F6B48614D2110D008096BA /* osx */ = {
@@ -731,23 +660,6 @@
 				30F6B48714D2110D008096BA /* osc.a */,
 			);
 			path = osx;
-			sourceTree = "<group>";
-		};
-		30F6B48814D2110D008096BA /* vs2010 */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B48914D2110D008096BA /* oscpack.lib */,
-				30F6B48A14D2110D008096BA /* oscpackd.lib */,
-			);
-			path = vs2010;
-			sourceTree = "<group>";
-		};
-		30F6B48B14D2110D008096BA /* win_cb */ = {
-			isa = PBXGroup;
-			children = (
-				30F6B48C14D2110D008096BA /* oscpack.a */,
-			);
-			path = win_cb;
 			sourceTree = "<group>";
 		};
 		30F6B48D14D2110D008096BA /* src */ = {

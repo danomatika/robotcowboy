@@ -12,6 +12,8 @@
 
 #include "ofxOsc.h"
 
+class AppCore;
+
 // a singleton for global variables
 class Global {
 
@@ -26,6 +28,10 @@ class Global {
         inline ofxOscSender& getOscSender() {return oscSender;}
         inline ofxOscReceiver& getOscReceiver() {return oscReceiver;}
 		
+		/// set/get app reference
+		void setApp(AppCore* app);
+		inline AppCore* getApp() {return app;}
+		
 		/// \section Variables
 		
 		string oscSendAddress;
@@ -37,6 +43,8 @@ class Global {
 
     private:
         
+		AppCore* app;	///< global app reference
+		
         ofxOscSender oscSender;       	///< global osc sender
         ofxOscReceiver oscReceiver;		///< global osc receiver
         

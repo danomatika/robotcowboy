@@ -10,16 +10,22 @@
  */
 #include "Global.h"
 
+#include "AppCore.h"
+
 //--------------------------------------------------------------
 Global& Global::instance() {
     static Global * pointerToTheSingletonInstance = new Global;
     return *pointerToTheSingletonInstance;
 }
 
+void Global::setApp(AppCore* app) {
+	this->app = app;
+}
+
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() : 
+Global::Global() : app(NULL),
 	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009),
-	visualSendsOut(true), audioSendsOut(true)
+	visualSendsOut(false), audioSendsOut(false)
 	{}
