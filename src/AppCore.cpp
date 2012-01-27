@@ -11,6 +11,7 @@
 #include "AppCore.h"
 
 #include "LuaWrapper.h"
+#include "externals/Externals.h"
 #include "poco/StringTokenizer.h"
 
 AppCore::AppCore() :
@@ -35,6 +36,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
 		ofLog(OF_LOG_ERROR, "Could not init pd");
 	}
+	Externals::setup();
 	pd.addReceiver(pdReceiver);
 	pd.addMidiReceiver(pdReceiver);
 	pd.subscribe("OSC_OUT");
