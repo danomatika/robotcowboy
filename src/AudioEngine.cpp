@@ -33,6 +33,7 @@ bool AudioEngine::setup(const int numOutChannels, const int numInChannels,
 	pd.addMidiReceiver(*this);
 	pd.subscribe("OSC_OUT");
 	pd.addToSearchPath("externals");
+	pd.addToSearchPath("externals/rj");
 	pd.start();
 	return true;
 }

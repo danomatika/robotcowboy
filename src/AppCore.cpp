@@ -42,10 +42,10 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	Global::instance().scriptEngine.setup();
 	
 	// load scenes
-	sceneManager.add(new Scene(parent, "TestOsc"));
+	sceneManager.add(new Scene(parent, "GuitarTest"));
 	sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
-	sceneManager.gotoScene("TestOsc", true);
+	sceneManager.gotoScene(0, true);
 	parent.setSceneManager(&sceneManager);
 }
 

@@ -1,0 +1,17 @@
+#N canvas 133 396 450 300 10;
+#X declare -lib rj;
+#X declare -path rc;
+#X declare -lib rj;
+#X declare -lib rj;
+#X obj 77 108 adc~ 1;
+#X obj 81 167 dac~ 1;
+#X obj 234 108 adc~ 2;
+#X obj 238 167 dac~ 2;
+#X obj 80 138 e_delayomatic~;
+#X obj 334 53 declare -path rc;
+#X obj 237 138 e_delayomatic~;
+#X obj 332 24 import rj;
+#X connect 0 0 4 0;
+#X connect 2 0 6 0;
+#X connect 4 0 1 0;
+#X connect 6 0 3 0;
