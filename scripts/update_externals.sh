@@ -14,20 +14,20 @@ svn export https://pure-data.svn.sourceforge.net/svnroot/pure-data/tags/pd-exten
 ## copy external abs and source
 
 # iemlib
-mkdir -p ../bin/data/pd/iemlib
 mkdir -p ../src/externals/iemlib
+#mkdir -p ../bin/data/externals/iemlib
 #rm -v externals/iemlib/iemlib2/src/wrap.c
-cp -Rv externals/iemlib/iemlib2/*.pd ../bin/data/externals/iemlib
+#cp -Rv externals/iemlib/iemlib2/*.pd ../bin/data/externals/iemlib
 cp -Rv externals/iemlib/iemlib2/src/*.h ../src/externals/iemlib
 cp -Rv externals/iemlib/iemlib2/src/*.c ../src/externals/iemlib
 
 # mrpeach
-mkdir -p ../bin/data/pd/mrpeach
 mkdir -p ../src/externals/mrpeach
-cp -Rv externals/mrpeach/osc/*.pd ../bin/data/externals/mrpeach
+#mkdir -p ../bin/data/externals/mrpeach
+#cp -Rv externals/mrpeach/osc/*.pd ../bin/data/externals/mrpeach
 cp -Rv externals/mrpeach/osc/*.h ../src/externals/mrpeach
 cp -Rv externals/mrpeach/osc/*.c ../src/externals/mrpeach
-cp -Rv externals/mrpeach/net/*.pd ../bin/data/externals/mrpeach
+#cp -Rv externals/mrpeach/net/*.pd ../bin/data/externals/mrpeach
 cp -Rv externals/mrpeach/net/*.h ../src/externals/mrpeach
 cp -Rv externals/mrpeach/net/*.c ../src/externals/mrpeach
 cp -Rv externals/mrpeach/midifile/*.c ../src/externals/mrpeach

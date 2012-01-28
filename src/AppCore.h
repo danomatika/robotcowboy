@@ -12,17 +12,19 @@
 
 #include "ofMain.h"
 
-#include "ofxPd.h"
-#include "ofxLua.h"
 #include "ofxOsc.h"
+#include "ofxAppUtils.h"
 
-#include "PdReceiver.h"
+#include "AudioEngine.h"
+#include "ScriptEngine.h"
 
-class AppCore : public ofxLuaListener {
+class App;
+
+class AppCore {
 
 	public:
 
-		AppCore();
+		AppCore(App& parent);
 
 		// main
 		void setup(const int numOutChannels, const int numInChannels,
@@ -39,28 +41,13 @@ class AppCore : public ofxLuaListener {
 		void audioReceived(float * input, int bufferSize, int nChannels);
 		void audioRequested(float * output, int bufferSize, int nChannels);
 		
-		// lua error callback
-		void errorReceived(const std::string& msg);
-		
-		// script control
-		
-		// exit, reinit the lua state, and reload the current script
-		void reloadScript();
-		
-		/// send an osc message to the lua script
-		/// calls the oscReceived function
-		void scriptOscReceived(ofxOscMessage& msg);
-		
-		/// send an osc message to pd
-		/// sends to OSC_IN
-		void pdSendOsc(ofxOscMessage& msg);
-		
-		ofxPd pd;
-		ofxLua lua;
-		string currentScript;
+		App& parent;
 		
 		ofxOscSender& sender;
 		ofxOscReceiver& receiver;
 		
-		PdReceiver pdReceiver;
+		AudioEngine& audioEngine;
+		ScriptEngine& scriptEngine;
+		
+		ofxSceneManager sceneManager;
 };

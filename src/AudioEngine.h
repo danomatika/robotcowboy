@@ -12,14 +12,21 @@
 
 #include "ofxPd.h"
 
-class AppCore;
-class ofxOscSender;
+class ofxOscMessage;
 
-class PdReceiver : public pd::PdReceiver, public pd::PdMidiReceiver {
+class AudioEngine : public pd::PdReceiver, public pd::PdMidiReceiver {
 
 	public:
 	
-		PdReceiver(AppCore& app);
+		AudioEngine();
+	
+		bool setup(const int numOutChannels, const int numInChannels,
+				   const int sampleRate, const int ticksPerBuffer);
+		void clear() {}
+		
+		/// send an osc message to pd
+		/// sends to OSC_IN
+		void sendOsc(ofxOscMessage& msg);
 	
 		// pd message receiver callbacks
 		void print(const std::string& message);
@@ -40,8 +47,5 @@ class PdReceiver : public pd::PdReceiver, public pd::PdMidiReceiver {
 		
 		void receiveMidiByte(const int port, const int byte);
 		
-	private:
-	
-		AppCore& app;
-		ofxOscSender& sender;
+		ofxPd pd;
 };

@@ -10,57 +10,51 @@
  */
 #include "AppCore.h"
 
-#include "LuaWrapper.h"
-#include "externals/Externals.h"
+#include "App.h"
+#include "Scene.h"
+#include "Global.h"
 #include "poco/StringTokenizer.h"
 
-AppCore::AppCore() :
-	sender(Global::instance().getOscSender()),
-	receiver(Global::instance().getOscReceiver()), pdReceiver(*this) {
-	Global::instance().setApp(this);
-}
+AppCore::AppCore(App& parent) : parent(parent),
+	sender(Global::instance().oscSender),
+	receiver(Global::instance().oscReceiver),
+	audioEngine(Global::instance().audioEngine),
+	scriptEngine(Global::instance().scriptEngine),
+	sceneManager(parent) {}
 
 //--------------------------------------------------------------
 void AppCore::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 
+	// setup of
 	ofSetVerticalSync(true);
-	//ofSetLogLevel(OF_LOG_VERBOSE);
+	ofSetLogLevel(OF_LOG_VERBOSE);
+	ofBackground(100, 100, 100);
 	
 	// setup osc
 	sender.setup(Global::instance().oscSendAddress,
 				 Global::instance().oscSendPort);
 	receiver.setup(Global::instance().oscReceivePort);
 	
-	// setup pd
-	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
-		ofLog(OF_LOG_ERROR, "Could not init pd");
-	}
-	Externals::setup();
-	pd.addReceiver(pdReceiver);
-	pd.addMidiReceiver(pdReceiver);
-	pd.subscribe("OSC_OUT");
-	pd.addToSearchPath("pd");
-	pd.start();
-    pd.openPatch("pd/test.pd");
+	// setup pd and lua
+	Global::instance().audioEngine.setup(numOutChannels, numInChannels,
+										 sampleRate, ticksPerBuffer);
+	Global::instance().scriptEngine.setup();
 	
-	// setup lua
-	currentScript = "scripts/tests/oscTest.lua";
-	lua.init();
-	lua.bind<LuaWrapper>();
-	lua.doScript(currentScript);
-	lua.scriptSetup();
+	// load scenes
+	sceneManager.add(new Scene(parent, "TestOsc"));
+	sceneManager.setup(false);	// setup all the scenes on the fly
+	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
+	sceneManager.gotoScene("TestOsc", true);
+	parent.setSceneManager(&sceneManager);
 }
 
 //--------------------------------------------------------------
 void AppCore::update() {
-	ofBackground(100, 100, 100);
-	lua.scriptUpdate();
 	
 	// check for waiting osc messages
 	while(receiver.hasWaitingMessages()) {
 		
-		// get the next message
 		ofxOscMessage msg;
 		receiver.getNextMessage(&msg);
 	
@@ -71,10 +65,10 @@ void AppCore::update() {
 		
 		// give to lua or pd
 		if(dest == "visual") {
-			scriptOscReceived(msg);
+			scriptEngine.sendOsc(msg);
 		}
 		else if(dest == "audio") {
-			pdSendOsc(msg);
+			audioEngine.sendOsc(msg);
 		}
 		else {
 			ofLogWarning() << "Unhandled osc message: " << msg.getAddress();
@@ -83,14 +77,12 @@ void AppCore::update() {
 }
 
 //--------------------------------------------------------------
-void AppCore::draw() {
-	lua.scriptDraw();
-}
+void AppCore::draw() {}
 
 //--------------------------------------------------------------
 void AppCore::exit() {
-	lua.scriptExit();
-	lua.clear();
+	audioEngine.clear();
+	scriptEngine.clear();
 }
 
 //--------------------------------------------------------------
@@ -99,79 +91,23 @@ void AppCore::keyPressed(int key) {
 	switch(key) {
 	
 		case 'r':
-			reloadScript();
+			scriptEngine.reloadScript();
 			break;
 			
 		default:
 			break;
 	}
-	
-	lua.scriptKeyPressed(key);
 }
 
 //--------------------------------------------------------------
-void AppCore::mousePressed(int x, int y, int button) {
-	lua.scriptMousePressed(x, y, button);
-}
+void AppCore::mousePressed(int x, int y, int button) {}
 
 //--------------------------------------------------------------
 void AppCore::audioReceived(float * input, int bufferSize, int nChannels) {
-	pd.audioIn(input, bufferSize, nChannels);
+	audioEngine.pd.audioIn(input, bufferSize, nChannels);
 }
 
 //--------------------------------------------------------------
 void AppCore::audioRequested(float * output, int bufferSize, int nChannels) {
-	pd.audioOut(output, bufferSize, nChannels);
-}
-
-//--------------------------------------------------------------
-void AppCore::errorReceived(const std::string& msg) {
-	cout << "got an error: " << msg << endl;
-}
-
-//--------------------------------------------------------------
-void AppCore::reloadScript() {
-	cout << "reloading script" << endl;
-	lua.scriptExit();
-	lua.init();
-	lua.bind<LuaWrapper>();
-	lua.doScript(currentScript);
-	lua.scriptSetup();
-}
-
-//--------------------------------------------------------------
-void AppCore::scriptOscReceived(ofxOscMessage& msg) {
-	if(!lua.isValid())
-		return;
-	luabind::call_function<bool>(lua, "oscReceived", boost::ref(msg));
-}
-
-//--------------------------------------------------------------
-void AppCore::pdSendOsc(ofxOscMessage& msg) {
-	
-	// get the sub destination
-	Poco::StringTokenizer tokenizer(msg.getAddress(), "/");
-	Poco::StringTokenizer::Iterator iter;
-	string subDest;
-	for(iter = tokenizer.begin()+1; iter != tokenizer.end(); ++iter) {
-		subDest += "/"+(*iter);
-	}
-	
-	// send to pd as a list
-	pd.startMessage();
-	pd.addSymbol(subDest);
-	for(int i = 0; i < msg.getNumArgs(); ++i) {
-		switch(msg.getArgType(i)) {
-			case OFXOSC_TYPE_INT32:
-				pd.addFloat(msg.getArgAsInt32(i));
-				break;
-			case OFXOSC_TYPE_FLOAT:
-				pd.addFloat(msg.getArgAsInt32(i));
-				break;
-			case OFXOSC_TYPE_STRING:
-				pd.addSymbol(msg.getArgAsString(i));
-				break;
-		}
-	}
-	pd.finishList("OSC_IN");
+	audioEngine.pd.audioOut(output, bufferSize, nChannels);
 }

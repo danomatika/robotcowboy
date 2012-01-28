@@ -440,62 +440,28 @@ class LuaWrapper {
 		static void oscSend(string address) {
 			ofxOscMessage msg;
 			msg.setAddress(address);
-			
-			Global& global = Global::instance();
-			if(global.visualSendsOut) {
-				global.getOscSender().sendMessage(msg);
-			}
-			else {
-				global.getApp()->pdSendOsc(msg);
-			}
+			Global::instance().sendOscFromScript(msg);
 		}
 		static void oscSendFloat(string address, float f) {
 			ofxOscMessage msg;
 			msg.setAddress(address);
 			msg.addFloatArg(f);
-			
-			Global& global = Global::instance();
-			if(global.visualSendsOut) {
-				global.getOscSender().sendMessage(msg);
-			}
-			else {
-				global.getApp()->pdSendOsc(msg);
-			}
+			Global::instance().sendOscFromScript(msg);
 		}
 		static void oscSendInt(string address, int i) {
 			ofxOscMessage msg;
 			msg.setAddress(address);
 			msg.addIntArg(i);
-			
-			Global& global = Global::instance();
-			if(global.visualSendsOut) {
-				global.getOscSender().sendMessage(msg);
-			}
-			else {
-				global.getApp()->pdSendOsc(msg);
-			}
+			Global::instance().sendOscFromScript(msg);
 		}
 		static void oscSendString(string address, string s) {
 			ofxOscMessage msg;
 			msg.setAddress(address);
 			msg.addStringArg(s);
-			
-			Global& global = Global::instance();
-			if(global.visualSendsOut) {
-				global.getOscSender().sendMessage(msg);
-			}
-			else {
-				global.getApp()->pdSendOsc(msg);
-			}
+			Global::instance().sendOscFromScript(msg);
 		}
 		static void oscSendMessage(ofxOscMessage& msg) {
-			Global& global = Global::instance();
-			if(global.visualSendsOut) {
-				global.getOscSender().sendMessage(msg);
-			}
-			else {
-				global.getApp()->pdSendOsc(msg);
-			}
+			Global::instance().sendOscFromScript(msg);
 		}
 		static void oscSendBundle(ofxOscBundle& bundle) {
 			//Global::instance().getOscSender().sendBundle(bundle);

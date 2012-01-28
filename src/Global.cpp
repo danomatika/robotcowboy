@@ -10,22 +10,36 @@
  */
 #include "Global.h"
 
-#include "AppCore.h"
-
 //--------------------------------------------------------------
 Global& Global::instance() {
     static Global * pointerToTheSingletonInstance = new Global;
     return *pointerToTheSingletonInstance;
 }
 
-void Global::setApp(AppCore* app) {
-	this->app = app;
+//--------------------------------------------------------------
+void Global::sendOscFromAudio(ofxOscMessage& msg) {
+	if(audioSendsOut) {
+		oscSender.sendMessage(msg);
+	}
+	else {
+		scriptEngine.sendOsc(msg);
+	}
+}
+
+//--------------------------------------------------------------
+void Global::sendOscFromScript(ofxOscMessage& msg) {
+	if(visualSendsOut) {
+		oscSender.sendMessage(msg);
+	}
+	else {
+		audioEngine.sendOsc(msg);
+	}
 }
 
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() : app(NULL),
+Global::Global() :
 	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009),
 	visualSendsOut(false), audioSendsOut(false)
 	{}

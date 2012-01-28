@@ -12,7 +12,8 @@
 
 #include "ofxOsc.h"
 
-class AppCore;
+#include "AudioEngine.h"
+#include "ScriptEngine.h"
 
 // a singleton for global variables
 class Global {
@@ -24,13 +25,13 @@ class Global {
 		/// creates a new object on the first call
         static Global& instance();
 
-        /// get a reference to the OscSender and OscReceiver
-        inline ofxOscSender& getOscSender() {return oscSender;}
-        inline ofxOscReceiver& getOscReceiver() {return oscReceiver;}
+		/// \section Objects
+
+		ofxOscSender oscSender;       	///< global osc sender
+        ofxOscReceiver oscReceiver;		///< global osc receiver
 		
-		/// set/get app reference
-		void setApp(AppCore* app);
-		inline AppCore* getApp() {return app;}
+		AudioEngine audioEngine;		///< pd engine
+		ScriptEngine scriptEngine;		///< lua engine
 		
 		/// \section Variables
 		
@@ -40,13 +41,14 @@ class Global {
 		
 		bool visualSendsOut;
 		bool audioSendsOut;
+		
+		/// \section Functions
+		
+		/// send osc messages
+		void sendOscFromAudio(ofxOscMessage& msg);
+		void sendOscFromScript(ofxOscMessage& msg);
 
     private:
-        
-		AppCore* app;	///< global app reference
-		
-        ofxOscSender oscSender;       	///< global osc sender
-        ofxOscReceiver oscReceiver;		///< global osc receiver
         
         // hide all the constructors, copy functions here
         Global(); 							// singleton constructor
