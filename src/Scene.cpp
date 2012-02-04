@@ -28,7 +28,7 @@ Scene::Scene(ofxApp &app, string path) :
 
 //--------------------------------------------------------------
 bool Scene::load(string path) {
-	cout << "Scene: loading scene at: \"" << sceneFolder+"/"+path << "/\"" << endl;
+	cout << "Scene: loading scene at: \"" << sceneFolder+"/"+path << "\"" << endl;
 	patch = core.audioEngine.pd.openPatch(sceneFolder+"/"+path+"/_main.pd");
 	bool ret = patch.isValid();
 	ret = ret && core.scriptEngine.loadScript(sceneFolder+"/"+path+"/_main.lua");

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -10,20 +10,24 @@
  */
 #include "App.h"
 
+#include "Global.h"
+
+//--------------------------------------------------------------
+App::App() : core(*this) {}
+
 //--------------------------------------------------------------
 void App::setup() {
 
-	// register touch events
-	ofRegisterTouchEvents(this);
-	
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
-	
-	// iPhoneAlerts will be sent to this
-	ofxiPhoneAlerts.addListener(this);
+	// setup iOs
+//	ofRegisterTouchEvents(this);
+//	ofxAccelerometer.setup();
+//	ofxiPhoneAlerts.addListener(this);
+	//ofSetDataPathRoot("./data/");
 	
 	// if you want a landscape orientation 
 	// ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+	
+	cout << "cwd: " << ofFilePath::getCurrentWorkingDirectory() << endl;
 	
 	ofBackground(127, 127, 127);
 	
@@ -36,16 +40,25 @@ void App::setup() {
 
 	// setup OF sound stream
 	ofSoundStreamSetup(2, 1, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 3);
+	
+	bangSound.loadSound("samples/bang.wav");
+	bangSound.setLoop(false);
+	bangSound.setVolume(0.75);
+	bangSound.play();
 }
 
 //--------------------------------------------------------------
 void App::update() {
 	core.update();
+	ofSoundUpdate();
 }
 
 //--------------------------------------------------------------
 void App::draw() {
 	core.draw();
+	if(core.sceneManager.getCurrentSceneIndex() > -1) {
+		ofDrawBitmapString(core.sceneManager.getCurrentSceneName(), 100, 100);
+	}
 }
 
 //--------------------------------------------------------------
@@ -55,7 +68,9 @@ void App::exit() {
 
 //--------------------------------------------------------------
 void App::touchDown(ofTouchEventArgs &touch) {
-	core.playTone(60);
+	cout << "TouchDown: " << touch.x << " " << touch.y << endl;
+	bangSound.play();
+	Global::instance().audioEngine.pd.sendSymbol("OSC_IN", "/transport");
 }
 
 //--------------------------------------------------------------
@@ -70,7 +85,8 @@ void App::touchUp(ofTouchEventArgs &touch) {
 
 //--------------------------------------------------------------
 void App::touchDoubleTap(ofTouchEventArgs &touch) {
-
+	cout << "TouchDoubleTap: " << touch.x << " " << touch.y << endl;
+	core.sceneManager.nextScene();
 }
 
 //--------------------------------------------------------------
@@ -99,10 +115,10 @@ void App::touchCancelled(ofTouchEventArgs& args) {
 }
 
 //--------------------------------------------------------------
-void App::audioReceived(float * input, int bufferSize, int nChannels) {
+void App::audioReceived(float* input, int bufferSize, int nChannels) {
 	core.audioReceived(input, bufferSize, nChannels);
 }
 
-void App::audioRequested(float * output, int bufferSize, int nChannels) {
+void App::audioRequested(float* output, int bufferSize, int nChannels) {
 	core.audioRequested(output, bufferSize, nChannels);
 }

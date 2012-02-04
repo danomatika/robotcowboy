@@ -46,11 +46,13 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
-	parent.setSceneManager(&sceneManager);
+	//parent.setSceneManager(&sceneManager);
 }
 
 //--------------------------------------------------------------
 void AppCore::update() {
+	
+	sceneManager.update();
 	
 	// check for waiting osc messages
 	while(receiver.hasWaitingMessages()) {
@@ -77,10 +79,13 @@ void AppCore::update() {
 }
 
 //--------------------------------------------------------------
-void AppCore::draw() {}
+void AppCore::draw() {
+	sceneManager.draw();
+}
 
 //--------------------------------------------------------------
 void AppCore::exit() {
+	sceneManager.clear();
 	audioEngine.clear();
 	scriptEngine.clear();
 }
@@ -97,10 +102,14 @@ void AppCore::keyPressed(int key) {
 		default:
 			break;
 	}
+	
+	sceneManager.keyPressed(key);
 }
 
 //--------------------------------------------------------------
-void AppCore::mousePressed(int x, int y, int button) {}
+void AppCore::mousePressed(int x, int y, int button) {
+	sceneManager.mousePressed(x, y, button);
+}
 
 //--------------------------------------------------------------
 void AppCore::audioReceived(float * input, int bufferSize, int nChannels) {
