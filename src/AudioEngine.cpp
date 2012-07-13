@@ -104,9 +104,9 @@ void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
 	ofxOscMessage m;
 	for(int i = 0; i < list.len(); ++i) {
 		if(list.isFloat(i))
-			m.addFloatArg(list.asFloat(i));
+			m.addFloatArg(list.getFloat(i));
 		else
-			m.addStringArg(list.asSymbol(i));
+			m.addStringArg(list.getSymbol(i));
 	}
 	Global::instance().sendOscFromAudio(m);
 }
@@ -118,9 +118,9 @@ void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg
 	m.setAddress(msg);
 	for(int i = 0; i < list.len(); ++i) {
 		if(list.isFloat(i))
-			m.addFloatArg(list.asFloat(i));
+			m.addFloatArg(list.getFloat(i));
 		else
-			m.addStringArg(list.asSymbol(i));
+			m.addStringArg(list.getSymbol(i));
 	}
 	Global::instance().sendOscFromAudio(m);
 }

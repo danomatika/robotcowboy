@@ -111,7 +111,11 @@
 		30B2D358142B3567000AB5E1 /* x_qlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D2FB142B3566000AB5E1 /* x_qlist.c */; };
 		30B2D359142B3567000AB5E1 /* x_time.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D2FC142B3566000AB5E1 /* x_time.c */; };
 		30B2D35D142B36EA000AB5E1 /* Project-ios.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 30B2D35C142B36EA000AB5E1 /* Project-ios.xcconfig */; };
-		30B5AFE514DCE122006A6578 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 30B5AFE414DCE122006A6578 /* data */; };
+		30B5B04214DD2480006A6578 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B5B03D14DD2480006A6578 /* Default.png */; };
+		30B5B04314DD2480006A6578 /* externals in Resources */ = {isa = PBXBuildFile; fileRef = 30B5B03E14DD2480006A6578 /* externals */; };
+		30B5B04414DD2480006A6578 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B5B03F14DD2480006A6578 /* Icon.png */; };
+		30B5B04514DD2480006A6578 /* samples in Resources */ = {isa = PBXBuildFile; fileRef = 30B5B04014DD2480006A6578 /* samples */; };
+		30B5B04614DD2480006A6578 /* scenes in Resources */ = {isa = PBXBuildFile; fileRef = 30B5B04114DD2480006A6578 /* scenes */; };
 		30D60DCF1446AD3E002134B1 /* robotcowboy-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D60DCE1446AD3E002134B1 /* robotcowboy-ios-Info.plist */; };
 		30EA8BB614D3C9A6000A1AB9 /* ofxApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8B1B14D3C9A5000A1AB9 /* ofxApp.cpp */; };
 		30EA8BB714D3C9A6000A1AB9 /* ofxParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8B1F14D3C9A5000A1AB9 /* ofxParticle.cpp */; };
@@ -347,7 +351,11 @@
 		30B2D2FB142B3566000AB5E1 /* x_qlist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x_qlist.c; sourceTree = "<group>"; };
 		30B2D2FC142B3566000AB5E1 /* x_time.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x_time.c; sourceTree = "<group>"; };
 		30B2D35C142B36EA000AB5E1 /* Project-ios.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-ios.xcconfig"; sourceTree = "<group>"; };
-		30B5AFE414DCE122006A6578 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
+		30B5B03D14DD2480006A6578 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = bin/data/Default.png; sourceTree = "<group>"; };
+		30B5B03E14DD2480006A6578 /* externals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = externals; path = bin/data/externals; sourceTree = "<group>"; };
+		30B5B03F14DD2480006A6578 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = bin/data/Icon.png; sourceTree = "<group>"; };
+		30B5B04014DD2480006A6578 /* samples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = samples; path = bin/data/samples; sourceTree = "<group>"; };
+		30B5B04114DD2480006A6578 /* scenes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scenes; path = bin/data/scenes; sourceTree = "<group>"; };
 		30D60DCD1446AD3E002134B1 /* iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS_Prefix.pch; sourceTree = "<group>"; };
 		30D60DCE1446AD3E002134B1 /* robotcowboy-ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "robotcowboy-ios-Info.plist"; sourceTree = "<group>"; };
 		30EA8B1A14D3C9A5000A1AB9 /* matrix_funcs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix_funcs.h; sourceTree = "<group>"; };
@@ -509,7 +517,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				30B5AFE414DCE122006A6578 /* data */,
+				30B5B03D14DD2480006A6578 /* Default.png */,
+				30B5B03E14DD2480006A6578 /* externals */,
+				30B5B03F14DD2480006A6578 /* Icon.png */,
+				30B5B04014DD2480006A6578 /* samples */,
+				30B5B04114DD2480006A6578 /* scenes */,
 				30EA93B514D46651000A1AB9 /* Icon.png */,
 				30B2D35C142B36EA000AB5E1 /* Project-ios.xcconfig */,
 				30D60DCD1446AD3E002134B1 /* iOS_Prefix.pch */,
@@ -1192,7 +1204,11 @@
 				30B2D35D142B36EA000AB5E1 /* Project-ios.xcconfig in Resources */,
 				30D60DCF1446AD3E002134B1 /* robotcowboy-ios-Info.plist in Resources */,
 				30EA93B614D46652000A1AB9 /* Icon.png in Resources */,
-				30B5AFE514DCE122006A6578 /* data in Resources */,
+				30B5B04214DD2480006A6578 /* Default.png in Resources */,
+				30B5B04314DD2480006A6578 /* externals in Resources */,
+				30B5B04414DD2480006A6578 /* Icon.png in Resources */,
+				30B5B04514DD2480006A6578 /* samples in Resources */,
+				30B5B04614DD2480006A6578 /* scenes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

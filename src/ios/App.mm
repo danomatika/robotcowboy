@@ -36,10 +36,10 @@ void App::setup() {
 	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
 	
 	// setup the app core
-	core.setup(2, 1, 44100, ticksPerBuffer);
+	core.setup(2, 2, 44100, ticksPerBuffer);
 
 	// setup OF sound stream
-	ofSoundStreamSetup(2, 1, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 3);
+	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 3);
 	
 	bangSound.loadSound("samples/bang.wav");
 	bangSound.setLoop(false);
