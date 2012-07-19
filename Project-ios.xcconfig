@@ -3,7 +3,7 @@
 OF_PATH = ../../..
 
 //THIS HAS ALL THE HEADER AND LIBS FOR OF CORE
-#include "../../../libs/openFrameworksCompiled/project/iphone/CoreOF.xcconfig"
+#include "../../../libs/openFrameworksCompiled/project/ios/CoreOF.xcconfig"
 
 ///////////////////////////////////////////
 // ADDONS
@@ -24,9 +24,12 @@ OFX_XML_HEADERS = "$(ADDONS_PATH)/ofxXmlSettings/src/"
 // app utils
 OFX_APP_UTILS_DEFINES = OFX_APP_UTILS_NO_CONTROL_PANEL
 
+// ofxOsc
+OFX_OSC_HEADERS = "$(ADDONS_PATH)/ofxOsc/libs/oscpack/src"
+
 // all addons
 OF_ADDON_DEFINES = $(OFX_APP_UTILS_DEFINES)
-OF_ADDON_HEADERS = $(OFX_PD_HEADERS) $(OFX_LUA_HEADERS) $(OFX_XML_HEADERS)
+OF_ADDON_HEADERS = $(OFX_PD_HEADERS) $(OFX_LUA_HEADERS) $(OFX_XML_HEADERS) $(OFX_OSC_HEADERS)
 OF_ADDON_LIBS = 
 
 ///////////////////////////////////////////
