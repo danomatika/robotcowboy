@@ -149,10 +149,6 @@
 		30EA8A5014D35874000A1AB9 /* ofxSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA89F114D35874000A1AB9 /* ofxSceneManager.cpp */; };
 		30EA8A5114D35874000A1AB9 /* ofxTransformer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA89F414D35874000A1AB9 /* ofxTransformer.cpp */; };
 		30EA8A5714D36367000A1AB9 /* ScriptEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8A5514D36366000A1AB9 /* ScriptEngine.cpp */; };
-		30EA8A6214D38509000A1AB9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8A5B14D38509000A1AB9 /* tinyxml.cpp */; };
-		30EA8A6314D38509000A1AB9 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8A5D14D38509000A1AB9 /* tinyxmlerror.cpp */; };
-		30EA8A6414D38509000A1AB9 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8A5E14D38509000A1AB9 /* tinyxmlparser.cpp */; };
-		30EA8A6514D38509000A1AB9 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30EA8A6014D38509000A1AB9 /* ofxXmlSettings.cpp */; };
 		30F6B4A114D2110D008096BA /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49014D2110D008096BA /* ofxOscBundle.cpp */; };
 		30F6B4A214D2110D008096BA /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49214D2110D008096BA /* ofxOscMessage.cpp */; };
 		30F6B4A314D2110D008096BA /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F6B49414D2110D008096BA /* ofxOscReceiver.cpp */; };
@@ -426,12 +422,6 @@
 		30EA89F514D35874000A1AB9 /* ofxTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTransformer.h; sourceTree = "<group>"; };
 		30EA8A5514D36366000A1AB9 /* ScriptEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScriptEngine.cpp; sourceTree = "<group>"; };
 		30EA8A5614D36366000A1AB9 /* ScriptEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEngine.h; sourceTree = "<group>"; };
-		30EA8A5B14D38509000A1AB9 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
-		30EA8A5C14D38509000A1AB9 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
-		30EA8A5D14D38509000A1AB9 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
-		30EA8A5E14D38509000A1AB9 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
-		30EA8A6014D38509000A1AB9 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
-		30EA8A6114D38509000A1AB9 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		30F6B43B14D200B2008096BA /* LuaWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaWrapper.h; sourceTree = "<group>"; };
 		30F6B48E14D2110D008096BA /* ofxOsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOsc.h; sourceTree = "<group>"; };
 		30F6B48F14D2110D008096BA /* ofxOscArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscArg.h; sourceTree = "<group>"; };
@@ -882,36 +872,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		30EA8A5814D38509000A1AB9 /* ofxXmlSettings */ = {
-			isa = PBXGroup;
-			children = (
-				30EA8A5A14D38509000A1AB9 /* libs */,
-				30EA8A5F14D38509000A1AB9 /* src */,
-			);
-			name = ofxXmlSettings;
-			path = ../../../addons/ofxXmlSettings;
-			sourceTree = "<group>";
-		};
-		30EA8A5A14D38509000A1AB9 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				30EA8A5B14D38509000A1AB9 /* tinyxml.cpp */,
-				30EA8A5C14D38509000A1AB9 /* tinyxml.h */,
-				30EA8A5D14D38509000A1AB9 /* tinyxmlerror.cpp */,
-				30EA8A5E14D38509000A1AB9 /* tinyxmlparser.cpp */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		30EA8A5F14D38509000A1AB9 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				30EA8A6014D38509000A1AB9 /* ofxXmlSettings.cpp */,
-				30EA8A6114D38509000A1AB9 /* ofxXmlSettings.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		30F6B46714D2110D008096BA /* ofxOsc */ = {
 			isa = PBXGroup;
 			children = (
@@ -961,7 +921,6 @@
 				30EA894414D35872000A1AB9 /* ofxAppUtils */,
 				30F6B46714D2110D008096BA /* ofxOsc */,
 				302EE0B314CF9C24004FFAB8 /* ofxLua */,
-				30EA8A5814D38509000A1AB9 /* ofxXmlSettings */,
 				30B2D0C2142B2C8B000AB5E1 /* ofxPd */,
 			);
 			name = addons;
@@ -1300,10 +1259,6 @@
 				30EA8A5014D35874000A1AB9 /* ofxSceneManager.cpp in Sources */,
 				30EA8A5114D35874000A1AB9 /* ofxTransformer.cpp in Sources */,
 				30EA8A5714D36367000A1AB9 /* ScriptEngine.cpp in Sources */,
-				30EA8A6214D38509000A1AB9 /* tinyxml.cpp in Sources */,
-				30EA8A6314D38509000A1AB9 /* tinyxmlerror.cpp in Sources */,
-				30EA8A6414D38509000A1AB9 /* tinyxmlparser.cpp in Sources */,
-				30EA8A6514D38509000A1AB9 /* ofxXmlSettings.cpp in Sources */,
 				30BE5E4815B7CD7D00C3BD96 /* IpEndpointName.cpp in Sources */,
 				30BE5E4915B7CD7D00C3BD96 /* NetworkingUtils.cpp in Sources */,
 				30BE5E4A15B7CD7D00C3BD96 /* UdpSocket.cpp in Sources */,
