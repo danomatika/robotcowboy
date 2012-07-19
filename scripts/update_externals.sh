@@ -17,6 +17,9 @@ svn export https://pure-data.svn.sourceforge.net/svnroot/pure-data/tags/pd-exten
 mkdir -p ../src/externals/iemlib
 #mkdir -p ../bin/data/externals/iemlib
 #rm -v externals/iemlib/iemlib2/src/wrap.c
+cp -v externals/iemlib/LICENCE.txt ../bin/data/externals/iemlib
+cp -v externals/iemlib/CHANGES.txt ../bin/data/externals/iemlib
+cp -v externals/iemlib/CONTENT.txt ../bin/data/externals/iemlib
 #cp -Rv externals/iemlib/iemlib2/*.pd ../bin/data/externals/iemlib
 cp -Rv externals/iemlib/iemlib2/src/*.h ../src/externals/iemlib
 cp -Rv externals/iemlib/iemlib2/src/*.c ../src/externals/iemlib
