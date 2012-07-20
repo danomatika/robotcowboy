@@ -18,11 +18,15 @@
 //--------------------------------------------------------------
 ScriptEngine::ScriptEngine() {
 	currentScript = "";
+	errorOcurred = false;
+	errorMsg = "";
+	
+	lua.addListener(*this);
 }
 
 //--------------------------------------------------------------
 bool ScriptEngine::setup() {
-	if(!lua.init()) {
+	if(!lua.init(true)) {
 		ofLog(OF_LOG_ERROR, "ScriptEngine: Could not init lua");
 		return false;
 	}
@@ -33,6 +37,8 @@ bool ScriptEngine::setup() {
 void ScriptEngine::clear() {
 	lua.clear();
 	currentScript = "";
+	errorOcurred = false;
+	errorMsg = "";
 }
 
 //--------------------------------------------------------------
@@ -40,13 +46,12 @@ bool ScriptEngine::loadScript(string script) {
 	cout << "ScriptEngine: loading script \""
 		 << script << "\"" << endl;
 	lua.scriptExit();
-	lua.clear();
-	lua.init();
+	clear();
+	if(!setup())
+		return false;
 	lua.bind<LuaWrapper>();
-	bool ret = lua.doScript(script);
-	if(ret)
-		currentScript = script;
-	return ret;
+	currentScript = script;
+	return lua.doScript(script);
 }
 
 //--------------------------------------------------------------
@@ -55,7 +60,10 @@ bool ScriptEngine::reloadScript() {
 		 << currentScript << "\"" << endl;
 	lua.scriptExit();
 	lua.clear();
-	lua.init();
+	errorOcurred = false;
+	errorMsg = "";
+	if(!setup())
+		return false;
 	lua.bind<LuaWrapper>();
 	return lua.doScript(currentScript);
 }
@@ -77,4 +85,6 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 //--------------------------------------------------------------
 void ScriptEngine::errorReceived(const std::string& msg) {
 	cout << "ScriptEngine: Got an error: " << msg << endl;
+	errorOcurred = true;
+	errorMsg = msg;
 }

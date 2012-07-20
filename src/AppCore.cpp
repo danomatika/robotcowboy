@@ -20,7 +20,13 @@ AppCore::AppCore(App& parent) : parent(parent),
 	receiver(Global::instance().oscReceiver),
 	audioEngine(Global::instance().audioEngine),
 	scriptEngine(Global::instance().scriptEngine),
-	sceneManager(parent) {}
+	sceneManager(parent) {
+
+	mouseButton = 1;
+	bMousePressed = false;
+
+	Global::instance().core = this;
+}
 
 //--------------------------------------------------------------
 void AppCore::setup(const int numOutChannels, const int numInChannels,
@@ -42,7 +48,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	Global::instance().scriptEngine.setup();
 	
 	// load scenes
-	sceneManager.add(new Scene(parent, "GuitarTest"));
+	sceneManager.add(new Scene(parent, "Test2"));
 	sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
@@ -81,6 +87,10 @@ void AppCore::update() {
 //--------------------------------------------------------------
 void AppCore::draw() {
 	sceneManager.draw();
+	
+	if(scriptEngine.errorOcurred) {
+		ofxBitmapString(10, 10) << scriptEngine.errorMsg;
+	}
 }
 
 //--------------------------------------------------------------
@@ -108,7 +118,15 @@ void AppCore::keyPressed(int key) {
 
 //--------------------------------------------------------------
 void AppCore::mousePressed(int x, int y, int button) {
+	mouseButton = button;
+	bMousePressed = true;
 	sceneManager.mousePressed(x, y, button);
+}
+
+//--------------------------------------------------------------
+void AppCore::mouseReleased(int x, int y, int button) {
+	bMousePressed = false;
+	sceneManager.mouseReleased(x, y, button);
 }
 
 //--------------------------------------------------------------

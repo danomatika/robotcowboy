@@ -15,6 +15,8 @@
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
 
+class AppCore;
+
 // a singleton for global variables
 class Global {
 
@@ -26,6 +28,8 @@ class Global {
         static Global& instance();
 
 		/// \section Objects
+
+		AppCore *core;					///< global app pointer
 
 		ofxOscSender oscSender;       	///< global osc sender
         ofxOscReceiver oscReceiver;		///< global osc receiver

@@ -15,6 +15,7 @@
 #include "ofxOsc.h"
 
 #include "Global.h"
+#include "AppCore.h"
 
 class LuaWrapper {
 
@@ -274,6 +275,8 @@ class LuaWrapper {
 				/// input properties
 				def("mouseX", &getMouseX),
 				def("mouseY", &getMouseY),
+				def("mouseButton", &getMouseButton),
+				def("mousePressed", &getMousePressed),
 				
 				/// exit
 				def("exit", (void(*)(void)) &ofExit),
@@ -407,7 +410,11 @@ class LuaWrapper {
 			/// \section Add Values
 			
 			/// add some constant values to the lua state
-			lua.doString("math.TWO_PI = "+ofToString(TWO_PI));
+			lua.doString(
+				"math.TWO_PI = "+ofToString(TWO_PI)+"\n" \
+				"app.LEFT = 1\n" \
+				"app.MIDDLE = 2\n" \
+				"app.RIGHT = 3\n");
 		}
 		
 		/// \section Function & Object Wrappers
@@ -425,8 +432,10 @@ class LuaWrapper {
 		}
 
 		/// global mouse vars
-		static int getMouseX() {return ofGetAppPtr()->mouseX;}
-		static int getMouseY() {return ofGetAppPtr()->mouseY;}
+		static float getMouseX();
+		static float getMouseY();
+		static float getMouseButton();
+		static float getMousePressed();
 		
 		/// ofTrueTypeFont
 		static void loadFont2(ofTrueTypeFont* font, string filename, int fontsize) {

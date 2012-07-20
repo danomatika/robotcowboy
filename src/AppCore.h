@@ -36,10 +36,15 @@ class AppCore {
 		// input callbacks
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);
+		void mouseReleased(int x, int y, int button);
 		
 		// audio callbacks
 		void audioReceived(float * input, int bufferSize, int nChannels);
 		void audioRequested(float * output, int bufferSize, int nChannels);
+		
+		/// for processing heads
+		int mouseButton;
+		bool bMousePressed;
 		
 		App& parent;
 		

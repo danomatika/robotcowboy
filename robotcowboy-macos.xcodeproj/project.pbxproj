@@ -95,6 +95,7 @@
 		30BE5E4E15B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4215B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp */; };
 		30BE5E4F15B7CD7D00C3BD96 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4415B7CD7D00C3BD96 /* OscReceivedElements.cpp */; };
 		30BE5E5015B7CD7D00C3BD96 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4615B7CD7D00C3BD96 /* OscTypes.cpp */; };
+		30CEA8F515B7EAA2009891F1 /* LuaWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */; };
 		30EA890A14D338F5000A1AB9 /* add2_comma.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88D214D338F4000A1AB9 /* add2_comma.c */; };
 		30EA890B14D338F5000A1AB9 /* aspeedlim.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88D314D338F4000A1AB9 /* aspeedlim.c */; };
 		30EA890C14D338F5000A1AB9 /* bpe.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88D414D338F4000A1AB9 /* bpe.c */; };
@@ -353,6 +354,7 @@
 		30BE5E4515B7CD7D00C3BD96 /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		30BE5E4615B7CD7D00C3BD96 /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
 		30BE5E4715B7CD7D00C3BD96 /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaWrapper.cpp; sourceTree = "<group>"; };
 		30EA88D014D338F4000A1AB9 /* Externals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Externals.h; sourceTree = "<group>"; };
 		30EA88D214D338F4000A1AB9 /* add2_comma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = add2_comma.c; sourceTree = "<group>"; };
 		30EA88D314D338F4000A1AB9 /* aspeedlim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aspeedlim.c; sourceTree = "<group>"; };
@@ -463,10 +465,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 				302EE21C14CFB727004FFAB8 /* liblua.a in Frameworks */,
 				302EE21D14CFB727004FFAB8 /* libluabind.a in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
-				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -986,6 +988,11 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */,
+				30B2D0C0142B2C7A000AB5E1 /* AppCore.h */,
+				E4B69E1E0A3A1BDC003C02F2 /* App.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* App.h */,
 				30EA8A5514D36366000A1AB9 /* ScriptEngine.cpp */,
 				30EA8A5614D36366000A1AB9 /* ScriptEngine.h */,
 				30EA894114D34146000A1AB9 /* Scene.cpp */,
@@ -995,12 +1002,8 @@
 				3005B62A14D277AA009FD6CE /* AudioEngine.h */,
 				30F6B4A514D21797008096BA /* Global.cpp */,
 				30F6B4A614D21797008096BA /* Global.h */,
+				30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */,
 				30F6B43B14D200B2008096BA /* LuaWrapper.h */,
-				30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */,
-				30B2D0C0142B2C7A000AB5E1 /* AppCore.h */,
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* App.cpp */,
-				E4B69E1F0A3A1BDC003C02F2 /* App.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1266,6 +1269,7 @@
 				30BE5E4E15B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp in Sources */,
 				30BE5E4F15B7CD7D00C3BD96 /* OscReceivedElements.cpp in Sources */,
 				30BE5E5015B7CD7D00C3BD96 /* OscTypes.cpp in Sources */,
+				30CEA8F515B7EAA2009891F1 /* LuaWrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1350,6 +1354,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "robotcowboy-macos-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -1442,6 +1447,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "robotcowboy-macos-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (

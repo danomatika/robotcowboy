@@ -13,6 +13,9 @@ end
 
 ----------------------------------------------------
 function draw()
+	if app.mousePressed and app.mouseButton == 1 then
+		of.circle(app.mouseX, app.mouseY, 20, 20)
+	end
 end
 
 ----------------------------------------------------

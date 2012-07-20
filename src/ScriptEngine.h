@@ -15,7 +15,7 @@
 
 class ofxOscMessage;
 
-class ScriptEngine : public ofxLuaListener {
+class ScriptEngine : private ofxLuaListener {
 
 	public:
 	
@@ -34,13 +34,16 @@ class ScriptEngine : public ofxLuaListener {
 		/// send an osc message to the lua script
 		/// calls the oscReceived lua function
 		void sendOsc(ofxOscMessage& msg);
-	
-		/// lua error callback
-		void errorReceived(const std::string& msg);
 
 		ofxLua lua;
 		
+		bool errorOcurred;
+		string errorMsg;
+		
 	private:
+	
+		/// lua error callback
+		void errorReceived(const std::string& msg);
 
 		string currentScript;
 };
