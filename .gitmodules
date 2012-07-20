@@ -1,0 +1,3 @@
+[submodule "bin/data/externals/rc-patches"]
+	path = bin/data/externals/rc-patches
+	url = git@github.com:danomatika/rc-patches.git
