@@ -33,16 +33,16 @@ class Scene : public ofxScene {
 		/// \section Scene callbacks
 		
 		/// run the script!
-		void setup()	{core.scriptEngine.lua.scriptSetup();}
-		void update()	{core.scriptEngine.lua.scriptUpdate();}
-		void draw()		{core.scriptEngine.lua.scriptDraw();}
+		void setup()	{scriptEngine.lua.scriptSetup();}
+		void update()	{scriptEngine.lua.scriptUpdate();}
+		void draw()		{scriptEngine.lua.scriptDraw();}
 		void exit();
 		
-		void keyPressed(int key)						{core.scriptEngine.lua.scriptKeyPressed(key);}
-		void mouseMoved(int x, int y)					{core.scriptEngine.lua.scriptMouseMoved(x, y);}
-		void mouseDragged(int x, int y, int button)		{core.scriptEngine.lua.scriptMouseDragged(x, y, button);}
-		void mousePressed(int x, int y, int button)		{core.scriptEngine.lua.scriptMousePressed(x, y, button);}
-		void mouseReleased(int x, int y, int button)	{core.scriptEngine.lua.scriptMouseReleased(x, y, button);}
+		void keyPressed(int key)						{scriptEngine.lua.scriptKeyPressed(key);}
+		void mouseMoved(int x, int y)					{scriptEngine.lua.scriptMouseMoved(x, y);}
+		void mouseDragged(int x, int y, int button)		{scriptEngine.lua.scriptMouseDragged(x, y, button);}
+		void mousePressed(int x, int y, int button)		{scriptEngine.lua.scriptMousePressed(x, y, button);}
+		void mouseReleased(int x, int y, int button)	{scriptEngine.lua.scriptMouseReleased(x, y, button);}
 		
 		/// \section Globals
 		
@@ -53,6 +53,7 @@ class Scene : public ofxScene {
 	private:
 	
 		AppCore& core;
+		ScriptEngine& scriptEngine;
 	
 		string path;		//< path to this scene
 		pd::Patch patch;	//< pd patch handle

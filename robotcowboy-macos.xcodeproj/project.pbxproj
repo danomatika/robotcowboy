@@ -15,6 +15,7 @@
 		308C1BB6146B39350067923E /* PdBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 308C1BB0146B39350067923E /* PdBase.cpp */; };
 		308C1BB7146B39350067923E /* PdTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 308C1BB4146B39350067923E /* PdTypes.cpp */; };
 		30B2273515D3AFB100405B99 /* Gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B2273315D3AFB000405B99 /* Gui.cpp */; };
+		30B2273815D3C2FA00405B99 /* Osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B2273615D3C2F900405B99 /* Osc.cpp */; };
 		30B2D0C1142B2C7A000AB5E1 /* AppCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */; };
 		30B2D135142B2CA5000AB5E1 /* ofxPd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D0C4142B2CA5000AB5E1 /* ofxPd.cpp */; };
 		30B2D137142B2CA5000AB5E1 /* s_libpdmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = 30B2D0CB142B2CA5000AB5E1 /* s_libpdmidi.c */; };
@@ -283,6 +284,8 @@
 		30B2273215D3AA7300405B99 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUIWidgetWithLabel.h; sourceTree = "<group>"; };
 		30B2273315D3AFB000405B99 /* Gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gui.cpp; sourceTree = "<group>"; };
 		30B2273415D3AFB000405B99 /* Gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gui.h; sourceTree = "<group>"; };
+		30B2273615D3C2F900405B99 /* Osc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Osc.cpp; sourceTree = "<group>"; };
+		30B2273715D3C2F900405B99 /* Osc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Osc.h; sourceTree = "<group>"; };
 		30B2D0BF142B2C7A000AB5E1 /* AppCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppCore.cpp; sourceTree = "<group>"; };
 		30B2D0C0142B2C7A000AB5E1 /* AppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCore.h; sourceTree = "<group>"; };
 		30B2D0C4142B2CA5000AB5E1 /* ofxPd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPd.cpp; sourceTree = "<group>"; };
@@ -1188,6 +1191,8 @@
 				3005B62A14D277AA009FD6CE /* AudioEngine.h */,
 				30DF809615D2F5AF007E779E /* Midi.cpp */,
 				30DF809715D2F5AF007E779E /* Midi.h */,
+				30B2273615D3C2F900405B99 /* Osc.cpp */,
+				30B2273715D3C2F900405B99 /* Osc.h */,
 				30F6B4A514D21797008096BA /* Global.cpp */,
 				30F6B4A614D21797008096BA /* Global.h */,
 				30B2273315D3AFB000405B99 /* Gui.cpp */,
@@ -1470,6 +1475,7 @@
 				30DF809515D2F42E007E779E /* ofxMidiOut.cpp in Sources */,
 				30DF809815D2F5AF007E779E /* Midi.cpp in Sources */,
 				30B2273515D3AFB100405B99 /* Gui.cpp in Sources */,
+				30B2273815D3C2FA00405B99 /* Osc.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

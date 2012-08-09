@@ -21,8 +21,8 @@ void Global::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 	
 	// setup osc
-	oscSender.setup(oscSendAddress, oscSendPort);
-	oscReceiver.setup(oscReceivePort);
+	osc.sender.setup(oscSendAddress, oscSendPort);
+	osc.receiver.setup(oscReceivePort);
 	
 	// setup engines
 	audioEngine.setup(numOutChannels, numInChannels,
@@ -42,26 +42,6 @@ void Global::clear() {
 	
 	midi.clear();
 	gui.clear();
-}
-
-//--------------------------------------------------------------
-void Global::sendOscFromAudio(ofxOscMessage& msg) {
-	if(audioSendsOut) {
-		oscSender.sendMessage(msg);
-	}
-	else {
-		scriptEngine.sendOsc(msg);
-	}
-}
-
-//--------------------------------------------------------------
-void Global::sendOscFromScript(ofxOscMessage& msg) {
-	if(visualSendsOut) {
-		oscSender.sendMessage(msg);
-	}
-	else {
-		audioEngine.sendOsc(msg);
-	}
 }
 
 // PRIVATE

@@ -14,6 +14,7 @@
 
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
+#include "Osc.h"
 #include "Midi.h"
 #include "Gui.h"
 
@@ -32,13 +33,11 @@ class Global {
 		/// \section Objects
 
 		AppCore *core;					///< global app pointer
-
-		ofxOscSender oscSender;       	///< global osc sender
-        ofxOscReceiver oscReceiver;		///< global osc receiver
 		
 		AudioEngine audioEngine;		///< pd wrapper
 		ScriptEngine scriptEngine;		///< lua wrapper
 		
+		Osc osc;			///< osc wrapper
 		Midi midi;			///< midi wrapper
 		Gui gui;			///< gui wrapper
 		
@@ -59,10 +58,6 @@ class Global {
 		
 		/// clear all objects
 		void clear();
-		
-		/// send osc messages
-		void sendOscFromAudio(ofxOscMessage& msg);
-		void sendOscFromScript(ofxOscMessage& msg);
 
     private:
         

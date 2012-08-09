@@ -44,19 +44,21 @@ void Gui::clear() {
 //--------------------------------------------------------------
 void Gui::guiEvent(ofxUIEventArgs &e) {
 		
+	ofxSceneManager& sceneManager = Global::instance().core->sceneManager;
+		
 	if(e.widget == prevScene) {
 		if(prevScene->getValue()) {
 			Global::instance().core->sceneManager.prevScene();
-			currentScene->setLabel(Global::instance().core->sceneManager.getCurrentSceneName());
+			currentScene->setLabel(sceneManager.getCurrentSceneName());
 		}
 	}
 	else if(e.widget == nextScene) {
 		if(nextScene->getValue()) {
-			Global::instance().core->sceneManager.nextScene();
-			currentScene->setLabel(Global::instance().core->sceneManager.getCurrentSceneName());
+			sceneManager.nextScene();
+			currentScene->setLabel(sceneManager.getCurrentSceneName());
 		}
 	}
 	else if(e.widget == play) {
-		Global::instance().core->sceneManager.runToggle();
+		sceneManager.run(play->getValue());
 	}
 }

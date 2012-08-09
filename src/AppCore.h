@@ -15,10 +15,10 @@
 #include "ofxOsc.h"
 #include "ofxAppUtils.h"
 
-#include "AudioEngine.h"
-#include "ScriptEngine.h"
+#include "Global.h"
 
 class App;
+//class Global;
 
 class AppCore {
 
@@ -48,11 +48,7 @@ class AppCore {
 		
 		App& parent;
 		
-		ofxOscSender& sender;
-		ofxOscReceiver& receiver;
-		
-		AudioEngine& audioEngine;
-		ScriptEngine& scriptEngine;
+		Global& global;
 		
 		ofxSceneManager sceneManager;
 };

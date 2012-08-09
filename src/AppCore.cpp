@@ -13,14 +13,9 @@
 #include "App.h"
 #include "Scene.h"
 #include "Global.h"
-#include "poco/StringTokenizer.h"
 
 AppCore::AppCore(App& parent) : parent(parent),
-	sender(Global::instance().oscSender),
-	receiver(Global::instance().oscReceiver),
-	audioEngine(Global::instance().audioEngine),
-	scriptEngine(Global::instance().scriptEngine),
-	sceneManager(parent) {
+	global(Global::instance()), sceneManager(parent) {
 
 	mouseButton = 1;
 	bMousePressed = false;
@@ -38,8 +33,8 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofBackground(100, 100, 100);
 	
 	// setup global objects
-	Global::instance().setup(numOutChannels, numInChannels,
-							 sampleRate, ticksPerBuffer);
+	global.setup(numOutChannels, numInChannels,
+				 sampleRate, ticksPerBuffer);
 	
 	// load scenes
 	sceneManager.add(new Scene(parent, "Test2"));
@@ -56,42 +51,22 @@ void AppCore::update() {
 	sceneManager.update();
 	
 	// check for waiting osc messages
-	while(receiver.hasWaitingMessages()) {
-		
-		ofxOscMessage msg;
-		receiver.getNextMessage(&msg);
-	
-		// get the main destination address
-		Poco::StringTokenizer tokenizer(msg.getAddress(), "/");
-		Poco::StringTokenizer::Iterator iter = tokenizer.begin()+1;
-		string dest = (*iter);
-		
-		// give to lua or pd
-		if(dest == "visual") {
-			scriptEngine.sendOsc(msg);
-		}
-		else if(dest == "audio") {
-			audioEngine.sendOsc(msg);
-		}
-		else {
-			ofLogWarning() << "Unhandled osc message: " << msg.getAddress();
-		}
-	}
+	global.osc.update();
 }
 
 //--------------------------------------------------------------
 void AppCore::draw() {
 	sceneManager.draw();
 	
-	if(scriptEngine.errorOcurred) {
-		ofxBitmapString(10, 10) << scriptEngine.errorMsg;
+	if(global.scriptEngine.errorOcurred) {
+		ofxBitmapString(10, 10) << global.scriptEngine.errorMsg;
 	}
 }
 
 //--------------------------------------------------------------
 void AppCore::exit() {
 	sceneManager.clear();
-	Global::instance().clear();
+	global.clear();
 }
 
 //--------------------------------------------------------------
@@ -100,7 +75,7 @@ void AppCore::keyPressed(int key) {
 	switch(key) {
 	
 		case 'r':
-			scriptEngine.reloadScript();
+			global.scriptEngine.reloadScript();
 			break;
 			
 		default:
@@ -125,10 +100,10 @@ void AppCore::mouseReleased(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void AppCore::audioReceived(float * input, int bufferSize, int nChannels) {
-	audioEngine.pd.audioIn(input, bufferSize, nChannels);
+	global.audioEngine.pd.audioIn(input, bufferSize, nChannels);
 }
 
 //--------------------------------------------------------------
 void AppCore::audioRequested(float * output, int bufferSize, int nChannels) {
-	audioEngine.pd.audioOut(output, bufferSize, nChannels);
+	global.audioEngine.pd.audioOut(output, bufferSize, nChannels);
 }

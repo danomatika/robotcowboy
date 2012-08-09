@@ -16,22 +16,24 @@ string Scene::sceneFolder = "scenes";
 
 //--------------------------------------------------------------
 Scene::Scene(ofxApp &app) :
-	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core) {
+	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core),
+	scriptEngine(core.global.scriptEngine) {
 	path = "";
 }
 
 //--------------------------------------------------------------
 Scene::Scene(ofxApp &app, string path) :
-	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core) {
+	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core),
+	scriptEngine(core.global.scriptEngine) {
 	load(path);
 }
 
 //--------------------------------------------------------------
 bool Scene::load(string path) {
 	cout << "Scene: loading scene at: \"" << sceneFolder+"/"+path << "\"" << endl;
-	patch = core.audioEngine.pd.openPatch(sceneFolder+"/"+path+"/_main.pd");
+	patch = core.global.audioEngine.pd.openPatch(sceneFolder+"/"+path+"/_main.pd");
 	bool ret = patch.isValid();
-	ret = ret && core.scriptEngine.loadScript(sceneFolder+"/"+path+"/_main.lua");
+	ret = ret && scriptEngine.loadScript(sceneFolder+"/"+path+"/_main.lua");
 	this->path = path;
 	setName(path);
 	return ret;
@@ -39,9 +41,9 @@ bool Scene::load(string path) {
 
 //--------------------------------------------------------------
 void Scene::exit()	{
-	core.scriptEngine.lua.scriptExit();
-	core.scriptEngine.lua.clear();
-	core.audioEngine.pd.closePatch(patch);
+	core.global.scriptEngine.lua.scriptExit();
+	core.global.scriptEngine.lua.clear();
+	core.global.audioEngine.pd.closePatch(patch);
 	path = "";
 }
 

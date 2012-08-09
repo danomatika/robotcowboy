@@ -78,7 +78,7 @@ void AudioEngine::receiveBang(const std::string& dest) {
 	
 	ofxOscMessage m;
 	m.setAddress(dest);
-	Global::instance().sendOscFromAudio(m);
+	Global::instance().osc.sendOscFromAudio(m);
 }
 
 void AudioEngine::receiveFloat(const std::string& dest, float value) {
@@ -90,7 +90,7 @@ void AudioEngine::receiveSymbol(const std::string& dest, const std::string& symb
 	
 	ofxOscMessage m;
 	m.setAddress(symbol);
-	Global::instance().sendOscFromAudio(m);
+	Global::instance().osc.sendOscFromAudio(m);
 }
 
 void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
@@ -108,7 +108,7 @@ void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
 		else
 			m.addStringArg(list.getSymbol(i));
 	}
-	Global::instance().sendOscFromAudio(m);
+	Global::instance().osc.sendOscFromAudio(m);
 }
 
 void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg, const pd::List& list) {
@@ -122,7 +122,7 @@ void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg
 		else
 			m.addStringArg(list.getSymbol(i));
 	}
-	Global::instance().sendOscFromAudio(m);
+	Global::instance().osc.sendOscFromAudio(m);
 }
 
 //--------------------------------------------------------------
