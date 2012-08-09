@@ -1,0 +1,24 @@
+#N canvas 330 367 490 337 10;
+#X obj 232 227 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 7500 1;
+#X obj 133 110 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 10100 0;
+#X obj 82 227 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 130 165 center_point;
+#X obj 9 -4 cnv 15 450 20 empty empty center_point 2 11 1 18 -233017
+-66577 0;
+#X text 285 306 released under the GNU GPL;
+#X text 16 306 (C) Copyright 2007 Free Software Foundation;
+#X text 22 39 Convert normal 0-to-1 data like you'd get from a joystick
+into a center point with two 0-to-1 ranges for either side of that
+center point.;
+#X floatatom 230 247 5 0 0 0 - - -;
+#X floatatom 79 248 5 0 0 0 - - -;
+#X floatatom 140 129 5 0 0 0 - - -;
+#X connect 0 0 8 0;
+#X connect 1 0 3 0;
+#X connect 1 0 10 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 3 1 0 0;

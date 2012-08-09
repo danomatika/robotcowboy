@@ -1,0 +1,23 @@
+#N canvas 36 39 631 752 10;
+#X obj 289 -297 vsl 15 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 2510 0;
+#X floatatom 335 -115 5 0 0 0 - - -;
+#X floatatom 405 -100 5 0 0 0 - - -;
+#X floatatom 372 5 5 0 0 0 - - -;
+#X floatatom 241 -106 5 0 0 0 - - -;
+#X floatatom 301 -146 5 0 0 0 - - -;
+#X floatatom 461 -144 5 0 0 0 - - -;
+#X obj 289 -50 resample 100;
+#X obj 289 -19 lop 1;
+#X obj 289 33 timeroll;
+#X text 193 -367 this should be a filter independant to data flow frequency.
+;
+#X text 182 -329 need some more work;
+#X connect 0 0 4 0;
+#X connect 0 0 7 0;
+#X connect 1 0 8 2;
+#X connect 2 0 8 3;
+#X connect 5 0 8 1;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;
+#X connect 8 0 9 0;

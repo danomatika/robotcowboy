@@ -1,0 +1,33 @@
+#N canvas 525 201 462 476 10;
+#X obj 5 2 cnv 15 450 20 empty empty keygate 2 11 1 18 -233017 -66577
+0;
+#X obj 160 257 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 160 121 loadbang;
+#X msg 160 141 1;
+#X obj 160 169 metro 150;
+#X text 33 416 (C) Copyright 2004 Hans-Christoph Steiner <hans@at.or.at>
+;
+#X text 250 430 released under the GNU GPL;
+#X obj 237 369 pddp/pddplink ../mapping-about.pd -text mapping-about;
+#X text 128 370 For more info:;
+#X text 15 207 data to be gated -->;
+#X obj 281 258 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 40 300 keyname;
+#X symbolatom 84 320 10 0 0 0 - - -;
+#X text 162 320 <-- check here for the keyname symbol;
+#X obj 160 214 keygate f;
+#X text 17 38 [keygate] is a simple gate controlled by a keyboard.
+You must specify the name of the key which controls the gate. The left
+inlet takes the data to be gated.;
+#X text 18 89 The "f" key on the any keyboard controls this gate:;
+#X text 310 263 <-- key released;
+#X text 41 264 key pressed -->;
+#X msg 422 3 pddp;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 14 0;
+#X connect 11 1 12 0;
+#X connect 14 0 1 0;
+#X connect 14 1 10 0;

@@ -1,0 +1,63 @@
+#N canvas 541 218 481 514 10;
+#X obj 5 2 cnv 15 450 20 empty empty one2three 2 11 1 18 -233017
+-66577 0;
+#X msg 422 3 pddp;
+#X floatatom 153 110 5 0 0 0 - - -;
+#X floatatom 23 186 5 0 0 0 - - -;
+#X obj 156 91 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 26 203 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 173 186 5 0 0 0 - - -;
+#X obj 176 203 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 323 186 5 0 0 0 - - -;
+#X obj 326 203 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 18 28 Simple one-to-three mapping object. The first inlet is
+passed thru \, the range of the output data on the other inlet starts
+at the points in the input range specified as arugments.;
+#X obj 153 145 one2three;
+#X text 280 473 released under the GNU GPL;
+#X floatatom 121 299 5 0 0 0 - - -;
+#X floatatom 23 416 5 0 0 0 - - -;
+#X obj 124 280 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 26 433 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 173 416 5 0 0 0 - - -;
+#X obj 176 433 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 323 416 5 0 0 0 - - -;
+#X obj 326 433 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 16 473 (C) Copyright 2007 Free Software Foundation;
+#X text 21 243 You can set the breakpoint using the argument or the
+right inlet:;
+#X floatatom 226 356 5 0 0 0 - - -;
+#X obj 229 337 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 173 336 5 0 0 0 - - -;
+#X obj 176 317 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 121 375 one2three 0.2 0.4;
+#X connect 2 0 11 0;
+#X connect 3 0 5 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 11 0 3 0;
+#X connect 11 1 6 0;
+#X connect 11 2 8 0;
+#X connect 13 0 27 0;
+#X connect 14 0 16 0;
+#X connect 15 0 13 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 23 0 27 2;
+#X connect 24 0 23 0;
+#X connect 25 0 27 1;
+#X connect 26 0 25 0;
+#X connect 27 0 14 0;
+#X connect 27 1 17 0;
+#X connect 27 2 19 0;
