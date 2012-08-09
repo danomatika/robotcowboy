@@ -17,6 +17,34 @@ Global& Global::instance() {
 }
 
 //--------------------------------------------------------------
+void Global::setup(const int numOutChannels, const int numInChannels,
+				    const int sampleRate, const int ticksPerBuffer) {
+	
+	// setup osc
+	oscSender.setup(oscSendAddress, oscSendPort);
+	oscReceiver.setup(oscReceivePort);
+	
+	// setup engines
+	audioEngine.setup(numOutChannels, numInChannels,
+					  sampleRate, ticksPerBuffer);
+	scriptEngine.setup();
+	
+	// wrappers
+	midi.setup();
+	gui.setup();
+}
+
+//--------------------------------------------------------------
+void Global::clear() {
+
+	audioEngine.clear();
+	scriptEngine.clear();
+	
+	midi.clear();
+	gui.clear();
+}
+
+//--------------------------------------------------------------
 void Global::sendOscFromAudio(ofxOscMessage& msg) {
 	if(audioSendsOut) {
 		oscSender.sendMessage(msg);

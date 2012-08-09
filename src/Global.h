@@ -15,6 +15,7 @@
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
 #include "Midi.h"
+#include "Gui.h"
 
 class AppCore;
 
@@ -39,6 +40,7 @@ class Global {
 		ScriptEngine scriptEngine;		///< lua wrapper
 		
 		Midi midi;			///< midi wrapper
+		Gui gui;			///< gui wrapper
 		
 		/// \section Variables
 		
@@ -50,6 +52,13 @@ class Global {
 		bool audioSendsOut;
 		
 		/// \section Functions
+		
+		/// setup objects
+		void setup(const int numOutChannels, const int numInChannels,
+				   const int sampleRate, const int ticksPerBuffer);
+		
+		/// clear all objects
+		void clear();
 		
 		/// send osc messages
 		void sendOscFromAudio(ofxOscMessage& msg);

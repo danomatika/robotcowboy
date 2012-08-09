@@ -37,16 +37,9 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	ofBackground(100, 100, 100);
 	
-	// setup osc
-	sender.setup(Global::instance().oscSendAddress,
-				 Global::instance().oscSendPort);
-	receiver.setup(Global::instance().oscReceivePort);
-	
-	// setup engines
-	Global::instance().audioEngine.setup(numOutChannels, numInChannels,
-										 sampleRate, ticksPerBuffer);
-	Global::instance().scriptEngine.setup();
-	Global::instance().midi.setup();
+	// setup global objects
+	Global::instance().setup(numOutChannels, numInChannels,
+							 sampleRate, ticksPerBuffer);
 	
 	// load scenes
 	sceneManager.add(new Scene(parent, "Test2"));
@@ -54,6 +47,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
 	//parent.setSceneManager(&sceneManager);
+	Global::instance().gui.currentScene->setLabel(sceneManager.getCurrentSceneName());
 }
 
 //--------------------------------------------------------------
@@ -97,8 +91,7 @@ void AppCore::draw() {
 //--------------------------------------------------------------
 void AppCore::exit() {
 	sceneManager.clear();
-	audioEngine.clear();
-	scriptEngine.clear();
+	Global::instance().clear();
 }
 
 //--------------------------------------------------------------
