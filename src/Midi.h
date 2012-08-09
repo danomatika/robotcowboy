@@ -12,11 +12,11 @@
 
 #include "ofxMidi.h"
 
-class MidiEngine : public ofxMidiListener, public ofxMidiConnectionListener {
+class Midi : public ofxMidiListener, public ofxMidiConnectionListener {
 
 	public:
 	
-		MidiEngine();
+		Midi();
 	
 		bool setup();
 		void clear() {}

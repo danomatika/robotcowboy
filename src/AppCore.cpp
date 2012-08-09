@@ -46,7 +46,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	Global::instance().audioEngine.setup(numOutChannels, numInChannels,
 										 sampleRate, ticksPerBuffer);
 	Global::instance().scriptEngine.setup();
-	Global::instance().midiEngine.setup();
+	Global::instance().midi.setup();
 	
 	// load scenes
 	sceneManager.add(new Scene(parent, "Test2"));

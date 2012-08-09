@@ -8,15 +8,15 @@
  * See https://github.com/danomatika/robotcowboy for documentation
  *
  */
-#include "MidiEngine.h"
+#include "Midi.h"
 
 #include "Global.h"
 
 //--------------------------------------------------------------
-MidiEngine::MidiEngine() {}
+Midi::Midi() {}
 
 //--------------------------------------------------------------
-bool MidiEngine::setup() {
+bool Midi::setup() {
 
 	ofxMidi::enableNetworking();
 	
@@ -40,7 +40,7 @@ bool MidiEngine::setup() {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendNoteOn(const int channel, const int pitch, const int velocity) {
+void Midi::sendNoteOn(const int channel, const int pitch, const int velocity) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendNoteOn(channel, pitch, velocity);
@@ -48,7 +48,7 @@ void MidiEngine::sendNoteOn(const int channel, const int pitch, const int veloci
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendControlChange(const int channel, const int controller, const int value) {
+void Midi::sendControlChange(const int channel, const int controller, const int value) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendControlChange(channel, controller, value);
@@ -56,7 +56,7 @@ void MidiEngine::sendControlChange(const int channel, const int controller, cons
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendProgramChange(const int channel, const int value) {
+void Midi::sendProgramChange(const int channel, const int value) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendProgramChange(channel, value);
@@ -64,7 +64,7 @@ void MidiEngine::sendProgramChange(const int channel, const int value) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendPitchBend(const int channel, const int value) {
+void Midi::sendPitchBend(const int channel, const int value) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendPitchBend(channel, value);
@@ -72,7 +72,7 @@ void MidiEngine::sendPitchBend(const int channel, const int value) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendAftertouch(const int channel, const int value) {
+void Midi::sendAftertouch(const int channel, const int value) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendAftertouch(channel, value);
@@ -80,7 +80,7 @@ void MidiEngine::sendAftertouch(const int channel, const int value) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::sendPolyAftertouch(const int channel, const int pitch, const int value) {
+void Midi::sendPolyAftertouch(const int channel, const int pitch, const int value) {
 	vector<ofxMidiOut*>::iterator iter;
 	for(iter = outputs.begin(); iter != outputs.end(); ++iter) {
 		(*iter)->sendPolyAftertouch(channel, pitch, value);
@@ -88,7 +88,7 @@ void MidiEngine::sendPolyAftertouch(const int channel, const int pitch, const in
 }
 
 //--------------------------------------------------------------
-void MidiEngine::newMidiMessage(ofxMidiMessage& msg) {
+void Midi::newMidiMessage(ofxMidiMessage& msg) {
 	
 	AudioEngine& audioEngine = Global::instance().audioEngine;
 	
@@ -125,7 +125,7 @@ void MidiEngine::newMidiMessage(ofxMidiMessage& msg) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::midiInputAdded(string name, bool isNetwork) {
+void Midi::midiInputAdded(string name, bool isNetwork) {
 	
 	stringstream msg;
 	msg << "ofxMidi: input added: " << name << " network: " << isNetwork;
@@ -138,9 +138,9 @@ void MidiEngine::midiInputAdded(string name, bool isNetwork) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::midiInputRemoved(string name, bool isNetwork) {
+void Midi::midiInputRemoved(string name, bool isNetwork) {
 	stringstream msg;
-	msg << "MidiEngine: input removed: " << name << " network: " << isNetwork << endl;
+	msg << "Midi: input removed: " << name << " network: " << isNetwork << endl;
 	
 	// close and remove input port
 	vector<ofxMidiIn*>::iterator iter;
@@ -157,9 +157,9 @@ void MidiEngine::midiInputRemoved(string name, bool isNetwork) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::midiOutputAdded(string name, bool isNetwork) {
+void Midi::midiOutputAdded(string name, bool isNetwork) {
 	stringstream msg;
-	msg << "MidiEngine: output added: " << name << " network: " << isNetwork << endl;
+	msg << "Midi: output added: " << name << " network: " << isNetwork << endl;
 	
 	// create and open new output port
 	ofxMidiOut * newOutput = new ofxMidiOut;
@@ -168,9 +168,9 @@ void MidiEngine::midiOutputAdded(string name, bool isNetwork) {
 }
 
 //--------------------------------------------------------------
-void MidiEngine::midiOutputRemoved(string name, bool isNetwork) {
+void Midi::midiOutputRemoved(string name, bool isNetwork) {
 	stringstream msg;
-	msg << "MidiEngine: output removed: " << name << " network: " << isNetwork << endl;
+	msg << "Midi: output removed: " << name << " network: " << isNetwork << endl;
 	
 	// close and remove output port
 	vector<ofxMidiOut*>::iterator iter;

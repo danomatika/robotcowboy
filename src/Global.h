@@ -14,7 +14,7 @@
 
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
-#include "MidiEngine.h"
+#include "Midi.h"
 
 class AppCore;
 
@@ -37,7 +37,8 @@ class Global {
 		
 		AudioEngine audioEngine;		///< pd wrapper
 		ScriptEngine scriptEngine;		///< lua wrapper
-		MidiEngine midiEngine;			///< midi wrapper
+		
+		Midi midi;			///< midi wrapper
 		
 		/// \section Variables
 		
