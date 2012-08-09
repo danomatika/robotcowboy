@@ -127,28 +127,34 @@ void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg
 
 //--------------------------------------------------------------
 void AudioEngine::receiveNoteOn(const int channel, const int pitch, const int velocity) {
-	cout << "OF MIDI: note on: " << channel << " " << pitch << " " << velocity << endl;
+	//cout << "OF MIDI: note on: " << channel << " " << pitch << " " << velocity << endl;
+	Global::instance().midiEngine.sendNoteOn(channel, pitch, velocity);
 }
 
 void AudioEngine::receiveControlChange(const int channel, const int controller, const int value) {
-	cout << "OF MIDI: control change: " << channel << " " << controller << " " << value << endl;
+	//cout << "OF MIDI: control change: " << channel << " " << controller << " " << value << endl;
+	Global::instance().midiEngine.sendControlChange(channel, controller, value);
 }
 
 // note: pgm nums are 1-128 to match pd
 void AudioEngine::receiveProgramChange(const int channel, const int value) {
-	cout << "OF MIDI: program change: " << channel << " " << value << endl;
+	//cout << "OF MIDI: program change: " << channel << " " << value << endl;
+	Global::instance().midiEngine.sendProgramChange(channel, value);
 }
 
 void AudioEngine::receivePitchBend(const int channel, const int value) {
-	cout << "OF MIDI: pitch bend: " << channel << " " << value << endl;
+	//cout << "OF MIDI: pitch bend: " << channel << " " << value << endl;
+	Global::instance().midiEngine.sendPitchBend(channel, value);
 }
 
 void AudioEngine::receiveAftertouch(const int channel, const int value) {
-	cout << "OF MIDI: aftertouch: " << channel << " " << value << endl;
+	//cout << "OF MIDI: aftertouch: " << channel << " " << value << endl;
+	Global::instance().midiEngine.sendAftertouch(channel, value);
 }
 
 void AudioEngine::receivePolyAftertouch(const int channel, const int pitch, const int value) {
-	cout << "OF MIDI: poly aftertouch: " << channel << " " << pitch << " " << value << endl;
+	//cout << "OF MIDI: poly aftertouch: " << channel << " " << pitch << " " << value << endl;
+	Global::instance().midiEngine.sendPolyAftertouch(channel, pitch, value);
 }
 
 // note: pd adds +2 to the port num, so sending to port 3 in pd to [midiout],

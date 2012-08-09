@@ -34,7 +34,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 
 	// setup of
 	ofSetVerticalSync(true);
-	ofSetLogLevel(OF_LOG_VERBOSE);
+	//ofSetLogLevel(OF_LOG_VERBOSE);
 	ofBackground(100, 100, 100);
 	
 	// setup osc
@@ -42,10 +42,11 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 				 Global::instance().oscSendPort);
 	receiver.setup(Global::instance().oscReceivePort);
 	
-	// setup pd and lua
+	// setup engines
 	Global::instance().audioEngine.setup(numOutChannels, numInChannels,
 										 sampleRate, ticksPerBuffer);
 	Global::instance().scriptEngine.setup();
+	Global::instance().midiEngine.setup();
 	
 	// load scenes
 	sceneManager.add(new Scene(parent, "Test2"));

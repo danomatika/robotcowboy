@@ -14,6 +14,7 @@
 
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
+#include "MidiEngine.h"
 
 class AppCore;
 
@@ -34,8 +35,9 @@ class Global {
 		ofxOscSender oscSender;       	///< global osc sender
         ofxOscReceiver oscReceiver;		///< global osc receiver
 		
-		AudioEngine audioEngine;		///< pd engine
-		ScriptEngine scriptEngine;		///< lua engine
+		AudioEngine audioEngine;		///< pd wrapper
+		ScriptEngine scriptEngine;		///< lua wrapper
+		MidiEngine midiEngine;			///< midi wrapper
 		
 		/// \section Variables
 		
