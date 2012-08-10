@@ -31,6 +31,10 @@ bool Gui::setup() {
 	gui->addWidgetRight(nextScene);
 	gui->addWidgetDown(play);
 	
+	//console.setup(10, 34);
+	console.pos.x = 750;
+	console.pos.y = 34;
+	
 	ofAddListener(gui->newGUIEvent, this, &Gui::guiEvent);
 	
 	return true;
@@ -69,4 +73,48 @@ void Gui::guiEvent(ofxUIEventArgs &e) {
 	else if(e.widget == play) {
 		sceneManager.run(play->getValue());
 	}
+}
+
+// CONSOLE
+
+//--------------------------------------------------------------
+Gui::Console::Console() {
+	width = 40;
+	height = 20;
+	//font = OFX_UI_FONT_SMALL);
+}
+
+//--------------------------------------------------------------
+void Gui::Console::setup(int w, int h) {
+	clear();
+	width = w;
+	height = h;
+}
+
+//--------------------------------------------------------------
+void Gui::Console::addLine(string line) {
+	mutex.lock();
+	lines.push_back(line);
+	while(lines.size() > height)
+		lines.pop_front();
+	mutex.unlock();
+}
+
+//--------------------------------------------------------------
+void Gui::Console::clear() {
+	mutex.lock();
+	lines.clear();
+	mutex.unlock();
+}
+
+//--------------------------------------------------------------
+void Gui::Console::draw() {
+	mutex.lock();
+	int x = pos.x, y = pos.y;
+	deque<string>::iterator iter = lines.begin();
+	for(; iter != lines.end(); ++iter) {
+		ofDrawBitmapString((*iter), x, y);
+		y += 14;
+	}
+	mutex.unlock();
 }

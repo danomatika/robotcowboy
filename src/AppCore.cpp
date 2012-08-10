@@ -71,6 +71,8 @@ void AppCore::draw() {
 	if(global.scriptEngine.errorOcurred) {
 		ofxBitmapString(10, 10) << global.scriptEngine.errorMsg;
 	}
+	
+	global.gui.console.draw();
 }
 
 //--------------------------------------------------------------

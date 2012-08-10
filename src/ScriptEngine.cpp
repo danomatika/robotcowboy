@@ -90,8 +90,10 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 
 //--------------------------------------------------------------
 void ScriptEngine::print(const std::string& message) {
-	// append any left overs in the writeBuffer
+	// append any leftovers in the writeBuffer
 	ofLog() << "LUA: " << writeBuffer << message;
+	Global::instance().gui.console.addLine("LUA: " + writeBuffer + message);
+	writeBuffer.clear();
 }
 
 //--------------------------------------------------------------
@@ -103,6 +105,7 @@ void ScriptEngine::write(const std::string& message) {
 		}
 		else {
 			ofLog() << "LUA: " << writeBuffer;
+			Global::instance().gui.console.addLine("LUA: " + writeBuffer);
 			writeBuffer.clear();
 		}
 	}

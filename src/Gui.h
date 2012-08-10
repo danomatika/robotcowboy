@@ -12,6 +12,10 @@
 
 #include "ofxUI.h"
 
+#include <deque>
+
+class Console;
+
 class Gui {
 
 	public:
@@ -33,4 +37,31 @@ class Gui {
 		ofxUIButton *prevScene;
 		ofxUIButton *nextScene;
 		ofxUIButton *play;
+		
+		class Console {
+
+			public:
+
+				Console();
+
+				void setup(int width, int height);
+
+				// add a line to the buffer
+				void addLine(string line);
+
+				// clear the buffer
+				void clear();
+
+				// draw the console using the current position
+				void draw();
+
+				deque<string> lines;
+				int width, height; // console chars, not pixels
+				ofPoint pos;
+				
+				ofTrueTypeFont *font;
+				
+				ofMutex mutex;
+				
+		} console;
 };

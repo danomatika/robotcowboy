@@ -86,6 +86,7 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 //--------------------------------------------------------------
 void AudioEngine::print(const std::string& message) {
 	ofLog() << "PD: " << message;
+	Global::instance().gui.console.addLine("PD: " + message);
 }
 
 void AudioEngine::receiveBang(const std::string& dest) {
