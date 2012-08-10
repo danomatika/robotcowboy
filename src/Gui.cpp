@@ -42,6 +42,16 @@ void Gui::clear() {
 }
 
 //--------------------------------------------------------------
+void Gui::setSceneName(string name) {
+	currentScene->setLabel(name);
+}
+
+//--------------------------------------------------------------
+void Gui::setPlayButtonValue(bool value) {
+	play->setValue(value);
+}
+
+//--------------------------------------------------------------
 void Gui::guiEvent(ofxUIEventArgs &e) {
 		
 	ofxSceneManager& sceneManager = Global::instance().core->sceneManager;
@@ -49,13 +59,11 @@ void Gui::guiEvent(ofxUIEventArgs &e) {
 	if(e.widget == prevScene) {
 		if(prevScene->getValue()) {
 			Global::instance().core->sceneManager.prevScene();
-			currentScene->setLabel(sceneManager.getCurrentSceneName());
 		}
 	}
 	else if(e.widget == nextScene) {
 		if(nextScene->getValue()) {
 			sceneManager.nextScene();
-			currentScene->setLabel(sceneManager.getCurrentSceneName());
 		}
 	}
 	else if(e.widget == play) {

@@ -12,48 +12,55 @@
 
 #include "App.h"
 
-string Scene::sceneFolder = "scenes";
-
 //--------------------------------------------------------------
-Scene::Scene(ofxApp &app) :
-	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core),
-	scriptEngine(core.global.scriptEngine) {
+Scene::Scene(ofxApp &app, string name) :
+	ofxScene(app, name, false), core(dynamic_cast<App&>(app).core),
+	global(Global::instance()) {
 	path = "";
 }
 
 //--------------------------------------------------------------
-Scene::Scene(ofxApp &app, string path) :
-	ofxScene(app, "scene"), core(dynamic_cast<App&>(app).core),
-	scriptEngine(core.global.scriptEngine) {
-	load(path);
-}
+void Scene::setup()	{
 
-//--------------------------------------------------------------
-bool Scene::load(string path) {
-	cout << "Scene: loading scene at: \"" << sceneFolder+"/"+path << "\"" << endl;
-	patch = core.global.audioEngine.pd.openPatch(sceneFolder+"/"+path+"/_main.pd");
-	bool ret = patch.isValid();
-	ret = ret && scriptEngine.loadScript(sceneFolder+"/"+path+"/_main.lua");
-	this->path = path;
-	setName(path);
-	return ret;
-}
-
-//--------------------------------------------------------------
-void Scene::exit()	{
-	core.global.scriptEngine.lua.scriptExit();
-	core.global.scriptEngine.lua.clear();
-	core.global.audioEngine.pd.closePatch(patch);
-	path = "";
-}
-
-//--------------------------------------------------------------
-bool Scene::setSceneFolder(string path) {
+	global.gui.setSceneName(getName());
+	path = ofFilePath::getAbsolutePath(core.global.scenePath+getName()+"/");
+	
 	if(!ofDirectory::doesDirectoryExist(ofFilePath::getEnclosingDirectory(path))) {
-		ofLogError() << "Scene: scene folder path \"" << path << "\" does not exist";
-		return false;
+		ofLogError() << "Scene: scene path \"" << path << "\" does not exist";
+		return;
 	}
-	sceneFolder = path;
-	return true;
+	
+	ofLogVerbose() << "Scene: loading scene: \"" << getName() << "\"";
+	
+	if(ofFile::doesFileExist(path+"_main.pd")) {
+		global.audioEngine.loadPatch(path+"_main.pd");
+	}
+	
+	if(ofFile::doesFileExist(path+"_main.lua")) {
+		global.scriptEngine.loadScript(path+"_main.lua");
+	}
+	
+	ofSetDataPathRoot(path);
+
+	global.scriptEngine.lua.scriptSetup();
 }
+
+//--------------------------------------------------------------
+void Scene::update() {global.scriptEngine.lua.scriptUpdate();}
+void Scene::draw() {global.scriptEngine.lua.scriptDraw();}
+
+//--------------------------------------------------------------
+void Scene::exit() {
+	global.gui.setPlayButtonValue(false);
+	global.scriptEngine.clearScript();
+	global.audioEngine.clearPatch();
+	path = "";
+}
+
+//--------------------------------------------------------------		
+void Scene::keyPressed(int key) {global.scriptEngine.lua.scriptKeyPressed(key);}
+void Scene::mouseMoved(int x, int y) {global.scriptEngine.lua.scriptMouseMoved(x, y);}
+void Scene::mouseDragged(int x, int y, int button) {global.scriptEngine.lua.scriptMouseDragged(x, y, button);}
+void Scene::mousePressed(int x, int y, int button) {global.scriptEngine.lua.scriptMousePressed(x, y, button);}
+void Scene::mouseReleased(int x, int y, int button) {global.scriptEngine.lua.scriptMouseReleased(x, y, button);}
 		

@@ -29,20 +29,30 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 
 	// setup of
 	ofSetVerticalSync(true);
-	//ofSetLogLevel(OF_LOG_VERBOSE);
+	ofSetLogLevel(OF_LOG_VERBOSE);
+	ofSetLogLevel("Pd", OF_LOG_WARNING);
+	ofSetLogLevel("ofxLua", OF_LOG_WARNING);
 	ofBackground(100, 100, 100);
 	
 	// setup global objects
 	global.setup(numOutChannels, numInChannels,
 				 sampleRate, ticksPerBuffer);
 	
+	// data path
+	#ifndef TARGET_IOS
+		ofSetDataPathRoot(ofFilePath::getAbsolutePath(ofFilePath::getCurrentWorkingDirectory()+"/../../../data"));
+	#endif
+	global.scenePath = ofToDataPath("")+"/scenes/";
+	ofLogVerbose() << "AppCore: scene path is " << global.scenePath;
+	
 	// load scenes
 	sceneManager.add(new Scene(parent, "Test2"));
-	sceneManager.setup(false);	// setup all the scenes on the fly
+	sceneManager.add(new Scene(parent, "Test3"));
+	//sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
+	sceneManager.run(true);
 	//parent.setSceneManager(&sceneManager);
-	Global::instance().gui.currentScene->setLabel(sceneManager.getCurrentSceneName());
 }
 
 //--------------------------------------------------------------
@@ -76,6 +86,7 @@ void AppCore::keyPressed(int key) {
 	
 		case 'r':
 			global.scriptEngine.reloadScript();
+			sceneManager.getCurrentScene()->setup();
 			break;
 			
 		default:

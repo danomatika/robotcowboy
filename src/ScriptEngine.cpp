@@ -27,7 +27,7 @@ ScriptEngine::ScriptEngine() {
 //--------------------------------------------------------------
 bool ScriptEngine::setup() {
 	if(!lua.init(true)) {
-		ofLog(OF_LOG_ERROR, "ScriptEngine: Could not init lua");
+		ofLogError() << "ScriptEngine: Could not init lua";
 		return false;
 	}
 	return true;
@@ -42,11 +42,15 @@ void ScriptEngine::clear() {
 }
 
 //--------------------------------------------------------------
-bool ScriptEngine::loadScript(string script) {
-	cout << "ScriptEngine: loading script \""
-		 << script << "\"" << endl;
+void ScriptEngine::clearScript() {
 	lua.scriptExit();
 	clear();
+}
+
+//--------------------------------------------------------------
+bool ScriptEngine::loadScript(string script) {
+	ofLogVerbose() << "ScriptEngine: loading script \"" << ofFilePath::getFileName(script) << "\"";
+	clearScript();
 	if(!setup())
 		return false;
 	lua.bind<LuaWrapper>();
@@ -56,9 +60,7 @@ bool ScriptEngine::loadScript(string script) {
 
 //--------------------------------------------------------------
 bool ScriptEngine::reloadScript() {
-	cout << "ScriptEngine: reloading script \""
-		 << currentScript << "\"" << endl;
-	lua.scriptExit();
+	ofLogVerbose() << "ScriptEngine: reloading script \"" << ofFilePath::getFileName(currentScript) << "\"";
 	lua.clear();
 	errorOcurred = false;
 	errorMsg = "";
@@ -78,13 +80,13 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 		luabind::call_function<bool>(lua, "oscReceived", boost::ref(msg));
 	}
 	catch(exception& e) {
-		cout << "ScriptEngine::sendOsc: Caught exception: " << e.what() << endl;
+		ofLogWarning() << "ScriptEngine::sendOsc: Caught exception: " << e.what();
 	}
 }
 
 //--------------------------------------------------------------
 void ScriptEngine::errorReceived(const std::string& msg) {
-	cout << "ScriptEngine: Got an error: " << msg << endl;
+	ofLogWarning() << "ScriptEngine: Got an error: " << msg;
 	errorOcurred = true;
 	errorMsg = msg;
 }

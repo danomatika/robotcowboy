@@ -21,6 +21,9 @@ class Gui {
 		bool setup();
 		void clear();
 		
+		void setSceneName(string name);
+		void setPlayButtonValue(bool value);
+		
 		// gui callback
 		void guiEvent(ofxUIEventArgs &e);
 		

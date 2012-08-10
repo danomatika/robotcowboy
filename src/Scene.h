@@ -21,42 +21,24 @@ class Scene : public ofxScene {
 
 	public:
 	
-		Scene(ofxApp &app);
-		Scene(ofxApp &app, string path);
+		/// name should be the same as the scene folder name!
+		Scene(ofxApp &app, string name);
 		
-		/// load the scene
-		bool load(string path);
-		
-		/// is the scene loaded?
-		bool isLoaded() {return path == "" ? false : true;}
-		
-		/// \section Scene callbacks
-		
-		/// run the script!
-		void setup()	{scriptEngine.lua.scriptSetup();}
-		void update()	{scriptEngine.lua.scriptUpdate();}
-		void draw()		{scriptEngine.lua.scriptDraw();}
+		void setup();
+		void update();
+		void draw();
 		void exit();
 		
-		void keyPressed(int key)						{scriptEngine.lua.scriptKeyPressed(key);}
-		void mouseMoved(int x, int y)					{scriptEngine.lua.scriptMouseMoved(x, y);}
-		void mouseDragged(int x, int y, int button)		{scriptEngine.lua.scriptMouseDragged(x, y, button);}
-		void mousePressed(int x, int y, int button)		{scriptEngine.lua.scriptMousePressed(x, y, button);}
-		void mouseReleased(int x, int y, int button)	{scriptEngine.lua.scriptMouseReleased(x, y, button);}
-		
-		/// \section Globals
-		
-		/// set/get the main scene folder
-		static bool setSceneFolder(string path);
-		static string getSceneFolder()	{return sceneFolder;}
+		void keyPressed(int key);
+		void mouseMoved(int x, int y);
+		void mouseDragged(int x, int y, int button);
+		void mousePressed(int x, int y, int button);
+		void mouseReleased(int x, int y, int button);
 		
 	private:
 	
 		AppCore& core;
-		ScriptEngine& scriptEngine;
+		Global& global;
 	
-		string path;		//< path to this scene
-		pd::Patch patch;	//< pd patch handle
-
-		static string sceneFolder;	//< where to look for scenes
+		string path;	//< path to this scene
 };

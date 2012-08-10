@@ -49,5 +49,5 @@ void Global::clear() {
 //--------------------------------------------------------------
 Global::Global() :
 	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009),
-	visualSendsOut(false), audioSendsOut(false)
+	visualSendsOut(false), audioSendsOut(false), scenePath("scenes")
 	{}

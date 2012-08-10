@@ -39,6 +39,21 @@ bool AudioEngine::setup(const int numOutChannels, const int numInChannels,
 }
 
 //--------------------------------------------------------------
+void AudioEngine::clearPatch() {
+	if(currentPatch.isValid()) {
+		pd.closePatch(currentPatch);
+	}
+}
+
+//--------------------------------------------------------------
+bool AudioEngine::loadPatch(string patch) {
+	ofLogVerbose() << "AudioEngine: loading patch \"" << ofFilePath::getFileName(patch) << "\"";
+	clearPatch();
+	currentPatch = pd.openPatch(patch);
+	return currentPatch.isValid();
+}
+
+//--------------------------------------------------------------
 void AudioEngine::sendOsc(ofxOscMessage& msg) {
 	
 	// get the sub destination
@@ -70,11 +85,11 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 
 //--------------------------------------------------------------
 void AudioEngine::print(const std::string& message) {
-	cout << "PD: " << message << endl;
+	ofLog() << "PD: " << message;
 }
 
 void AudioEngine::receiveBang(const std::string& dest) {
-	cout << "OF: bang " << dest << endl;
+	//cout << "OF: bang " << dest << endl;
 	
 	ofxOscMessage m;
 	m.setAddress(dest);
@@ -82,11 +97,11 @@ void AudioEngine::receiveBang(const std::string& dest) {
 }
 
 void AudioEngine::receiveFloat(const std::string& dest, float value) {
-	cout << "OF: float " << dest << ": " << value << endl;
+	//cout << "OF: float " << dest << ": " << value << endl;
 }
 
 void AudioEngine::receiveSymbol(const std::string& dest, const std::string& symbol) {
-	cout << "OF: symbol " << dest << ": " << symbol << endl;
+	//cout << "OF: symbol " << dest << ": " << symbol << endl;
 	
 	ofxOscMessage m;
 	m.setAddress(symbol);
@@ -94,7 +109,7 @@ void AudioEngine::receiveSymbol(const std::string& dest, const std::string& symb
 }
 
 void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
-	cout << "OF: list " << dest << ": " << list.toString() << endl;
+	//cout << "OF: list " << dest << ": " << list.toString() << endl;
 	
 	if(!list.isSymbol(0)) {
 		ofLogWarning() << "AudioEngine: Malformed osc message, ignoring" << endl;
@@ -112,7 +127,7 @@ void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
 }
 
 void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg, const pd::List& list) {
-	cout << "OF: message " << dest << ": " << msg << " " << list.toString() << list.types() << endl;
+	//cout << "OF: message " << dest << ": " << msg << " " << list.toString() << list.types() << endl;
 	
 	ofxOscMessage m;
 	m.setAddress(msg);
@@ -160,5 +175,5 @@ void AudioEngine::receivePolyAftertouch(const int channel, const int pitch, cons
 // note: pd adds +2 to the port num, so sending to port 3 in pd to [midiout],
 //       shows up at port 1 in ofxPd
 void AudioEngine::receiveMidiByte(const int port, const int byte) {
-	cout << "OF MIDI: midi byte: " << port << " " << byte << endl;
+	//cout << "OF MIDI: midi byte: " << port << " " << byte << endl;
 }

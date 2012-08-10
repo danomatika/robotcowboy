@@ -50,6 +50,8 @@ class Global {
 		bool visualSendsOut;
 		bool audioSendsOut;
 		
+		string scenePath;	///< absolute path to scene root
+		
 		/// \section Functions
 		
 		/// setup objects

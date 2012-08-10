@@ -24,6 +24,13 @@ class AudioEngine : public pd::PdReceiver, public pd::PdMidiReceiver {
 				   const int sampleRate, const int ticksPerBuffer);
 		void clear() {}
 		
+		/// clears the current patch
+		void clearPatch();
+		
+		/// load a new patch
+		/// clears the current patch
+		bool loadPatch(std::string patch);
+		
 		/// send an osc message to pd
 		/// sends to OSC_IN
 		void sendOsc(ofxOscMessage& msg);
@@ -48,4 +55,5 @@ class AudioEngine : public pd::PdReceiver, public pd::PdMidiReceiver {
 		void receiveMidiByte(const int port, const int byte);
 		
 		ofxPd pd;
+		pd::Patch currentPatch;
 };
