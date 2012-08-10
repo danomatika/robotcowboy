@@ -21,6 +21,8 @@ ScriptEngine::ScriptEngine() {
 	errorOcurred = false;
 	errorMsg = "";
 	
+	writeBuffer = "";
+	
 	lua.addListener(*this);
 }
 
@@ -55,6 +57,7 @@ bool ScriptEngine::loadScript(string script) {
 		return false;
 	lua.bind<LuaWrapper>();
 	currentScript = script;
+	lua.doScript(bootScript);
 	return lua.doScript(script);
 }
 
@@ -67,6 +70,7 @@ bool ScriptEngine::reloadScript() {
 	if(!setup())
 		return false;
 	lua.bind<LuaWrapper>();
+	lua.doScript(bootScript);
 	return lua.doScript(currentScript);
 }
 
@@ -81,6 +85,26 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 	}
 	catch(exception& e) {
 		ofLogWarning() << "ScriptEngine::sendOsc: Caught exception: " << e.what();
+	}
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::print(const std::string& message) {
+	// append any left overs in the writeBuffer
+	ofLog() << "LUA: " << writeBuffer << message;
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::write(const std::string& message) {
+	// add to buffer, flush on each newline
+	for(int i = 0; i < message.length(); ++i) {
+		if(message[i] != '\n') {
+			writeBuffer.push_back(message[i]);
+		}
+		else {
+			ofLog() << "LUA: " << writeBuffer;
+			writeBuffer.clear();
+		}
 	}
 }
 

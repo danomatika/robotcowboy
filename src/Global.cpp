@@ -28,6 +28,7 @@ void Global::setup(const int numOutChannels, const int numInChannels,
 	audioEngine.setup(numOutChannels, numInChannels,
 					  sampleRate, ticksPerBuffer);
 	scriptEngine.setup();
+	scriptEngine.bootScript = ofToDataPath("boot.lua", true);
 	
 	// wrappers
 	midi.setup();

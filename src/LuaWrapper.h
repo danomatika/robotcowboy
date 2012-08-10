@@ -349,7 +349,7 @@ class LuaWrapper {
 				def("launchBrowser", &ofLaunchBrowser)
 			];
 			
-			/// app
+			/// osc
 			module(lua, "osc")
 			[				
 				///////////////////////////////
@@ -404,6 +404,12 @@ class LuaWrapper {
 					.def("numBundles", &ofxOscBundle::getBundleCount)
 					.def("getMessage", &ofxOscBundle::getMessageAt)
 					.def("getBundle", &ofxOscBundle::getBundleAt)
+			];
+			
+			module(lua, "rc")
+			[
+				def("print", &print),
+				def("write", &write)
 			];
 			
 			///////////////////////////////
@@ -474,5 +480,14 @@ class LuaWrapper {
 		}
 		static void oscSendBundle(ofxOscBundle& bundle) {
 			//Global::instance().osc.sender.sendBundle(bundle);
+		}
+		
+		// console io
+		static void print(const std::string& message) {
+			Global::instance().scriptEngine.print(message);
+		}
+		
+		static void write(const std::string& message) {
+			Global::instance().scriptEngine.write(message);
 		}
 };

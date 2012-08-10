@@ -37,11 +37,17 @@ class ScriptEngine : private ofxLuaListener {
 		/// send an osc message to the lua script
 		/// calls the oscReceived lua function
 		void sendOsc(ofxOscMessage& msg);
+		
+		/// receives a print from the lua console
+		void print(const std::string& message);
+		void write(const std::string& message);
 
 		ofxLua lua;
 		
 		bool errorOcurred;
 		string errorMsg;
+
+		string bootScript;
 		
 	private:
 	
@@ -49,4 +55,6 @@ class ScriptEngine : private ofxLuaListener {
 		void errorReceived(const std::string& msg);
 
 		string currentScript;
+
+		string writeBuffer;
 };
