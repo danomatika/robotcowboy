@@ -54,6 +54,9 @@ class Global {
 		
 		/// \section Functions
 		
+		/// laod global settings from lua script
+		void loadSettings(string path);
+		
 		/// setup objects
 		void setup(const int numOutChannels, const int numInChannels,
 				   const int sampleRate, const int ticksPerBuffer);

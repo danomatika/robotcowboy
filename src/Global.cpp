@@ -20,6 +20,8 @@ Global& Global::instance() {
 void Global::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 	
+	loadSettings("ka");
+	
 	// setup osc
 	osc.sender.setup(oscSendAddress, oscSendPort);
 	osc.receiver.setup(oscReceivePort);
@@ -43,6 +45,49 @@ void Global::clear() {
 	
 	midi.clear();
 	gui.clear();
+}
+
+//--------------------------------------------------------------
+void Global::loadSettings(string path) {
+	
+	ofxLua lua;
+	lua.init();
+	
+	// load defaults
+	if(!lua.doScript("defaults.lua")) {
+		return;
+	}
+	
+	// load user settings
+//	if(!lua.doScript(path)) {
+//		return;
+//	}
+	
+	lua.pushTable("rc");
+	lua.pushTable("settings");
+
+	scenePath = lua.readString("scenePath", scenePath);
+
+	lua.pushTable("osc");
+	oscSendAddress = lua.readString("sendAddress", oscSendAddress);
+	oscSendPort = lua.readUInt("sendPort", oscSendPort);
+	oscReceivePort = lua.readUInt("receivePort", oscReceivePort);
+	lua.popTable();
+	
+	lua.pushTable("visual");
+	audioSendsOut = lua.readBool("sendsOut", visualSendsOut);
+	lua.popTable();
+	
+	lua.pushTable("audio");
+	audioSendsOut = lua.readBool("sendsOut", audioSendsOut);
+	lua.popTable();
+	
+	lua.pushTable("midi");
+	lua.readStringVector("inputs", midi.inputNames);
+	lua.readStringVector("outputs", midi.outputNames);
+	lua.popTable();
+	
+	lua.popAllTables();
 }
 
 // PRIVATE

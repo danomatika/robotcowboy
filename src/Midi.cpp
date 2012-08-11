@@ -23,20 +23,78 @@ bool Midi::setup() {
 	ofxMidiIn::listPorts();
 	ofxMidiOut::listPorts();
 	
-	for(int i = 0; i < ofxMidiIn::getNumPorts(); ++i) {
-		inputs.push_back(new ofxMidiIn);
-		inputs[i]->addListener(this);
-		inputs[i]->openPort(i);
-	}
-	
-	for(int i = 0; i < ofxMidiOut::getNumPorts(); ++i) {
-		outputs.push_back(new ofxMidiOut);
-		outputs[i]->openPort(i);
-	}
+	connect();
 	
 	ofxMidi::setConnectionListener(this);
 	
 	return true;
+}
+
+void Midi::clear() {
+	disconnect();
+}
+
+//--------------------------------------------------------------
+void Midi::connect() {
+	
+	// connect to everything if the whitelist is empty
+	if(inputNames.empty()) {
+		for(int i = 0; i < ofxMidiIn::getNumPorts(); ++i) {
+			ofxMidiIn *in = new ofxMidiIn;
+			in->addListener(this);
+			in->openPort(i);
+			inputs.push_back(in);
+		}
+	}
+	// connect to white list
+	else {
+		for(int i = 0; i < ofxMidiIn::getNumPorts(); ++i) {
+			// look in whitelist
+			for(int j = 0; j < inputNames.size(); ++j) {
+				if(inputNames[j] == ofxMidiIn::getPortName(i)) {
+					ofxMidiIn *in = new ofxMidiIn;
+					in->addListener(this);
+					in->openPort(i);
+					inputs.push_back(in);
+				}
+			}
+		}
+	}
+	
+	// outputs
+	if(outputNames.empty()) {
+		for(int i = 0; i < ofxMidiOut::getNumPorts(); ++i) {
+			ofxMidiOut *out = new ofxMidiOut;
+			out->openPort(i);
+			outputs.push_back(out);
+		}
+	}
+	else {
+		for(int i = 0; i < ofxMidiOut::getNumPorts(); ++i) {
+			// look in whitelist
+			for(int j = 0; j < outputNames.size(); ++j) {
+				if(outputNames[j] == ofxMidiOut::getPortName(i)) {
+					ofxMidiOut *out = new ofxMidiOut;
+					out->openPort(i);
+					outputs.push_back(out);
+				}
+			}
+		}
+	}
+}
+
+//--------------------------------------------------------------
+void Midi::disconnect() {
+	for(int i = 0; i < inputs.size(); ++i) {
+		inputs[i]->closePort();
+		delete inputs[i];
+	}
+	for(int i = 0; i < outputs.size(); ++i) {
+		outputs[i]->closePort();
+		delete outputs[i];
+	}
+	inputs.clear();
+	outputs.clear();
 }
 
 //--------------------------------------------------------------

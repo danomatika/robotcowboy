@@ -18,8 +18,13 @@ class Midi : public ofxMidiListener, public ofxMidiConnectionListener {
 	
 		Midi();
 	
+		// set the whitelist before calling this
 		bool setup();
-		void clear() {}
+		void clear();
+		
+		// connect, disconnect from whitelisted devices
+		void connect();
+		void disconnect();
 		
 		// sending
 		void sendNoteOn(const int channel, const int pitch, const int velocity);
@@ -38,6 +43,10 @@ class Midi : public ofxMidiListener, public ofxMidiConnectionListener {
 		
 		void midiOutputAdded(string nam, bool isNetwork);
 		void midiOutputRemoved(string name, bool isNetwork);
+		
+		// whitelist
+		vector<string> inputNames;
+		vector<string> outputNames;
 		
 		vector<ofxMidiIn*> inputs;
 		vector<ofxMidiOut*> outputs;
