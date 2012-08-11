@@ -43,18 +43,11 @@ class Global {
 		
 		/// \section Variables
 		
-		string oscSendAddress;
-		int oscSendPort;
-		int oscReceivePort;
-		
-		bool visualSendsOut;
-		bool audioSendsOut;
-		
 		string scenePath;	///< absolute path to scene root
 		
 		/// \section Functions
 		
-		/// laod global settings from lua script
+		/// load global settings from a lua script
 		void loadSettings(string path);
 		
 		/// setup objects

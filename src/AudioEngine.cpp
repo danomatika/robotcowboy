@@ -17,14 +17,16 @@
 #include "poco/StringTokenizer.h"
 
 //--------------------------------------------------------------
-AudioEngine::AudioEngine() {}
+AudioEngine::AudioEngine() {
+	sendsOscOut = false;
+}
 
 //--------------------------------------------------------------
 bool AudioEngine::setup(const int numOutChannels, const int numInChannels,
 						const int sampleRate, const int ticksPerBuffer) {
 
 	if(!pd.init(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
-		ofLog(OF_LOG_ERROR, "AudioEngine: Could not init pd");
+		ofLogError() << "AudioEngine: Could not init pd";
 		return false;
 	}
 
@@ -85,7 +87,7 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 
 //--------------------------------------------------------------
 void AudioEngine::print(const std::string& message) {
-	ofLog() << "PD: " << message;
+	ofLogNotice() << "PD: " << message;
 	Global::instance().gui.console.addLine("PD: " + message);
 }
 

@@ -23,6 +23,8 @@ ScriptEngine::ScriptEngine() {
 	
 	writeBuffer = "";
 	
+	sendsOscOut = false;
+	
 	lua.addListener(*this);
 }
 
@@ -91,7 +93,7 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 //--------------------------------------------------------------
 void ScriptEngine::print(const std::string& message) {
 	// append any leftovers in the writeBuffer
-	ofLog() << "LUA: " << writeBuffer << message;
+	ofLogNotice() << "LUA: " << writeBuffer << message;
 	Global::instance().gui.console.addLine("LUA: " + writeBuffer + message);
 	writeBuffer.clear();
 }

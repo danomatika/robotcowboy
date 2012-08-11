@@ -22,17 +22,12 @@ void Global::setup(const int numOutChannels, const int numInChannels,
 	
 	loadSettings("ka");
 	
-	// setup osc
-	osc.sender.setup(oscSendAddress, oscSendPort);
-	osc.receiver.setup(oscReceivePort);
-	
-	// setup engines
 	audioEngine.setup(numOutChannels, numInChannels,
 					  sampleRate, ticksPerBuffer);
 	scriptEngine.setup();
 	scriptEngine.bootScript = ofToDataPath("boot.lua", true);
 	
-	// wrappers
+	osc.setup();
 	midi.setup();
 	gui.setup();
 }
@@ -43,6 +38,7 @@ void Global::clear() {
 	audioEngine.clear();
 	scriptEngine.clear();
 	
+	osc.clear();
 	midi.clear();
 	gui.clear();
 }
@@ -69,17 +65,17 @@ void Global::loadSettings(string path) {
 	scenePath = lua.readString("scenePath", scenePath);
 
 	lua.pushTable("osc");
-	oscSendAddress = lua.readString("sendAddress", oscSendAddress);
-	oscSendPort = lua.readUInt("sendPort", oscSendPort);
-	oscReceivePort = lua.readUInt("receivePort", oscReceivePort);
+	osc.sendAddress = lua.readString("sendAddress", osc.sendAddress);
+	osc.sendPort = lua.readUInt("sendPort", osc.sendPort);
+	osc.receivePort = lua.readUInt("receivePort", osc.receivePort);
 	lua.popTable();
 	
 	lua.pushTable("visual");
-	audioSendsOut = lua.readBool("sendsOut", visualSendsOut);
+	scriptEngine.sendsOscOut = lua.readBool("sendsOut", scriptEngine.sendsOscOut);
 	lua.popTable();
 	
 	lua.pushTable("audio");
-	audioSendsOut = lua.readBool("sendsOut", audioSendsOut);
+	audioEngine.sendsOscOut = lua.readBool("sendsOut", audioEngine.sendsOscOut);
 	lua.popTable();
 	
 	lua.pushTable("midi");
@@ -93,7 +89,4 @@ void Global::loadSettings(string path) {
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() :
-	oscSendAddress("127.0.0.1"), oscSendPort(8880), oscReceivePort(9009),
-	visualSendsOut(false), audioSendsOut(false), scenePath("scenes")
-	{}
+Global::Global() : scenePath("scenes") {}

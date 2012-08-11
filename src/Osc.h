@@ -18,7 +18,10 @@ class Osc {
 	
 		Osc();
 		
-		// handle any incoming messages
+		void setup();
+		void clear() {}
+		
+		/// handle any incoming messages
 		void update();
 		
 		/// send osc messages
@@ -27,4 +30,8 @@ class Osc {
 		
 		ofxOscSender sender;
         ofxOscReceiver receiver;
+		
+		string sendAddress;
+		int sendPort;
+		int receivePort;
 };

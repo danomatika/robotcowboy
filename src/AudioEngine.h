@@ -56,4 +56,6 @@ class AudioEngine : public pd::PdReceiver, public pd::PdMidiReceiver {
 		
 		ofxPd pd;
 		pd::Patch currentPatch;
+		
+		bool sendsOscOut;
 };

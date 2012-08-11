@@ -17,6 +17,12 @@
 Osc::Osc() {}
 
 //--------------------------------------------------------------
+void Osc::setup() {
+	sender.setup(sendAddress, sendPort);
+	receiver.setup(receivePort);
+}
+
+//--------------------------------------------------------------
 void Osc::update() {
 	
 	Global &global = Global::instance();
@@ -48,7 +54,7 @@ void Osc::update() {
 //--------------------------------------------------------------
 void Osc::sendOscFromAudio(ofxOscMessage& msg) {
 	Global &global = Global::instance();
-	if(global.audioSendsOut) {
+	if(global.audioEngine.sendsOscOut) {
 		sender.sendMessage(msg);
 	}
 	else {
@@ -59,7 +65,7 @@ void Osc::sendOscFromAudio(ofxOscMessage& msg) {
 //--------------------------------------------------------------
 void Osc::sendOscFromScript(ofxOscMessage& msg) {
 	Global &global = Global::instance();
-	if(global.visualSendsOut) {
+	if(global.scriptEngine.sendsOscOut) {
 		sender.sendMessage(msg);
 	}
 	else {

@@ -49,6 +49,8 @@ class ScriptEngine : private ofxLuaListener {
 
 		string bootScript;
 		
+		bool sendsOscOut;
+		
 	private:
 	
 		/// lua error callback

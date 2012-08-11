@@ -44,9 +44,11 @@ class Midi : public ofxMidiListener, public ofxMidiConnectionListener {
 		void midiOutputAdded(string nam, bool isNetwork);
 		void midiOutputRemoved(string name, bool isNetwork);
 		
-		// whitelist
+		// whitelists
 		vector<string> inputNames;
 		vector<string> outputNames;
+		
+	private:
 		
 		vector<ofxMidiIn*> inputs;
 		vector<ofxMidiOut*> outputs;
