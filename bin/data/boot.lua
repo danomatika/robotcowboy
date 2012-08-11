@@ -22,3 +22,7 @@ math.HALF_PI = 1.57079632679489661923
 -- override default prints
 print = rc.print
 write = rc.write
+
+rc.app.LEFT = 1
+rc.app.MIDDLE = 3
+rc.app.RIGHT = 2

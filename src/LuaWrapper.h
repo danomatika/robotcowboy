@@ -26,8 +26,12 @@ class LuaWrapper {
 		
 			using namespace luabind;
 			
+			/// overall table
+			module(lua, "rc")
+			[
+			
 			/// graphics
-			module(lua, "gfx")
+			namespace_("gfx")
 			[
 				///////////////////////////////
 				/// \section Graphics
@@ -242,10 +246,10 @@ class LuaWrapper {
 					.def("getStringBoundingBox", &ofTrueTypeFont::getStringBoundingBox)
 					.def("drawString", &ofTrueTypeFont::drawString)
 					.def("drawStringAsShapes", &ofTrueTypeFont::drawStringAsShapes)
-			];
+			],
 			
 			/// math
-			module(lua, "math")
+			namespace_("math")
 			[
 				///////////////////////////////
 				/// \section Math
@@ -264,10 +268,10 @@ class LuaWrapper {
 					//.def("set", (void(ofPoint::*)(const ofPoint&)) &ofPoint::set)
 					.def_readonly("x", &ofPoint::x)
 					.def_readonly("y", &ofPoint::y)
-			];
+			],
 			
 			/// app
-			module(lua, "app")
+			namespace_("app")
 			[
 				///////////////////////////////
 				/// \section App
@@ -314,10 +318,10 @@ class LuaWrapper {
 				
 				/// sync
 				def("setVerticalSync", &ofSetVerticalSync)
-			];
+			],
 			
 			/// app
-			module(lua, "utils")
+			namespace_("utils")
 			[
 				///////////////////////////////
 				/// \section Utils
@@ -347,10 +351,10 @@ class LuaWrapper {
 				def("getWeekday", &ofGetWeekday),
 				
 				def("launchBrowser", &ofLaunchBrowser)
-			];
+			],
 			
 			/// osc
-			module(lua, "osc")
+			namespace_("osc")
 			[				
 				///////////////////////////////
 				/// \section Osc
@@ -404,23 +408,22 @@ class LuaWrapper {
 					.def("numBundles", &ofxOscBundle::getBundleCount)
 					.def("getMessage", &ofxOscBundle::getMessageAt)
 					.def("getBundle", &ofxOscBundle::getBundleAt)
-			];
+			],
 			
-			module(lua, "rc")
-			[
-				def("print", &print),
-				def("write", &write)
-			];
+			def("print", &print),
+			def("write", &write)
+			
+			]; // end rc
 			
 			///////////////////////////////
 			/// \section Add Values
 			
 			/// add some constant values to the lua state
-			lua.doString(
-				"math.TWO_PI = "+ofToString(TWO_PI)+"\n" \
-				"app.LEFT = 1\n" \
-				"app.MIDDLE = 2\n" \
-				"app.RIGHT = 3\n");
+//			lua.doString(
+//				"math.TWO_PI = "+ofToString(TWO_PI)+"\n" \
+//				"app.LEFT = 1\n" \
+//				"app.MIDDLE = 2\n" \
+//				"app.RIGHT = 3\n");
 		}
 		
 		/// \section Function & Object Wrappers
