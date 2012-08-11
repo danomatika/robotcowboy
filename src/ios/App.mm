@@ -35,13 +35,13 @@ void App::setup() {
 	// used to compute the audio buffer len: tpb * blocksize (always 64)
 	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
 	
+	// setup OF sound stream
+	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
+	
 	// setup the app core
 	core.setup(2, 2, 44100, ticksPerBuffer);
-
-	// setup OF sound stream
-	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 3);
 	
-	bangSound.loadSound("samples/bang.wav");
+	bangSound.loadSound("data/samples/bang.wav");
 	bangSound.setLoop(false);
 	bangSound.setVolume(0.75);
 	bangSound.play();

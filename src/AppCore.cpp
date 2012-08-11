@@ -29,14 +29,25 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 
 	// setup of
 	ofSetVerticalSync(true);
-	ofSetLogLevel(OF_LOG_VERBOSE);
-	ofSetLogLevel("Pd", OF_LOG_WARNING);
-	ofSetLogLevel("ofxLua", OF_LOG_WARNING);
+	//ofSetLogLevel(OF_LOG_VERBOSE);
+	//ofSetLogLevel("Pd", OF_LOG_WARNING);
+	//ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
 	ofBackground(100, 100, 100);
+	
+	#ifdef TARGET_IOS
+		ofSetDataPathRoot(ofToDataPath("data/", true));
+	#endif
+	//ofLogNotice() << "Data path: " << ofToDataPath("data", true);
+	
+	//ofSetDataPathRoot(ofFilePath::getAbsolutePath("data/"));
+	ofLogNotice() << "Data path: " << ofToDataPath("");
 	
 	// setup global objects
 	global.setup(numOutChannels, numInChannels,
 				 sampleRate, ticksPerBuffer);
+	
+	// set log level from config file
+	ofSetLogLevel(global.logLevel);
 	
 	// data path
 	#ifndef TARGET_IOS

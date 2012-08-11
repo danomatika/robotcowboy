@@ -63,6 +63,7 @@ void Global::loadSettings(string path) {
 	lua.pushTable("settings");
 
 	scenePath = lua.readString("scenePath", scenePath);
+	logLevel = (ofLogLevel) lua.readUInt("logLevel", (int) logLevel);
 
 	lua.pushTable("osc");
 	osc.sendAddress = lua.readString("sendAddress", osc.sendAddress);
@@ -89,4 +90,6 @@ void Global::loadSettings(string path) {
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() : scenePath("scenes") {}
+Global::Global() : scenePath("scenes") {
+	logLevel = ofGetLogLevel();
+}

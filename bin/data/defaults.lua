@@ -28,5 +28,15 @@ rc.settings.osc.receivePort = 9009
 rc.settings.visual.sendsOut = false
 rc.settings.audio.sendsOut = false
 
-rc.settings.midi.inputs = {"IAC Driver Pure Data Out"}
-rc.settings.midi.outputs = {"IAC Driver Pure Data In"}
+rc.settings.midi.inputs = {"IAC Driver Pure Data Out", "Session 1"}
+rc.settings.midi.outputs = {"IAC Driver Pure Data In", "Session 1"}
+
+--[[
+	verbose 	0
+	notice		1
+	warning 	2
+	error		3
+	fata error 	4
+	silent		5
+]]--
+rc.settings.logLevel = 1

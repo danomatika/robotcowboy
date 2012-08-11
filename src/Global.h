@@ -45,6 +45,8 @@ class Global {
 		
 		string scenePath;	///< absolute path to scene root
 		
+		ofLogLevel logLevel;
+		
 		/// \section Functions
 		
 		/// load global settings from a lua script
