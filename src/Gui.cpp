@@ -32,7 +32,7 @@ bool Gui::setup() {
 	gui->addWidgetDown(play);
 	
 	//console.setup(10, 34);
-	console.pos.x = 750;
+	console.pos.x = 650;
 	console.pos.y = 34;
 	
 	ofAddListener(gui->newGUIEvent, this, &Gui::guiEvent);

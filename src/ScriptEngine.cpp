@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -18,14 +18,14 @@
 //--------------------------------------------------------------
 ScriptEngine::ScriptEngine() {
 	currentScript = "";
-	errorOcurred = false;
+	bErrorOcurred = false;
 	errorMsg = "";
 	
 	writeBuffer = "";
 	
 	sendsOscOut = false;
 	
-	lua.addListener(*this);
+	lua.addListener(this);
 }
 
 //--------------------------------------------------------------
@@ -41,7 +41,7 @@ bool ScriptEngine::setup() {
 void ScriptEngine::clear() {
 	lua.clear();
 	currentScript = "";
-	errorOcurred = false;
+	bErrorOcurred = false;
 	errorMsg = "";
 }
 
@@ -67,7 +67,7 @@ bool ScriptEngine::loadScript(string script) {
 bool ScriptEngine::reloadScript() {
 	ofLogVerbose() << "ScriptEngine: reloading script \"" << ofFilePath::getFileName(currentScript) << "\"";
 	lua.clear();
-	errorOcurred = false;
+	bErrorOcurred = false;
 	errorMsg = "";
 	if(!setup())
 		return false;
@@ -80,8 +80,11 @@ bool ScriptEngine::reloadScript() {
 // calling lua functions with objects:
 // http://www.nuclex.org/articles/cxx/1-quick-introduction-to-luabind
 void ScriptEngine::sendOsc(ofxOscMessage& msg) {
-	if(!lua.isValid())
+	
+	if(!lua.isValid()) {
 		return;
+	}
+	
 	try {
 		luabind::call_function<bool>(lua, "oscReceived", boost::ref(msg));
 	}
@@ -91,7 +94,7 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 }
 
 //--------------------------------------------------------------
-void ScriptEngine::print(const std::string& message) {
+void ScriptEngine::print(const string& message) {
 	// append any leftovers in the writeBuffer
 	ofLogNotice() << "LUA: " << writeBuffer << message;
 	Global::instance().gui.console.addLine("LUA: " + writeBuffer + message);
@@ -99,7 +102,7 @@ void ScriptEngine::print(const std::string& message) {
 }
 
 //--------------------------------------------------------------
-void ScriptEngine::write(const std::string& message) {
+void ScriptEngine::write(const string& message) {
 	// add to buffer, flush on each newline
 	for(int i = 0; i < message.length(); ++i) {
 		if(message[i] != '\n') {
@@ -114,8 +117,18 @@ void ScriptEngine::write(const std::string& message) {
 }
 
 //--------------------------------------------------------------
-void ScriptEngine::errorReceived(const std::string& msg) {
+bool ScriptEngine::errorOcurred() {
+	return bErrorOcurred;
+}
+
+string ScriptEngine::getErrorMessage() {
+	return errorMsg;
+}
+
+// PRIVATE
+//--------------------------------------------------------------
+void ScriptEngine::errorReceived(string& msg) {
 	ofLogWarning() << "ScriptEngine: Got an error: " << msg;
-	errorOcurred = true;
+	bErrorOcurred = true;
 	errorMsg = msg;
 }

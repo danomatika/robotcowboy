@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -39,22 +39,24 @@ class ScriptEngine : private ofxLuaListener {
 		void sendOsc(ofxOscMessage& msg);
 		
 		/// receives a print from the lua console
-		void print(const std::string& message);
-		void write(const std::string& message);
+		void print(const string& message);
+		void write(const string& message);
 
+		/// did a script error ocurr? if so, grab the message
+		bool errorOcurred();
+		string getErrorMessage();
+		
 		ofxLua lua;
-		
-		bool errorOcurred;
-		string errorMsg;
-
-		string bootScript;
-		
 		bool sendsOscOut;
+		string bootScript;
 		
 	private:
 	
 		/// lua error callback
-		void errorReceived(const std::string& msg);
+		void errorReceived(string& msg);
+		
+		bool bErrorOcurred;
+		string errorMsg;
 
 		string currentScript;
 

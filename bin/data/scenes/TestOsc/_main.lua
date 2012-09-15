@@ -1,20 +1,18 @@
 
 ----------------------------------------------------
 function setup()
-	print("script setup")
-
-	app.setWindowTitle("osc test")	
+	rc.app.setWindowTitle("osc test")	
 end
 
 ----------------------------------------------------
 function update()
-	gfx.background(255)
+	rc.gfx.background(127)
 end
 
 ----------------------------------------------------
 function draw()
-	if app.mousePressed and app.mouseButton == 1 then
-		of.circle(app.mouseX, app.mouseY, 20, 20)
+	if rc.app.mousePressed and rc.app.mouseButton == 1 then
+		rc.gfx.circle(app.mouseX, app.mouseY, 20, 20)
 	end
 end
 
@@ -37,16 +35,19 @@ end
 ----------------------------------------------------
 function keyPressed(key)
 	print("script keyPressed \""..string.char(key).."\"")
-	osc.sendInt("/audio/key", key);
+	rc.osc.sendInt("/audio/key", key);
 end
 
 ----------------------------------------------------
 function mousePressed(x, y, button)
 	print("script mousePressed "..x.." "..y.." "..button)
-	msg = osc.message()
+	--bundle = rc.osc.bundle()
+	msg = rc.osc.message()
 	msg:addInt(x)
 	msg:addInt(y)
 	msg:addInt(button)
 	msg:setAddress("/audio/mouse")
-	osc.sendMessage(msg)
+	rc.osc.sendMessage(msg)
+	--bundle:addMessage(msg)
+	--rc.osc.sendBundle(bundle)
 end

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -31,8 +31,6 @@ bool AudioEngine::setup(const int numOutChannels, const int numInChannels,
 	}
 
 	Externals::setup();
-	pd.addReceiver(*this);
-	pd.addMidiReceiver(*this);
 	pd.subscribe("OSC_OUT");
 	pd.addToSearchPath("externals");
 	pd.addToSearchPath("externals/rj");
@@ -53,6 +51,103 @@ bool AudioEngine::loadPatch(string patch) {
 	clearPatch();
 	currentPatch = pd.openPatch(patch);
 	return currentPatch.isValid();
+}
+
+//--------------------------------------------------------------
+bool AudioEngine::reloadPatch() {
+	pd::Patch p = currentPatch;
+	clearPatch();
+	currentPatch = pd.openPatch(p);
+	return currentPatch.isValid();
+}
+
+//--------------------------------------------------------------
+void AudioEngine::update() {
+
+	while(pd.numMessages() > 0) {
+	
+		pd::Message& msg = pd.nextMessage();
+		switch(msg.type) {
+			
+			case pd::PRINT:
+				ofLogNotice() << "PD: " << msg.symbol;
+				Global::instance().gui.console.addLine("PD: " + msg.symbol);
+				break;
+			
+			// events
+			case pd::BANG:
+			{
+				ofxOscMessage m;
+				m.setAddress(msg.dest);
+				Global::instance().osc.sendOscFromAudio(m);
+				break;
+			}
+			case pd::FLOAT:
+				break;
+			case pd::SYMBOL:
+			{
+				ofxOscMessage m;
+				m.setAddress(msg.symbol);
+				Global::instance().osc.sendOscFromAudio(m);
+				break;
+			}
+			case pd::LIST:
+			{
+				if(!msg.list.isSymbol(0)) {
+					ofLogWarning() << "AudioEngine: Malformed osc message, ignoring" << endl;
+					return;
+				}
+				
+				ofxOscMessage m;
+				for(int i = 0; i < msg.list.len(); ++i) {
+					if(msg.list.isFloat(i))
+						m.addFloatArg(msg.list.getFloat(i));
+					else
+						m.addStringArg(msg.list.getSymbol(i));
+				}
+				Global::instance().osc.sendOscFromAudio(m);
+				break;
+			}
+			case pd::MESSAGE:
+			{
+				ofxOscMessage m;
+				m.setAddress(msg.symbol);
+				for(int i = 0; i < msg.list.len(); ++i) {
+					if(msg.list.isFloat(i))
+						m.addFloatArg(msg.list.getFloat(i));
+					else
+						m.addStringArg(msg.list.getSymbol(i));
+				}
+				Global::instance().osc.sendOscFromAudio(m);
+				break;
+			}
+			
+			// midi
+			case pd::NOTE_ON:
+				Global::instance().midi.sendNoteOn(msg.channel, msg.pitch, msg.velocity);
+				break;
+			case pd::CONTROL_CHANGE:
+				Global::instance().midi.sendControlChange(msg.channel, msg.controller, msg.value);
+				break;
+			case pd::PROGRAM_CHANGE:
+				Global::instance().midi.sendProgramChange(msg.channel, msg.value);
+				break;
+			case pd::PITCH_BEND:
+				Global::instance().midi.sendPitchBend(msg.channel, msg.value);
+				break;
+			case pd::AFTERTOUCH:
+				Global::instance().midi.sendAftertouch(msg.channel, msg.value);
+				break;
+			case pd::POLY_AFTERTOUCH:
+				Global::instance().midi.sendPolyAftertouch(msg.channel, msg.pitch, msg.value);
+				break;
+			case pd::BYTE:
+				break;
+		
+			case pd::NONE:
+				break;
+		}
+	}
 }
 
 //--------------------------------------------------------------
@@ -83,100 +178,4 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 		}
 	}
 	pd.finishList("OSC_IN");
-}
-
-//--------------------------------------------------------------
-void AudioEngine::print(const std::string& message) {
-	ofLogNotice() << "PD: " << message;
-	Global::instance().gui.console.addLine("PD: " + message);
-}
-
-void AudioEngine::receiveBang(const std::string& dest) {
-	//cout << "OF: bang " << dest << endl;
-	
-	ofxOscMessage m;
-	m.setAddress(dest);
-	Global::instance().osc.sendOscFromAudio(m);
-}
-
-void AudioEngine::receiveFloat(const std::string& dest, float value) {
-	//cout << "OF: float " << dest << ": " << value << endl;
-}
-
-void AudioEngine::receiveSymbol(const std::string& dest, const std::string& symbol) {
-	//cout << "OF: symbol " << dest << ": " << symbol << endl;
-	
-	ofxOscMessage m;
-	m.setAddress(symbol);
-	Global::instance().osc.sendOscFromAudio(m);
-}
-
-void AudioEngine::receiveList(const std::string& dest, const pd::List& list) {
-	//cout << "OF: list " << dest << ": " << list.toString() << endl;
-	
-	if(!list.isSymbol(0)) {
-		ofLogWarning() << "AudioEngine: Malformed osc message, ignoring" << endl;
-		return;
-	}
-	
-	ofxOscMessage m;
-	for(int i = 0; i < list.len(); ++i) {
-		if(list.isFloat(i))
-			m.addFloatArg(list.getFloat(i));
-		else
-			m.addStringArg(list.getSymbol(i));
-	}
-	Global::instance().osc.sendOscFromAudio(m);
-}
-
-void AudioEngine::receiveMessage(const std::string& dest, const std::string& msg, const pd::List& list) {
-	//cout << "OF: message " << dest << ": " << msg << " " << list.toString() << list.types() << endl;
-	
-	ofxOscMessage m;
-	m.setAddress(msg);
-	for(int i = 0; i < list.len(); ++i) {
-		if(list.isFloat(i))
-			m.addFloatArg(list.getFloat(i));
-		else
-			m.addStringArg(list.getSymbol(i));
-	}
-	Global::instance().osc.sendOscFromAudio(m);
-}
-
-//--------------------------------------------------------------
-void AudioEngine::receiveNoteOn(const int channel, const int pitch, const int velocity) {
-	//cout << "OF MIDI: note on: " << channel << " " << pitch << " " << velocity << endl;
-	Global::instance().midi.sendNoteOn(channel, pitch, velocity);
-}
-
-void AudioEngine::receiveControlChange(const int channel, const int controller, const int value) {
-	//cout << "OF MIDI: control change: " << channel << " " << controller << " " << value << endl;
-	Global::instance().midi.sendControlChange(channel, controller, value);
-}
-
-// note: pgm nums are 1-128 to match pd
-void AudioEngine::receiveProgramChange(const int channel, const int value) {
-	//cout << "OF MIDI: program change: " << channel << " " << value << endl;
-	Global::instance().midi.sendProgramChange(channel, value);
-}
-
-void AudioEngine::receivePitchBend(const int channel, const int value) {
-	//cout << "OF MIDI: pitch bend: " << channel << " " << value << endl;
-	Global::instance().midi.sendPitchBend(channel, value);
-}
-
-void AudioEngine::receiveAftertouch(const int channel, const int value) {
-	//cout << "OF MIDI: aftertouch: " << channel << " " << value << endl;
-	Global::instance().midi.sendAftertouch(channel, value);
-}
-
-void AudioEngine::receivePolyAftertouch(const int channel, const int pitch, const int value) {
-	//cout << "OF MIDI: poly aftertouch: " << channel << " " << pitch << " " << value << endl;
-	Global::instance().midi.sendPolyAftertouch(channel, pitch, value);
-}
-
-// note: pd adds +2 to the port num, so sending to port 3 in pd to [midiout],
-//       shows up at port 1 in ofxPd
-void AudioEngine::receiveMidiByte(const int port, const int byte) {
-	//cout << "OF MIDI: midi byte: " << port << " " << byte << endl;
 }

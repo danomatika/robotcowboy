@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -67,12 +67,12 @@ class LuaWrapper {
 				//def("disableBlendMode", &ofDisableBlendMode),
 				
 				/// transparency
-				def("enableAlphaBlending", &ofEnableAlphaBlending),
-				def("disableAlphaBlending", &ofDisableAlphaBlending),
+				def("alphaBlend", &ofEnableAlphaBlending),
+				def("noAlphaBlend", &ofDisableAlphaBlending),
 				
 				/// smooth
-				def("enableSmoothing", &ofEnableSmoothing),
-				def("disableSmoothing", &ofDisableSmoothing),
+				def("smooth", &ofEnableSmoothing),
+				def("noSmooth", &ofDisableSmoothing),
 				
 				/// drawing style
                 def("setRectMode", &ofSetRectMode),
@@ -246,7 +246,8 @@ class LuaWrapper {
 					.def("getStringBoundingBox", &ofTrueTypeFont::getStringBoundingBox)
 					.def("drawString", &ofTrueTypeFont::drawString)
 					.def("drawStringAsShapes", &ofTrueTypeFont::drawStringAsShapes)
-			],
+			
+			], // gfx
 			
 			/// math
 			namespace_("math")
@@ -268,7 +269,8 @@ class LuaWrapper {
 					//.def("set", (void(ofPoint::*)(const ofPoint&)) &ofPoint::set)
 					.def_readonly("x", &ofPoint::x)
 					.def_readonly("y", &ofPoint::y)
-			],
+			
+			], // math
 			
 			/// app
 			namespace_("app")
@@ -318,9 +320,10 @@ class LuaWrapper {
 				
 				/// sync
 				def("setVerticalSync", &ofSetVerticalSync)
-			],
 			
-			/// app
+			], // app
+			
+			/// utils
 			namespace_("utils")
 			[
 				///////////////////////////////
@@ -351,7 +354,8 @@ class LuaWrapper {
 				def("getWeekday", &ofGetWeekday),
 				
 				def("launchBrowser", &ofLaunchBrowser)
-			],
+			
+			], // utils
 			
 			/// osc
 			namespace_("osc")
@@ -408,8 +412,10 @@ class LuaWrapper {
 					.def("numBundles", &ofxOscBundle::getBundleCount)
 					.def("getMessage", &ofxOscBundle::getMessageAt)
 					.def("getBundle", &ofxOscBundle::getBundleAt)
-			],
 			
+			], // osc
+			
+			/// to override lua print and write functions
 			def("print", &print),
 			def("write", &write)
 			
@@ -482,7 +488,7 @@ class LuaWrapper {
 			Global::instance().osc.sendOscFromScript(msg);
 		}
 		static void oscSendBundle(ofxOscBundle& bundle) {
-			//Global::instance().osc.sender.sendBundle(bundle);
+			Global::instance().osc.sender.sendBundle(bundle);
 		}
 		
 		// console io

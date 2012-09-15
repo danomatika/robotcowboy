@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -62,27 +62,31 @@ void Global::loadSettings(string path) {
 	lua.pushTable("rc");
 	lua.pushTable("settings");
 
-	scenePath = lua.readString("scenePath", scenePath);
-	logLevel = (ofLogLevel) lua.readUInt("logLevel", (int) logLevel);
+	scenePath = lua.getString("scenePath", scenePath);
+	logLevel = (ofLogLevel) ((int) lua.getFloat("logLevel", (int) logLevel));
 
 	lua.pushTable("osc");
-	osc.sendAddress = lua.readString("sendAddress", osc.sendAddress);
-	osc.sendPort = lua.readUInt("sendPort", osc.sendPort);
-	osc.receivePort = lua.readUInt("receivePort", osc.receivePort);
+	osc.sendAddress = lua.getString("sendAddress", osc.sendAddress);
+	osc.sendPort = lua.getFloat("sendPort", osc.sendPort);
+	osc.receivePort = lua.getFloat("receivePort", osc.receivePort);
 	lua.popTable();
 	
 	lua.pushTable("visual");
-	scriptEngine.sendsOscOut = lua.readBool("sendsOut", scriptEngine.sendsOscOut);
+	scriptEngine.sendsOscOut = lua.getBool("sendsOut", scriptEngine.sendsOscOut);
 	lua.popTable();
 	
 	lua.pushTable("audio");
-	audioEngine.sendsOscOut = lua.readBool("sendsOut", audioEngine.sendsOscOut);
+	audioEngine.sendsOscOut = lua.getBool("sendsOut", audioEngine.sendsOscOut);
 	lua.popTable();
 	
 	lua.pushTable("midi");
-	lua.readStringVector("inputs", midi.inputNames);
-	lua.readStringVector("outputs", midi.outputNames);
+	lua.getStringVector("inputs", midi.inputNames);
+	lua.getStringVector("outputs", midi.outputNames);
 	lua.popTable();
+	
+	lua.popTable();
+	ofLogNotice() << "Loaded settings:";
+	lua.printTable(); // print settings
 	
 	lua.popAllTables();
 }

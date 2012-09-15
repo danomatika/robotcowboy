@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Dan Wilcox <danomatika@gmail.com>
+ * Copyright (c) 2012 Dan Wilcox <danomatika@gmail.com>
  *
  * BSD Simplified License.
  * For information on usage and redistribution, and for a DISCLAIMER OF ALL
@@ -57,6 +57,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofLogVerbose() << "AppCore: scene path is " << global.scenePath;
 	
 	// load scenes
+	sceneManager.add(new Scene(parent, "TestOsc"));
 	sceneManager.add(new Scene(parent, "Test2"));
 	sceneManager.add(new Scene(parent, "Test3"));
 	//sceneManager.setup(false);	// setup all the scenes on the fly
@@ -72,6 +73,7 @@ void AppCore::update() {
 	sceneManager.update();
 	
 	// check for waiting osc messages
+	global.audioEngine.update();
 	global.osc.update();
 }
 
@@ -79,8 +81,8 @@ void AppCore::update() {
 void AppCore::draw() {
 	sceneManager.draw();
 	
-	if(global.scriptEngine.errorOcurred) {
-		ofxBitmapString(10, 10) << global.scriptEngine.errorMsg;
+	if(global.scriptEngine.errorOcurred()) {
+		ofxBitmapString(10, 10) << global.scriptEngine.getErrorMessage();
 	}
 	
 	global.gui.console.draw();
@@ -99,6 +101,7 @@ void AppCore::keyPressed(int key) {
 	
 		case 'r':
 			global.scriptEngine.reloadScript();
+			global.audioEngine.reloadPatch();
 			sceneManager.getCurrentScene()->setup();
 			break;
 			
