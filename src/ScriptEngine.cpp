@@ -13,7 +13,7 @@
 #include "ofxOsc.h"
 
 #include "Global.h"
-#include "LuaWrapper.h"
+#include "Bindings.h"
 
 //--------------------------------------------------------------
 ScriptEngine::ScriptEngine() {
@@ -57,7 +57,7 @@ bool ScriptEngine::loadScript(string script) {
 	clearScript();
 	if(!setup())
 		return false;
-	lua.bind<LuaWrapper>();
+	lua.bind<Bindings>();
 	currentScript = script;
 	lua.doScript(bootScript);
 	return lua.doScript(script);
@@ -71,7 +71,7 @@ bool ScriptEngine::reloadScript() {
 	errorMsg = "";
 	if(!setup())
 		return false;
-	lua.bind<LuaWrapper>();
+	lua.bind<Bindings>();
 	lua.doScript(bootScript);
 	return lua.doScript(currentScript);
 }

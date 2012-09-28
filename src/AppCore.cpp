@@ -19,6 +19,8 @@ AppCore::AppCore(App& parent) : parent(parent),
 
 	mouseButton = 1;
 	bMousePressed = false;
+	currentKey = 0;
+	bKeyPressed = false;
 
 	Global::instance().core = this;
 }
@@ -28,6 +30,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 
 	// setup of
+	global.resetGraphics();
 	ofSetVerticalSync(true);
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	//ofSetLogLevel("Pd", OF_LOG_WARNING);
@@ -58,8 +61,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	
 	// load scenes
 	sceneManager.add(new Scene(parent, "TestOsc"));
-	sceneManager.add(new Scene(parent, "Test2"));
-	sceneManager.add(new Scene(parent, "Test3"));
+	sceneManager.add(new Scene(parent, "TestInput"));
 	//sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
@@ -82,6 +84,9 @@ void AppCore::draw() {
 	sceneManager.draw();
 	
 	if(global.scriptEngine.errorOcurred()) {
+		ofSetColor(0);
+		ofxBitmapString(11, 11) << global.scriptEngine.getErrorMessage();
+		ofSetColor(255);
 		ofxBitmapString(10, 10) << global.scriptEngine.getErrorMessage();
 	}
 	
@@ -97,6 +102,9 @@ void AppCore::exit() {
 //--------------------------------------------------------------
 void AppCore::keyPressed(int key) {
 
+	currentKey = key;
+	bKeyPressed = true;
+
 	switch(key) {
 	
 		case 'r':
@@ -110,6 +118,17 @@ void AppCore::keyPressed(int key) {
 	}
 	
 	sceneManager.keyPressed(key);
+}
+
+//--------------------------------------------------------------
+void AppCore::keyReleased(int key) {
+	bKeyPressed = false;
+	sceneManager.keyReleased(key);
+}
+
+//--------------------------------------------------------------
+void AppCore::mouseMoved(int x, int y) {
+	sceneManager.mouseMoved(x, y);
 }
 
 //--------------------------------------------------------------

@@ -58,6 +58,9 @@ class Global {
 		
 		/// clear all objects
 		void clear();
+		
+		/// reset the graphics state
+		void resetGraphics();
 
     private:
         

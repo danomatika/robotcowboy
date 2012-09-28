@@ -7,7 +7,7 @@
  
  See https://github.com/danomatika/robotcowboy for documentation
 
- Adapted/inspired by LOVE: https://love2d.org/
+ Adapted/inspired from LOVE: https://love2d.org/
 --]]
 
 -- make sure rc table exists
@@ -22,7 +22,3 @@ math.HALF_PI = 1.57079632679489661923
 -- override default prints
 print = rc.print
 write = rc.write
-
-rc.app.LEFT = 1
-rc.app.MIDDLE = 3
-rc.app.RIGHT = 2

@@ -22,9 +22,13 @@ Scene::Scene(ofxApp &app, string name) :
 //--------------------------------------------------------------
 void Scene::setup()	{
 
-	global.gui.setSceneName(getName());
-	path = ofFilePath::getAbsolutePath(core.global.scenePath+getName()+"/");
+	// reset graphics state
+	global.resetGraphics();
 	
+	// set scene name
+	global.gui.setSceneName(getName());
+	
+	path = ofFilePath::getAbsolutePath(core.global.scenePath+getName()+"/");
 	if(!ofDirectory::doesDirectoryExist(ofFilePath::getEnclosingDirectory(path))) {
 		ofLogError() << "Scene: scene path \"" << path << "\" does not exist";
 		return;
@@ -59,6 +63,7 @@ void Scene::exit() {
 
 //--------------------------------------------------------------		
 void Scene::keyPressed(int key) {global.scriptEngine.lua.scriptKeyPressed(key);}
+void Scene::keyReleased(int key) {global.scriptEngine.lua.scriptKeyReleased(key);}
 void Scene::mouseMoved(int x, int y) {global.scriptEngine.lua.scriptMouseMoved(x, y);}
 void Scene::mouseDragged(int x, int y, int button) {global.scriptEngine.lua.scriptMouseDragged(x, y, button);}
 void Scene::mousePressed(int x, int y, int button) {global.scriptEngine.lua.scriptMousePressed(x, y, button);}

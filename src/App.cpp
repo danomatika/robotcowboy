@@ -50,7 +50,14 @@ void App::keyPressed(int key) {
 }
 
 //--------------------------------------------------------------
-void App::mouseMoved(int x, int y) {}
+void App::keyReleased(int key) {
+	core.keyReleased(key);
+}
+
+//--------------------------------------------------------------
+void App::mouseMoved(int x, int y) {
+	core.mouseMoved(x, y);
+}
 
 //--------------------------------------------------------------
 void App::mouseDragged(int x, int y, int button) {}
@@ -61,7 +68,9 @@ void App::mousePressed(int x, int y, int button) {
 }
 
 //--------------------------------------------------------------
-void App::mouseReleased(int x, int y, int button) {}
+void App::mouseReleased(int x, int y, int button) {
+	core.mouseReleased(x, y, button);
+}
 
 //--------------------------------------------------------------
 void App::windowResized(int w, int h) {}

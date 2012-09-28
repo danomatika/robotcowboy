@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3005B62C14D27960009FD6CE /* AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3005B62B14D27960009FD6CE /* AudioEngine.cpp */; };
 		302E68181603B25700380E84 /* ofxLuaFileWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302E68161603B25700380E84 /* ofxLuaFileWriter.cpp */; };
+		302E6876160643DB00380E84 /* Bindings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302E6874160643D900380E84 /* Bindings.cpp */; };
 		302EE18514CF9C45004FFAB8 /* ofxLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302EE15314CF9C45004FFAB8 /* ofxLua.cpp */; };
 		302EE21C14CFB727004FFAB8 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EE18F14CF9C4E004FFAB8 /* liblua.a */; };
 		302EE21D14CFB727004FFAB8 /* libluabind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302EE19114CF9C4E004FFAB8 /* libluabind.a */; };
@@ -99,7 +100,6 @@
 		30BE5E4E15B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4215B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp */; };
 		30BE5E4F15B7CD7D00C3BD96 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4415B7CD7D00C3BD96 /* OscReceivedElements.cpp */; };
 		30BE5E5015B7CD7D00C3BD96 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30BE5E4615B7CD7D00C3BD96 /* OscTypes.cpp */; };
-		30CEA8F515B7EAA2009891F1 /* LuaWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */; };
 		30DF808615D2F42E007E779E /* ofxRtMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DF805915D2F42E007E779E /* ofxRtMidiIn.cpp */; };
 		30DF808715D2F42E007E779E /* ofxRtMidiOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DF805B15D2F42E007E779E /* ofxRtMidiOut.cpp */; };
 		30DF808815D2F42E007E779E /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30DF806015D2F42E007E779E /* RtMidi.cpp */; };
@@ -236,6 +236,8 @@
 		3005B62B14D27960009FD6CE /* AudioEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioEngine.cpp; sourceTree = "<group>"; };
 		302E68161603B25700380E84 /* ofxLuaFileWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLuaFileWriter.cpp; sourceTree = "<group>"; };
 		302E68171603B25700380E84 /* ofxLuaFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLuaFileWriter.h; sourceTree = "<group>"; };
+		302E6874160643D900380E84 /* Bindings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bindings.cpp; sourceTree = "<group>"; };
+		302E6875160643D900380E84 /* Bindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bindings.h; sourceTree = "<group>"; };
 		302EE0AF14CF9C1E004FFAB8 /* PdBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdBase.hpp; sourceTree = "<group>"; };
 		302EE0B014CF9C1E004FFAB8 /* PdMidiReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdMidiReceiver.hpp; sourceTree = "<group>"; };
 		302EE0B114CF9C1E004FFAB8 /* PdReceiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PdReceiver.hpp; sourceTree = "<group>"; };
@@ -413,7 +415,6 @@
 		30BE5E4515B7CD7D00C3BD96 /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		30BE5E4615B7CD7D00C3BD96 /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
 		30BE5E4715B7CD7D00C3BD96 /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
-		30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaWrapper.cpp; sourceTree = "<group>"; };
 		30DF805915D2F42E007E779E /* ofxRtMidiIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRtMidiIn.cpp; sourceTree = "<group>"; };
 		30DF805A15D2F42E007E779E /* ofxRtMidiIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxRtMidiIn.h; sourceTree = "<group>"; };
 		30DF805B15D2F42E007E779E /* ofxRtMidiOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRtMidiOut.cpp; sourceTree = "<group>"; };
@@ -505,7 +506,6 @@
 		30EA89F514D35874000A1AB9 /* ofxTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTransformer.h; sourceTree = "<group>"; };
 		30EA8A5514D36366000A1AB9 /* ScriptEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScriptEngine.cpp; sourceTree = "<group>"; };
 		30EA8A5614D36366000A1AB9 /* ScriptEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEngine.h; sourceTree = "<group>"; };
-		30F6B43B14D200B2008096BA /* LuaWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaWrapper.h; sourceTree = "<group>"; };
 		30F6B48E14D2110D008096BA /* ofxOsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOsc.h; sourceTree = "<group>"; };
 		30F6B48F14D2110D008096BA /* ofxOscArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscArg.h; sourceTree = "<group>"; };
 		30F6B49014D2110D008096BA /* ofxOscBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscBundle.cpp; sourceTree = "<group>"; };
@@ -1202,8 +1202,8 @@
 				30F6B4A614D21797008096BA /* Global.h */,
 				30B2273315D3AFB000405B99 /* Gui.cpp */,
 				30B2273415D3AFB000405B99 /* Gui.h */,
-				30CEA8F415B7EAA2009891F1 /* LuaWrapper.cpp */,
-				30F6B43B14D200B2008096BA /* LuaWrapper.h */,
+				302E6874160643D900380E84 /* Bindings.cpp */,
+				302E6875160643D900380E84 /* Bindings.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1469,7 +1469,6 @@
 				30BE5E4E15B7CD7D00C3BD96 /* OscPrintReceivedElements.cpp in Sources */,
 				30BE5E4F15B7CD7D00C3BD96 /* OscReceivedElements.cpp in Sources */,
 				30BE5E5015B7CD7D00C3BD96 /* OscTypes.cpp in Sources */,
-				30CEA8F515B7EAA2009891F1 /* LuaWrapper.cpp in Sources */,
 				30DF808615D2F42E007E779E /* ofxRtMidiIn.cpp in Sources */,
 				30DF808715D2F42E007E779E /* ofxRtMidiOut.cpp in Sources */,
 				30DF808815D2F42E007E779E /* RtMidi.cpp in Sources */,
@@ -1482,6 +1481,7 @@
 				30B2273515D3AFB100405B99 /* Gui.cpp in Sources */,
 				30B2273815D3C2FA00405B99 /* Osc.cpp in Sources */,
 				302E68181603B25700380E84 /* ofxLuaFileWriter.cpp in Sources */,
+				302E6876160643DB00380E84 /* Bindings.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

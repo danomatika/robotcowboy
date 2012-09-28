@@ -170,7 +170,7 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 				pd.addFloat(msg.getArgAsInt32(i));
 				break;
 			case OFXOSC_TYPE_FLOAT:
-				pd.addFloat(msg.getArgAsInt32(i));
+				pd.addFloat(msg.getArgAsFloat(i));
 				break;
 			case OFXOSC_TYPE_STRING:
 				pd.addSymbol(msg.getArgAsString(i));

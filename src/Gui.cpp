@@ -22,9 +22,9 @@ bool Gui::setup() {
 	gui = new ofxUICanvas(0, 0, ofGetWidth(), ofGetHeight());
 	
 	currentScene = new ofxUILabel("kaa", OFX_UI_FONT_LARGE);
-	prevScene = new ofxUIButton(50, 50, false, "Prev");
-	nextScene = new ofxUIButton(50, 50, false, "Next");
-	play = new ofxUIToggle(50, 50, false, "Play");
+	prevScene = new ofxUIButton("Prev", false, 50, 50);
+	nextScene = new ofxUIButton("Next", false, 50, 50);
+	play = new ofxUIToggle("Play", false, 50, 50);
 	
 	gui->addWidgetDown(currentScene);
 	gui->addWidgetDown(prevScene);
@@ -32,9 +32,8 @@ bool Gui::setup() {
 	gui->addWidgetDown(play);
 	
 	//console.setup(10, 34);
-	console.pos.x = 650;
-	console.pos.y = 34;
-	
+	console.pos.x = 10;
+	console.pos.y = ofGetHeight() - (console.height+1)*14;
 	ofAddListener(gui->newGUIEvent, this, &Gui::guiEvent);
 	
 	return true;
@@ -48,6 +47,7 @@ void Gui::clear() {
 //--------------------------------------------------------------
 void Gui::setSceneName(string name) {
 	currentScene->setLabel(name);
+	ofSetWindowTitle(name);
 }
 
 //--------------------------------------------------------------
@@ -113,6 +113,9 @@ void Gui::Console::draw() {
 	int x = pos.x, y = pos.y;
 	deque<string>::iterator iter = lines.begin();
 	for(; iter != lines.end(); ++iter) {
+		ofSetColor(0);
+		ofDrawBitmapString((*iter), x+1, y+1);
+		ofSetColor(255);
 		ofDrawBitmapString((*iter), x, y);
 		y += 14;
 	}

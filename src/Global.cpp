@@ -91,6 +91,15 @@ void Global::loadSettings(string path) {
 	lua.popAllTables();
 }
 
+//--------------------------------------------------------------
+void Global::resetGraphics {
+	ofSetupGraphicDefaults();
+	ofSetBackgroundAuto(true);
+	ofSetVerticalSync(true);
+	ofBackground(100, 100, 100);
+	ofSetFrameRate(60);
+}
+
 // PRIVATE
 
 //--------------------------------------------------------------
