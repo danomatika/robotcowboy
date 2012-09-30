@@ -18,7 +18,6 @@
 #include "Global.h"
 
 class App;
-//class Global;
 
 class AppCore {
 
@@ -40,6 +39,16 @@ class AppCore {
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
 		
+		///
+		/// keep track of pressed modifer keys
+		///
+		/// from Rick Companje's ofxKeyMap 2009.09.17
+		/// https://github.com/companje/ofxKeyMap
+		///
+		inline bool isAltPressed()		{return bAltPressed;}
+		inline bool isShiftPressed()	{return bShiftPressed;}
+		inline bool isControlPressed()	{return bControlPressed;}
+		
 		// audio callbacks
 		void audioReceived(float * input, int bufferSize, int nChannels);
 		void audioRequested(float * output, int bufferSize, int nChannels);
@@ -49,6 +58,9 @@ class AppCore {
 		bool bMousePressed;
 		int currentKey;
 		bool bKeyPressed;
+		
+		/// modifier key states
+		bool bAltPressed, bShiftPressed, bControlPressed;
 		
 		App& parent;
 		

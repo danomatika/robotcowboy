@@ -92,12 +92,13 @@ void Global::loadSettings(string path) {
 }
 
 //--------------------------------------------------------------
-void Global::resetGraphics {
+void Global::resetGraphics() {
 	ofSetupGraphicDefaults();
 	ofSetBackgroundAuto(true);
 	ofSetVerticalSync(true);
 	ofBackground(100, 100, 100);
 	ofSetFrameRate(60);
+	ofShowCursor();
 }
 
 // PRIVATE

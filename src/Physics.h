@@ -10,13 +10,13 @@
  */
 #pragma once
 
-#include "ofxOsc.h"
+#include "ofxBox2d.h"
 
-class Osc {
+class Physics {
 
 	public:
 	
-		Osc();
+		Physics();
 		
 		void setup();
 		void clear() {}
@@ -24,15 +24,5 @@ class Osc {
 		/// handle any incoming messages
 		void update();
 		
-		/// send osc messages
-		void sendOscFromAudio(ofxOscMessage& msg);
-		void sendOscFromScript(ofxOscMessage& msg);
-		void sendOscFromScript(ofxOscBundle& bundle);
-		
-		ofxOscSender sender;
-        ofxOscReceiver receiver;
-		
-		string sendAddress;
-		int sendPort;
-		int receivePort;
+		ofxBox2d box2d;
 };

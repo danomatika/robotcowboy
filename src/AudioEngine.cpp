@@ -179,3 +179,17 @@ void AudioEngine::sendOsc(ofxOscMessage& msg) {
 	}
 	pd.finishList("OSC_IN");
 }
+
+//--------------------------------------------------------------
+void AudioEngine::sendOsc(ofxOscBundle& bundle) {
+	
+	// recurse into bundles
+	for(int i = 0; i < bundle.getBundleCount(); ++i) {
+		sendOsc(bundle.getBundleAt(i));
+	}
+	
+	// process messages
+	for(int i = 0; i < bundle.getMessageCount(); ++i) {
+		sendOsc(bundle.getMessageAt(i));
+	}
+}

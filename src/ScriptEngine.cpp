@@ -13,7 +13,7 @@
 #include "ofxOsc.h"
 
 #include "Global.h"
-#include "Bindings.h"
+#include "bindings/Bindings.h"
 
 //--------------------------------------------------------------
 ScriptEngine::ScriptEngine() {

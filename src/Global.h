@@ -15,6 +15,7 @@
 #include "AudioEngine.h"
 #include "ScriptEngine.h"
 #include "Osc.h"
+#include "Physics.h"
 #include "Midi.h"
 #include "Gui.h"
 
@@ -40,6 +41,7 @@ class Global {
 		Osc osc;			///< osc wrapper
 		Midi midi;			///< midi wrapper
 		Gui gui;			///< gui wrapper
+		Physics physics;	///< box2d wrapper
 		
 		/// \section Variables
 		

@@ -20,6 +20,7 @@ Gui::Gui() {}
 bool Gui::setup() {
 
 	gui = new ofxUICanvas(0, 0, ofGetWidth(), ofGetHeight());
+	gui->disableAppEventCallbacks();
 	
 	currentScene = new ofxUILabel("kaa", OFX_UI_FONT_LARGE);
 	prevScene = new ofxUIButton("Prev", false, 50, 50);
@@ -41,6 +42,7 @@ bool Gui::setup() {
 
 //--------------------------------------------------------------
 void Gui::clear() {
+	gui->exit();
 	delete gui;
 }
 
@@ -73,6 +75,26 @@ void Gui::guiEvent(ofxUIEventArgs &e) {
 	else if(e.widget == play) {
 		sceneManager.run(play->getValue());
 	}
+}
+
+//--------------------------------------------------------------
+void Gui::update() {
+	gui->update();
+}
+
+//--------------------------------------------------------------
+void Gui::draw() {
+	gui->draw();
+}
+
+//--------------------------------------------------------------
+void Gui::exit() {
+	gui->exit();
+}
+
+//--------------------------------------------------------------
+void Gui::drawFps() {
+	ofxBitmapString(ofGetWidth()-32, 14) << (int) ofGetFrameRate();
 }
 
 // CONSOLE

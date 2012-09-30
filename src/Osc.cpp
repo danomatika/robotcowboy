@@ -72,3 +72,14 @@ void Osc::sendOscFromScript(ofxOscMessage& msg) {
 		global.audioEngine.sendOsc(msg);
 	}
 }
+
+//--------------------------------------------------------------
+void Osc::sendOscFromScript(ofxOscBundle& bundle) {
+	Global &global = Global::instance();
+	if(global.scriptEngine.sendsOscOut) {
+		sender.sendBundle(bundle);
+	}
+	else {
+		global.audioEngine.sendOsc(bundle);
+	}
+}

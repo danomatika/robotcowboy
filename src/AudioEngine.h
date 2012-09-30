@@ -13,6 +13,7 @@
 #include "ofxPd.h"
 
 class ofxOscMessage;
+class ofxOscBundle;
 
 class AudioEngine {
 
@@ -40,6 +41,7 @@ class AudioEngine {
 		/// send an osc message to pd
 		/// sends to OSC_IN
 		void sendOsc(ofxOscMessage& msg);
+		void sendOsc(ofxOscBundle& bundle);
 		
 		ofxPd pd;
 		bool sendsOscOut;

@@ -14,6 +14,13 @@
 #include "Scene.h"
 #include "Global.h"
 
+// for mapping special keys
+#ifndef __APPLE__
+	#include <GL/glut.h>
+#else
+	#include <GLUT/glut.h>
+#endif
+
 AppCore::AppCore(App& parent) : parent(parent),
 	global(Global::instance()), sceneManager(parent) {
 
@@ -21,6 +28,10 @@ AppCore::AppCore(App& parent) : parent(parent),
 	bMousePressed = false;
 	currentKey = 0;
 	bKeyPressed = false;
+	
+	bAltPressed = false;
+	bShiftPressed = false;
+	bControlPressed = false;
 
 	Global::instance().core = this;
 }
@@ -31,11 +42,16 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 
 	// setup of
 	global.resetGraphics();
-	ofSetVerticalSync(true);
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	//ofSetLogLevel("Pd", OF_LOG_WARNING);
 	//ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
-	ofBackground(100, 100, 100);
+	
+	// setup the render size (working area)
+	parent.setRenderSize(1024, 768);
+
+	// turn on transform origin translation and scaling to screen size,
+	// disable quad warping, and enable aspect ratio and centering when scaling
+	//parent.setTransforms(true, true, false, true, true);
 	
 	#ifdef TARGET_IOS
 		ofSetDataPathRoot(ofToDataPath("data/", true));
@@ -77,11 +93,22 @@ void AppCore::update() {
 	// check for waiting osc messages
 	global.audioEngine.update();
 	global.osc.update();
+	
+	global.gui.update();
 }
 
 //--------------------------------------------------------------
 void AppCore::draw() {
+
+//	ofNoFill();
+//	ofSetColor(255);
+//	ofSetRectMode(OF_RECTMODE_CORNER);
+//	ofRect(1, 1, parent.getRenderWidth()-2, parent.getRenderHeight()-2);
+//	ofFill();
+
 	sceneManager.draw();
+	
+	//parent.popTransforms();
 	
 	if(global.scriptEngine.errorOcurred()) {
 		ofSetColor(0);
@@ -91,6 +118,10 @@ void AppCore::draw() {
 	}
 	
 	global.gui.console.draw();
+	global.gui.drawFps();
+	global.gui.draw();
+	
+	//parent.pushTransforms();
 }
 
 //--------------------------------------------------------------
@@ -101,6 +132,27 @@ void AppCore::exit() {
 
 //--------------------------------------------------------------
 void AppCore::keyPressed(int key) {
+
+	// read modifier keys
+	#ifdef TARGET_WIN32
+		bAltPressed = (bool) ((GetKeyState(VK_MENU) & 0x80) > 0);
+		bShiftPressed = (bool) ((GetKeyState(VK_SHIFT) & 0x80) > 0);
+		bControlPressed = (bool) ((GetKeyState(VK_CONTROL) & 0x80) > 0);
+	#else
+		bAltPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_ALT);
+		bShiftPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_SHIFT);
+		bControlPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_CTRL);
+	#endif
+	if(bAltPressed) {
+		switch(key) {
+			case 'f':
+				//ofToggleFullscreen();
+				break;
+			default:
+				break;
+		}
+		return;
+	}
 
 	currentKey = key;
 	bKeyPressed = true;

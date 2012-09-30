@@ -11,49 +11,23 @@
 #pragma once
 
 #include "ofMain.h"
-
 #include "ofxLua.h"
-#include <luabind/operator.hpp>
 
-#include "Global.h"
-
-#include "ofxOsc.h"
-#include "ofxPd.h"
-#include "ofxAppUtils.h"
-#include "ofxUI.h"
-
-//
-// naming guidelines
-//
-// global:
-// * getters drop "get" prepend -> getWidth() becomes width()
-// * setters keep "set" prepend -> setWidth() stays setWidth()
-// * binary mode setters use "name" / "noName" -> smooth() / noSmooth()
-// * try to associate enums with pertinent classes -> app.mouse.LEFT
-//
-// class binding:
-// * getters keep "get" prepend, unless they are for simple sizes/lengths/nums
-//   -> pixels.size() & msg.numArgs() instead of pixels.getSize() msg.getNumArgs()
-// * setters keep "set" prepend
-// * replace getter/setter pairs with a property *only* if that variable is a
-//   simple class member that dosen't need to be computed/set 
-//
-class Bindings {
+namespace lua {
+	
+class Graphics {
 
 	private:
 	
 		/// dummy classes for empty class enums
 		struct BlendMode {};
-		struct MouseVars {};
-		struct KeyboardVars {};
 
 	public:
-	
-		/// static function called when binding
-		static void bind(ofxLua& lua) {
 		
+		static void bind(ofxLua& lua) {
+
 			using namespace luabind;
-						
+			
 			module(lua, "graphics")
 			[
 				///////////////////////////////
@@ -137,19 +111,19 @@ class Bindings {
 				def("setPolyMode", &ofSetPolyMode),
 				
 				/// background
-				def("background", (void(*)(int)) &graphicsBackground),
+				def("background", (void(*)(int)) &background),
 				def("background", (void(*)(int,int)) &ofBackground),
-				def("background", (void(*)(int,int,int)) &graphicsBackground),
+				def("background", (void(*)(int,int,int)) &background),
 				def("background", (void(*)(int,int,int,int)) &ofBackground),
 				def("background", (void(*)(const ofColor&)) &ofBackground),
-				def("backgroundHex", (void(*)(int)) &graphicsBackground),
+				def("backgroundHex", (void(*)(int)) &background),
 				def("backgroundHex", (void(*)(int,int)) &ofBackgroundHex),
 				
-				def("autoBackground", &graphicsAutoBackground),
-				def("noAutoBackground", &graphicsNoAutoBackground),
+				def("autoBackground", &autoBackground),
+				def("noAutoBackground", &noAutoBackground),
 				def("usingAutoBackground", &ofbClearBg),
 				
-				def("clear", (void(*)(float)) &graphicsClear),
+				def("clear", (void(*)(float)) &clear),
 				def("clear", (void(*)(float,float)) &ofClear),
 				def("clear", (void(*)(float,float,float,float)) &ofClear),
 				def("clearAlpha", &ofClearAlpha),
@@ -177,10 +151,10 @@ class Bindings {
 				def("ellipse", (void(*)(float,float,float,float,float)) &ofEllipse),
 				
 				def("curve", (void(*)(float,float,float,float,float,float,float,float)) &ofCurve),
-				def("curve", (void(*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &graphicsCurve),
+				def("curve", (void(*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &curve),
 				
 				def("bezier", (void(*)(float,float,float,float,float,float,float,float)) &ofBezier),
-				def("bezier", (void(*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &graphicsBezier),
+				def("bezier", (void(*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &bezier),
 				
 				/// polygons
 				def("beginShape", &ofBeginShape),
@@ -198,9 +172,9 @@ class Bindings {
 				def("bezierVertex", (void(*)(float,float,float,float,float,float,float,float,float)) &ofBezierVertex),
 				//def("bezierVertices", &bezierVertices), // TODO: needs vector
 				
-				def("endShape",	(void(*)(void)) &graphicsEndShape),
+				def("endShape",	(void(*)(void)) &endShape),
 				def("endShape",	(void(*)(bool)) &ofEndShape),
-				def("nextContour", (void(*)(void)) &graphicsNextContour),
+				def("nextContour", (void(*)(void)) &nextContour),
 				def("nextContour", (void(*)(bool)) &ofNextContour),
 				
 				/// 3d primitives
@@ -221,12 +195,12 @@ class Bindings {
 				
 				/// 3d utils
 				def("axis", &ofDrawAxis),
-				def("grid", &graphicsDrawGrid0),
-				def("grid", &graphicsDrawGrid3),
+				def("grid", &drawGrid0),
+				def("grid", &drawGrid3),
 				def("grid", &ofDrawGrid),
-				def("gridPlane", &graphicsDrawGridPlane1),
+				def("gridPlane", &drawGridPlane1),
 				def("gridPlane", &ofDrawGridPlane),
-				def("arrow", &graphicsDrawArrow2),
+				def("arrow", &drawArrow2),
 				def("arrow", &ofDrawArrow),
 				
 				/// bitmapped text
@@ -817,449 +791,47 @@ class Bindings {
 				def("isLightingEnabled", &ofGetLightingEnabled),
 				def("enableSeparateSpecularLight", &ofEnableSeparateSpecularLight),
 				def("disableSeparateSpecularLight", &ofDisableSeparateSpecularLight),
-				def("smoothLighting", &graphicsSmoothLighting),
-				def("noSmoothLighting", &graphicsNoSmoothLighting),
+				def("smoothLighting", &smoothLighting),
+				def("noSmoothLighting", &noSmoothLighting),
 				def("setGlobalAmbientColor", &ofSetGlobalAmbientColor),
-				def("setGlobalAmbientColor", &graphicsSetGlobalAmbientColor3),
-				def("setGlobalAmbientColor", &graphicsSetGlobalAmbientColor4),
-				def("setGlobalAmbientHexColor", &graphicsSetGlobalAmbientHexColor)
+				def("setGlobalAmbientColor", &setGlobalAmbientColor3),
+				def("setGlobalAmbientColor", &setGlobalAmbientColor4),
+				def("setGlobalAmbientHexColor", &setGlobalAmbientHexColor)
 			
-			]; // graphics
-			
-			module(lua, "math")
-			[
-				///////////////////////////////
-				/// \section Math
-				
-				def("nextPow2", &ofNextPow2),
-				
-				def("seedRandom", (void(*)(void)) &ofSeedRandom),
-				def("seedRandom", (void(*)(int)) &ofSeedRandom),
-				def("random", (float(*)(float)) &ofRandom),
-				def("random", (float(*)(float,float)) &ofRandom),
-				def("randomf", (float(*)(void)) &ofRandomf),
-				def("randomuf", (float(*)(void)) &ofRandomuf),
-				
-				def("normalize", &ofNormalize),
-				def("map", (float(*)(float,float,float,float,float)) &mathMap5),
-				def("map", (float(*)(float,float,float,float,float,bool)) &ofMap),
-				def("clamp", &ofClamp),
-				def("lerp", &ofLerp),
-				def("dist", &ofDist),
-				def("distSquared", &ofDistSquared),
-				def("sign", &ofSign),
-				def("inRange", &ofInRange),
-				
-				def("degrees", &ofRadToDeg),
-				def("radians", &ofDegToRad),
-				def("lerpDegrees", &ofLerpDegrees),
-				def("lerpRadians", &ofLerpRadians),
-				def("angleDifferenceDegrees", &ofAngleDifferenceDegrees),
-				def("angleDifferenceRadians", &ofAngleDifferenceRadians),
-				// TODO: missing implementation in CPP file, should be fixed in next PF release
-				//def("angleSumRadians", (float(*)(float,float)) &ofAngleSumRadians),
-				def("wrapRadians", &ofWrapRadians),
-				def("wrapDegrees", &ofWrapDegrees),
-				
-				def("randomWidth", &ofRandomWidth),
-				def("randomHeight", &ofRandomHeight),
-				
-				def("noise", (float(*)(float)) &ofNoise),
-				def("noise", (float(*)(float,float)) &ofNoise),
-				def("noise", (float(*)(float,float,float)) &ofNoise),
-				def("noise", (float(*)(float,float,float,float)) &ofNoise),
-				
-				def("signedNoise", (float(*)(float)) &ofSignedNoise),
-				def("signedNoise", (float(*)(float,float)) &ofSignedNoise),
-				def("signedNoise", (float(*)(float,float,float)) &ofSignedNoise),
-				def("signedNoise", (float(*)(float,float,float,float)) &ofSignedNoise),
-				
-				// TODO: needs vector
-				//def("insidePoly", (bool(*)(float,float,const vector<ofPoint>&)) &ofInsidePoly),
-				//def("insidePoly", (bool(*)(const ofPoint&,const vector<ofPoint>&)) &ofInsidePoly),
-				
-				def("lineSegmentIntersection", (bool(*)(ofPoint,ofPoint,ofPoint,ofPoint,ofPoint)) &ofLineSegmentIntersection),
-				
-				def("bezierPoint", (ofPoint(*)(ofPoint,ofPoint,ofPoint,ofPoint,float)) &ofBezierPoint),
-				def("curvePoint", (ofPoint(*)(ofPoint,ofPoint,ofPoint,ofPoint,float)) &ofCurvePoint),
-				def("bezierTangent", (ofPoint(*)(ofPoint,ofPoint,ofPoint,ofPoint,float)) &ofBezierTangent),
-				def("curveTangent", (ofPoint(*)(ofPoint,ofPoint,ofPoint,ofPoint,float)) &ofCurveTangent),
-				
-				
-				///////////////////////////////
-				/// \section Point
-				
-				class_<ofPoint>("point")
-					.def(constructor<>())
-					.def(constructor<const ofPoint&>())
-					.def(constructor<float,float>())
-					.def(constructor<float,float,float>())
-					.def("set", &pointSet2)
-					.def("set", (void(ofPoint::*)(const ofPoint&)) &ofPoint::set)
-					.def("set", (void(ofPoint::*)(float,float,float)) &ofPoint::set)
-					.def(self == other<const ofPoint>())
-					.def("match", &pointMatch1)
-					.def("match", (bool(ofPoint::*)(const ofPoint&,float)) &ofPoint::match)
-					.def("isAligned", &pointIsAligned1)
-					.def("isAligned", (bool(ofPoint::*)(const ofPoint&,float)) &ofPoint::isAligned)
-					.def("isAlignedRad", &pointIsAlignedRad1)
-					.def("isAlignedRad", &pointIsAlignedRad2)
-					.def("align", &pointAlign1)
-					.def("align", (bool(ofPoint::*)(const ofPoint&,float)) &ofPoint::align)
-					.def("alignRad", &pointAlignRad1)
-					.def("alignRad", (bool(ofPoint::*)(const ofPoint&,float)) &ofPoint::alignRad)
-					.def(self == other<const ofPoint&>())
-					.def(self + other<const ofPoint&>())
-					.def(self - other<const ofPoint&>())
-					.def(self * other<const ofPoint&>())
-					.def(self / other<const ofPoint&>())
-					.def(self + other<const float>())
-					.def(self - other<const float>())
-					.def(self * other<const float>())
-					.def(self / other<const float>())
-					.def("getScaled", (ofPoint(ofPoint::*)(const float)) &ofPoint::getScaled)
-					.def("scale", (ofPoint&(ofPoint::*)(const float)) &ofPoint::scale)
-					.def("getRotated", &pointGetRotated3)
-					.def("getRotatedRad", &pointGetRotatedRad3)
-					.def("rotate", (ofPoint&(ofPoint::*)(float,float,float)) &ofPoint::rotate)
-					.def("rotateRad", (ofPoint&(ofPoint::*)(float,float,float)) &ofPoint::rotateRad)
-					.def("getRotated", &pointGetRotated2)
-					.def("getRotatedRad", &pointGetRotatedRad2)
-					.def("rotate", (ofPoint&(ofPoint::*)(float,const ofPoint&)) &ofPoint::rotate)
-					.def("rotateRad", (ofPoint&(ofPoint::*)(float,const ofPoint&)) &ofPoint::rotateRad)
-					.def("getRotated", &pointGetRotated3p)
-					.def("getRotatedRad", &pointGetRotatedRad3p)
-					.def("rotate", (ofPoint&(ofPoint::*)(float,const ofPoint&,const ofPoint&)) &ofPoint::rotate)
-					.def("rotateRad", (ofPoint&(ofPoint::*)(float,const ofPoint&,const ofPoint&)) &ofPoint::rotateRad)
-					.def("getMapped", (ofPoint(ofPoint::*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &ofPoint::getMapped)
-					.def("map", (ofPoint&(ofPoint::*)(const ofPoint&,const ofPoint&,const ofPoint&,const ofPoint&)) &ofPoint::map)
-					.def("distance", (float(ofPoint::*)(const ofPoint&)) &ofPoint::distance)
-					.def("squareDistance", (float(ofPoint::*)(const ofPoint&)) &ofPoint::squareDistance)
-					.def("getInterpolated", (ofPoint(ofPoint::*)(const ofPoint&,float)) &ofPoint::getInterpolated)
-					.def("interpolate", (ofPoint&(ofPoint::*)(const ofPoint&,float)) &ofPoint::interpolate)
-					.def("getMidPoint", (ofPoint(ofPoint::*)(const ofPoint&)) &ofPoint::getMiddle)
-					.def("midPoint", (ofPoint&(ofPoint::*)(const ofPoint&)) &ofPoint::middle)
-					//.def("average", (ofPoint&(ofPoint::*)(const ofPoint*,int)) &ofPoint::average) // TODO: takes point array
-					.def("getNormalized", (ofPoint(ofPoint::*)(void)) &ofPoint::getNormalized)
-					.def("normalize", (ofPoint&(ofPoint::*)(void)) &ofPoint::normalize)
-					.def("getLimited", (ofPoint(ofPoint::*)(float)) &ofPoint::getLimited)
-					.def("limit", (ofPoint&(ofPoint::*)(float)) &ofPoint::limit)
-					.def("getCrossed", (ofPoint(ofPoint::*)(const ofPoint&)) &ofPoint::getCrossed)
-					.def("cross", (ofPoint&(ofPoint::*)(const ofPoint&)) &ofPoint::cross)
-					.def("getPerpendicular", (ofPoint(ofPoint::*)(void)) &ofPoint::getPerpendicular)
-					.def("perpendicular", (ofPoint&(ofPoint::*)(void)) &ofPoint::perpendicular)
-					.def("length", (float(ofPoint::*)(void)) &ofPoint::length)
-					.def("squareLength", (float(ofPoint::*)(void)) &ofPoint::squareLength)
-					.def("angle", (float(ofPoint::*)(const ofPoint&)) &ofPoint::angle)
-					.def("angleRad", (float(ofPoint::*)(const ofPoint&)) &ofPoint::angleRad)
-					.def("dot", (float(ofPoint::*)(const ofPoint&)) &ofPoint::dot)
-					.def_readwrite("x", &ofPoint::x)
-					.def_readwrite("y", &ofPoint::y)
-					.def_readwrite("z", &ofPoint::z)
-					
-			]; // math
-			
-			module(lua, "app")
-			[
-				///////////////////////////////
-				/// \section App
-				
-				/// mouse
-				def("mouseX", &appGetMouseX),
-				def("mouseY", &appGetMouseY),
-				def("pmouseX", &ofGetPreviousMouseX),
-				def("pmouseY", &ofGetPreviousMouseY),
-				def("mouseButton", &appGetMouseButton),
-				def("mousePressed", &appGetMousePressed),
-				class_<MouseVars>("mouse")
-					.enum_("button")
-					[
-						value("LEFT", 0),
-						value("MIDDLE", 1),
-						value("RIGHT", 2)
-					],
-					
-				/// keyboard
-				def("keyCode", &appGetKey),
-				def("keyPressed", &appGetKeyPressed),
-				class_<KeyboardVars>("key")
-					.enum_("sym")
-					[
-						value("MODIFIER", OF_KEY_MODIFIER),
-						value("RETURN", OF_KEY_RETURN),
-						value("ESC", OF_KEY_ESC),
-						value("CTRL", OF_KEY_CTRL),
-						value("ALT", OF_KEY_ALT),
-						value("SHIFT", OF_KEY_SHIFT),
-						value("BACKSPACE", OF_KEY_BACKSPACE),
-						value("DEL", OF_KEY_DEL),
-					
-						value("F1", OF_KEY_F1),
-						value("F2", OF_KEY_F2),
-						value("F3", OF_KEY_F3),
-						value("F4", OF_KEY_F4),
-						value("F5", OF_KEY_F5),
-						value("F6", OF_KEY_F6),
-						value("F7", OF_KEY_F7),
-						value("F8", OF_KEY_F8),
-						value("F9", OF_KEY_F9),
-						value("F10", OF_KEY_F10),
-						value("F11", OF_KEY_F11),
-						value("F12", OF_KEY_F12),
-					
-						value("LEFT", OF_KEY_LEFT),
-						value("RIGHT", OF_KEY_RIGHT),
-						value("UP", OF_KEY_UP),
-						value("DOWN", OF_KEY_DOWN),
-						
-						value("PAGE_UP", OF_KEY_PAGE_UP),
-						value("PAGE_DOWN", OF_KEY_PAGE_DOWN),
-						value("HOME", OF_KEY_HOME),
-						value("END", OF_KEY_END),
-						value("INSERT", OF_KEY_INSERT)
-					],
-				
-				/// exit
-				//def("exit", (void(*)(void)) &ofExit), // shouldn't be able to
-				//def("exit", (void(*)(int)) &ofExit), // exit from lua
-				
-				/// time
-				def("frame", &ofGetFrameNum),
-				def("frameRate", &ofGetFrameRate),
-				def("setFrameRate", &ofSetFrameRate),
-				//def("sleepMillis", &ofSleepMillis), // needed? not to be set from lua ...
-				def("frameTime", &ofGetLastFrameTime), // seconds
-				def("seconds", &ofGetElapsedTimef),
-				def("millis", &ofGetElapsedTimeMillis),
-				def("micros", &ofGetElapsedTimeMicros),
-				def("resetElapsedTime", &ofResetElapsedTimeCounter),
-				
-				/// cursor
-				def("hideCursor", &ofHideCursor),
-				def("showCursor", &ofShowCursor),
-				
-				/// window / screen
-				def("width", &ofGetWidth),
-				def("height", &ofGetHeight),
-				// TODO: are these needed by scenes? I'm thinking not
-				//def("windowWidth", &ofGetWindowWidth),
-				//def("windowHeight", &ofGetWindowHeight),
-				//def("windowX", &ofGetWindowPositionX),
-				//def("windowY", &ofGetWindowPositionY),
-				//def("screenWidth", &ofGetScreenWidth),
-				//def("screenHeight", &ofGetScreenHeight),
-				//def("windowMode", &ofGetWindowMode), // needed? TODO: needs enums
-				
-				def("setWindowTitle", &ofSetWindowTitle)
-				// TODO: are these needed by scenes? I'm thinking not
-				//def("setWindowPosition", &ofSetWindowPosition),
-				//def("setWindowSize", &ofSetWindowShape),
-				//def("enableSetupScreen", &ofEnableSetupScreen),
-				//def("disableSetupScreen", &ofDisableSetupScreen),
-				//def("setFullscreen", &ofSetFullscreen), // needed?
-				//def("toggleFullscreen", &ofToggleFullscreen), // needed?
-				
-				/// sync
-				//def("setVerticalSync", &ofSetVerticalSync) // on by default
-			
-			]; // app
-			
-			module(lua, "util")
-			[
-				///////////////////////////////
-				/// \section Util
-				
-				// TODO: needed?
-				//def("getUnixTime", &ofGetUnixTime),
-				//def("getSystemTime", &ofGetSystemTime),
-				//def("getSystemTimeMicros", &ofGetSystemTimeMicros),
-				
-				def("timestampString", (string(*)(void)) &ofGetTimestampString),
-				def("timestampString", (string(*)(string)) &ofGetTimestampString),
-
-				def("second", &ofGetSeconds),
-				def("minute", &ofGetMinutes),
-				def("hour", &ofGetHours),
-				def("day", &ofGetDay),
-				//def("weekday", &ofGetWeekday), // needed?
-				def("month", &ofGetMonth),
-				def("year", &ofGetYear),
-				
-				def("saveScreen", &ofSaveScreen),
-				def("saveFrame", &ofSaveFrame),
-				
-				///////////////////////////////
-				/// \section Timer
-				
-				class_<ofxTimer>("timer")
-					.def(constructor<>())
-					.def(constructor<unsigned int>())
-					.def("set", &ofxTimer::set)
-					.def("setAlarm", &ofxTimer::setAlarm)
-					.def("resetAlarm", &ofxTimer::resetAlarm)
-					.def("alarm", &ofxTimer::alarm)
-					.def("getDiff", &ofxTimer::getDiff)
-					.def("getDiffN", &ofxTimer::set)
-			
-			]; // util
-			
-			module(lua, "audio")
-			[
-			
-				///////////////////////////////
-				/// \section Sound
-				class_<ofSoundPlayer>("sound")
-					.def(constructor<>())
-					.def("loadSound", &ofSoundPlayer::loadSound)
-					.def("clear", &ofSoundPlayer::unloadSound)
-					.def("isLoaded", &ofSoundPlayer::isLoaded)
-					.def("play", &ofSoundPlayer::play)
-					.def("pause", &soundPause)
-					.def("unpause", &soundUnpause)
-					.def("stop", &ofSoundPlayer::stop)
-					.def("isPlaying", &ofSoundPlayer::getIsPlaying)
-					.def("loop", &soundLoop)
-					.def("noLoop", &soundNoLoop)
-					//.def("multiPlay", &soundMultiPlay) // only works for FMOD
-					//.def("noMultiPlay", &soundNoMultiPlay)
-					.property("volume", &ofSoundPlayer::getVolume, &ofSoundPlayer::setVolume)
-					.property("pan", &ofSoundPlayer::getPan, &ofSoundPlayer::setPan)
-					.property("speed", &ofSoundPlayer::getSpeed, &ofSoundPlayer::setSpeed)
-					.property("pos", &ofSoundPlayer::getPosition, &ofSoundPlayer::setPosition)
-					.property("posMillis", &ofSoundPlayer::getPositionMS, &ofSoundPlayer::setPositionMS),
-				
-				///////////////////////////////
-				/// \section Pure Data
-				
-				// TODO: add patch handling bindings
-				//"openPatch"
-				//"closePatch"
-				//"clearPatches"
-				
-				///////////////////////////////
-				/// \section Patch
-				class_<pd::Patch>("patch")
-					.def(constructor<>())
-					.def(constructor<const string&,const string&>())
-					.def("clear", &pd::Patch::clear)
-					.def("isValid", &pd::Patch::isValid)
-					.def(tostring(self)) // uses ostream << operator
-					.def_readonly("dollarZero", &pd::Patch::dollarZero)
-					.def_readonly("dollarZeroStr", &pd::Patch::dollarZeroStr)
-					.def_readonly("filename", &pd::Patch::filename)
-					.def_readonly("path", &pd::Patch::path)
-				
-			]; // audio
-			
-			module(lua, "osc")
-			[				
-				///////////////////////////////
-				/// \section Osc
-				
-				def("send", &oscSend),
-				def("sendFloat", &oscSendFloat),
-				def("sendInt", &oscSendInt),
-				def("sendString", &oscSendString),
-				def("sendMessage", &oscSendMessage),
-				def("sendBundle", &oscSendBundle),
-					
-				///////////////////////////////
-				/// \section Message
-				
-				class_<ofxOscMessage>("message")
-					.def(constructor<>())
-					.def("clear", &ofxOscMessage::clear)
-					.def("setAddress", &ofxOscMessage::setAddress)
-					.def("getAddress", &ofxOscMessage::getAddress)
-					.def("getRemoteIp", &ofxOscMessage::getRemoteIp)
-					.def("getRemotePort", &ofxOscMessage::getRemotePort)
-					.def("setRemote", &ofxOscMessage::setRemoteEndpoint)
-					.def("getType", &ofxOscMessage::getArgType)
-					.def("getTypeName", &ofxOscMessage::getArgTypeName)
-					.def("getInt", &ofxOscMessage::getArgAsInt32)
-					.def("getFloat", &ofxOscMessage::getArgAsFloat)
-					.def("getString", &ofxOscMessage::getArgAsString)
-					.def("addInt", &ofxOscMessage::addIntArg)
-					.def("addFloat", &ofxOscMessage::addFloatArg)
-					.def("addString", &ofxOscMessage::addStringArg)
-					.def_readonly("numArgs", &ofxOscMessage::getNumArgs)
-					.enum_("argType")
-					[
-						value("NONE", OFXOSC_TYPE_NONE),
-						value("INT", OFXOSC_TYPE_INT32),
-						value("FLOAT", OFXOSC_TYPE_FLOAT),
-						value("STRING", OFXOSC_TYPE_STRING),
-						value("BLOB", OFXOSC_TYPE_BLOB),
-						value("BUNDLE", OFXOSC_TYPE_BUNDLE),
-						value("OUTOFBOUNDS", OFXOSC_TYPE_INDEXOUTOFBOUNDS)
-					],
-					
-				///////////////////////////////
-				/// \section Bundle
-				
-				class_<ofxOscBundle>("bundle")
-					.def(constructor<>())
-					.def("clear", &ofxOscBundle::clear)
-					.def("addMessage", &ofxOscBundle::addMessage)
-					.def("addBundle", &ofxOscBundle::addBundle)
-					.def("getMessage", &ofxOscBundle::getMessageAt)
-					.def("getBundle", &ofxOscBundle::getBundleAt)
-					.def_readonly("numMessages", &ofxOscBundle::getMessageCount)
-					.def_readonly("numBundles", &ofxOscBundle::getBundleCount)
-			
-			]; // osc
-			
-			// TODO: add ofxUI bindings
-			//module(lua, "gui")
-			//[
-				///////////////////////////////
-				/// \section Gui
-				
-				//class_<
-				
-			//]; // gui
-			
-			/// rc-specifics
-			module(lua, "rc")
-			[
-				/// to override lua print and write functions
-				def("print", &print),
-				def("write", &write)
-			
-			]; // rc
+			];
 		}
-		
+
 		/// \section Function & Object Wrappers
 		
 		/// background
-		static void graphicsBackground(int brightness) {ofBackground(brightness);}
-		static void graphicsBackground(int r, int g, int b) {ofBackground(r, g, b);}
-		static void graphicsBackgroundHex(int hexColor) {ofBackgroundHex(hexColor);}
-		static void graphicsClear(float brightness) {ofClear(brightness);}
-		static void graphicsAutoBackground() {ofSetBackgroundAuto(true);}
-		static void graphicsNoAutoBackground() {ofSetBackgroundAuto(false);}
+		static void Background(int brightness) {ofBackground(brightness);}
+		static void background(int r, int g, int b) {ofBackground(r, g, b);}
+		static void backgroundHex(int hexColor) {ofBackgroundHex(hexColor);}
+		static void clear(float brightness) {ofClear(brightness);}
+		static void autoBackground() {ofSetBackgroundAuto(true);}
+		static void noAutoBackground() {ofSetBackgroundAuto(false);}
 		
 		/// primitives
-		static void graphicsCurve(const ofPoint& p1, const ofPoint& p2, const ofPoint& p3, const ofPoint& p4)
+		static void curve(const ofPoint& p1, const ofPoint& p2, const ofPoint& p3, const ofPoint& p4)
 			{ofCurve(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z, p3.x, p3.y, p3.z, p4.x, p4.y, p4.z);}
-		static void graphicsBezier(const ofPoint& p1, const ofPoint& p2, const ofPoint& p3, const ofPoint& p4)
+		static void bezier(const ofPoint& p1, const ofPoint& p2, const ofPoint& p3, const ofPoint& p4)
 			{ofBezier(p1.x, p1.y, p1.z, p2.x, p2.y, p2.z, p3.x, p3.y, p3.z, p4.x, p4.y, p4.z);}
 		
 		/// polygons
-		static void graphicsEndShape() {ofEndShape();}
-		static void graphicsNextContour() {ofNextContour();}
+		static void endShape() {ofEndShape();}
+		static void nextContour() {ofNextContour();}
 		
 		/// 3d utils
-		static void graphicsDrawGrid0() {
+		static void drawGrid0() {
 			ofDrawGrid();
 		}
-		static void graphicsDrawGrid3(float scale, float ticks, bool labels) {
+		static void drawGrid3(float scale, float ticks, bool labels) {
 			ofDrawGrid(scale, ticks, labels);
 		}
-		static void graphicsDrawGridPlane1(float scale) {
+		static void drawGridPlane1(float scale) {
 			ofDrawGridPlane(scale);
 		}
-		static void graphicsDrawArrow2(const ofPoint& start, const ofPoint& end) {
+		static void drawArrow2(const ofPoint& start, const ofPoint& end) {
 			ofDrawArrow(start, end);
 		}
 
@@ -1493,14 +1065,6 @@ class Bindings {
 		static ofImageType imageGetType(ofImage* image) {
 			return image->getPixelsRef().getImageType();
 		}
-
-		/// global mouse vars
-		static float appGetMouseX();
-		static float appGetMouseY();
-		static int appGetMouseButton();
-		static bool appGetMousePressed();
-		static int appGetKey();
-		static bool appGetKeyPressed();
 		
 		/// font
 		static void fontLoadFont2(ofTrueTypeFont* font, string filename, int fontsize) {
@@ -1555,103 +1119,11 @@ class Bindings {
 		}
 		
 		/// global light
-		static void graphicsSmoothLighting() {ofSetSmoothLighting(true);}
-		static void graphicsNoSmoothLighting() {ofSetSmoothLighting(false);}
-		static void graphicsSetGlobalAmbientColor3(int r, int g, int b) {ofSetGlobalAmbientColor(ofColor(r, g, b));}
-		static void graphicsSetGlobalAmbientColor4(int r, int g, int b, int a) {ofSetGlobalAmbientColor(ofColor(r, g, b, a));}
-		static void graphicsSetGlobalAmbientHexColor(int color) {ofSetGlobalAmbientColor(ofColor(color));}
-		
-		/// math
-		static float mathMap5(float value, float inputMin, float inputMax, float outputMin, float outputMax) {
-			return ofMap(value, inputMin, inputMax, outputMin, outputMax);
-		}
-
-		/// point
-		static void pointSet2(ofPoint* point, float x, float y) {
-			point->set(x, y);
-		}
-		static float pointMatch1(ofPoint* point, const ofPoint& other) {
-			return point->match(other);
-		}
-		static float pointIsAligned1(ofPoint* point, const ofPoint& other) {
-			return point->isAligned(other);
-		}
-		static float pointIsAlignedRad1(ofPoint* point, const ofPoint& other) {
-			return point->isAlignedRad(other);
-		}
-		static float pointIsAlignedRad2(ofPoint* point, const ofPoint& other, float tolerance) {
-			return point->isAlignedRad(other, tolerance);
-		}
-		static float pointAlign1(ofPoint* point, const ofPoint& other) {
-			return point->align(other);
-		}
-		static float pointAlignRad1(ofPoint* point, const ofPoint& other) {
-			return point->alignRad(other);
-		}
-		
-		/// point const wrappers
-		static ofPoint pointGetRotated2(ofPoint* point, float angle, const ofPoint& axis) {
-			return point->getRotated(angle, axis);
-		}
-		static ofPoint pointGetRotatedRad2(ofPoint* point, float angle, const ofPoint& axis) {
-			return point->getRotatedRad(angle, axis);
-		}
-		static ofPoint pointGetRotated3(ofPoint* point, float ax, float ay, float az) {
-			return point->getRotated(ax, ay, az);
-		}
-		static ofPoint pointGetRotatedRad3(ofPoint* point, float ax, float ay, float az) {
-			return point->getRotatedRad(ax, ay, az);
-		}
-		static ofPoint pointGetRotated3p(ofPoint* point, float angle, const ofPoint& pivot,const ofPoint& axis) {
-			return point->getRotated(angle, pivot, axis);
-		}
-		static ofPoint pointGetRotatedRad3p(ofPoint* point, float angle, const ofPoint& pivot,const ofPoint& axis) {
-			return point->getRotatedRad(angle, pivot, axis);
-		}
-		
-		/// audio
-		static void soundPause(ofSoundPlayer* sound) {sound->setPaused(true);}
-		static void soundUnpause(ofSoundPlayer* sound) {sound->setPaused(false);}
-		static void soundLoop(ofSoundPlayer* sound) {sound->setLoop(true);}
-		static void soundNoLoop(ofSoundPlayer* sound) {sound->setLoop(false);}
-		
-		/// osc
-		static void oscSend(string address) {
-			ofxOscMessage msg;
-			msg.setAddress(address);
-			Global::instance().osc.sendOscFromScript(msg);
-		}
-		static void oscSendFloat(string address, float f) {
-			ofxOscMessage msg;
-			msg.setAddress(address);
-			msg.addFloatArg(f);
-			Global::instance().osc.sendOscFromScript(msg);
-		}
-		static void oscSendInt(string address, int i) {
-			ofxOscMessage msg;
-			msg.setAddress(address);
-			msg.addIntArg(i);
-			Global::instance().osc.sendOscFromScript(msg);
-		}
-		static void oscSendString(string address, string s) {
-			ofxOscMessage msg;
-			msg.setAddress(address);
-			msg.addStringArg(s);
-			Global::instance().osc.sendOscFromScript(msg);
-		}
-		static void oscSendMessage(ofxOscMessage& msg) {
-			Global::instance().osc.sendOscFromScript(msg);
-		}
-		static void oscSendBundle(ofxOscBundle& bundle) {
-			Global::instance().osc.sender.sendBundle(bundle);
-		}
-		
-		/// console io
-		static void print(const std::string& message) {
-			Global::instance().scriptEngine.print(message);
-		}
-		
-		static void write(const std::string& message) {
-			Global::instance().scriptEngine.write(message);
-		}
+		static void smoothLighting() {ofSetSmoothLighting(true);}
+		static void noSmoothLighting() {ofSetSmoothLighting(false);}
+		static void setGlobalAmbientColor3(int r, int g, int b) {ofSetGlobalAmbientColor(ofColor(r, g, b));}
+		static void setGlobalAmbientColor4(int r, int g, int b, int a) {ofSetGlobalAmbientColor(ofColor(r, g, b, a));}
+		static void setGlobalAmbientHexColor(int color) {ofSetGlobalAmbientColor(ofColor(color));}
 };
+
+} // namespace

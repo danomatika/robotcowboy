@@ -31,6 +31,12 @@ class Gui {
 		// gui callback
 		void guiEvent(ofxUIEventArgs &e);
 		
+		void update();
+		void draw();
+		void exit();
+		
+		void drawFps();
+		
 		ofxUICanvas *gui;
 		
 		ofxUILabel *currentScene;
