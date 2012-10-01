@@ -20,15 +20,15 @@ float App::getWidth() {return Global::instance().core->parent.getRenderWidth();}
 float App::getHeight() {return Global::instance().core->parent.getRenderHeight();}
 
 float App::getMouseX() {
-	if(ofGetWindowMode() == OF_FULLSCREEN)
-		return Global::instance().core->parent.mouseX + Global::instance().core->parent.getOriginX();
-	else
+//	if(ofGetWindowMode() == OF_FULLSCREEN)
+//		return Global::instance().core->parent.mouseX + Global::instance().core->parent.getOriginX();
+//	else
 		return Global::instance().core->parent.mouseX;
 }
 float App::getMouseY() {
-	if(ofGetWindowMode() == OF_FULLSCREEN)
-		return Global::instance().core->parent.mouseY + Global::instance().core->parent.getOriginY();
-	else
+//	if(ofGetWindowMode() == OF_FULLSCREEN)
+//		return Global::instance().core->parent.mouseY + Global::instance().core->parent.getOriginY();
+//	else
 		return Global::instance().core->parent.mouseY;
 }
 int App::getMouseButton() {return Global::instance().core->mouseButton;}

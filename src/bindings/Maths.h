@@ -155,7 +155,6 @@ class Maths {
 					.def_readwrite("x", &ofPoint::x)
 					.def_readwrite("y", &ofPoint::y)
 					.def_readwrite("z", &ofPoint::z)
-					
 			];
 		}
 		

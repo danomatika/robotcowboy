@@ -131,7 +131,6 @@ class App {
 				
 				/// sync
 				//def("setVerticalSync", &ofSetVerticalSync) // on by default
-			
 			];
 		}
 		

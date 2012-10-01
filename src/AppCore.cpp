@@ -78,6 +78,8 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	// load scenes
 	sceneManager.add(new Scene(parent, "TestOsc"));
 	sceneManager.add(new Scene(parent, "TestInput"));
+	sceneManager.add(new Scene(parent, "PhysicsChain"));
+	sceneManager.add(new Scene(parent, "PhysicsPolygon"));
 	//sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
@@ -93,7 +95,7 @@ void AppCore::update() {
 	// check for waiting osc messages
 	global.audioEngine.update();
 	global.osc.update();
-	
+	global.physics.update();
 	global.gui.update();
 }
 
@@ -194,6 +196,11 @@ void AppCore::mousePressed(int x, int y, int button) {
 void AppCore::mouseReleased(int x, int y, int button) {
 	bMousePressed = false;
 	sceneManager.mouseReleased(x, y, button);
+}
+
+//--------------------------------------------------------------
+void AppCore::mouseDragged(int x, int y, int button) {
+	sceneManager.mouseDragged(x, y, button);
 }
 
 //--------------------------------------------------------------

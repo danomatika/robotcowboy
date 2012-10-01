@@ -29,6 +29,7 @@ void Global::setup(const int numOutChannels, const int numInChannels,
 	
 	osc.setup();
 	midi.setup();
+	physics.setup();
 	gui.setup();
 }
 
@@ -40,6 +41,7 @@ void Global::clear() {
 	
 	osc.clear();
 	midi.clear();
+	physics.clear();
 	gui.clear();
 }
 

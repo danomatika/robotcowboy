@@ -12,6 +12,7 @@
 
 #include "ofxBox2d.h"
 
+// a stub for now
 class Physics {
 
 	public:
@@ -21,8 +22,5 @@ class Physics {
 		void setup();
 		void clear() {}
 		
-		/// handle any incoming messages
 		void update();
-		
-		ofxBox2d box2d;
 };

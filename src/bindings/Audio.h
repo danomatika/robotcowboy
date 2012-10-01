@@ -71,7 +71,6 @@ class Audio {
 					.def_readonly("dollarZeroStr", &pd::Patch::dollarZeroStr)
 					.def_readonly("filename", &pd::Patch::filename)
 					.def_readonly("path", &pd::Patch::path)
-				
 			];
 		}
 		

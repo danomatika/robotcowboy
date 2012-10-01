@@ -61,7 +61,6 @@ class Util {
 					.def("alarm", &ofxTimer::alarm)
 					.def("getDiff", &ofxTimer::getDiff)
 					.def("getDiffN", &ofxTimer::set)
-			
 			];
 		}
 		

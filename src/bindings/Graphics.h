@@ -274,7 +274,7 @@ class Graphics {
 					//.def("getVertices", &ofPolyline::getVertices) // TODO: returns vector
 					.def("getPerimeter", &ofPolyline::getPerimeter)
 					.def("getArea", &ofPolyline::getArea)
-					.def("getCentroid", &ofPolyline::getCentroid2D)
+					.def("getCenter", &ofPolyline::getCentroid2D)
 					.def("draw", &ofPolyline::draw)
 					.def_readonly("size", &ofPolyline::size)
 					.enum_("windingMode")
@@ -797,7 +797,6 @@ class Graphics {
 				def("setGlobalAmbientColor", &setGlobalAmbientColor3),
 				def("setGlobalAmbientColor", &setGlobalAmbientColor4),
 				def("setGlobalAmbientHexColor", &setGlobalAmbientHexColor)
-			
 			];
 		}
 

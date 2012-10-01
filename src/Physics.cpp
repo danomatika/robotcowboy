@@ -16,11 +16,7 @@
 Physics::Physics() {}
 
 //--------------------------------------------------------------
-void Physics::setup() {
-	box2d.init();
-}
+void Physics::setup() {}
 
 //--------------------------------------------------------------
-void Physics::update() {
-	box2d.update();
-}
+void Physics::update() {}

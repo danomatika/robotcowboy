@@ -62,7 +62,6 @@ class Bindings {
 				/// to override lua print and write functions
 				def("print", &print),
 				def("write", &write)
-			
 			];
 		}
 		

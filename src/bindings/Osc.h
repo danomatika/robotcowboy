@@ -81,7 +81,6 @@ class Osc {
 					.def("getBundle", &ofxOscBundle::getBundleAt)
 					.def_readonly("numMessages", &ofxOscBundle::getMessageCount)
 					.def_readonly("numBundles", &ofxOscBundle::getBundleCount)
-			
 			];
 		}
 		

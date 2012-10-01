@@ -60,7 +60,9 @@ void App::mouseMoved(int x, int y) {
 }
 
 //--------------------------------------------------------------
-void App::mouseDragged(int x, int y, int button) {}
+void App::mouseDragged(int x, int y, int button) {
+	core.mouseDragged(x, y, button);
+}
 
 //--------------------------------------------------------------
 void App::mousePressed(int x, int y, int button) {
