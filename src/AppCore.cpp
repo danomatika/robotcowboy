@@ -15,10 +15,12 @@
 #include "Global.h"
 
 // for mapping special keys
-#ifndef __APPLE__
-	#include <GL/glut.h>
-#else
-	#include <GLUT/glut.h>
+#ifndef TARGET_OF_IPHONE
+	#ifndef __APPLE__
+		#include <GL/glut.h>
+	#else
+		#include <GLUT/glut.h>
+	#endif
 #endif
 
 AppCore::AppCore(App& parent) : parent(parent),
@@ -53,7 +55,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	// disable quad warping, and enable aspect ratio and centering when scaling
 	//parent.setTransforms(true, true, false, true, true);
 	
-	#ifdef TARGET_IOS
+	#ifdef TARGET_OF_IPHONE
 		ofSetDataPathRoot(ofToDataPath("data/", true));
 	#endif
 	//ofLogNotice() << "Data path: " << ofToDataPath("data", true);
@@ -69,7 +71,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofSetLogLevel(global.logLevel);
 	
 	// data path
-	#ifndef TARGET_IOS
+	#ifndef TARGET_OF_IPHONE
 		ofSetDataPathRoot(ofFilePath::getAbsolutePath(ofFilePath::getCurrentWorkingDirectory()+"/../../../data"));
 	#endif
 	global.scenePath = ofToDataPath("")+"/scenes/";
@@ -136,14 +138,16 @@ void AppCore::exit() {
 void AppCore::keyPressed(int key) {
 
 	// read modifier keys
-	#ifdef TARGET_WIN32
-		bAltPressed = (bool) ((GetKeyState(VK_MENU) & 0x80) > 0);
-		bShiftPressed = (bool) ((GetKeyState(VK_SHIFT) & 0x80) > 0);
-		bControlPressed = (bool) ((GetKeyState(VK_CONTROL) & 0x80) > 0);
-	#else
-		bAltPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_ALT);
-		bShiftPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_SHIFT);
-		bControlPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_CTRL);
+	#ifndef TARGET_OF_IPHONE
+		#ifdef TARGET_WIN32
+			bAltPressed = (bool) ((GetKeyState(VK_MENU) & 0x80) > 0);
+			bShiftPressed = (bool) ((GetKeyState(VK_SHIFT) & 0x80) > 0);
+			bControlPressed = (bool) ((GetKeyState(VK_CONTROL) & 0x80) > 0);
+		#else
+			bAltPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_ALT);
+			bShiftPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_SHIFT);
+			bControlPressed = (bool) (glutGetModifiers() & GLUT_ACTIVE_CTRL);
+		#endif
 	#endif
 	if(bAltPressed) {
 		switch(key) {

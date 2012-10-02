@@ -12,7 +12,7 @@
 
 //#include "../Global.h"
 #include "../AppCore.h"
-#include "../App.h"
+#include "../desktop/App.h"
 
 namespace lua {
 
