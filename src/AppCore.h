@@ -17,13 +17,11 @@
 
 #include "Global.h"
 
-class App;
-
-class AppCore {
+class AppCore : public ofBaseApp {
 
 	public:
 
-		AppCore(App& parent);
+		AppCore();
 
 		// main
 		void setup(const int numOutChannels, const int numInChannels,
@@ -62,8 +60,6 @@ class AppCore {
 		
 		/// modifier key states
 		bool bAltPressed, bShiftPressed, bControlPressed;
-		
-		App& parent;
 		
 		Global& global;
 		

@@ -42,7 +42,7 @@ cp -Rv externals/mrpeach/osc/*.c $SRC_DIR/mrpeach
 cp -Rv externals/mrpeach/net/*.h $SRC_DIR/mrpeach
 cp -Rv externals/mrpeach/net/*.c $SRC_DIR/mrpeach
 cp -Rv externals/mrpeach/midifile/*.c $SRC_DIR/mrpeach
-cp -Rv externals/mrpeach/sqosc~/*.c $SRC_DIR/mrpeach
+#cp -Rv externals/mrpeach/sqosc~/*.c $SRC_DIR/mrpeach # doesn't build on ios
 
 # ggee
 mkdir -p $SRC_DIR/ggee

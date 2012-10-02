@@ -10,12 +10,8 @@
  */
 #include "AppCore.h"
 
-#include "App.h"
-#include "Scene.h"
-#include "Global.h"
-
-// for mapping special keys
 #ifndef TARGET_OF_IPHONE
+	// for mapping special keys
 	#ifndef __APPLE__
 		#include <GL/glut.h>
 	#else
@@ -23,8 +19,11 @@
 	#endif
 #endif
 
-AppCore::AppCore(App& parent) : parent(parent),
-	global(Global::instance()), sceneManager(parent) {
+#include "Scene.h"
+#include "Global.h"
+
+AppCore::AppCore() ://App& parent) : parent(parent),
+	global(Global::instance()) {
 
 	mouseButton = 1;
 	bMousePressed = false;
@@ -47,13 +46,6 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	//ofSetLogLevel("Pd", OF_LOG_WARNING);
 	//ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
-	
-	// setup the render size (working area)
-	parent.setRenderSize(1024, 768);
-
-	// turn on transform origin translation and scaling to screen size,
-	// disable quad warping, and enable aspect ratio and centering when scaling
-	//parent.setTransforms(true, true, false, true, true);
 	
 	#ifdef TARGET_OF_IPHONE
 		ofSetDataPathRoot(ofToDataPath("data/", true));
@@ -78,15 +70,14 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofLogVerbose() << "AppCore: scene path is " << global.scenePath;
 	
 	// load scenes
-	sceneManager.add(new Scene(parent, "TestOsc"));
-	sceneManager.add(new Scene(parent, "TestInput"));
-	sceneManager.add(new Scene(parent, "PhysicsChain"));
-	sceneManager.add(new Scene(parent, "PhysicsPolygon"));
+	sceneManager.add(new Scene("TestOsc"));
+	sceneManager.add(new Scene("TestInput"));
+	sceneManager.add(new Scene("PhysicsChain"));
+	sceneManager.add(new Scene("PhysicsPolygon"));
 	//sceneManager.setup(false);	// setup all the scenes on the fly
 	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
 	sceneManager.run(true);
-	//parent.setSceneManager(&sceneManager);
 }
 
 //--------------------------------------------------------------
@@ -104,15 +95,7 @@ void AppCore::update() {
 //--------------------------------------------------------------
 void AppCore::draw() {
 
-//	ofNoFill();
-//	ofSetColor(255);
-//	ofSetRectMode(OF_RECTMODE_CORNER);
-//	ofRect(1, 1, parent.getRenderWidth()-2, parent.getRenderHeight()-2);
-//	ofFill();
-
 	sceneManager.draw();
-	
-	//parent.popTransforms();
 	
 	if(global.scriptEngine.errorOcurred()) {
 		ofSetColor(0);
@@ -124,8 +107,6 @@ void AppCore::draw() {
 	global.gui.console.draw();
 	global.gui.drawFps();
 	global.gui.draw();
-	
-	//parent.pushTransforms();
 }
 
 //--------------------------------------------------------------

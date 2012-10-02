@@ -12,11 +12,10 @@
 
 #include "ofMain.h"
 
-#include "ofxAppUtils.h"
 #include "../AppCore.h"
 
 /// a desktop os app wrapper
-class App : public ofxApp {
+class App : public ofBaseApp {
 
 	public:
 

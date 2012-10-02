@@ -13,7 +13,7 @@
 #include "Global.h"
 
 //--------------------------------------------------------------
-App::App() : core(*this) {}
+App::App() {}
 
 //--------------------------------------------------------------
 void App::setup() {
@@ -25,7 +25,7 @@ void App::setup() {
 	//ofSetDataPathRoot("./data/");
 	
 	// if you want a landscape orientation 
-	// ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT;
 	
 	cout << "cwd: " << ofFilePath::getCurrentWorkingDirectory() << endl;
 	

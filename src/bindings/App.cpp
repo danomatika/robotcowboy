@@ -10,26 +10,28 @@
  */
 #include "App.h"
 
-//#include "../Global.h"
 #include "../AppCore.h"
-#include "../desktop/App.h"
 
 namespace lua {
 
-float App::getWidth() {return Global::instance().core->parent.getRenderWidth();}
-float App::getHeight() {return Global::instance().core->parent.getRenderHeight();}
+float App::getWidth() {
+	return ofGetWidth();
+}
+float App::getHeight() {
+	return ofGetHeight();
+}
 
 float App::getMouseX() {
 //	if(ofGetWindowMode() == OF_FULLSCREEN)
 //		return Global::instance().core->parent.mouseX + Global::instance().core->parent.getOriginX();
 //	else
-		return Global::instance().core->parent.mouseX;
+		return ofGetMouseX();
 }
 float App::getMouseY() {
 //	if(ofGetWindowMode() == OF_FULLSCREEN)
 //		return Global::instance().core->parent.mouseY + Global::instance().core->parent.getOriginY();
 //	else
-		return Global::instance().core->parent.mouseY;
+		return ofGetMouseY();
 }
 int App::getMouseButton() {return Global::instance().core->mouseButton;}
 bool App::getMousePressed() {return Global::instance().core->bMousePressed;}

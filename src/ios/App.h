@@ -13,11 +13,10 @@
 #include "ofMain.h"
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
-#include "ofxAppUtils.h"
 
 #include "../AppCore.h"
 
-class App : public ofxiPhoneApp { //public ofxApp {
+class App : public ofxiPhoneApp {
 	
 	public:
 	

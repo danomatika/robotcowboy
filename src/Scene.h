@@ -22,7 +22,7 @@ class Scene : public ofxScene {
 	public:
 	
 		/// name should be the same as the scene folder name!
-		Scene(ofxApp &app, string name);
+		Scene(string name);
 		
 		void setup();
 		void update();
@@ -38,7 +38,6 @@ class Scene : public ofxScene {
 		
 	private:
 	
-		AppCore& core;
 		Global& global;
 	
 		string path;	//< path to this scene

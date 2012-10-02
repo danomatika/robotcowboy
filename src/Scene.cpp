@@ -13,8 +13,8 @@
 #include "App.h"
 
 //--------------------------------------------------------------
-Scene::Scene(ofxApp &app, string name) :
-	ofxScene(app, name, false), core(dynamic_cast<App&>(app).core),
+Scene::Scene(string name) :
+	ofxScene(name, false),
 	global(Global::instance()) {
 	path = "";
 }
@@ -28,7 +28,7 @@ void Scene::setup()	{
 	// set scene name
 	global.gui.setSceneName(getName());
 	
-	path = ofFilePath::getAbsolutePath(core.global.scenePath+getName()+"/");
+	path = ofFilePath::getAbsolutePath(global.scenePath+getName()+"/");
 	if(!ofDirectory::doesDirectoryExist(ofFilePath::getEnclosingDirectory(path))) {
 		ofLogError() << "Scene: scene path \"" << path << "\" does not exist";
 		return;
