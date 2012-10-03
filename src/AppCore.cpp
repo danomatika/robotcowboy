@@ -22,7 +22,7 @@
 #include "Scene.h"
 #include "Global.h"
 
-AppCore::AppCore() ://App& parent) : parent(parent),
+AppCore::AppCore() :
 	global(Global::instance()) {
 
 	mouseButton = 1;
@@ -72,6 +72,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	// load scenes
 	sceneManager.add(new Scene("TestOsc"));
 	sceneManager.add(new Scene("TestInput"));
+	sceneManager.add(new Scene("TestTouch"));
 	sceneManager.add(new Scene("PhysicsChain"));
 	sceneManager.add(new Scene("PhysicsPolygon"));
 	//sceneManager.setup(false);	// setup all the scenes on the fly

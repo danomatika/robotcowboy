@@ -194,8 +194,6 @@
 		9f9d49cfc30ba1589822e7abc2b3e958 /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = deed18744d2e82c919d7d1524223a797 /* b2PulleyJoint.cpp */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
-		BB24DD8F10DA77E000E9C588 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8C10DA77E000E9C588 /* Default.png */; };
-		BB24DD9010DA77E000E9C588 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8D10DA77E000E9C588 /* Icon.png */; };
 		BBE5EAB80F49AD8400F28951 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */; };
 		E41D400B13B39D2100A75A5D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400613B39D2100A75A5D /* AVFoundation.framework */; };
 		E41D400C13B39D2100A75A5D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41D400713B39D2100A75A5D /* CoreMedia.framework */; };
@@ -454,6 +452,7 @@
 		30625118161AA1FA003D5BA9 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../../addons/ofxLua/lib/boost/ios/boost.framework; sourceTree = "<group>"; };
 		3062511B161AA28B003D5BA9 /* Project-ios.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-ios.xcconfig"; sourceTree = "<group>"; };
 		3062512C161AA43C003D5BA9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
+		30625146161C94C5003D5BA9 /* TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchEvent.h; sourceTree = "<group>"; };
 		31317daf63909d58058dc81e856e7604 /* ofxPGMidiSourceDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPGMidiSourceDelegate.h; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiSourceDelegate.h; sourceTree = SOURCE_ROOT; };
 		314f3fba7f709698498672ccba9054ea /* function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = function.cpp; path = ../../../addons/ofxLua/src/luabind/src/function.cpp; sourceTree = SOURCE_ROOT; };
 		319aa8a155a918a615b97c1efc835ce5 /* App.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = App.h; path = src/ios/App.h; sourceTree = SOURCE_ROOT; };
@@ -734,11 +733,8 @@
 		9fd64016dd629351fd67d82fbe82e3cf /* llex.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = llex.h; path = ../../../addons/ofxLua/src/lua/llex.h; sourceTree = SOURCE_ROOT; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BB24DD8C10DA77E000E9C588 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		BB24DD8D10DA77E000E9C588 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiphone-Info.plist"; sourceTree = "<group>"; };
 		BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		E41D3ED613B38FB500A75A5D /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		E41D3EE513B3906D00A75A5D /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/ios/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E41D400613B39D2100A75A5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E41D400713B39D2100A75A5D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -1179,7 +1175,6 @@
 				30625112161AA06D003D5BA9 /* robotcowboy-ios-Info.plist */,
 				3062512C161AA43C003D5BA9 /* data */,
 				E4D8936A11527B74007E1F53 /* src */,
-				BB24DD8B10DA77E000E9C588 /* data */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				BB16F26B0F2B646B00518274 /* addons */,
 				BB16E9930F2B1E5900518274 /* libs */,
@@ -1573,16 +1568,6 @@
 			name = addons;
 			sourceTree = "<group>";
 		};
-		BB24DD8B10DA77E000E9C588 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				BB24DD8C10DA77E000E9C588 /* Default.png */,
-				BB24DD8D10DA77E000E9C588 /* Icon.png */,
-			);
-			name = data;
-			path = bin/data;
-			sourceTree = "<group>";
-		};
 		BB24E1F710DAA51900E9C588 /* openFrameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1590,7 +1575,6 @@
 				32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */,
 				BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */,
 				E41D3EE513B3906D00A75A5D /* CoreOF.xcconfig */,
-				E41D3ED613B38FB500A75A5D /* Project.xcconfig */,
 			);
 			name = openFrameworks;
 			sourceTree = "<group>";
@@ -1635,6 +1619,7 @@
 				195129592521aa26628ba6ce734f9f29 /* Scene.h */,
 				235746572f760172f48ac44cdae3f121 /* ScriptEngine.cpp */,
 				2bf4f48bac0aed62474819f42e95699e /* ScriptEngine.h */,
+				30625146161C94C5003D5BA9 /* TouchEvent.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -2252,8 +2237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB24DD8F10DA77E000E9C588 /* Default.png in Resources */,
-				BB24DD9010DA77E000E9C588 /* Icon.png in Resources */,
 				3062512D161AA43C003D5BA9 /* data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2579,11 +2562,12 @@
 					"\"$(SRCROOT)/../../../addons/ofxLua/lib/boost/ios\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				GCC_PREFIX_HEADER = iOS_Prefix.pch;
 				INFOPLIST_FILE = "robotcowboy-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -2595,11 +2579,12 @@
 					"\"$(SRCROOT)/../../../addons/ofxLua/lib/boost/ios\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				GCC_PREFIX_HEADER = iOS_Prefix.pch;
 				INFOPLIST_FILE = "robotcowboy-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};

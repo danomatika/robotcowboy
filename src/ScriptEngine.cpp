@@ -89,7 +89,97 @@ void ScriptEngine::sendOsc(ofxOscMessage& msg) {
 		luabind::call_function<bool>(lua, "oscReceived", boost::ref(msg));
 	}
 	catch(exception& e) {
-		ofLogWarning() << "ScriptEngine::sendOsc: Caught exception: " << e.what();
+		//ofLogWarning() << "ScriptEngine::sendOsc: Caught exception: " << e.what();
+	}
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::touchDown(ofTouchEventArgs &touch) {
+	
+	if(!lua.isValid()) {
+		return;
+	}
+	
+	// convert and store
+	touchEvent.copyFromArgs(touch);
+	
+	try {
+		luabind::call_function<bool>(lua, "touchDown", boost::ref(touchEvent));
+	}
+	catch(exception& e) {
+		//ofLogWarning() << "ScriptEngine::touchDown: Caught exception: " << e.what();
+	}
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::touchMoved(ofTouchEventArgs &touch) {
+	
+	if(!lua.isValid()) {
+		return;
+	}
+	
+	// convert and store
+	touchEvent.copyFromArgs(touch);
+	
+	try {
+		luabind::call_function<bool>(lua, "touchMoved", boost::ref(touchEvent));
+	}
+	catch(exception& e) {
+		//ofLogWarning() << "ScriptEngine::touchMoved: Caught exception: " << e.what();
+	}
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::touchUp(ofTouchEventArgs &touch) {
+		
+	if(!lua.isValid()) {
+		return;
+	}
+	
+	// convert and store
+	touchEvent.copyFromArgs(touch);
+	
+	try {
+		luabind::call_function<bool>(lua, "touchUp", boost::ref(touchEvent));
+	}
+	catch(exception& e) {
+		//ofLogWarning() << "ScriptEngine::touchUp: Caught exception: " << e.what();
+	}	
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::touchDoubleTap(ofTouchEventArgs &touch) {
+	
+	if(!lua.isValid()) {
+		return;
+	}
+	
+	// convert and store
+	touchEvent.copyFromArgs(touch);
+	
+	try {
+		luabind::call_function<bool>(lua, "touchDoubleTap", boost::ref(touchEvent));
+	}
+	catch(exception& e) {
+		//ofLogWarning() << "ScriptEngine::touchDoubleTap: Caught exception: " << e.what();
+	}
+}
+
+//--------------------------------------------------------------
+void ScriptEngine::touchCancelled(ofTouchEventArgs &touch) {
+			
+	if(!lua.isValid()) {
+		return;
+	}
+	
+	// convert and store
+	touchEvent.copyFromArgs(touch);
+	
+	try {
+		luabind::call_function<bool>(lua, "touchCancelled", boost::ref(touchEvent));
+	}
+	catch(exception& e) {
+		//ofLogWarning() << "ScriptEngine::touchCancelled: Caught exception: " << e.what();
 	}
 }
 

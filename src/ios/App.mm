@@ -10,8 +10,6 @@
  */
 #include "App.h"
 
-#include "Global.h"
-
 //--------------------------------------------------------------
 App::App() {}
 
@@ -25,9 +23,7 @@ void App::setup() {
 	//ofSetDataPathRoot("./data/");
 	
 	// if you want a landscape orientation 
-	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT;
-	
-	cout << "cwd: " << ofFilePath::getCurrentWorkingDirectory() << endl;
+	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
 	
 	ofBackground(127, 127, 127);
 	
@@ -40,17 +36,11 @@ void App::setup() {
 	
 	// setup the app core
 	core.setup(2, 2, 44100, ticksPerBuffer);
-	
-	bangSound.loadSound("data/samples/bang.wav");
-	bangSound.setLoop(false);
-	bangSound.setVolume(0.75);
-	bangSound.play();
 }
 
 //--------------------------------------------------------------
 void App::update() {
 	core.update();
-	ofSoundUpdate();
 }
 
 //--------------------------------------------------------------
@@ -68,25 +58,27 @@ void App::exit() {
 
 //--------------------------------------------------------------
 void App::touchDown(ofTouchEventArgs &touch) {
-	cout << "TouchDown: " << touch.x << " " << touch.y << endl;
-	bangSound.play();
-	Global::instance().audioEngine.pd.sendSymbol("OSC_IN", "/transport");
+	Global::instance().scriptEngine.touchDown(touch);
 }
 
 //--------------------------------------------------------------
 void App::touchMoved(ofTouchEventArgs &touch) {
-
+	Global::instance().scriptEngine.touchMoved(touch);
 }
 
 //--------------------------------------------------------------
 void App::touchUp(ofTouchEventArgs &touch) {
-
+	Global::instance().scriptEngine.touchUp(touch);
 }
 
 //--------------------------------------------------------------
 void App::touchDoubleTap(ofTouchEventArgs &touch) {
-	cout << "TouchDoubleTap: " << touch.x << " " << touch.y << endl;
-	core.sceneManager.nextScene();
+	Global::instance().scriptEngine.touchDoubleTap(touch);
+}
+
+//--------------------------------------------------------------
+void App::touchCancelled(ofTouchEventArgs& touch) {
+	Global::instance().scriptEngine.touchCancelled(touch);
 }
 
 //--------------------------------------------------------------
@@ -106,11 +98,6 @@ void App::gotMemoryWarning() {
 
 //--------------------------------------------------------------
 void App::deviceOrientationChanged(int newOrientation) {
-
-}
-
-//--------------------------------------------------------------
-void App::touchCancelled(ofTouchEventArgs& args) {
 
 }
 

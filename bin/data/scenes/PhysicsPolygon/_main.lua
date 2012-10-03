@@ -82,6 +82,35 @@ function mouseReleased(x, y, button)
 end
 
 ----------------------------------------------------
+function touchDown(touch)
+	local p = physics.polygon()
+	p:addVertex(touch.x, touch.y)
+	table.insert(polygons, p)
+end
+
+----------------------------------------------------
+function touchMoved(touch)
+	polygons[#polygons]:addVertex(touch.x, touch.y)
+end
+
+----------------------------------------------------
+function touchUp(touch)
+	if #polygons > 0 then
+		local p = polygons[#polygons]
+		p:addVertex(touch.x, touch.y)
+		p:simplify()
+		p:setup(world)
+	end
+end
+
+----------------------------------------------------
+function touchDoubleTap(touch)
+	-- clear by setting an empty table
+	circles = {}
+	polygons = {}
+end
+
+----------------------------------------------------
 function keyPressed(key)
 	
 	if key == string.byte("n") then	

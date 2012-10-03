@@ -13,6 +13,8 @@
 #include "ofMain.h"
 #include "ofxLua.h"
 
+#include "TouchEvent.h"
+
 namespace lua {
 
 class App {
@@ -110,7 +112,7 @@ class App {
 				
 				/// window / screen
 				def("width", &getWidth),//&ofGetWidth),
-				def("height", &getHeight)//&ofGetHeight),
+				def("height", &getHeight),//&ofGetHeight),
 				// TODO: are these needed by scenes? I'm thinking not
 				//def("windowWidth", &ofGetWindowWidth),
 				//def("windowHeight", &ofGetWindowHeight),
@@ -131,6 +133,35 @@ class App {
 				
 				/// sync
 				//def("setVerticalSync", &ofSetVerticalSync) // on by default
+				
+				///////////////////////////////
+				/// \section Touch Event
+				
+				class_<TouchEvent>("touch")
+					.def(constructor<>())
+					.def_readonly("id", &TouchEvent::id)
+					.def_readonly("time", &TouchEvent::time)
+					.def_readonly("x", &TouchEvent::x)
+					.def_readonly("y", &TouchEvent::y)
+					.def_readonly("numTouches", &TouchEvent::numTouches)
+					.def_readonly("width", &TouchEvent::width)
+					.def_readonly("height", &TouchEvent::height)
+					.def_readonly("angle", &TouchEvent::angle)
+					.def_readonly("minorAxis", &TouchEvent::minoraxis)
+					.def_readonly("majorAxis", &TouchEvent::majoraxis)
+					.def_readonly("pressure", &TouchEvent::pressure)
+					.def_readonly("xspeed", &TouchEvent::xspeed)
+					.def_readonly("yspeed", &TouchEvent::yspeed)
+					.def_readonly("xaccel", &TouchEvent::xaccel)
+					.def_readonly("yaccel", &TouchEvent::yaccel)
+					.enum_("touchType")
+					[
+						value("DOWN", ofTouchEventArgs::down),
+						value("UP", ofTouchEventArgs::up),
+						value("MOVE", ofTouchEventArgs::move),
+						value("DOUBLETAP", ofTouchEventArgs::doubleTap),
+						value("CANCEL", ofTouchEventArgs::cancel)
+					]
 			];
 		}
 		

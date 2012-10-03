@@ -10,8 +10,6 @@
  */
 #include "Scene.h"
 
-#include "App.h"
-
 //--------------------------------------------------------------
 Scene::Scene(string name) :
 	ofxScene(name, false),

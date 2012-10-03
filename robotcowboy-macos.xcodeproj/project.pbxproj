@@ -298,6 +298,7 @@
 		306250D4161A9B63003D5BA9 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		306250D5161A9B63003D5BA9 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		306250D6161A9B63003D5BA9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		30625156161CBBBA003D5BA9 /* TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchEvent.h; sourceTree = "<group>"; };
 		308637B915D37B8D00BAD4C5 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = /System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<absolute>"; };
 		308C1BB0146B39350067923E /* PdBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdBase.cpp; sourceTree = "<group>"; };
 		308C1BB4146B39350067923E /* PdTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdTypes.cpp; sourceTree = "<group>"; };
@@ -1557,6 +1558,7 @@
 				30F6B4A614D21797008096BA /* Global.h */,
 				30B2273315D3AFB000405B99 /* Gui.cpp */,
 				30B2273415D3AFB000405B99 /* Gui.h */,
+				30625156161CBBBA003D5BA9 /* TouchEvent.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

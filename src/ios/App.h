@@ -43,8 +43,6 @@ class App : public ofxiPhoneApp {
 		void audioRequested(float* output, int bufferSize, int nChannels);
 
 		AppCore core;
-		
-		ofSoundPlayer bangSound;
 };
 
 

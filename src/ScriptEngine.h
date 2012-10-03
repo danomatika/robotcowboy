@@ -13,6 +13,8 @@
 #include "ofMain.h"
 #include "ofxLua.h"
 
+#include "TouchEvent.h"
+
 class ofxOscMessage;
 
 class ScriptEngine : private ofxLuaListener {
@@ -38,6 +40,13 @@ class ScriptEngine : private ofxLuaListener {
 		/// calls the oscReceived lua function
 		void sendOsc(ofxOscMessage& msg);
 		
+		/// touch events
+		void touchDown(ofTouchEventArgs &touch);
+		void touchMoved(ofTouchEventArgs &touch);
+		void touchUp(ofTouchEventArgs &touch);
+		void touchDoubleTap(ofTouchEventArgs &touch);
+		void touchCancelled(ofTouchEventArgs &touch);
+		
 		/// receives a print from the lua console
 		void print(const string& message);
 		void write(const string& message);
@@ -61,4 +70,6 @@ class ScriptEngine : private ofxLuaListener {
 		string currentScript;
 
 		string writeBuffer;
+		
+		TouchEvent touchEvent; /// to use as a conversion reference
 };
