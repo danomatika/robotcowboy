@@ -36,6 +36,8 @@ class Scene : public ofxScene {
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
 		
+		string getPath() {return path;}
+		
 	private:
 	
 		Global& global;

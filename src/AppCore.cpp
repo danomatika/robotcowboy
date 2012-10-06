@@ -70,6 +70,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	ofLogVerbose() << "AppCore: scene path is " << global.scenePath;
 	
 	// load scenes
+	sceneManager.add(new Scene("MarsShow"));
 	sceneManager.add(new Scene("TestOsc"));
 	sceneManager.add(new Scene("TestInput"));
 	sceneManager.add(new Scene("TestTouch"));

@@ -39,4 +39,8 @@ bool App::getMousePressed() {return Global::instance().core->bMousePressed;}
 int App::getKey() {return Global::instance().core->currentKey;}
 bool App::getKeyPressed() {return Global::instance().core->bKeyPressed;}
 
+string App::getScenePath() {
+	return Global::instance().core->sceneManager.getCurrentSceneName();
+}
+
 } // namespace

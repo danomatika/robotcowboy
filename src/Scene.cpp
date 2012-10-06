@@ -32,8 +32,14 @@ void Scene::setup()	{
 		return;
 	}
 	
-	ofLogVerbose() << "Scene: loading scene: \"" << getName() << "\"";
+	if(chdir(path.c_str()) != 0) {
+		ofLogError() << "Scene: couldn't change directory to \"" << path << "\"";
+	}
+	//ofSetDataPathRoot(path);
+	ofLogVerbose() << "Scene: current dir: " << ofFilePath::getCurrentWorkingDirectory();
 	
+	// try to load scene
+	ofLogVerbose() << "Scene: loading scene: \"" << getName() << "\"";
 	if(ofFile::doesFileExist(path+"_main.pd")) {
 		global.audioEngine.loadPatch(path+"_main.pd");
 	}
@@ -41,8 +47,6 @@ void Scene::setup()	{
 	if(ofFile::doesFileExist(path+"_main.lua")) {
 		global.scriptEngine.loadScript(path+"_main.lua");
 	}
-	
-	ofSetDataPathRoot(path);
 
 	global.scriptEngine.lua.scriptSetup();
 }

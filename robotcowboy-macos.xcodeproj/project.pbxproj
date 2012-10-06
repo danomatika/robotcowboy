@@ -15,6 +15,9 @@
 		30625000161817F9003D5BA9 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30624FFE161817F9003D5BA9 /* App.cpp */; };
 		306250D9161A9B63003D5BA9 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306250D4161A9B63003D5BA9 /* App.cpp */; };
 		306250DA161A9B63003D5BA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 306250D6161A9B63003D5BA9 /* main.cpp */; };
+		3062515C161D0129003D5BA9 /* getdir.c in Sources */ = {isa = PBXBuildFile; fileRef = 30625159161D0129003D5BA9 /* getdir.c */; };
+		3062515D161D0129003D5BA9 /* moog~.c in Sources */ = {isa = PBXBuildFile; fileRef = 3062515A161D0129003D5BA9 /* moog~.c */; };
+		3062515E161D0129003D5BA9 /* stripdir.c in Sources */ = {isa = PBXBuildFile; fileRef = 3062515B161D0129003D5BA9 /* stripdir.c */; };
 		308637BA15D37B8D00BAD4C5 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308637B915D37B8D00BAD4C5 /* CoreMIDI.framework */; };
 		308C1BB6146B39350067923E /* PdBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 308C1BB0146B39350067923E /* PdBase.cpp */; };
 		308C1BB7146B39350067923E /* PdTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 308C1BB4146B39350067923E /* PdTypes.cpp */; };
@@ -196,7 +199,6 @@
 		30EA893114D338F5000A1AB9 /* unsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88FA14D338F4000A1AB9 /* unsymbol.c */; };
 		30EA893214D338F5000A1AB9 /* midifile.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88FC14D338F4000A1AB9 /* midifile.c */; };
 		30EA893314D338F5000A1AB9 /* packOSC.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88FD14D338F4000A1AB9 /* packOSC.c */; };
-		30EA893414D338F5000A1AB9 /* pipelist.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88FE14D338F4000A1AB9 /* pipelist.c */; };
 		30EA893514D338F5000A1AB9 /* routeOSC.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA88FF14D338F4000A1AB9 /* routeOSC.c */; };
 		30EA893E14D338F5000A1AB9 /* unpackOSC.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA890914D338F4000A1AB9 /* unpackOSC.c */; };
 		30EA894014D33DDB000A1AB9 /* wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 30EA893F14D33DDB000A1AB9 /* wrap.c */; };
@@ -299,6 +301,9 @@
 		306250D5161A9B63003D5BA9 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		306250D6161A9B63003D5BA9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		30625156161CBBBA003D5BA9 /* TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchEvent.h; sourceTree = "<group>"; };
+		30625159161D0129003D5BA9 /* getdir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getdir.c; sourceTree = "<group>"; };
+		3062515A161D0129003D5BA9 /* moog~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "moog~.c"; sourceTree = "<group>"; };
+		3062515B161D0129003D5BA9 /* stripdir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stripdir.c; sourceTree = "<group>"; };
 		308637B915D37B8D00BAD4C5 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = /System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<absolute>"; };
 		308C1BB0146B39350067923E /* PdBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdBase.cpp; sourceTree = "<group>"; };
 		308C1BB4146B39350067923E /* PdTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PdTypes.cpp; sourceTree = "<group>"; };
@@ -630,7 +635,6 @@
 		30EA88FA14D338F4000A1AB9 /* unsymbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unsymbol.c; sourceTree = "<group>"; };
 		30EA88FC14D338F4000A1AB9 /* midifile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = midifile.c; sourceTree = "<group>"; };
 		30EA88FD14D338F4000A1AB9 /* packOSC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = packOSC.c; sourceTree = "<group>"; };
-		30EA88FE14D338F4000A1AB9 /* pipelist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pipelist.c; sourceTree = "<group>"; };
 		30EA88FF14D338F4000A1AB9 /* routeOSC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = routeOSC.c; sourceTree = "<group>"; };
 		30EA890914D338F4000A1AB9 /* unpackOSC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpackOSC.c; sourceTree = "<group>"; };
 		30EA893F14D33DDB000A1AB9 /* wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrap.c; sourceTree = "<group>"; };
@@ -777,6 +781,16 @@
 				306250D6161A9B63003D5BA9 /* main.cpp */,
 			);
 			path = desktop;
+			sourceTree = "<group>";
+		};
+		30625158161D0129003D5BA9 /* ggee */ = {
+			isa = PBXGroup;
+			children = (
+				30625159161D0129003D5BA9 /* getdir.c */,
+				3062515A161D0129003D5BA9 /* moog~.c */,
+				3062515B161D0129003D5BA9 /* stripdir.c */,
+			);
+			path = ggee;
 			sourceTree = "<group>";
 		};
 		308C1BAF146B39350067923E /* cpp */ = {
@@ -1319,6 +1333,7 @@
 			isa = PBXGroup;
 			children = (
 				30EA88D014D338F4000A1AB9 /* Externals.h */,
+				30625158161D0129003D5BA9 /* ggee */,
 				30EA88D114D338F4000A1AB9 /* iemlib */,
 				30EA88FB14D338F4000A1AB9 /* mrpeach */,
 			);
@@ -1379,7 +1394,6 @@
 			children = (
 				30EA88FC14D338F4000A1AB9 /* midifile.c */,
 				30EA88FD14D338F4000A1AB9 /* packOSC.c */,
-				30EA88FE14D338F4000A1AB9 /* pipelist.c */,
 				30EA88FF14D338F4000A1AB9 /* routeOSC.c */,
 				30EA890914D338F4000A1AB9 /* unpackOSC.c */,
 			);
@@ -1803,7 +1817,6 @@
 				30EA893114D338F5000A1AB9 /* unsymbol.c in Sources */,
 				30EA893214D338F5000A1AB9 /* midifile.c in Sources */,
 				30EA893314D338F5000A1AB9 /* packOSC.c in Sources */,
-				30EA893414D338F5000A1AB9 /* pipelist.c in Sources */,
 				30EA893514D338F5000A1AB9 /* routeOSC.c in Sources */,
 				30EA893E14D338F5000A1AB9 /* unpackOSC.c in Sources */,
 				30EA894014D33DDB000A1AB9 /* wrap.c in Sources */,
@@ -1880,6 +1893,9 @@
 				30625000161817F9003D5BA9 /* App.cpp in Sources */,
 				306250D9161A9B63003D5BA9 /* App.cpp in Sources */,
 				306250DA161A9B63003D5BA9 /* main.cpp in Sources */,
+				3062515C161D0129003D5BA9 /* getdir.c in Sources */,
+				3062515D161D0129003D5BA9 /* moog~.c in Sources */,
+				3062515E161D0129003D5BA9 /* stripdir.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

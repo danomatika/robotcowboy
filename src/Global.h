@@ -46,8 +46,7 @@ class Global {
 		/// \section Variables
 		
 		string scenePath;	///< absolute path to scene root
-		
-		ofLogLevel logLevel;
+		ofLogLevel logLevel; ///< log level for console
 		
 		/// \section Functions
 		

@@ -134,6 +134,9 @@ class App {
 				/// sync
 				//def("setVerticalSync", &ofSetVerticalSync) // on by default
 				
+				// path to current scene
+				def("scenePath", &getScenePath),
+				
 				///////////////////////////////
 				/// \section Touch Event
 				
@@ -179,6 +182,9 @@ class App {
 		/// global key vars
 		static int getKey();
 		static bool getKeyPressed();
+		
+		/// current scene path
+		static string getScenePath();
 };
 
 } // namespace
