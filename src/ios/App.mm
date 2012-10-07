@@ -10,6 +10,9 @@
  */
 #include "App.h"
 
+#include "../Global.h"
+#include "WebServer.h"
+
 //--------------------------------------------------------------
 App::App() {}
 
@@ -17,10 +20,9 @@ App::App() {}
 void App::setup() {
 
 	// setup iOs
-//	ofRegisterTouchEvents(this);
+	ofRegisterTouchEvents(this);
 //	ofxAccelerometer.setup();
 //	ofxiPhoneAlerts.addListener(this);
-	//ofSetDataPathRoot("./data/");
 	
 	// if you want a landscape orientation 
 	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
@@ -36,6 +38,10 @@ void App::setup() {
 	
 	// setup the app core
 	core.setup(2, 2, 44100, ticksPerBuffer);
+	
+	
+	
+	WebServer::start(Global::instance().dataPath);
 }
 
 //--------------------------------------------------------------
@@ -54,6 +60,9 @@ void App::draw() {
 //--------------------------------------------------------------
 void App::exit() {
 	core.exit();
+	
+	
+	WebServer::stop();
 }
 
 //--------------------------------------------------------------

@@ -45,7 +45,8 @@ class Global {
 		
 		/// \section Variables
 		
-		string scenePath;	///< absolute path to scene root
+		string dataPath;	///< absolute path to data folder
+		string scenePath;	///< absolute path to scene folder
 		ofLogLevel logLevel; ///< log level for console
 		
 		/// \section Functions

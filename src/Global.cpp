@@ -20,6 +20,9 @@ Global& Global::instance() {
 void Global::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 	
+	// get data path
+	dataPath = ofToDataPath("", true);
+	
 	loadSettings("ka");
 	
 	audioEngine.setup(numOutChannels, numInChannels,
@@ -106,6 +109,6 @@ void Global::resetGraphics() {
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() : scenePath("scenes") {
+Global::Global() : dataPath("data"), scenePath("scenes") {
 	logLevel = ofGetLogLevel();
 }

@@ -41,6 +41,11 @@ class App : public ofxiPhoneApp {
 		// audio callbacks
 		void audioReceived(float* input, int bufferSize, int nChannels);
 		void audioRequested(float* output, int bufferSize, int nChannels);
+		
+		// webdav server
+		void startWebServer();
+		void stopWebServer();
+		bool isWebServerRunning();
 
 		AppCore core;
 };
