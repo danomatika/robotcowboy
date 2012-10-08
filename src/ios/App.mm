@@ -39,9 +39,11 @@ void App::setup() {
 	// setup the app core
 	core.setup(2, 2, 44100, ticksPerBuffer);
 	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	WebServer::start([documentsDirectory UTF8String]);
 	
-	
-	WebServer::start(Global::instance().dataPath);
+	//WebServer::start(Global::instance().dataPath);
 }
 
 //--------------------------------------------------------------

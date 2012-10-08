@@ -39,7 +39,7 @@ rc.settings.midi.outputs = {"IAC Driver Pure Data In", "Session 1"}
 	notice		1
 	warning 	2
 	error		3
-	fata error 	4
+	fatal error 4
 	silent		5
 ]]--
 rc.settings.logLevel = 0

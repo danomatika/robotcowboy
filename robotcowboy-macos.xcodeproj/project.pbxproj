@@ -461,7 +461,6 @@
 		30B2D0D5142B2CA5000AB5E1 /* choice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = choice.c; sourceTree = "<group>"; };
 		30B2D0D6142B2CA5000AB5E1 /* complex-mod~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "complex-mod~-help.pd"; sourceTree = "<group>"; };
 		30B2D0D7142B2CA5000AB5E1 /* complex-mod~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "complex-mod~.pd"; sourceTree = "<group>"; };
-		30B2D0D8142B2CA5000AB5E1 /* expr-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "expr-help.pd"; sourceTree = "<group>"; };
 		30B2D0D9142B2CA5000AB5E1 /* hilbert~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hilbert~-help.pd"; sourceTree = "<group>"; };
 		30B2D0DA142B2CA5000AB5E1 /* hilbert~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hilbert~.pd"; sourceTree = "<group>"; };
 		30B2D0DC142B2CA5000AB5E1 /* pique-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pique-help.pd"; sourceTree = "<group>"; };
@@ -1102,7 +1101,6 @@
 				30B2D0D3142B2CA5000AB5E1 /* choice */,
 				30B2D0D6142B2CA5000AB5E1 /* complex-mod~-help.pd */,
 				30B2D0D7142B2CA5000AB5E1 /* complex-mod~.pd */,
-				30B2D0D8142B2CA5000AB5E1 /* expr-help.pd */,
 				30B2D0D9142B2CA5000AB5E1 /* hilbert~-help.pd */,
 				30B2D0DA142B2CA5000AB5E1 /* hilbert~.pd */,
 				30B2D0DB142B2CA5000AB5E1 /* pique */,

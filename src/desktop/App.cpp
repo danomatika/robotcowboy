@@ -18,11 +18,26 @@ App::App() {}
 //--------------------------------------------------------------
 void App::setup() {
 
-	// the number if libpd ticks per buffer,
-	// used to compute the audio buffer len: tpb * blocksize (always 64)
-	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
+//	#ifdef TARGET_OF_IPHONE
+//		ofFile configFile(ofFilePath::getUserHomeDir()+"/.robotcowboy");
+//	#else
+//		ofFile configFile(ofFilePath::getUserHomeDir()+"/.robotcowboy");
+//	#endif
+//	
+//	// check if location is a dir
+//	if(configFile.isDirectory()) {
+//		ofLogWarning() << "App: config file location is a directory, cannot load file";
+//	}
+//	// create file if it dosen't exist
+//	else if(!configFile.exists()) {
+//		ofLogNotice() << "App: config file dosen't exist, copying default ...";
+//		if(!configFile.create()) {
+//			ofLogError() << "App: couldn't copy config file!";
+//		}
+//	}
 
 	// setup OF sound stream
+	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
 	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
 
 	// setup the app core

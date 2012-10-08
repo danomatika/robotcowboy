@@ -21,7 +21,7 @@
 
 class AppCore;
 
-// a singleton for global variables
+// a singleton for global variables, states, etc
 class Global {
 
     public:
@@ -45,13 +45,19 @@ class Global {
 		
 		/// \section Variables
 		
-		string dataPath;	///< absolute path to data folder
-		string scenePath;	///< absolute path to scene folder
+		/// these are set on startup
+		string dataPath;	///< absolute path to app data folder
+		string docsPath;	///< absolute path to user documents folder
+		string scenePath;	///< absolute path to user scene folder
+		
+		/// these can be changed when loading a settings file
 		ofLogLevel logLevel; ///< log level for console
 		
 		/// \section Functions
 		
-		/// load global settings from a lua script
+		/// laod startup settings from a conf lua script
+		
+		/// load settings from a lua script
 		void loadSettings(string path);
 		
 		/// setup objects

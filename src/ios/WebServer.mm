@@ -14,7 +14,7 @@
 #import "DDLog.h"
 #import "DDTTYLogger.h"
 
-static const int ddLogLevel = LOG_LEVEL_WARN;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 HTTPServer* WebServer::server = nil;
 

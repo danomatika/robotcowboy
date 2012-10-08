@@ -20,13 +20,14 @@ Global& Global::instance() {
 void Global::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 	
-	// get data path
 	dataPath = ofToDataPath("", true);
 	
-	loadSettings("ka");
+	// load defaults
+	loadSettings("ka");//docsPath+"/settings.lua");
 	
 	audioEngine.setup(numOutChannels, numInChannels,
 					  sampleRate, ticksPerBuffer);
+	
 	scriptEngine.setup();
 	scriptEngine.bootScript = ofToDataPath("boot.lua", true);
 	
@@ -34,6 +35,12 @@ void Global::setup(const int numOutChannels, const int numInChannels,
 	midi.setup();
 	physics.setup();
 	gui.setup();
+	
+	// get absolute paths
+	
+	if(!ofFilePath::isAbsolute(scenePath)) {
+		scenePath = ofToDataPath(scenePath+"/", true);
+	}
 }
 
 //--------------------------------------------------------------
@@ -55,11 +62,11 @@ void Global::loadSettings(string path) {
 	lua.init();
 	
 	// load defaults
-	if(!lua.doScript("defaults.lua")) {
+	if(!lua.doScript(dataPath+"/defaults.lua")) {
 		return;
 	}
 	
-	// load user settings
+	// load user settings on top, if any	
 //	if(!lua.doScript(path)) {
 //		return;
 //	}

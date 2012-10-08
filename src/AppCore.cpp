@@ -46,38 +46,29 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	//ofSetLogLevel("Pd", OF_LOG_WARNING);
 	//ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
+	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE);
 	
 	#ifdef TARGET_OF_IPHONE
 		ofSetDataPathRoot(ofToDataPath("data/", true));
 	#endif
-	//ofLogNotice() << "Data path: " << ofToDataPath("data", true);
-	
-	//ofSetDataPathRoot(ofFilePath::getAbsolutePath("data/"));
-	ofLogNotice() << "Data path: " << ofToDataPath("");
 	
 	// setup global objects
 	global.setup(numOutChannels, numInChannels,
 				 sampleRate, ticksPerBuffer);
 	
-	// set log level from config file
+	// set log level from config
 	ofSetLogLevel(global.logLevel);
 	
-	// data path
-	#ifndef TARGET_OF_IPHONE
-		ofSetDataPathRoot(ofFilePath::getAbsolutePath(ofFilePath::getCurrentWorkingDirectory()+"/../../../data"));
-	#endif
-	global.scenePath = ofToDataPath("")+"/scenes/";
-	ofLogVerbose() << "AppCore: scene path is " << global.scenePath;
+	ofLogNotice() << "AppCore: data path: " << global.dataPath;
+	ofLogVerbose() << "AppCore: scene path: " << global.scenePath;
 	
 	// load scenes
-	sceneManager.add(new Scene("MarsShow"));
+	//sceneManager.add(new Scene("MarsShow"));
 	sceneManager.add(new Scene("TestOsc"));
 	sceneManager.add(new Scene("TestInput"));
 	sceneManager.add(new Scene("TestTouch"));
 	sceneManager.add(new Scene("PhysicsChain"));
 	sceneManager.add(new Scene("PhysicsPolygon"));
-	//sceneManager.setup(false);	// setup all the scenes on the fly
-	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE); // lets see whats going on inside
 	sceneManager.gotoScene(0, true);
 	sceneManager.run(true);
 }
@@ -134,9 +125,17 @@ void AppCore::keyPressed(int key) {
 	#endif
 	if(bAltPressed) {
 		switch(key) {
+		
 			case 'f':
 				//ofToggleFullscreen();
 				break;
+			
+			case 'r':
+				global.scriptEngine.reloadScript();
+				global.audioEngine.reloadPatch();
+				sceneManager.getCurrentScene()->setup();
+				break;
+			
 			default:
 				break;
 		}
@@ -145,18 +144,6 @@ void AppCore::keyPressed(int key) {
 
 	currentKey = key;
 	bKeyPressed = true;
-
-	switch(key) {
-	
-		case 'r':
-			global.scriptEngine.reloadScript();
-			global.audioEngine.reloadPatch();
-			sceneManager.getCurrentScene()->setup();
-			break;
-			
-		default:
-			break;
-	}
 	
 	sceneManager.keyPressed(key);
 }

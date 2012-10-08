@@ -110,6 +110,7 @@
 		3062579D16200687003D5BA9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3062579C16200686003D5BA9 /* libxml2.dylib */; };
 		3062579F1620FCC1003D5BA9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 3062579E1620FCC1003D5BA9 /* data */; };
 		3071288e8eff50d43c7b667ce4338191 /* g_toggle.c in Sources */ = {isa = PBXBuildFile; fileRef = d0e58363a990e17286a45137e4a779f5 /* g_toggle.c */; };
+		30DFA457162289B10094270D /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 30DFA456162289B10094270D /* Documents */; };
 		30c9649631f10f53a2d1c4928fca8c74 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1cf27802fbf26f2ccde62c9f6ecfbdd3 /* Physics.cpp */; };
 		311e822ee7c77f819f8002aa68e11523 /* unsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = ea6867e1325c02f567cc5745fd4ee614 /* unsymbol.c */; };
 		3267a1f431b8bac449abbd7a9e229e2b /* udpsend.c in Sources */ = {isa = PBXBuildFile; fileRef = a992530b8d2923017c0af9238d22cfd3 /* udpsend.c */; };
@@ -552,6 +553,7 @@
 		3062579A1620065B003D5BA9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3062579C16200686003D5BA9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3062579E1620FCC1003D5BA9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
+		30DFA456162289B10094270D /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Documents; path = bin/Documents; sourceTree = "<group>"; };
 		31317daf63909d58058dc81e856e7604 /* ofxPGMidiSourceDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPGMidiSourceDelegate.h; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiSourceDelegate.h; sourceTree = SOURCE_ROOT; };
 		314f3fba7f709698498672ccba9054ea /* function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = function.cpp; path = ../../../addons/ofxLua/src/luabind/src/function.cpp; sourceTree = SOURCE_ROOT; };
 		319aa8a155a918a615b97c1efc835ce5 /* App.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = App.h; path = src/ios/App.h; sourceTree = SOURCE_ROOT; };
@@ -1270,6 +1272,7 @@
 			children = (
 				3062511B161AA28B003D5BA9 /* Project-ios.xcconfig */,
 				30625112161AA06D003D5BA9 /* robotcowboy-ios-Info.plist */,
+				30DFA456162289B10094270D /* Documents */,
 				3062579E1620FCC1003D5BA9 /* data */,
 				E4D8936A11527B74007E1F53 /* src */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
@@ -2480,6 +2483,7 @@
 				306251D1161FC3E4003D5BA9 /* About.txt in Resources */,
 				306251D9161FC3E4003D5BA9 /* README.txt in Resources */,
 				3062579F1620FCC1003D5BA9 /* data in Resources */,
+				30DFA457162289B10094270D /* Documents in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
