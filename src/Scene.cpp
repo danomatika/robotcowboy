@@ -26,26 +26,29 @@ void Scene::setup()	{
 	// set scene name
 	global.gui.setSceneName(getName());
 	
-	path = ofFilePath::getAbsolutePath(global.scenePath+getName()+"/");
+	// change the current dir to the scene directory, this allows the lua state
+	// to find local files
+	path = ofFilePath::join(global.scenePath, getName());
 	if(!ofDirectory::doesDirectoryExist(ofFilePath::getEnclosingDirectory(path))) {
 		ofLogError() << "Scene: scene path \"" << path << "\" does not exist";
 		return;
 	}
-	
-	if(chdir(path.c_str()) != 0) {
-		ofLogError() << "Scene: couldn't change directory to \"" << path << "\"";
+	else {
+		if(chdir(path.c_str()) != 0) {
+			ofLogError() << "Scene: couldn't change directory to \"" << path << "\"";
+			return;
+		}
 	}
-	//ofSetDataPathRoot(path);
 	ofLogVerbose() << "Scene: current dir: " << ofFilePath::getCurrentWorkingDirectory();
 	
 	// try to load scene
 	ofLogVerbose() << "Scene: loading scene: \"" << getName() << "\"";
-	if(ofFile::doesFileExist(path+"_main.pd")) {
-		global.audioEngine.loadPatch(path+"_main.pd");
+	if(ofFile::doesFileExist(ofFilePath::join(path, "_main.pd"))) {
+		global.audioEngine.loadPatch(ofFilePath::join(path, "_main.pd"));
 	}
 	
-	if(ofFile::doesFileExist(path+"_main.lua")) {
-		global.scriptEngine.loadScript(path+"_main.lua");
+	if(ofFile::doesFileExist(ofFilePath::join(path, "_main.lua"))) {
+		global.scriptEngine.loadScript(ofFilePath::join(path, "_main.lua"));
 	}
 
 	global.scriptEngine.lua.scriptSetup();

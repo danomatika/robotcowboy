@@ -57,19 +57,15 @@ class ScriptEngine : private ofxLuaListener {
 		
 		ofxLua lua;
 		bool sendsOscOut;
-		string bootScript;
+		string bootScript; ///< absolute path
 		
 	private:
 	
 		/// lua error callback
 		void errorReceived(string& msg);
-		
-		bool bErrorOcurred;
-		string errorMsg;
 
-		string currentScript;
+		string currentScript; ///< absolute path to current script
 
-		string writeBuffer;
-		
-		TouchEvent touchEvent; /// to use as a conversion reference
+		string writeBuffer; ///< print() & write() buffer for building messages
+		TouchEvent touchEvent; ///< to use as a conversion reference
 };

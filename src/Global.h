@@ -33,35 +33,33 @@ class Global {
 
 		/// \section Objects
 
-		AppCore *core;					///< global app pointer
+		AppCore *core;					//< global app pointer
 		
-		AudioEngine audioEngine;		///< pd wrapper
-		ScriptEngine scriptEngine;		///< lua wrapper
+		AudioEngine audioEngine;		//< pd wrapper
+		ScriptEngine scriptEngine;		//< lua wrapper
 		
-		Osc osc;			///< osc wrapper
-		Midi midi;			///< midi wrapper
-		Gui gui;			///< gui wrapper
-		Physics physics;	///< box2d wrapper
+		Osc osc;			//< osc wrapper
+		Midi midi;			//< midi wrapper
+		Gui gui;			//< gui wrapper
+		Physics physics;	//< box2d wrapper
 		
 		/// \section Variables
 		
-		/// these are set on startup
-		string dataPath;	///< absolute path to app data folder
-		string docsPath;	///< absolute path to user documents folder
-		string scenePath;	///< absolute path to user scene folder
+		string dataPath;		//< absolute path to app data folder
+		string settingsPath;	//< absolute path to user settings folder
 		
-		/// these can be changed when loading a settings file
-		ofLogLevel logLevel; ///< log level for console
+		string docsPath;		//< absolute path to user documents folder
+		string scenePath;		//< absolute path to user scene folder
+		
+		ofLogLevel logLevel;	//< log level for console
 		
 		/// \section Functions
 		
-		/// laod startup settings from a conf lua script
-		
 		/// load settings from a lua script
-		void loadSettings(string path);
+		bool loadSettings(string path);
 		
 		/// setup objects
-		void setup(const int numOutChannels, const int numInChannels,
+		bool setup(const int numOutChannels, const int numInChannels,
 				   const int sampleRate, const int ticksPerBuffer);
 		
 		/// clear all objects
@@ -69,9 +67,32 @@ class Global {
 		
 		/// reset the graphics state
 		void resetGraphics();
+		
+		/// \section Errors
+		
+		bool errorOcurred() {
+			return bErrorOcurred;
+		}
+
+		string getErrorMessage() {
+			return errorMessage;
+		}
+		
+		void setError(string msg) {
+			bErrorOcurred = true;
+			errorMessage = msg;
+		}
+		
+		void clearError() {
+			bErrorOcurred = false;
+			errorMessage = "";
+		}
 
     private:
-        
+    
+		bool bErrorOcurred; //< did some sort of error in the app ocurr?
+		string errorMessage; ///< the error message
+		
         // hide all the constructors, copy functions here
         Global(); 							// singleton constructor
         Global(Global const&);    			// not defined, not copyable

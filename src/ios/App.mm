@@ -25,25 +25,16 @@ void App::setup() {
 //	ofxiPhoneAlerts.addListener(this);
 	
 	// if you want a landscape orientation 
-	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
-	
-	ofBackground(127, 127, 127);
-	
-	// the number if libpd ticks per buffer,
-	// used to compute the audio buffer len: tpb * blocksize (always 64)
-	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
+	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	// setup OF sound stream
+	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
 	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
 	
 	// setup the app core
 	core.setup(2, 2, 44100, ticksPerBuffer);
 	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	WebServer::start([documentsDirectory UTF8String]);
-	
-	//WebServer::start(Global::instance().dataPath);
+	//WebServer::start(Global::instance().docsPath);
 }
 
 //--------------------------------------------------------------
@@ -63,8 +54,7 @@ void App::draw() {
 void App::exit() {
 	core.exit();
 	
-	
-	WebServer::stop();
+	//WebServer::stop();
 }
 
 //--------------------------------------------------------------

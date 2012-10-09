@@ -18,11 +18,7 @@
 //--------------------------------------------------------------
 ScriptEngine::ScriptEngine() {
 	currentScript = "";
-	bErrorOcurred = false;
-	errorMsg = "";
-	
 	writeBuffer = "";
-	
 	sendsOscOut = false;
 	
 	lua.addListener(this);
@@ -41,8 +37,7 @@ bool ScriptEngine::setup() {
 void ScriptEngine::clear() {
 	lua.clear();
 	currentScript = "";
-	bErrorOcurred = false;
-	errorMsg = "";
+	Global::instance().clearError();
 }
 
 //--------------------------------------------------------------
@@ -67,8 +62,7 @@ bool ScriptEngine::loadScript(string script) {
 bool ScriptEngine::reloadScript() {
 	ofLogVerbose() << "ScriptEngine: reloading script \"" << ofFilePath::getFileName(currentScript) << "\"";
 	lua.clear();
-	bErrorOcurred = false;
-	errorMsg = "";
+	Global::instance().clearError();
 	if(!setup())
 		return false;
 	lua.bind<Bindings>();
@@ -206,19 +200,9 @@ void ScriptEngine::write(const string& message) {
 	}
 }
 
-//--------------------------------------------------------------
-bool ScriptEngine::errorOcurred() {
-	return bErrorOcurred;
-}
-
-string ScriptEngine::getErrorMessage() {
-	return errorMsg;
-}
-
 // PRIVATE
 //--------------------------------------------------------------
 void ScriptEngine::errorReceived(string& msg) {
-	ofLogWarning() << "ScriptEngine: Got an error: " << msg;
-	bErrorOcurred = true;
-	errorMsg = msg;
+	ofLogWarning() << "ScriptEngine: " << msg;
+	Global::instance().setError(msg);
 }

@@ -53,8 +53,10 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	#endif
 	
 	// setup global objects
-	global.setup(numOutChannels, numInChannels,
-				 sampleRate, ticksPerBuffer);
+	if(!global.setup(numOutChannels, numInChannels, sampleRate, ticksPerBuffer)) {
+		// don't bother loading if there was a setup error
+		return;
+	}
 	
 	// set log level from config
 	ofSetLogLevel(global.logLevel);
@@ -90,11 +92,11 @@ void AppCore::draw() {
 
 	sceneManager.draw();
 	
-	if(global.scriptEngine.errorOcurred()) {
+	if(global.errorOcurred()) {
 		ofSetColor(0);
-		ofxBitmapString(11, 11) << global.scriptEngine.getErrorMessage();
+		ofxBitmapString(11, 11) << global.getErrorMessage();
 		ofSetColor(255);
-		ofxBitmapString(10, 10) << global.scriptEngine.getErrorMessage();
+		ofxBitmapString(10, 10) << global.getErrorMessage();
 	}
 	
 	global.gui.console.draw();

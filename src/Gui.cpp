@@ -14,7 +14,13 @@
 #include "AppCore.h"
 
 //--------------------------------------------------------------
-Gui::Gui() {}
+Gui::Gui() {
+	gui = NULL;
+	currentScene = NULL;
+	prevScene = NULL;
+	nextScene = NULL;
+	play = NULL;
+}
 
 //--------------------------------------------------------------
 bool Gui::setup() {
@@ -22,7 +28,7 @@ bool Gui::setup() {
 	gui = new ofxUICanvas(0, 0, ofGetWidth(), ofGetHeight());
 	gui->disableAppEventCallbacks();
 	
-	currentScene = new ofxUILabel("kaa", OFX_UI_FONT_LARGE);
+	currentScene = new ofxUILabel("No Scene", OFX_UI_FONT_LARGE);
 	prevScene = new ofxUIButton("Prev", false, 50, 50);
 	nextScene = new ofxUIButton("Next", false, 50, 50);
 	play = new ofxUIToggle("Play", false, 50, 50);
@@ -42,7 +48,8 @@ bool Gui::setup() {
 
 //--------------------------------------------------------------
 void Gui::clear() {
-	gui->exit();
+	if(gui)
+		gui->exit();
 	delete gui;
 }
 
@@ -79,17 +86,20 @@ void Gui::guiEvent(ofxUIEventArgs &e) {
 
 //--------------------------------------------------------------
 void Gui::update() {
-	gui->update();
+	if(gui)
+		gui->update();
 }
 
 //--------------------------------------------------------------
 void Gui::draw() {
-	gui->draw();
+	if(gui)
+		gui->draw();
 }
 
 //--------------------------------------------------------------
 void Gui::exit() {
-	gui->exit();
+	if(gui)
+		gui->exit();
 }
 
 //--------------------------------------------------------------

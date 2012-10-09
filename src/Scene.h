@@ -42,5 +42,5 @@ class Scene : public ofxScene {
 	
 		Global& global;
 	
-		string path;	//< path to this scene
+		string path;	//< absolute path to this scene
 };

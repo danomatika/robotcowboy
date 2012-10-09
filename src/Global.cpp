@@ -17,30 +17,96 @@ Global& Global::instance() {
 }
 
 //--------------------------------------------------------------
-void Global::setup(const int numOutChannels, const int numInChannels,
+bool Global::setup(const int numOutChannels, const int numInChannels,
 				    const int sampleRate, const int ticksPerBuffer) {
 	
+	// set dataPath here since it will change a scene is loaded
 	dataPath = ofToDataPath("", true);
 	
-	// load defaults
-	loadSettings("ka");//docsPath+"/settings.lua");
+	// settings path: ~/.robotcowboy
+	#ifndef TARGET_OF_IPHONE
+		ofDirectory settingsDir(ofFilePath::join(ofFilePath::getUserHomeDir(), ".robotcowboy"));
+	#else
+		ofDirectory settingsDir("Documents"); // should be relative to app root
+	#endif
+	if(!settingsDir.exists()) {
+		ofLogNotice() << "Global: settings directory dosen't exist, creating ...";
+		if(!settingsDir.create()) {
+			ofLogError() << "Global: couldn't create settings directory";
+			return false;
+		}
+	}
+	else if(!settingsDir.isDirectory()) {
+		ofLogError() << "Global: settings location is not a directory";
+		return false;
+	}
+	settingsPath = settingsDir.path();
 	
+	// settings file: ~/.robotcowboy/settings.lua
+	ofFile settingsFile(ofFilePath::join(settingsDir.path(), "settings.lua"));
+	if(!settingsFile.exists()) {
+		// copy defaults file
+		if(!ofFile::copyFromTo(ofFilePath::join(dataPath, "defaults.lua"), // src
+						   settingsFile.path(), // dest
+						   false, false)) { // not relative to data, don't overwrite
+			ofLogError() << "Global: couldn't copy default settings file";
+			return false;
+		}
+	}
+	
+	// load settings
+	if(!loadSettings(settingsFile.path())) {
+		// bail if problem laoding settings
+		return false;
+	}
+	
+	// documents & scene paths
+	#ifndef TARGET_OF_IPHONE
+		// set absolute paths from give nrealitve paths
+		if(!ofFilePath::isAbsolute(docsPath)) {
+			docsPath = ofFilePath::join(ofFilePath::getUserHomeDir(), docsPath); 
+		}
+		if(!ofFilePath::isAbsolute(scenePath)) {
+			scenePath = ofFilePath::join(docsPath, scenePath);
+		}
+	#else
+		// these are hardcoded on iOS since the dirs will not change
+		docsPath = "Documents";
+		scenePath = "Documents/scenes";
+	#endif
+	ofDirectory docsDir(docsPath);
+	if(!docsDir.exists()) {
+		ofLogNotice() << "Global: document directory doesn't exist, creating ...";
+		if(!docsDir.create()) {
+			ofLogError() << "Global: couldn't create documents directory";
+			return false;
+		}
+	}
+	ofDirectory sceneDir(scenePath);
+	if(!sceneDir.exists()) {
+		ofLogNotice() << "Global: scene directory doesn't exist, creating ...";
+		if(!sceneDir.create()) {
+			ofLogError() << "Global: couldn't create scene directory";
+			return false;
+		}
+	}
+	
+	ofLogVerbose() << "Global: docsPath is " << docsPath;
+	ofLogVerbose() << "Global: scenePath is " << scenePath;
+	
+	// setup modules
 	audioEngine.setup(numOutChannels, numInChannels,
 					  sampleRate, ticksPerBuffer);
 	
 	scriptEngine.setup();
-	scriptEngine.bootScript = ofToDataPath("boot.lua", true);
+	scriptEngine.bootScript = ofFilePath::join(dataPath, "boot.lua");
 	
 	osc.setup();
 	midi.setup();
 	physics.setup();
 	gui.setup();
 	
-	// get absolute paths
-	
-	if(!ofFilePath::isAbsolute(scenePath)) {
-		scenePath = ofToDataPath(scenePath+"/", true);
-	}
+	return true;
 }
 
 //--------------------------------------------------------------
@@ -56,24 +122,21 @@ void Global::clear() {
 }
 
 //--------------------------------------------------------------
-void Global::loadSettings(string path) {
+bool Global::loadSettings(string path) {
 	
 	ofxLua lua;
 	lua.init();
 	
 	// load defaults
-	if(!lua.doScript(dataPath+"/defaults.lua")) {
-		return;
+	if(!lua.doScript(path)) {
+		setError("Settings file: "+lua.getErrorMessage());
+		return false;
 	}
-	
-	// load user settings on top, if any	
-//	if(!lua.doScript(path)) {
-//		return;
-//	}
 	
 	lua.pushTable("rc");
 	lua.pushTable("settings");
 
+	docsPath = lua.getString("docsPath", docsPath);
 	scenePath = lua.getString("scenePath", scenePath);
 	logLevel = (ofLogLevel) ((int) lua.getFloat("logLevel", (int) logLevel));
 
@@ -101,6 +164,8 @@ void Global::loadSettings(string path) {
 	lua.printTable(); // print settings
 	
 	lua.popAllTables();
+	
+	return true;
 }
 
 //--------------------------------------------------------------
@@ -116,6 +181,10 @@ void Global::resetGraphics() {
 // PRIVATE
 
 //--------------------------------------------------------------
-Global::Global() : dataPath("data"), scenePath("scenes") {
+Global::Global() {
+	dataPath = "data";
+	settingsPath = ".robotcowboy";
+	docsPath = "Documents/robotcowboy";
+	scenePath = "scenes";
 	logLevel = ofGetLogLevel();
 }

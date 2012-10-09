@@ -117,11 +117,14 @@ function keyPressed(key)
 		-- add a new circle
 		local c = physics.circle()
 		c:setPhysics(1.0, 0.5, 0.5)
-		c:setup(world, app.mouseX(), app.mouseY(), 10)
+		c:setup(world, app.mouseX(), app.mouseY(), 10, 10)
 		table.insert(circles, c)
 	elseif key == string.byte("c") then
 		-- clear by setting an empty table
 		circles = {}
+		for i=1,#polygons do
+			polygons[i]:clear()
+		end
 		polygons = {}
 	end
 end
