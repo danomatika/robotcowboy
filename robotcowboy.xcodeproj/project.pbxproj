@@ -15,15 +15,12 @@
 		03ac305c546fedb7c2a7e1a8112cdafb /* b2FrictionJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = f4b51e6f303e7cff1c9150fac5480e98 /* b2FrictionJoint.cpp */; };
 		03b00dc69e00a244bf19a478a456b530 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = aeecd4c5dbd5d5bb84b9c64ad0c76170 /* loslib.c */; };
 		0546d1a38e13bd319cc9755b5ca7e1a0 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9bf3aa0d4faa89d0f8a0e545403162be /* OscReceivedElements.cpp */; };
-		06566b3965c3d35acd76cbb1f6c707a0 /* class_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = d65163fc52fd08776132a184c4b53e30 /* class_info.cpp */; };
 		066b476767e5339021ef039c540082b1 /* ldump.c in Sources */ = {isa = PBXBuildFile; fileRef = f5d8176a74845af076b6a40c4ca9e6d2 /* ldump.c */; };
 		0a57c9e6237b6b84efbab2c45ae87018 /* transf_fader.c in Sources */ = {isa = PBXBuildFile; fileRef = 9d37ba1037e4e5945819d171b6b0db6d /* transf_fader.c */; };
 		0b3021b9f11d5b67c6b3e4612f6112dc /* speedlim.c in Sources */ = {isa = PBXBuildFile; fileRef = 4a6b8555b420bd923af1241ca9b3a684 /* speedlim.c */; };
 		0b6cbde291e75b6c24fc163a8442a120 /* s_audio_dummy.c in Sources */ = {isa = PBXBuildFile; fileRef = 0aac76e01db55b6db8b1e350d10926cf /* s_audio_dummy.c */; };
 		0bfc9c20fd7e3c8d5873aa97edae7333 /* ofxMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3dd359247f3ed1550d8bb5c9d4d84f9c /* ofxMidiIn.cpp */; };
 		0c7bd977292f7d20b41df594ce4f8a70 /* b2StackAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 920cfc6d7e43eed2b7b03746cc1dde5f /* b2StackAllocator.cpp */; };
-		0cad8abb9d2e8eb89695a0ea0307ef42 /* pcall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18be9dc5379d7bc799fad27af3660e3a /* pcall.cpp */; };
-		0cbe22e1c353d7bc318e3a9bdb4c7c8d /* weak_ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6e10fbba3300a18b00da65cbde852974 /* weak_ref.cpp */; };
 		0d7f7661e98534e5ccf89f07ee4b9189 /* ofxPGMidiSourceDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 235261de16f1fe6990ee1f8704af68c1 /* ofxPGMidiSourceDelegate.mm */; };
 		0fdc448c501ab07e33dfba0ea2e0a51d /* pipelist.c in Sources */ = {isa = PBXBuildFile; fileRef = 26242f888371bb6e219e3fa8446bb139 /* pipelist.c */; };
 		101c32504223e9ad5954e447b8efba2e /* prepend_ascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 24ecf99806f45612fd260a198adffe99 /* prepend_ascii.c */; };
@@ -51,7 +48,6 @@
 		20cfd97f17cc6a9954cbf3ea19b58969 /* g_traversal.c in Sources */ = {isa = PBXBuildFile; fileRef = 3cbe3ca2da2daae314cdb49d1ce7b6b4 /* g_traversal.c */; };
 		22a83fe368c671fa8dbd5e51c2e02c66 /* b2Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = f672ebfcb4887c08bbb23527c897a3ac /* b2Math.cpp */; };
 		238ac3f1424d9198e908d4ecf5526fed /* iem_i_route.c in Sources */ = {isa = PBXBuildFile; fileRef = 77700e3c4186ae1de140344b2e0e546e /* iem_i_route.c */; };
-		243f84d22d1ddd3f19b4ac039ffc49dd /* class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 856bdbd4f02c1c848ea2e5102c9314dc /* class.cpp */; };
 		26357791493c59a0eac0444b1943de47 /* x_midi.c in Sources */ = {isa = PBXBuildFile; fileRef = ec2cd1a6f8724287799f5350649d20c7 /* x_midi.c */; };
 		26acf77456246d846a3787c373315b4e /* x_arithmetic.c in Sources */ = {isa = PBXBuildFile; fileRef = fd671a8a1eb397a37dc0dbb74e12cc6b /* x_arithmetic.c */; };
 		26dcf1352338c9d5fc325f556751f2e3 /* ldebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 4dadb4dda6a0eb0f7b762c055b46c3e6 /* ldebug.c */; };
@@ -110,6 +106,24 @@
 		3062579D16200687003D5BA9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3062579C16200686003D5BA9 /* libxml2.dylib */; };
 		3062579F1620FCC1003D5BA9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 3062579E1620FCC1003D5BA9 /* data */; };
 		3071288e8eff50d43c7b667ce4338191 /* g_toggle.c in Sources */ = {isa = PBXBuildFile; fileRef = d0e58363a990e17286a45137e4a779f5 /* g_toggle.c */; };
+		30C8E2ED16298F17003BF750 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 30C8E28A16298F17003BF750 /* LICENSE */; };
+		30C8E2EE16298F17003BF750 /* class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2DC16298F17003BF750 /* class.cpp */; };
+		30C8E2EF16298F17003BF750 /* class_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2DD16298F17003BF750 /* class_info.cpp */; };
+		30C8E2F016298F17003BF750 /* class_registry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2DE16298F17003BF750 /* class_registry.cpp */; };
+		30C8E2F116298F17003BF750 /* class_rep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2DF16298F17003BF750 /* class_rep.cpp */; };
+		30C8E2F216298F17003BF750 /* create_class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E016298F17003BF750 /* create_class.cpp */; };
+		30C8E2F316298F17003BF750 /* error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E116298F17003BF750 /* error.cpp */; };
+		30C8E2F416298F17003BF750 /* exception_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E216298F17003BF750 /* exception_handler.cpp */; };
+		30C8E2F516298F17003BF750 /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E316298F17003BF750 /* function.cpp */; };
+		30C8E2F616298F17003BF750 /* inheritance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E416298F17003BF750 /* inheritance.cpp */; };
+		30C8E2F716298F17003BF750 /* link_compatibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E516298F17003BF750 /* link_compatibility.cpp */; };
+		30C8E2F816298F17003BF750 /* object_rep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E616298F17003BF750 /* object_rep.cpp */; };
+		30C8E2F916298F17003BF750 /* open.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E716298F17003BF750 /* open.cpp */; };
+		30C8E2FA16298F17003BF750 /* pcall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E816298F17003BF750 /* pcall.cpp */; };
+		30C8E2FB16298F17003BF750 /* scope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2E916298F17003BF750 /* scope.cpp */; };
+		30C8E2FC16298F17003BF750 /* stack_content_by_name.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2EA16298F17003BF750 /* stack_content_by_name.cpp */; };
+		30C8E2FD16298F17003BF750 /* weak_ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2EB16298F17003BF750 /* weak_ref.cpp */; };
+		30C8E2FE16298F17003BF750 /* wrapper_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30C8E2EC16298F17003BF750 /* wrapper_base.cpp */; };
 		30DFA457162289B10094270D /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 30DFA456162289B10094270D /* Documents */; };
 		30c9649631f10f53a2d1c4928fca8c74 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1cf27802fbf26f2ccde62c9f6ecfbdd3 /* Physics.cpp */; };
 		311e822ee7c77f819f8002aa68e11523 /* unsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = ea6867e1325c02f567cc5745fd4ee614 /* unsymbol.c */; };
@@ -132,9 +146,7 @@
 		4250163735d2e5d8b0cf80f6b976ebe8 /* x_qlist.c in Sources */ = {isa = PBXBuildFile; fileRef = f227b3b3966bde2777fc48c5b93d8994 /* x_qlist.c */; };
 		4483b7bbed83eac2adc0207ca7938419 /* udpreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = d64612145ad4033fae0b9b166996201f /* udpreceive.c */; };
 		48ba1fd920a2e1c29e78ece019e21e86 /* g_bang.c in Sources */ = {isa = PBXBuildFile; fileRef = 699e086443c1dddad94d1a1f91e5cd26 /* g_bang.c */; };
-		49585df09aec0c42a77c2ec101fe865e /* open.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8c02e6988e83175240e52f8353f38db9 /* open.cpp */; };
 		4ae612a1fcb05cb0dfe882188490d4ce /* PdTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01fd79f5c1d00d28d8b1efeb175da998 /* PdTypes.cpp */; };
-		4c5ba54e82f62b1f0ab8347374d17161 /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314f3fba7f709698498672ccba9054ea /* function.cpp */; };
 		4cc0fd96de77ff40bbcf8dd893ae88b8 /* del_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3ec06dc33990374e7508e4ea9cf41d28 /* del_impl.cpp */; };
 		510cafe035e576a4e1502d52c11243bb /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = e6def695b88ba5faaceaa93785a12fd9 /* UdpSocket.cpp */; };
 		5146aeb9e58fb1b388820c2ae900051e /* b2WorldCallbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 561370923a365a4a9dc9fb8aa1c415d5 /* b2WorldCallbacks.cpp */; };
@@ -148,12 +160,10 @@
 		5864ad82e20f15536d054ea319473de3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = df49d76c45d5db505a234880104e4dc7 /* ofxOscMessage.cpp */; };
 		594106e10a4a694dab7160c5611c41fc /* d_global.c in Sources */ = {isa = PBXBuildFile; fileRef = b12f8ea2b0b96dc86df6685549d94dd7 /* d_global.c */; };
 		596d77c7a94daeb886daf7a5b9fbaf3c /* iem_symtoalist.c in Sources */ = {isa = PBXBuildFile; fileRef = 347f3587b604d3ea688280e6c98aec0b /* iem_symtoalist.c */; };
-		59e15068dbd6923fd525adba411fe31b /* stack_content_by_name.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 935e4b45c46d937839e07939e2141ab9 /* stack_content_by_name.cpp */; };
 		5b371704ae35181ad62ed9ac010121bc /* g_template.c in Sources */ = {isa = PBXBuildFile; fileRef = 85f7b193da07f11c4240e5a3b2d6f466 /* g_template.c */; };
 		5d77f8bf23dde33daf1d70fa65d33b6b /* lstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 98d6c71938382211b23f22b07558e069 /* lstring.c */; };
 		5e2f575841624549395cc4417f5afd68 /* x_misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 2e17efff2aba71f142a3b477155e5705 /* x_misc.c */; };
 		5f9a42bb0d0e7be2a7f62fdb8d14ab04 /* ofxTransformer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75ff1054d5948d7eddd30e442ed0d1c7 /* ofxTransformer.cpp */; };
-		6070cfa70b0569c6c3a9f581ac854525 /* error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7f742b5ccd6492b0d8729abd85e16a19 /* error.cpp */; };
 		61e0a99bc255f8d9162b680a33a1ac06 /* LFO_noise~.c in Sources */ = {isa = PBXBuildFile; fileRef = 2c0a4d9c1dbcc2781d3ebefcc7a66a6d /* LFO_noise~.c */; };
 		62545d179c94265ca1389d4ac8d694a5 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */; };
 		63b1660025f48d5c77c61ef104fe487c /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9dd1ce9757a3468afdab04045b994403 /* PGMidi.mm */; };
@@ -205,7 +215,6 @@
 		879a251454401bc0b6e4f238fc63135b /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = d9bffbbf4cc43dee890b3c3e8f7d792c /* OscTypes.cpp */; };
 		87c5c3ded336b7bb4a5d06d6b0f522d3 /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84b1b4a3e366385f8eeecd619dfefd0b /* b2WeldJoint.cpp */; };
 		8951d204049634ced0d19011c641e67b /* receive2list.c in Sources */ = {isa = PBXBuildFile; fileRef = 523bc1995caa17c6f820de22003cf932 /* receive2list.c */; };
-		8976c203fbe7b7520051bcde772dabef /* class_rep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = db09d05bb8eb0ae9ca1243e381162cd0 /* class_rep.cpp */; };
 		8cebccd3e6bcec2633e16b0e12b60468 /* x_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 8d956fd1e9efb9b6d754e6974de1db06 /* x_net.c */; };
 		8ee512801acb2986d991a42799d6b559 /* g_readwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 3327e747c56e4d1dbefc8b8f5b423470 /* g_readwrite.c */; };
 		8f5205aef8861ef234f0651aba6be2ee /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292bfc87a0144bd32c66f3adb20 /* ofxOscSender.cpp */; };
@@ -214,11 +223,9 @@
 		91f3275c84c1a2cd22fda0e66e49c853 /* lcode.c in Sources */ = {isa = PBXBuildFile; fileRef = 6248457154cf5abbe620577c78ba8048 /* lcode.c */; };
 		923e842c81df4e29ab524453ca3444a7 /* parentdollarzero.c in Sources */ = {isa = PBXBuildFile; fileRef = f8fb3a9e742b29c34a103d1c1564c853 /* parentdollarzero.c */; };
 		92f906395ad575bfc6bacdfe82f82e9a /* iem_route.c in Sources */ = {isa = PBXBuildFile; fileRef = 7f0b79b6df8f6fa68e369992845402cf /* iem_route.c */; };
-		935b8668671d0f5c7f51e98d92975442 /* class_registry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09d3213a9940ad9fb8875a1d916f3772 /* class_registry.cpp */; };
 		9446b4ca38439f15d7529e06d3e55b68 /* udpsend~.c in Sources */ = {isa = PBXBuildFile; fileRef = 2cf54e522eec58cbd269bb8916f13cc3 /* udpsend~.c */; };
 		981ea7c2357295ae8501f4c650fd5c84 /* b2PolygonShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = cc3fcae32b28b52708484dc5d6cfcbb1 /* b2PolygonShape.cpp */; };
 		99b44fd0c82e0862c33d05c7bcf0b901 /* s_path.c in Sources */ = {isa = PBXBuildFile; fileRef = 7a2aac13774f90d8ae1ab237d1747118 /* s_path.c */; };
-		99e6b6062af77dd1d863263994e958d8 /* scope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = d1aec233a4326eb443d3e248fe28bb21 /* scope.cpp */; };
 		9c1751b83cd88c7af84a1ba33ed675d7 /* wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 6c61a91e2e73c10145e3347ceb8062a2 /* wrap.c */; };
 		9c2dd51deba93269648ec013fabdbd4b /* g_array.c in Sources */ = {isa = PBXBuildFile; fileRef = e932d4ae38cbbeb093294c7269ca683d /* g_array.c */; };
 		9c62065bbbc072242af6965a91830ffd /* m_atom.c in Sources */ = {isa = PBXBuildFile; fileRef = d3504a489669607540b9cbe6ab22efb8 /* m_atom.c */; };
@@ -245,7 +252,6 @@
 		a84241e7eda642b44d4f4375ce68c690 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 64bcb1d7c71e2f2e5923315c0c13cb47 /* lzio.c */; };
 		a9fd1a53eb297012cc4b8d1fd79158c5 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = d0103c21d539ed0e9bf073b77886ef80 /* lvm.c */; };
 		aac5465761fea73d844aae8c49b43cbb /* ltable.c in Sources */ = {isa = PBXBuildFile; fileRef = 3bcb9cfc13d0208943688ee09475bdb7 /* ltable.c */; };
-		ab0260e6d8d14a324b832f33f6079337 /* object_rep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = da5b2381c04ead156500bf0ae29d5f0f /* object_rep.cpp */; };
 		ab6a76cbcda20e8775ec745ec4fe47cb /* d_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 696f56af39e0cfdf60f5197459426bc1 /* d_fft.c */; };
 		ac527216645d66921fb3e36f669df420 /* b2World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = bccd69f7be28da5483cc6db59fca798a /* b2World.cpp */; };
 		ac5a3d9e6c3e12122c80f404c3dedf69 /* b2Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076e021c881963ff378f36ad42d37173 /* b2Collision.cpp */; };
@@ -269,7 +275,6 @@
 		bf5f042e9a1d0840b6f4b04b1a1bbcf6 /* float24.c in Sources */ = {isa = PBXBuildFile; fileRef = da6e114d6063f525c4e574316329a6ed /* float24.c */; };
 		bfd2a0eebe3b4153659ec355abca9208 /* b2Contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = bbca857da9c5f92bf720a6c8461c0c07 /* b2Contact.cpp */; };
 		c0410cbbfa95ecd4c7856c71cb035d80 /* protect_against_open.c in Sources */ = {isa = PBXBuildFile; fileRef = 68063b1526793cf39e410f2f35a875e4 /* protect_against_open.c */; };
-		c0bc9f4227f9b5d1a1f2cfad01264632 /* inheritance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = f9232b8c877a7e23d9a626398f79cb7b /* inheritance.cpp */; };
 		c37442d8ec1cc9a0cc12c05d2317732e /* m_sched.c in Sources */ = {isa = PBXBuildFile; fileRef = e81103ebddcafc22cde1beda080a5e2d /* m_sched.c */; };
 		c3cab9d6240089ebed008bb8b6356078 /* lmathlib.c in Sources */ = {isa = PBXBuildFile; fileRef = acb884dcf7e7650e0714573a9a384e40 /* lmathlib.c */; };
 		c3d8ef14a387ea959014ad91674b22c5 /* b2ContactManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14f573eb8a3c9d93203e1f205fee0766 /* b2ContactManager.cpp */; };
@@ -285,7 +290,6 @@
 		cb503b33759f22a302b8fc6e1c86d94e /* b2Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52fd632883052641c31c9444cbf7467f /* b2Settings.cpp */; };
 		cb6daea8ee562cffa503375d20b01742 /* ofxLua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = dc94311c7cebbf025eab00870e4f1d06 /* ofxLua.cpp */; };
 		cd4464977ce801f17c7b38bdd3f65b62 /* g_all_guis.c in Sources */ = {isa = PBXBuildFile; fileRef = b664d636b26bc930a7ecabccca0529bf /* g_all_guis.c */; };
-		cf038e70832d08743ae3111e3eacde47 /* exception_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63a3baa3f674b5fbad55d9316510f239 /* exception_handler.cpp */; };
 		cf62535cd1ea828b2268977259fce84e /* linit.c in Sources */ = {isa = PBXBuildFile; fileRef = 098afd494eb5e0e48c89fa8f262872b0 /* linit.c */; };
 		d1343e5b5dde4bed37550225ea42b3e5 /* d_osc.c in Sources */ = {isa = PBXBuildFile; fileRef = 622b56664e2c5c89175655d363d5c873 /* d_osc.c */; };
 		d17d585aeaf6d4e58704ce94619a39af /* iem_sel_any.c in Sources */ = {isa = PBXBuildFile; fileRef = d2da2c0437707d689dac0667ba4eec9a /* iem_sel_any.c */; };
@@ -301,7 +305,6 @@
 		da4c6c0b47c257f85cadb5ce6b6f929a /* ltablib.c in Sources */ = {isa = PBXBuildFile; fileRef = f69a610a8a919360214cec81d87a7029 /* ltablib.c */; };
 		da846513da696b1e8921bbc376393b74 /* b2CircleShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7414da8ee4de1570c05c5ca842cd585e /* b2CircleShape.cpp */; };
 		dbd889f3fd3660adc66ff3d389b4267a /* d_math.c in Sources */ = {isa = PBXBuildFile; fileRef = 4f0a26bd0cb4aec4502c7979688bc78a /* d_math.c */; };
-		ddeb456962f57d85a6664c7cb3f8ce3a /* create_class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ff3c1a3c98be02ffca7720da2d59f6e /* create_class.cpp */; };
 		de4bca9b3ebfaeeccfc92aa1a49e9316 /* d_fftroutine.c in Sources */ = {isa = PBXBuildFile; fileRef = 8f752d533061c3745ffb0a71e2ad5501 /* d_fftroutine.c */; };
 		dfacec3a1e9d23315321d7eaa48bd2b5 /* ofxBox2dPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = f3392d405a715a07dcc8fac21d1cac32 /* ofxBox2dPolygon.cpp */; };
 		e149be56ca934724e52a0ea080e2d50a /* x_list.c in Sources */ = {isa = PBXBuildFile; fileRef = bfc74d9d7d9b55f4b6c21724c58830f0 /* x_list.c */; };
@@ -322,7 +325,6 @@
 		eb77ea7cecb60bea4671ebcd6746e311 /* s_libpdmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3894acc5797520f448e1f6e80b3106ed /* s_libpdmidi.c */; };
 		ec057b6090f435e9ace747d34c4241d4 /* lundump.c in Sources */ = {isa = PBXBuildFile; fileRef = fa60eb6838024b87283d24f3e3c9f5c8 /* lundump.c */; };
 		f0c88590f24448ace5c1032cc4b22481 /* s_inter.c in Sources */ = {isa = PBXBuildFile; fileRef = 469d077e9a2e9f1ea3f57faf1fabfc3e /* s_inter.c */; };
-		f27ed89be04830b09c1dcd5b73b7b5ad /* link_compatibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 526a5595fe595c43803c1765e204acbe /* link_compatibility.cpp */; };
 		f2aba376362f9091ee6c019ebbfb3575 /* mergefilename.c in Sources */ = {isa = PBXBuildFile; fileRef = 86c0c927ad7d970e8302b15dfb1c05b9 /* mergefilename.c */; };
 		f2ff2f9d6699b4b328cb6be3b5b250e9 /* ofxBox2dBaseShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3b2388bee23f8a1dd0aadbc6a898cc3c /* ofxBox2dBaseShape.cpp */; };
 		f31b87e70b2b89573c34fdb0c7580aa4 /* d_misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 2acd83545e5127b926b5d494153031c8 /* d_misc.c */; };
@@ -332,7 +334,6 @@
 		f763afbd9b38041654213ca0e45b21c7 /* g_vslider.c in Sources */ = {isa = PBXBuildFile; fileRef = 2ea81956c5117a181bddadeeef0688a0 /* g_vslider.c */; };
 		f924067e333ec0ac5f5e27d15f7a10e5 /* iem_receive.c in Sources */ = {isa = PBXBuildFile; fileRef = 5782ebc7ca5bec9ead229e937461e1f2 /* iem_receive.c */; };
 		fa7300bac71dac1abaf6ee151b67c52e /* b2Fixture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 774ddd1b3f05d3fdf0d37794ec73b989 /* b2Fixture.cpp */; };
-		fb7cb213a286b67f18db38b478cdb9e0 /* wrapper_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1ba878c81289178f7bf6e44359ac8218 /* wrapper_base.cpp */; };
 		fbd702fbb755d1ed2e480bd2ceaaec17 /* dollarg.c in Sources */ = {isa = PBXBuildFile; fileRef = b992baedf8e14ea6e39c31643f5ec6b1 /* dollarg.c */; };
 		fee636805444d5af0370bdec7575d233 /* post_netreceive.c in Sources */ = {isa = PBXBuildFile; fileRef = 55c46869e67225b9c0e8b29fb51f71bf /* post_netreceive.c */; };
 /* End PBXBuildFile section */
@@ -375,7 +376,6 @@
 		01083bd4b9b55159826034cc86144e17 /* lopcodes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lopcodes.h; path = ../../../addons/ofxLua/src/lua/lopcodes.h; sourceTree = SOURCE_ROOT; };
 		01b3cf190f24aa8b9db737edc2ff5b71 /* d_fft_mayer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_fft_mayer.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_fft_mayer.c"; sourceTree = SOURCE_ROOT; };
 		01fd79f5c1d00d28d8b1efeb175da998 /* PdTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = PdTypes.cpp; path = ../../../addons/ofxPd/src/pd/cpp/PdTypes.cpp; sourceTree = SOURCE_ROOT; };
-		023de0d47941c90873bc18bc6a8d1a79 /* from_stack.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = from_stack.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/from_stack.hpp; sourceTree = SOURCE_ROOT; };
 		02677fa320d6c63b228a7562514b9d55 /* ofxUIWidgetWithLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIWidgetWithLabel.h; path = ../../../addons/ofxUI/src/ofxUIWidgetWithLabel.h; sourceTree = SOURCE_ROOT; };
 		029684cf678f70f6d3537a29773654a6 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		03657267728295d65742776d12cc7d4c /* lstate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lstate.h; path = ../../../addons/ofxLua/src/lua/lstate.h; sourceTree = SOURCE_ROOT; };
@@ -390,15 +390,11 @@
 		08f0ccdb0f246ca99d3937a8209496a2 /* iemlib2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iemlib2.c; path = src/externals/iemlib/iemlib2.c; sourceTree = SOURCE_ROOT; };
 		097fce1bd109d98ecb276d325ceb7f8c /* ofxBitmapString.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBitmapString.h; path = ../../../addons/ofxAppUtils/src/ofxBitmapString.h; sourceTree = SOURCE_ROOT; };
 		098afd494eb5e0e48c89fa8f262872b0 /* linit.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = linit.c; path = ../../../addons/ofxLua/src/lua/linit.c; sourceTree = SOURCE_ROOT; };
-		09d3213a9940ad9fb8875a1d916f3772 /* class_registry.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = class_registry.cpp; path = ../../../addons/ofxLua/src/luabind/src/class_registry.cpp; sourceTree = SOURCE_ROOT; };
-		0a4b125ba724c9b6fc18cc68629fb3b8 /* function.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = function.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/function.hpp; sourceTree = SOURCE_ROOT; };
 		0aac76e01db55b6db8b1e350d10926cf /* s_audio_dummy.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_audio_dummy.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_audio_dummy.c"; sourceTree = SOURCE_ROOT; };
 		0bd18c418e3124bf12bbf3b5e0d1deac /* Graphics.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Graphics.h; path = src/bindings/Graphics.h; sourceTree = SOURCE_ROOT; };
 		0bf8f76e1fd3014f351621945bf6422d /* m_class.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_class.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_class.c"; sourceTree = SOURCE_ROOT; };
 		0c853cbb2720455f347ddb39a0d1f61d /* Bindings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Bindings.h; path = src/bindings/Bindings.h; sourceTree = SOURCE_ROOT; };
-		0ca72e1b03dbf980fe5ea72679e5bd86 /* luabind.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = luabind.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/luabind.hpp; sourceTree = SOURCE_ROOT; };
 		0cd7e22b01780b878cdba02d37194a6c /* ofxQuadWarper.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxQuadWarper.h; path = ../../../addons/ofxAppUtils/src/ofxQuadWarper.h; sourceTree = SOURCE_ROOT; };
-		0cf44d4d044c76d4ac83aa0cc5df85d8 /* compute_score.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = compute_score.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/compute_score.hpp; sourceTree = SOURCE_ROOT; };
 		0d20fab5be82ddd150240c1517c31468 /* PGMidiAllSources.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PGMidiAllSources.h; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGMidiAllSources.h; sourceTree = SOURCE_ROOT; };
 		0eb37553d87229d445f9feb25d27b34d /* LICENCE.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = LICENCE.txt; path = src/externals/iemlib/LICENCE.txt; sourceTree = SOURCE_ROOT; };
 		0f9686e96127c79506700dd143940e37 /* Gui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Gui.cpp; path = src/Gui.cpp; sourceTree = SOURCE_ROOT; };
@@ -416,16 +412,11 @@
 		15cd42111d8d68f3d225da28407e48ab /* PGMidiFind.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PGMidiFind.h; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGMidiFind.h; sourceTree = SOURCE_ROOT; };
 		15e69017b5db282ef100ee15e7bce594 /* ofxUICustomImageButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUICustomImageButton.h; path = ../../../addons/ofxUI/src/ofxUICustomImageButton.h; sourceTree = SOURCE_ROOT; };
 		17177733c8ab60d9ddde9850062e8032 /* b2FrictionJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2FrictionJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2FrictionJoint.h; sourceTree = SOURCE_ROOT; };
-		1817fc3b8661b54b359b8c60d04731bd /* raw_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = raw_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/raw_policy.hpp; sourceTree = SOURCE_ROOT; };
-		18be9dc5379d7bc799fad27af3660e3a /* pcall.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = pcall.cpp; path = ../../../addons/ofxLua/src/luabind/src/pcall.cpp; sourceTree = SOURCE_ROOT; };
 		1902452f5e510a2dbc1e5bd6d62db983 /* ofxUIMultiImageToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIMultiImageToggle.h; path = ../../../addons/ofxUI/src/ofxUIMultiImageToggle.h; sourceTree = SOURCE_ROOT; };
 		195129592521aa26628ba6ce734f9f29 /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Scene.h; path = src/Scene.h; sourceTree = SOURCE_ROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* robotcowboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = robotcowboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		1a212f1eb11eb1ca870abc70a3c33d97 /* operator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = operator.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/operator.hpp; sourceTree = SOURCE_ROOT; };
-		1b091f5ce9f45182df2013084d6edffc /* is_indirect_const.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = is_indirect_const.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/is_indirect_const.hpp; sourceTree = SOURCE_ROOT; };
-		1ba878c81289178f7bf6e44359ac8218 /* wrapper_base.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = wrapper_base.cpp; path = ../../../addons/ofxLua/src/luabind/src/wrapper_base.cpp; sourceTree = SOURCE_ROOT; };
 		1c782441c9c9a9788d754d6255446c05 /* notes.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = notes.txt; path = "../../../addons/ofxPd/src/pd/pure-data/extra/pd~/notes.txt"; sourceTree = SOURCE_ROOT; };
 		1cf27802fbf26f2ccde62c9f6ecfbdd3 /* Physics.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Physics.cpp; path = src/Physics.cpp; sourceTree = SOURCE_ROOT; };
 		1d96594eb6bce7c4a6758e77b4799a32 /* b2PolygonShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2PolygonShape.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2PolygonShape.h; sourceTree = SOURCE_ROOT; };
@@ -448,18 +439,14 @@
 		23880c34b8a1e1a2ccf35dd6c60621d9 /* aspeedlim.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = aspeedlim.c; path = src/externals/iemlib/aspeedlim.c; sourceTree = SOURCE_ROOT; };
 		23b9de5a0b1db1986c2ddcd042c83a34 /* iem_pbank_csv.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_pbank_csv.c; path = src/externals/iemlib/iem_pbank_csv.c; sourceTree = SOURCE_ROOT; };
 		240d6c0514e5791af1df31451f7df5e4 /* m_pd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = m_pd.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_pd.h"; sourceTree = SOURCE_ROOT; };
-		243a92ea4e2379fc01bfe70e4343ce03 /* shared_ptr_converter.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = shared_ptr_converter.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/shared_ptr_converter.hpp; sourceTree = SOURCE_ROOT; };
 		2463962449bac63c71ff71ce967cbc26 /* complex-mod~.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "complex-mod~.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/complex-mod~.pd"; sourceTree = SOURCE_ROOT; };
 		24ecf99806f45612fd260a198adffe99 /* prepend_ascii.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = prepend_ascii.c; path = src/externals/iemlib/prepend_ascii.c; sourceTree = SOURCE_ROOT; };
 		24f38ed76a59ef7566000c8420e783df /* tcpreceive.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = tcpreceive.c; path = src/externals/mrpeach/tcpreceive.c; sourceTree = SOURCE_ROOT; };
-		25c5d0953a5bad60b3f86003cd867e33 /* object_rep.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = object_rep.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/object_rep.hpp; sourceTree = SOURCE_ROOT; };
-		2611ceb12b1b9b4d962e4593b5abad46 /* constructor.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = constructor.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/constructor.hpp; sourceTree = SOURCE_ROOT; };
 		26242f888371bb6e219e3fa8446bb139 /* pipelist.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = pipelist.c; path = src/externals/mrpeach/pipelist.c; sourceTree = SOURCE_ROOT; };
 		26392d1501441535e6a35ef1a41ced1a /* Gui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Gui.h; path = src/Gui.h; sourceTree = SOURCE_ROOT; };
 		27de7fcaef0e5c507a533741d6501460 /* ldo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = ldo.c; path = ../../../addons/ofxLua/src/lua/ldo.c; sourceTree = SOURCE_ROOT; };
 		281abf2c199753345c476f1a16fa3caf /* lmem.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lmem.c; path = ../../../addons/ofxLua/src/lua/lmem.c; sourceTree = SOURCE_ROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2a190d6e419edc1d4ff5d1c78e6a6f33 /* open.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = open.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/open.hpp; sourceTree = SOURCE_ROOT; };
 		2acd83545e5127b926b5d494153031c8 /* d_misc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_misc.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_misc.c"; sourceTree = SOURCE_ROOT; };
 		2ae0767c7a8932bd07116aba0b9af0c7 /* Physics.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Physics.h; path = src/bindings/Physics.h; sourceTree = SOURCE_ROOT; };
 		2b21931e67c9313564b1311c9c43113d /* modulo_counter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = modulo_counter.c; path = src/externals/iemlib/modulo_counter.c; sourceTree = SOURCE_ROOT; };
@@ -553,9 +540,104 @@
 		3062579A1620065B003D5BA9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3062579C16200686003D5BA9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3062579E1620FCC1003D5BA9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
+		30C8E28A16298F17003BF750 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		30C8E28C16298F17003BF750 /* adopt_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = adopt_policy.hpp; sourceTree = "<group>"; };
+		30C8E28D16298F17003BF750 /* back_reference.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = back_reference.hpp; sourceTree = "<group>"; };
+		30C8E28E16298F17003BF750 /* back_reference_fwd.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = back_reference_fwd.hpp; sourceTree = "<group>"; };
+		30C8E28F16298F17003BF750 /* class.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = class.hpp; sourceTree = "<group>"; };
+		30C8E29016298F17003BF750 /* class_info.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = class_info.hpp; sourceTree = "<group>"; };
+		30C8E29116298F17003BF750 /* config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = config.hpp; sourceTree = "<group>"; };
+		30C8E29216298F17003BF750 /* container_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = container_policy.hpp; sourceTree = "<group>"; };
+		30C8E29316298F17003BF750 /* copy_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = copy_policy.hpp; sourceTree = "<group>"; };
+		30C8E29416298F17003BF750 /* dependency_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dependency_policy.hpp; sourceTree = "<group>"; };
+		30C8E29616298F17003BF750 /* call.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = call.hpp; sourceTree = "<group>"; };
+		30C8E29716298F17003BF750 /* call_0x.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = call_0x.hpp; sourceTree = "<group>"; };
+		30C8E29816298F17003BF750 /* call_function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = call_function.hpp; sourceTree = "<group>"; };
+		30C8E29916298F17003BF750 /* call_member.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = call_member.hpp; sourceTree = "<group>"; };
+		30C8E29A16298F17003BF750 /* call_operator_iterate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = call_operator_iterate.hpp; sourceTree = "<group>"; };
+		30C8E29B16298F17003BF750 /* class_registry.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = class_registry.hpp; sourceTree = "<group>"; };
+		30C8E29C16298F17003BF750 /* class_rep.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = class_rep.hpp; sourceTree = "<group>"; };
+		30C8E29D16298F17003BF750 /* constructor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = constructor.hpp; sourceTree = "<group>"; };
+		30C8E29E16298F17003BF750 /* conversion_storage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = conversion_storage.hpp; sourceTree = "<group>"; };
+		30C8E29F16298F17003BF750 /* convert_to_lua.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = convert_to_lua.hpp; sourceTree = "<group>"; };
+		30C8E2A016298F17003BF750 /* debug.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = debug.hpp; sourceTree = "<group>"; };
+		30C8E2A116298F17003BF750 /* decorate_type.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = decorate_type.hpp; sourceTree = "<group>"; };
+		30C8E2A216298F17003BF750 /* deduce_signature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = deduce_signature.hpp; sourceTree = "<group>"; };
+		30C8E2A316298F17003BF750 /* enum_maker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = enum_maker.hpp; sourceTree = "<group>"; };
+		30C8E2A416298F17003BF750 /* format_signature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = format_signature.hpp; sourceTree = "<group>"; };
+		30C8E2A516298F17003BF750 /* garbage_collector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = garbage_collector.hpp; sourceTree = "<group>"; };
+		30C8E2A616298F17003BF750 /* has_get_pointer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = has_get_pointer.hpp; sourceTree = "<group>"; };
+		30C8E2A716298F17003BF750 /* inheritance.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = inheritance.hpp; sourceTree = "<group>"; };
+		30C8E2A816298F17003BF750 /* instance_holder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = instance_holder.hpp; sourceTree = "<group>"; };
+		30C8E2A916298F17003BF750 /* link_compatibility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = link_compatibility.hpp; sourceTree = "<group>"; };
+		30C8E2AA16298F17003BF750 /* make_instance.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = make_instance.hpp; sourceTree = "<group>"; };
+		30C8E2AB16298F17003BF750 /* most_derived.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = most_derived.hpp; sourceTree = "<group>"; };
+		30C8E2AC16298F17003BF750 /* object_call.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object_call.hpp; sourceTree = "<group>"; };
+		30C8E2AD16298F17003BF750 /* object_rep.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object_rep.hpp; sourceTree = "<group>"; };
+		30C8E2AE16298F17003BF750 /* open.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = open.hpp; sourceTree = "<group>"; };
+		30C8E2AF16298F17003BF750 /* operator_id.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = operator_id.hpp; sourceTree = "<group>"; };
+		30C8E2B016298F17003BF750 /* other.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = other.hpp; sourceTree = "<group>"; };
+		30C8E2B116298F17003BF750 /* pcall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pcall.hpp; sourceTree = "<group>"; };
+		30C8E2B216298F17003BF750 /* pointee_sizeof.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pointee_sizeof.hpp; sourceTree = "<group>"; };
+		30C8E2B316298F17003BF750 /* pointee_typeid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pointee_typeid.hpp; sourceTree = "<group>"; };
+		30C8E2B416298F17003BF750 /* policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = policy.hpp; sourceTree = "<group>"; };
+		30C8E2B516298F17003BF750 /* primitives.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = primitives.hpp; sourceTree = "<group>"; };
+		30C8E2B616298F17003BF750 /* property.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = property.hpp; sourceTree = "<group>"; };
+		30C8E2B716298F17003BF750 /* ref.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ref.hpp; sourceTree = "<group>"; };
+		30C8E2B816298F17003BF750 /* signature_match.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = signature_match.hpp; sourceTree = "<group>"; };
+		30C8E2B916298F17003BF750 /* stack_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stack_utils.hpp; sourceTree = "<group>"; };
+		30C8E2BA16298F17003BF750 /* typetraits.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = typetraits.hpp; sourceTree = "<group>"; };
+		30C8E2BB16298F17003BF750 /* yes_no.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = yes_no.hpp; sourceTree = "<group>"; };
+		30C8E2BC16298F17003BF750 /* discard_result_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = discard_result_policy.hpp; sourceTree = "<group>"; };
+		30C8E2BD16298F17003BF750 /* error.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = error.hpp; sourceTree = "<group>"; };
+		30C8E2BE16298F17003BF750 /* exception_handler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = exception_handler.hpp; sourceTree = "<group>"; };
+		30C8E2BF16298F17003BF750 /* from_stack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = from_stack.hpp; sourceTree = "<group>"; };
+		30C8E2C016298F17003BF750 /* function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = function.hpp; sourceTree = "<group>"; };
+		30C8E2C116298F17003BF750 /* get_main_thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = get_main_thread.hpp; sourceTree = "<group>"; };
+		30C8E2C216298F17003BF750 /* get_pointer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = get_pointer.hpp; sourceTree = "<group>"; };
+		30C8E2C316298F17003BF750 /* handle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = handle.hpp; sourceTree = "<group>"; };
+		30C8E2C416298F17003BF750 /* iterator_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = iterator_policy.hpp; sourceTree = "<group>"; };
+		30C8E2C516298F17003BF750 /* lua_include.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_include.hpp; sourceTree = "<group>"; };
+		30C8E2C616298F17003BF750 /* luabind.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luabind.hpp; sourceTree = "<group>"; };
+		30C8E2C716298F17003BF750 /* make_function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = make_function.hpp; sourceTree = "<group>"; };
+		30C8E2C816298F17003BF750 /* nil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nil.hpp; sourceTree = "<group>"; };
+		30C8E2C916298F17003BF750 /* no_dependency.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = no_dependency.hpp; sourceTree = "<group>"; };
+		30C8E2CA16298F17003BF750 /* object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
+		30C8E2CB16298F17003BF750 /* open.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = open.hpp; sourceTree = "<group>"; };
+		30C8E2CC16298F17003BF750 /* operator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = operator.hpp; sourceTree = "<group>"; };
+		30C8E2CD16298F17003BF750 /* out_value_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = out_value_policy.hpp; sourceTree = "<group>"; };
+		30C8E2CE16298F17003BF750 /* prefix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = prefix.hpp; sourceTree = "<group>"; };
+		30C8E2CF16298F17003BF750 /* raw_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = raw_policy.hpp; sourceTree = "<group>"; };
+		30C8E2D016298F17003BF750 /* return_reference_to_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = return_reference_to_policy.hpp; sourceTree = "<group>"; };
+		30C8E2D116298F17003BF750 /* scope.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = scope.hpp; sourceTree = "<group>"; };
+		30C8E2D216298F17003BF750 /* shared_ptr_converter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shared_ptr_converter.hpp; sourceTree = "<group>"; };
+		30C8E2D316298F17003BF750 /* tag_function.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tag_function.hpp; sourceTree = "<group>"; };
+		30C8E2D416298F17003BF750 /* typeid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = typeid.hpp; sourceTree = "<group>"; };
+		30C8E2D516298F17003BF750 /* value_wrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = value_wrapper.hpp; sourceTree = "<group>"; };
+		30C8E2D616298F17003BF750 /* vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector.hpp; sourceTree = "<group>"; };
+		30C8E2D716298F17003BF750 /* version.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = version.hpp; sourceTree = "<group>"; };
+		30C8E2D816298F17003BF750 /* weak_ref.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = weak_ref.hpp; sourceTree = "<group>"; };
+		30C8E2D916298F17003BF750 /* wrapper_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wrapper_base.hpp; sourceTree = "<group>"; };
+		30C8E2DA16298F17003BF750 /* yield_policy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = yield_policy.hpp; sourceTree = "<group>"; };
+		30C8E2DC16298F17003BF750 /* class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class.cpp; sourceTree = "<group>"; };
+		30C8E2DD16298F17003BF750 /* class_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class_info.cpp; sourceTree = "<group>"; };
+		30C8E2DE16298F17003BF750 /* class_registry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class_registry.cpp; sourceTree = "<group>"; };
+		30C8E2DF16298F17003BF750 /* class_rep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = class_rep.cpp; sourceTree = "<group>"; };
+		30C8E2E016298F17003BF750 /* create_class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = create_class.cpp; sourceTree = "<group>"; };
+		30C8E2E116298F17003BF750 /* error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = error.cpp; sourceTree = "<group>"; };
+		30C8E2E216298F17003BF750 /* exception_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exception_handler.cpp; sourceTree = "<group>"; };
+		30C8E2E316298F17003BF750 /* function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = function.cpp; sourceTree = "<group>"; };
+		30C8E2E416298F17003BF750 /* inheritance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inheritance.cpp; sourceTree = "<group>"; };
+		30C8E2E516298F17003BF750 /* link_compatibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = link_compatibility.cpp; sourceTree = "<group>"; };
+		30C8E2E616298F17003BF750 /* object_rep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object_rep.cpp; sourceTree = "<group>"; };
+		30C8E2E716298F17003BF750 /* open.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = open.cpp; sourceTree = "<group>"; };
+		30C8E2E816298F17003BF750 /* pcall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pcall.cpp; sourceTree = "<group>"; };
+		30C8E2E916298F17003BF750 /* scope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scope.cpp; sourceTree = "<group>"; };
+		30C8E2EA16298F17003BF750 /* stack_content_by_name.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stack_content_by_name.cpp; sourceTree = "<group>"; };
+		30C8E2EB16298F17003BF750 /* weak_ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = weak_ref.cpp; sourceTree = "<group>"; };
+		30C8E2EC16298F17003BF750 /* wrapper_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrapper_base.cpp; sourceTree = "<group>"; };
 		30DFA456162289B10094270D /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Documents; path = bin/Documents; sourceTree = "<group>"; };
 		31317daf63909d58058dc81e856e7604 /* ofxPGMidiSourceDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPGMidiSourceDelegate.h; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiSourceDelegate.h; sourceTree = SOURCE_ROOT; };
-		314f3fba7f709698498672ccba9054ea /* function.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = function.cpp; path = ../../../addons/ofxLua/src/luabind/src/function.cpp; sourceTree = SOURCE_ROOT; };
 		319aa8a155a918a615b97c1efc835ce5 /* App.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = App.h; path = src/ios/App.h; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
 		32bd050a579633adbca5af6b202f651b /* ofxUIWidget.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIWidget.h; path = ../../../addons/ofxUI/src/ofxUIWidget.h; sourceTree = SOURCE_ROOT; };
@@ -565,11 +647,8 @@
 		347f3587b604d3ea688280e6c98aec0b /* iem_symtoalist.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_symtoalist.c; path = src/externals/iemlib/iem_symtoalist.c; sourceTree = SOURCE_ROOT; };
 		348d3afcfbd6cfe03f4fa1eacd0eeb92 /* g_guiconnect.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_guiconnect.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_guiconnect.c"; sourceTree = SOURCE_ROOT; };
 		35c35f60fa8c88f1c5417c80f58d5b9a /* lualib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lualib.h; path = ../../../addons/ofxLua/src/lua/lualib.h; sourceTree = SOURCE_ROOT; };
-		35cd2f4073825acb30d238c1d6cdfb26 /* typetraits.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = typetraits.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/typetraits.hpp; sourceTree = SOURCE_ROOT; };
-		378830770e5e13604e3432d78335d66a /* pcall.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pcall.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/pcall.hpp; sourceTree = SOURCE_ROOT; };
 		37c25a3402e53b06c36f9a1169654518 /* Externals.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Externals.h; path = src/externals/Externals.h; sourceTree = SOURCE_ROOT; };
 		3894acc5797520f448e1f6e80b3106ed /* s_libpdmidi.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_libpdmidi.c; path = ../../../addons/ofxPd/src/pd/libpd_wrapper/s_libpdmidi.c; sourceTree = SOURCE_ROOT; };
-		39fea4aefb9d7ebefda6421ae676aead /* config.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = config.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/config.hpp; sourceTree = SOURCE_ROOT; };
 		3b2388bee23f8a1dd0aadbc6a898cc3c /* ofxBox2dBaseShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBox2dBaseShape.cpp; path = ../../../addons/ofxBox2d/src/ofxBox2dBaseShape.cpp; sourceTree = SOURCE_ROOT; };
 		3b361208cd4107e479f04e7bce6d93aa /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		3bb83c49d497d42eed89dd6a4edf44e1 /* lfunc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lfunc.h; path = ../../../addons/ofxLua/src/lua/lfunc.h; sourceTree = SOURCE_ROOT; };
@@ -591,22 +670,18 @@
 		4310befde24ff04febee80868bac48b1 /* ofxBaseMidi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseMidi.h; path = ../../../addons/ofxMidi/src/ofxBaseMidi.h; sourceTree = SOURCE_ROOT; };
 		431d6bbf1ef545b203e4cae1dda8512f /* ofxUIMultiImageSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIMultiImageSlider.h; path = ../../../addons/ofxUI/src/ofxUIMultiImageSlider.h; sourceTree = SOURCE_ROOT; };
 		444657a12e59d0ed86981498fccd5fcc /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
-		44c29c514c57e8409e094e81c1427359 /* tag_function.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tag_function.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/tag_function.hpp; sourceTree = SOURCE_ROOT; };
 		45642a0fea658671d40702637be5032d /* z_libpd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = z_libpd.h; path = ../../../addons/ofxPd/src/pd/libpd_wrapper/z_libpd.h; sourceTree = SOURCE_ROOT; };
 		45be5b8e457c862373c10ba0bc06c42d /* lua.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lua.hpp; path = ../../../addons/ofxLua/src/lua/lua.hpp; sourceTree = SOURCE_ROOT; };
 		45eb42f8640cfcae47aa7e08ab94ffbd /* b2LineJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2LineJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2LineJoint.cpp; sourceTree = SOURCE_ROOT; };
 		460b98c230e89be48913a04b3b457ad8 /* s_utf8.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = s_utf8.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_utf8.h"; sourceTree = SOURCE_ROOT; };
 		469610240a273862d8b39ce4df7f945b /* b2Shape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Shape.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2Shape.h; sourceTree = SOURCE_ROOT; };
 		469d077e9a2e9f1ea3f57faf1fabfc3e /* s_inter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_inter.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_inter.c"; sourceTree = SOURCE_ROOT; };
-		46ed7b2cc54334aafc909280fdad5932 /* convert_to_lua.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = convert_to_lua.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/convert_to_lua.hpp; sourceTree = SOURCE_ROOT; };
-		46fba186d35a813d08175147f1ba3e69 /* yield_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = yield_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/yield_policy.hpp; sourceTree = SOURCE_ROOT; };
 		470b5d2ac2f616d10b2e6025718527c8 /* ofxUISlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUISlider.h; path = ../../../addons/ofxUI/src/ofxUISlider.h; sourceTree = SOURCE_ROOT; };
 		47e9154fc2661aefd61f894430cc9eef /* pd~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "pd~.c"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/pd~/pd~.c"; sourceTree = SOURCE_ROOT; };
 		4801b1141648f6e78fbc8b53eff8e429 /* Osc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Osc.h; path = src/bindings/Osc.h; sourceTree = SOURCE_ROOT; };
 		48974f980f51769171d0b2f5e519dd28 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
 		48ea57aeddc5f85bc45e2a48ac47838d /* Maths.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Maths.h; path = src/bindings/Maths.h; sourceTree = SOURCE_ROOT; };
 		49c7bdf48b8ad51076f61ddf725d4df4 /* x_connective.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_connective.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_connective.c"; sourceTree = SOURCE_ROOT; };
-		4a57b6f533f14083c5d4ac24a8adcda9 /* class_rep.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = class_rep.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/class_rep.hpp; sourceTree = SOURCE_ROOT; };
 		4a6b8555b420bd923af1241ca9b3a684 /* speedlim.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = speedlim.c; path = src/externals/iemlib/speedlim.c; sourceTree = SOURCE_ROOT; };
 		4aea0d08c3b0323fedc8d9749c9217ea /* ofxUIImageSampler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIImageSampler.h; path = ../../../addons/ofxUI/src/ofxUIImageSampler.h; sourceTree = SOURCE_ROOT; };
 		4c1a083ac6f4f462ebc575655c1e2c66 /* b2CircleContact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2CircleContact.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2CircleContact.cpp; sourceTree = SOURCE_ROOT; };
@@ -624,14 +699,10 @@
 		4f492e5e6995ab38da7b98fdfef34ca3 /* PGMidiFind.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = PGMidiFind.mm; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGMidiFind.mm; sourceTree = SOURCE_ROOT; };
 		4fddee75e5f3cd756de154c3c3f835f5 /* iem_prepend.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_prepend.c; path = src/externals/iemlib/iem_prepend.c; sourceTree = SOURCE_ROOT; };
 		4ff2f2d5a01ada37a9ade20fb41e7560 /* ofxUICanvas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUICanvas.h; path = ../../../addons/ofxUI/src/ofxUICanvas.h; sourceTree = SOURCE_ROOT; };
-		4ff3c1a3c98be02ffca7720da2d59f6e /* create_class.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = create_class.cpp; path = ../../../addons/ofxLua/src/luabind/src/create_class.cpp; sourceTree = SOURCE_ROOT; };
 		4ff68debec893c2786c435ddf8ad720f /* luaconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = luaconf.h; path = ../../../addons/ofxLua/src/lua/luaconf.h; sourceTree = SOURCE_ROOT; };
 		502a47df926e78cb6a25b5375aa025b1 /* ofxBox2dContactListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dContactListener.h; path = ../../../addons/ofxBox2d/src/ofxBox2dContactListener.h; sourceTree = SOURCE_ROOT; };
 		5094291c0247c3cf099a4215822bfa67 /* g_vumeter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_vumeter.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_vumeter.c"; sourceTree = SOURCE_ROOT; };
-		5203b3f3dc8e47c23415872c5287a327 /* pointee_sizeof.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pointee_sizeof.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/pointee_sizeof.hpp; sourceTree = SOURCE_ROOT; };
 		523bc1995caa17c6f820de22003cf932 /* receive2list.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = receive2list.c; path = src/externals/iemlib/receive2list.c; sourceTree = SOURCE_ROOT; };
-		526a5595fe595c43803c1765e204acbe /* link_compatibility.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = link_compatibility.cpp; path = ../../../addons/ofxLua/src/luabind/src/link_compatibility.cpp; sourceTree = SOURCE_ROOT; };
-		52a8ef24ce3d62cc4dc50e66983a86c6 /* class.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = class.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/class.hpp; sourceTree = SOURCE_ROOT; };
 		52c6b12e0d9664019ea67fa827999460 /* ofxBox2dRect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dRect.h; path = ../../../addons/ofxBox2d/src/ofxBox2dRect.h; sourceTree = SOURCE_ROOT; };
 		52fd632883052641c31c9444cbf7467f /* b2Settings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Settings.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2Settings.cpp; sourceTree = SOURCE_ROOT; };
 		5305dd16135abc25a2e96f03dd146007 /* b2WeldJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2WeldJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2WeldJoint.h; sourceTree = SOURCE_ROOT; };
@@ -641,31 +712,24 @@
 		5393f1d6dceffb0c70bb85735362e80e /* g_canvas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = g_canvas.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_canvas.h"; sourceTree = SOURCE_ROOT; };
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		544cc4730ee672ec0e6f2b79c96cb411 /* fade~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "fade~.c"; path = "src/externals/iemlib/fade~.c"; sourceTree = SOURCE_ROOT; };
-		547246e494faa622bc3619b09910a6b8 /* open.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = open.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/open.hpp; sourceTree = SOURCE_ROOT; };
 		54772cef289ec0081eeeb3d13264c276 /* b2RevoluteJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2RevoluteJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2RevoluteJoint.h; sourceTree = SOURCE_ROOT; };
 		55b76645e4d8d78efd4175aebd95546f /* ofxParticle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxParticle.cpp; path = ../../../addons/ofxAppUtils/src/ofxParticle.cpp; sourceTree = SOURCE_ROOT; };
 		55c46869e67225b9c0e8b29fb51f71bf /* post_netreceive.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = post_netreceive.c; path = src/externals/iemlib/post_netreceive.c; sourceTree = SOURCE_ROOT; };
 		561370923a365a4a9dc9fb8aa1c415d5 /* b2WorldCallbacks.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2WorldCallbacks.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2WorldCallbacks.cpp; sourceTree = SOURCE_ROOT; };
 		56aea56381fc73f8adafe53bc4c5174c /* g_rtext.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_rtext.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_rtext.c"; sourceTree = SOURCE_ROOT; };
 		5738a60d76f5b706cb90c16436b07bc4 /* b2DynamicTree.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2DynamicTree.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2DynamicTree.cpp; sourceTree = SOURCE_ROOT; };
-		573b20d54e030c33ef1ccbbb3cae29f6 /* dependency_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dependency_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/dependency_policy.hpp; sourceTree = SOURCE_ROOT; };
-		5763acf048b7cbef7098ab52294776e9 /* call_member.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = call_member.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/call_member.hpp; sourceTree = SOURCE_ROOT; };
 		5782ebc7ca5bec9ead229e937461e1f2 /* iem_receive.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_receive.c; path = src/externals/iemlib/iem_receive.c; sourceTree = SOURCE_ROOT; };
 		57d9b46a6c79cba14ba11339e9cfca9b /* ofxAppUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAppUtils.h; path = ../../../addons/ofxAppUtils/src/ofxAppUtils.h; sourceTree = SOURCE_ROOT; };
 		583a83b877584149117b6f300f921053 /* liolib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = liolib.c; path = ../../../addons/ofxLua/src/lua/liolib.c; sourceTree = SOURCE_ROOT; };
 		59d7f855e21ac0ebed3bd58fd1da0960 /* x_gui.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_gui.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_gui.c"; sourceTree = SOURCE_ROOT; };
-		59fd9806beb27e71f5f39785204729ae /* error.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = error.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/error.hpp; sourceTree = SOURCE_ROOT; };
 		5a2c06818caeeca565a9ca4de5d0e2c3 /* App.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = App.cpp; path = src/bindings/App.cpp; sourceTree = SOURCE_ROOT; };
 		5a719e4a99ea17712d7f869c9525b25d /* fiddle~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "fiddle~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/fiddle~/fiddle~-help.pd"; sourceTree = SOURCE_ROOT; };
-		5a8ea58dc4d0ef427535f39f5dfc7c22 /* typeid.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = typeid.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/typeid.hpp; sourceTree = SOURCE_ROOT; };
 		5b0ae9e02e18cf2105e38299cd5eed9a /* m_imp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = m_imp.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_imp.h"; sourceTree = SOURCE_ROOT; };
 		5b220f25830875b94b8f8ba80cba0062 /* COPYRIGHT */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = COPYRIGHT; path = ../../../addons/ofxLua/src/lua/COPYRIGHT; sourceTree = SOURCE_ROOT; };
 		5c48e3511951bb86fa9aa6420fa60cf9 /* ofxUIMovingGraph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIMovingGraph.h; path = ../../../addons/ofxUI/src/ofxUIMovingGraph.h; sourceTree = SOURCE_ROOT; };
 		5c703fd5b2d1d10baee01bea61886b5c /* b2Island.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Island.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Island.cpp; sourceTree = SOURCE_ROOT; };
 		5c7edba74f9e5fc963e9c3fffe095022 /* lzio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lzio.h; path = ../../../addons/ofxLua/src/lua/lzio.h; sourceTree = SOURCE_ROOT; };
 		5df61edea06c9c6664d20a06ed7129b7 /* lobject.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lobject.c; path = ../../../addons/ofxLua/src/lua/lobject.c; sourceTree = SOURCE_ROOT; };
-		5ed06bba12e1c1a1ab4b53e78a976b8d /* handle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = handle.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/handle.hpp; sourceTree = SOURCE_ROOT; };
-		5f597d44a91ca471cb6f973038f36644 /* link_compatibility.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = link_compatibility.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/link_compatibility.hpp; sourceTree = SOURCE_ROOT; };
 		60265ef4d6057c8d3c9254e8835a6d34 /* lfunc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lfunc.c; path = ../../../addons/ofxLua/src/lua/lfunc.c; sourceTree = SOURCE_ROOT; };
 		610407412ca7fb0606a2479573ec2c17 /* m_binbuf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_binbuf.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_binbuf.c"; sourceTree = SOURCE_ROOT; };
 		61084035f9bad2e934415139ba2e6531 /* b2DynamicTree.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2DynamicTree.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2DynamicTree.h; sourceTree = SOURCE_ROOT; };
@@ -675,22 +739,17 @@
 		622b56664e2c5c89175655d363d5c873 /* d_osc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_osc.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_osc.c"; sourceTree = SOURCE_ROOT; };
 		6248457154cf5abbe620577c78ba8048 /* lcode.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lcode.c; path = ../../../addons/ofxLua/src/lua/lcode.c; sourceTree = SOURCE_ROOT; };
 		6248640c06b47042bb5bd3f21e730c74 /* ofxUILabelToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUILabelToggle.h; path = ../../../addons/ofxUI/src/ofxUILabelToggle.h; sourceTree = SOURCE_ROOT; };
-		6267260f5e18f3b9bea0be314f0b886e /* exception_handler.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = exception_handler.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/exception_handler.hpp; sourceTree = SOURCE_ROOT; };
 		63730f5f8a1aba6f5db78e7b17376842 /* ofxQuadWarper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxQuadWarper.cpp; path = ../../../addons/ofxAppUtils/src/ofxQuadWarper.cpp; sourceTree = SOURCE_ROOT; };
-		63a3baa3f674b5fbad55d9316510f239 /* exception_handler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = exception_handler.cpp; path = ../../../addons/ofxLua/src/luabind/src/exception_handler.cpp; sourceTree = SOURCE_ROOT; };
 		63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
 		63a6de8917910ba8f1c7cc400b2ce128 /* Box2D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Box2D.h; path = ../../../addons/ofxBox2d/libs/Box2D/Box2D.h; sourceTree = SOURCE_ROOT; };
 		63f0f626b5e74b2a2462d8d1b808330d /* iem_alisttosym.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_alisttosym.c; path = src/externals/iemlib/iem_alisttosym.c; sourceTree = SOURCE_ROOT; };
 		64bcb1d7c71e2f2e5923315c0c13cb47 /* lzio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lzio.c; path = ../../../addons/ofxLua/src/lua/lzio.c; sourceTree = SOURCE_ROOT; };
 		64c6f7ad018ffd34c7abb6f2a2c0cec0 /* ofxUI.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUI.h; path = ../../../addons/ofxUI/src/ofxUI.h; sourceTree = SOURCE_ROOT; };
-		651217de2471918d2b329224eb9c5600 /* instance_holder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = instance_holder.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/instance_holder.hpp; sourceTree = SOURCE_ROOT; };
 		654312303dcc69b59603cfa13418a260 /* matrix_funcs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_funcs.h; path = ../../../addons/ofxAppUtils/src/matrix_funcs.h; sourceTree = SOURCE_ROOT; };
 		654d9d3fd3248efa16d6ddfbd6f4188c /* ofxLua.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLua.h; path = ../../../addons/ofxLua/src/ofxLua.h; sourceTree = SOURCE_ROOT; };
 		65eefa3da3526e9cdd9c21f90d9b5684 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
-		6627857f9006f334bf7becbc2a1829cc /* property.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = property.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/property.hpp; sourceTree = SOURCE_ROOT; };
 		664d65407be633c038fa9498bcf62aa7 /* ofxUIFPSSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIFPSSlider.h; path = ../../../addons/ofxUI/src/ofxUIFPSSlider.h; sourceTree = SOURCE_ROOT; };
 		6680ad87145cd45ae0b7f1178f3ffe68 /* rev3~.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev3~.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev3~.pd"; sourceTree = SOURCE_ROOT; };
-		6739769281ea0cc335bd3333fa866a92 /* value_wrapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = value_wrapper.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/value_wrapper.hpp; sourceTree = SOURCE_ROOT; };
 		67e6103dc0f324faeb33e3f58bc31db3 /* b2Fixture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Fixture.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Fixture.h; sourceTree = SOURCE_ROOT; };
 		67e96c54b18840a55fc2c82f3ad8ec6f /* getdir.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = getdir.c; path = src/externals/ggee/getdir.c; sourceTree = SOURCE_ROOT; };
 		68063b1526793cf39e410f2f35a875e4 /* protect_against_open.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = protect_against_open.c; path = src/externals/iemlib/protect_against_open.c; sourceTree = SOURCE_ROOT; };
@@ -711,9 +770,7 @@
 		6cfe765b0e101938ff5ece21c9d3a4bd /* ofxPGMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPGMidiIn.h; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiIn.h; sourceTree = SOURCE_ROOT; };
 		6daaed83a192cfb0ba4d2fb5ad383935 /* print.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = print.c; path = ../../../addons/ofxLua/src/lua/print.c; sourceTree = SOURCE_ROOT; };
 		6dc33bd675b405526e991594b79654f6 /* hilbert~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "hilbert~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/hilbert~-help.pd"; sourceTree = SOURCE_ROOT; };
-		6e10fbba3300a18b00da65cbde852974 /* weak_ref.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = weak_ref.cpp; path = ../../../addons/ofxLua/src/luabind/src/weak_ref.cpp; sourceTree = SOURCE_ROOT; };
 		6e379d4c4001238ab708a5ecd1af1e21 /* m_glob.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_glob.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_glob.c"; sourceTree = SOURCE_ROOT; };
-		6f9ddd71785243db03a3aff6b5585b43 /* stack_utils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = stack_utils.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/stack_utils.hpp; sourceTree = SOURCE_ROOT; };
 		719f72e93b2357ba1ee370242e1fbeea /* lbaselib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lbaselib.c; path = ../../../addons/ofxLua/src/lua/lbaselib.c; sourceTree = SOURCE_ROOT; };
 		71b9cc7556771186d69cf8fd124d360e /* g_hdial.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_hdial.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_hdial.c"; sourceTree = SOURCE_ROOT; };
 		71f79720d477f27ecdc19e6654d8820b /* llimits.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = llimits.h; path = ../../../addons/ofxLua/src/lua/llimits.h; sourceTree = SOURCE_ROOT; };
@@ -723,24 +780,19 @@
 		740820d7be0f68ec1d2bf1dcf262a051 /* PGArc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PGArc.h; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGArc.h; sourceTree = SOURCE_ROOT; };
 		7414da8ee4de1570c05c5ca842cd585e /* b2CircleShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2CircleShape.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2CircleShape.cpp; sourceTree = SOURCE_ROOT; };
 		7456407a3e8bff75fe8bd142a0c610ba /* triangle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = triangle.h; path = ../../../addons/ofxBox2d/libs/triangle/triangle.h; sourceTree = SOURCE_ROOT; };
-		7478c52b936d8edb7ba11f31863c320c /* operator_id.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = operator_id.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/operator_id.hpp; sourceTree = SOURCE_ROOT; };
 		7521578ad76c7e9fca0c592d272ab55e /* m_obj.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_obj.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_obj.c"; sourceTree = SOURCE_ROOT; };
 		75ff1054d5948d7eddd30e442ed0d1c7 /* ofxTransformer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxTransformer.cpp; path = ../../../addons/ofxAppUtils/src/ofxTransformer.cpp; sourceTree = SOURCE_ROOT; };
 		7689f8a0f3d0b7635a8c310487cd0928 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscArg.h; path = ../../../addons/ofxOsc/src/ofxOscArg.h; sourceTree = SOURCE_ROOT; };
 		768df885ce87a7bb30033f543af1e226 /* ofxBox2dBaseShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dBaseShape.h; path = ../../../addons/ofxBox2d/src/ofxBox2dBaseShape.h; sourceTree = SOURCE_ROOT; };
-		76e1af0f6594cab3133adeb5c7b10f29 /* call_operator_iterate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = call_operator_iterate.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/call_operator_iterate.hpp; sourceTree = SOURCE_ROOT; };
 		774ddd1b3f05d3fdf0d37794ec73b989 /* b2Fixture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Fixture.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Fixture.cpp; sourceTree = SOURCE_ROOT; };
 		77650c5d323b6d9fea7fd152a270a9de /* ofxBox2dJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dJoint.h; path = ../../../addons/ofxBox2d/src/ofxBox2dJoint.h; sourceTree = SOURCE_ROOT; };
 		77700e3c4186ae1de140344b2e0e546e /* iem_i_route.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_i_route.c; path = src/externals/iemlib/iem_i_route.c; sourceTree = SOURCE_ROOT; };
 		77bdac059aae22ce81a682ddf8b45310 /* d_dac.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_dac.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_dac.c"; sourceTree = SOURCE_ROOT; };
 		77f32fb37ab4853cf8062d113202c2b9 /* d_array.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_array.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_array.c"; sourceTree = SOURCE_ROOT; };
 		781f73bf02a917f9c115b16563f9e9a7 /* Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Scene.cpp; path = src/Scene.cpp; sourceTree = SOURCE_ROOT; };
-		787277aa2bb952c2507f70a48c7f1baa /* deduce_signature.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = deduce_signature.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/deduce_signature.hpp; sourceTree = SOURCE_ROOT; };
 		79050cbe29f01ac372ce787627a5ad8e /* PdMidiReceiver.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PdMidiReceiver.hpp; path = ../../../addons/ofxPd/src/pd/cpp/PdMidiReceiver.hpp; sourceTree = SOURCE_ROOT; };
 		791ffdea82926354cf92141d0941f3b5 /* ofxBox2dPolygonUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dPolygonUtils.h; path = ../../../addons/ofxBox2d/src/ofxBox2dPolygonUtils.h; sourceTree = SOURCE_ROOT; };
-		79d663df0839fdfeed47c2f1fd6b4f55 /* back_reference.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = back_reference.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/back_reference.hpp; sourceTree = SOURCE_ROOT; };
 		7a2aac13774f90d8ae1ab237d1747118 /* s_path.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_path.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_path.c"; sourceTree = SOURCE_ROOT; };
-		7a34e0f1d2a9aea468d53b0ce9f0de21 /* signature_match.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = signature_match.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/signature_match.hpp; sourceTree = SOURCE_ROOT; };
 		7b26cfd4a3a27887074efb5b8f7b8ad7 /* s_file.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_file.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_file.c"; sourceTree = SOURCE_ROOT; };
 		7b6ed037c65f5bb37fe5881a72a74a41 /* x_interface.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_interface.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_interface.c"; sourceTree = SOURCE_ROOT; };
 		7bfca20b135ffe2f7c20ff3cacbc24f8 /* LICENSE.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = LICENSE.txt; path = ../../../addons/ofxPd/src/pd/LICENSE.txt; sourceTree = SOURCE_ROOT; };
@@ -749,7 +801,6 @@
 		7dfcd9cd60ad0eba8080c9b11518cd08 /* PdReceiver.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PdReceiver.hpp; path = ../../../addons/ofxPd/src/pd/cpp/PdReceiver.hpp; sourceTree = SOURCE_ROOT; };
 		7e9a63141e4828f4f2ebf2fba4d7947b /* Global.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Global.h; path = src/Global.h; sourceTree = SOURCE_ROOT; };
 		7f0b79b6df8f6fa68e369992845402cf /* iem_route.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_route.c; path = src/externals/iemlib/iem_route.c; sourceTree = SOURCE_ROOT; };
-		7f742b5ccd6492b0d8729abd85e16a19 /* error.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = error.cpp; path = ../../../addons/ofxLua/src/luabind/src/error.cpp; sourceTree = SOURCE_ROOT; };
 		7fef23147e630214d7dbae2b742d09c1 /* PdBase.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PdBase.hpp; path = ../../../addons/ofxPd/src/pd/cpp/PdBase.hpp; sourceTree = SOURCE_ROOT; };
 		804b4f86c3daa1e51794d893c353798b /* b2PolygonAndCircleContact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2PolygonAndCircleContact.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp; sourceTree = SOURCE_ROOT; };
 		80c3ade6f054d328a726b4c6ddd4882a /* b2Island.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Island.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Island.h; sourceTree = SOURCE_ROOT; };
@@ -760,8 +811,6 @@
 		83527a3e3c29064bb9b26ac52c4f62df /* ofxSceneManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSceneManager.cpp; path = ../../../addons/ofxAppUtils/src/ofxSceneManager.cpp; sourceTree = SOURCE_ROOT; };
 		849aaf42248331d10fea51b233d5ef66 /* AudioEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AudioEngine.cpp; path = src/AudioEngine.cpp; sourceTree = SOURCE_ROOT; };
 		84b1b4a3e366385f8eeecd619dfefd0b /* b2WeldJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2WeldJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2WeldJoint.cpp; sourceTree = SOURCE_ROOT; };
-		84cf045ee26378a1809c741b32a59241 /* yes_no.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = yes_no.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/yes_no.hpp; sourceTree = SOURCE_ROOT; };
-		856bdbd4f02c1c848ea2e5102c9314dc /* class.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = class.cpp; path = ../../../addons/ofxLua/src/luabind/src/class.cpp; sourceTree = SOURCE_ROOT; };
 		856bf5ab0322d0689ee63829f6f27a37 /* ofxUIRangeSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIRangeSlider.h; path = ../../../addons/ofxUI/src/ofxUIRangeSlider.h; sourceTree = SOURCE_ROOT; };
 		85c23e137a5bfd4dc54a44ed3b498b8b /* tcpclient.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = tcpclient.c; path = src/externals/mrpeach/tcpclient.c; sourceTree = SOURCE_ROOT; };
 		85f7b193da07f11c4240e5a3b2d6f466 /* g_template.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_template.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_template.c"; sourceTree = SOURCE_ROOT; };
@@ -774,28 +823,20 @@
 		87c1e2a2cc108c32b0d02b08325ee180 /* b2DistanceJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2DistanceJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2DistanceJoint.cpp; sourceTree = SOURCE_ROOT; };
 		884bd1a8b63f2e203ef971898763cec6 /* d_arithmetic.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_arithmetic.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_arithmetic.c"; sourceTree = SOURCE_ROOT; };
 		885850b62fad08eb1d2f0bf4a56e5e01 /* ofxUIRotarySlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIRotarySlider.h; path = ../../../addons/ofxUI/src/ofxUIRotarySlider.h; sourceTree = SOURCE_ROOT; };
-		89be337f47c464c89e8f8fd617d471f3 /* return_reference_to_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = return_reference_to_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/return_reference_to_policy.hpp; sourceTree = SOURCE_ROOT; };
-		8a84dfdde51ab0af0080d485ba2a55db /* calc_arity.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = calc_arity.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/calc_arity.hpp; sourceTree = SOURCE_ROOT; };
 		8ab83ae0d873faeb68941d152fae73fa /* d_ugen.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_ugen.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_ugen.c"; sourceTree = SOURCE_ROOT; };
 		8b30e93fd3d3475eed522a0e0b085e30 /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscBundle.h; path = ../../../addons/ofxOsc/src/ofxOscBundle.h; sourceTree = SOURCE_ROOT; };
-		8b8daefa2e35215bd1e4cf26dca32b98 /* conversion_storage.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = conversion_storage.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/conversion_storage.hpp; sourceTree = SOURCE_ROOT; };
-		8c02e6988e83175240e52f8353f38db9 /* open.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = open.cpp; path = ../../../addons/ofxLua/src/luabind/src/open.cpp; sourceTree = SOURCE_ROOT; };
 		8c2393788c81dd59bdaa377e48e2eb2d /* s_print.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_print.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_print.c"; sourceTree = SOURCE_ROOT; };
 		8c75afc8774a62495dd5346429f6f666 /* ofxOscReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscReceiver.h; path = ../../../addons/ofxOsc/src/ofxOscReceiver.h; sourceTree = SOURCE_ROOT; };
 		8c78f1bc97d419a7c064143d1570d188 /* b2CircleShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2CircleShape.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2CircleShape.h; sourceTree = SOURCE_ROOT; };
-		8cd4b6371463f68e632d0b3f7af0a353 /* version.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = version.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/version.hpp; sourceTree = SOURCE_ROOT; };
 		8d1fc15f5941283f4a9e70d333118bf8 /* b2PrismaticJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2PrismaticJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2PrismaticJoint.h; sourceTree = SOURCE_ROOT; };
 		8d58a041d966a62f514fa29f94256695 /* lauxlib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lauxlib.c; path = ../../../addons/ofxLua/src/lua/lauxlib.c; sourceTree = SOURCE_ROOT; };
 		8d956fd1e9efb9b6d754e6974de1db06 /* x_net.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_net.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_net.c"; sourceTree = SOURCE_ROOT; };
-		8e026e13a6d41c277bed568b71e0bb31 /* class_info.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = class_info.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/class_info.hpp; sourceTree = SOURCE_ROOT; };
 		8e9e1915049605de5d6a9a7aecc0d204 /* PGMidiAllSources.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = PGMidiAllSources.mm; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGMidiAllSources.mm; sourceTree = SOURCE_ROOT; };
 		8f752d533061c3745ffb0a71e2ad5501 /* d_fftroutine.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_fftroutine.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_fftroutine.c"; sourceTree = SOURCE_ROOT; };
 		8f844ea01a3b84164ec531d5b19d1871 /* bpe.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = bpe.c; path = src/externals/iemlib/bpe.c; sourceTree = SOURCE_ROOT; };
-		8fa011ed327d11f7bec1c5715338c8e7 /* pointee_typeid.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pointee_typeid.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/pointee_typeid.hpp; sourceTree = SOURCE_ROOT; };
 		917e84e4f57957f7a5bd76f7d895f5be /* ofxTimer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxTimer.h; path = ../../../addons/ofxAppUtils/src/ofxTimer.h; sourceTree = SOURCE_ROOT; };
 		920cfc6d7e43eed2b7b03746cc1dde5f /* b2StackAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2StackAllocator.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2StackAllocator.cpp; sourceTree = SOURCE_ROOT; };
 		930eb8baaa6a962411ec197db54eb10b /* b2GearJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2GearJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2GearJoint.cpp; sourceTree = SOURCE_ROOT; };
-		935e4b45c46d937839e07939e2141ab9 /* stack_content_by_name.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = stack_content_by_name.cpp; path = ../../../addons/ofxLua/src/luabind/src/stack_content_by_name.cpp; sourceTree = SOURCE_ROOT; };
 		938214a2795aa8fed29086dbb901d974 /* ofxMidiConstants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiConstants.h; path = ../../../addons/ofxMidi/src/ofxMidiConstants.h; sourceTree = SOURCE_ROOT; };
 		93fa3a7443c002fcfbd2a0c2a80d7af9 /* lcode.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lcode.h; path = ../../../addons/ofxLua/src/lua/lcode.h; sourceTree = SOURCE_ROOT; };
 		94826f6efa2228d3fe00d6671b817997 /* sigmund~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "sigmund~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/sigmund~/sigmund~-help.pd"; sourceTree = SOURCE_ROOT; };
@@ -811,12 +852,9 @@
 		99169ec8c90877bfb099b5d4043e979d /* unpackOSC.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = unpackOSC.c; path = src/externals/mrpeach/unpackOSC.c; sourceTree = SOURCE_ROOT; };
 		993abed49fec53956339bb6c338ca02f /* del_interface.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = del_interface.hpp; path = ../../../addons/ofxBox2d/libs/triangle/del_interface.hpp; sourceTree = SOURCE_ROOT; };
 		993da2bf507b037b97e6fa1653830b15 /* b2PolygonContact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2PolygonContact.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2PolygonContact.cpp; sourceTree = SOURCE_ROOT; };
-		99a95f083512305cbe9db82f39a0ff29 /* make_instance.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = make_instance.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/make_instance.hpp; sourceTree = SOURCE_ROOT; };
-		99ff496335c710255f5a4fab17b96f84 /* get_main_thread.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = get_main_thread.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/get_main_thread.hpp; sourceTree = SOURCE_ROOT; };
 		9a488205c013114720e138ce77b6e457 /* rev1~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev1~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev1~-help.pd"; sourceTree = SOURCE_ROOT; };
 		9ab81c46db3fef044a9bcf0c4d2703cd /* udpsend~.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "udpsend~.h"; path = "src/externals/mrpeach/udpsend~.h"; sourceTree = SOURCE_ROOT; };
 		9bccba18fa85c5a2a68dc1e510a4dca9 /* ofxLuaFileWriter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLuaFileWriter.cpp; path = ../../../addons/ofxLua/src/ofxLuaFileWriter.cpp; sourceTree = SOURCE_ROOT; };
-		9bdda8d1beafe596344202ab2485deee /* prefix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = prefix.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/prefix.hpp; sourceTree = SOURCE_ROOT; };
 		9be3e52d5188198c2c3c5674ca27e381 /* d_delay.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_delay.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_delay.c"; sourceTree = SOURCE_ROOT; };
 		9bf3aa0d4faa89d0f8a0e545403162be /* OscReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
 		9d37ba1037e4e5945819d171b6b0db6d /* transf_fader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = transf_fader.c; path = src/externals/iemlib/transf_fader.c; sourceTree = SOURCE_ROOT; };
@@ -824,7 +862,6 @@
 		9dd1ce9757a3468afdab04045b994403 /* PGMidi.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = PGMidi.mm; path = ../../../addons/ofxMidi/src/ios/pgmidi/PGMidi.mm; sourceTree = SOURCE_ROOT; };
 		9e4379c040a2c0896393eeab94079191 /* b2CollidePolygon.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2CollidePolygon.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2CollidePolygon.cpp; sourceTree = SOURCE_ROOT; };
 		9f0530cd46c7fade918f596b0c802150 /* d_soundfile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_soundfile.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_soundfile.c"; sourceTree = SOURCE_ROOT; };
-		9f5a4811f572d572d4855d65d2594633 /* debug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = debug.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/debug.hpp; sourceTree = SOURCE_ROOT; };
 		9f6ee3e5cccd11e0542ba51e9275bfd4 /* Osc.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Osc.cpp; path = src/Osc.cpp; sourceTree = SOURCE_ROOT; };
 		9f7986dc4eb05e75fce2c777500fdc01 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
 		9fd64016dd629351fd67d82fbe82e3cf /* llex.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = llex.h; path = ../../../addons/ofxLua/src/lua/llex.h; sourceTree = SOURCE_ROOT; };
@@ -843,15 +880,10 @@
 		a1eaf66768906007a12c37d378b56a91 /* ldebug.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ldebug.h; path = ../../../addons/ofxLua/src/lua/ldebug.h; sourceTree = SOURCE_ROOT; };
 		a296623a714c9f8edb4bca26d13eafef /* b2Body.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Body.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Body.cpp; sourceTree = SOURCE_ROOT; };
 		a2aaa8ca403479e6fcdf920ebcd1682b /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscHostEndianness.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
-		a3c88df4a6198c4c08fa1a462f4d4fa6 /* back_reference_fwd.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = back_reference_fwd.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/back_reference_fwd.hpp; sourceTree = SOURCE_ROOT; };
-		a4ccdf97c94dc2876510a0320b2464f8 /* discard_result_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = discard_result_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/discard_result_policy.hpp; sourceTree = SOURCE_ROOT; };
 		a50d78022165a0491d5bacde9a09e83b /* ofxBox2dJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBox2dJoint.cpp; path = ../../../addons/ofxBox2d/src/ofxBox2dJoint.cpp; sourceTree = SOURCE_ROOT; };
 		a53d126faa18a596595c0c6f393033d2 /* b2Math.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Math.h; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2Math.h; sourceTree = SOURCE_ROOT; };
-		a59d2dfccc7b2cd6ca563d24d476cf6b /* container_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = container_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/container_policy.hpp; sourceTree = SOURCE_ROOT; };
-		a601a407db1c0fd75b4d4ef7d27d84be /* class_registry.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = class_registry.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/class_registry.hpp; sourceTree = SOURCE_ROOT; };
 		a62d78491e7bde4c7cdcaba10d644d1e /* lua.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lua.h; path = ../../../addons/ofxLua/src/lua/lua.h; sourceTree = SOURCE_ROOT; };
 		a69b169f3de469a29debd8a41d66d358 /* b2MouseJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2MouseJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2MouseJoint.h; sourceTree = SOURCE_ROOT; };
-		a7527d5e160b5b6d4e24e74bfb299d58 /* wrapper_base.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wrapper_base.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/wrapper_base.hpp; sourceTree = SOURCE_ROOT; };
 		a76d962905d0ba4de02320a5954b5369 /* b2BlockAllocator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2BlockAllocator.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Common/b2BlockAllocator.cpp; sourceTree = SOURCE_ROOT; };
 		a83c49197f5cc83db6afd84abcbb1aff /* ofxPGMidiOut.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPGMidiOut.h; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiOut.h; sourceTree = SOURCE_ROOT; };
 		a934eac544f0b486ab1d0befee5304f9 /* pique.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = pique.c; path = "../../../addons/ofxPd/src/pd/pure-data/extra/pique/pique.c"; sourceTree = SOURCE_ROOT; };
@@ -860,50 +892,41 @@
 		a9a6e1363fe0cd4d15df8d75084a748a /* bonk~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "bonk~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/bonk~/bonk~-help.pd"; sourceTree = SOURCE_ROOT; };
 		a9f3d27f6d0c0433ffbf52c6717379d4 /* lapi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lapi.h; path = ../../../addons/ofxLua/src/lua/lapi.h; sourceTree = SOURCE_ROOT; };
 		aa0fe3c78dd74553590df52ce7664e9f /* g_hslider.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_hslider.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_hslider.c"; sourceTree = SOURCE_ROOT; };
-		abe2661aeee5baf66d61df70c1806986 /* call.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = call.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/call.hpp; sourceTree = SOURCE_ROOT; };
 		acafafc0f683f5ff1a5ccbf701a5c308 /* Osc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Osc.h; path = src/Osc.h; sourceTree = SOURCE_ROOT; };
 		acb884dcf7e7650e0714573a9a384e40 /* lmathlib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lmathlib.c; path = ../../../addons/ofxLua/src/lua/lmathlib.c; sourceTree = SOURCE_ROOT; };
 		ad494cc17bfeb2e3bab246c563c73720 /* lstring.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lstring.h; path = ../../../addons/ofxLua/src/lua/lstring.h; sourceTree = SOURCE_ROOT; };
 		ad4ed35c34c7716523e3f68ed553596c /* ofxApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxApp.h; path = ../../../addons/ofxAppUtils/src/ofxApp.h; sourceTree = SOURCE_ROOT; };
 		ad5577c6f268e40a66be4d86893567f4 /* s_main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_main.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_main.c"; sourceTree = SOURCE_ROOT; };
 		add194746185e2da11468377f4e88c2f /* IpEndpointName.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = IpEndpointName.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp; sourceTree = SOURCE_ROOT; };
-		ae3135cae6bd0e4f2a18b9381dede505 /* class_cache.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = class_cache.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/class_cache.hpp; sourceTree = SOURCE_ROOT; };
 		ae335eb4709bfd4671eeac8460534507 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MessageMappingOscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h; sourceTree = SOURCE_ROOT; };
-		ae80dd804f4d9057a8e19c6b3cda9b58 /* other.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = other.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/other.hpp; sourceTree = SOURCE_ROOT; };
 		aee4b843de00cd3bb805773ac309b699 /* midifile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = midifile.c; path = src/externals/mrpeach/midifile.c; sourceTree = SOURCE_ROOT; };
 		aeecd4c5dbd5d5bb84b9c64ad0c76170 /* loslib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = loslib.c; path = ../../../addons/ofxLua/src/lua/loslib.c; sourceTree = SOURCE_ROOT; };
 		b07c7a4211ac63d83504f2ed7e5fe82e /* lgc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lgc.c; path = ../../../addons/ofxLua/src/lua/lgc.c; sourceTree = SOURCE_ROOT; };
 		b10aeee2adfecc94e43a60ff352bf149 /* d_resample.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_resample.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_resample.c"; sourceTree = SOURCE_ROOT; };
 		b12f8ea2b0b96dc86df6685549d94dd7 /* d_global.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_global.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_global.c"; sourceTree = SOURCE_ROOT; };
-		b1c477df3306ebe410b57d9a71715959 /* format_signature.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = format_signature.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/format_signature.hpp; sourceTree = SOURCE_ROOT; };
 		b33cb34959aeb0103b1cd6db6b93967f /* m_memory.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_memory.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_memory.c"; sourceTree = SOURCE_ROOT; };
 		b385f5ff4a8101ddaeaf19d9d5a8d991 /* g_numbox.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_numbox.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_numbox.c"; sourceTree = SOURCE_ROOT; };
 		b3ca0202b1a3b6d8920c2b1513b3b305 /* ofxUIButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIButton.h; path = ../../../addons/ofxUI/src/ofxUIButton.h; sourceTree = SOURCE_ROOT; };
 		b3f58b34b31e5b4eeadeed8f060d61e0 /* s_loader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_loader.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_loader.c"; sourceTree = SOURCE_ROOT; };
 		b4a4af8f4a0f65fb42e53bbe418d125b /* pique-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "pique-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/pique/pique-help.pd"; sourceTree = SOURCE_ROOT; };
 		b4b0fe5ec1bf05ea77c62d9cbba8d18a /* fiddle~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "fiddle~.c"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/fiddle~/fiddle~.c"; sourceTree = SOURCE_ROOT; };
-		b64200311bc15a7037d22d56618045de /* nil.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = nil.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/nil.hpp; sourceTree = SOURCE_ROOT; };
 		b65647007a07664eb9ebd674322f6295 /* lauxlib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lauxlib.h; path = ../../../addons/ofxLua/src/lua/lauxlib.h; sourceTree = SOURCE_ROOT; };
 		b664d636b26bc930a7ecabccca0529bf /* g_all_guis.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_all_guis.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_all_guis.c"; sourceTree = SOURCE_ROOT; };
 		b75d46d6b41e78df2b519a18ea6220ed /* b2BroadPhase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2BroadPhase.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2BroadPhase.cpp; sourceTree = SOURCE_ROOT; };
 		b76fa489151dbaf1616df378299d0daa /* ofxMidiIn.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiIn.h; path = ../../../addons/ofxMidi/src/ofxMidiIn.h; sourceTree = SOURCE_ROOT; };
 		b8171158aaaa0027520eeaf7170937a7 /* ofxParticleManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxParticleManager.h; path = ../../../addons/ofxAppUtils/src/ofxParticleManager.h; sourceTree = SOURCE_ROOT; };
-		b97281b9e3708a975b5425d02926246d /* lua_include.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lua_include.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/lua_include.hpp; sourceTree = SOURCE_ROOT; };
 		b98365814a7d1eb1159378d18523a01c /* b2TOISolver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2TOISolver.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2TOISolver.h; sourceTree = SOURCE_ROOT; };
 		b992baedf8e14ea6e39c31643f5ec6b1 /* dollarg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = dollarg.c; path = src/externals/iemlib/dollarg.c; sourceTree = SOURCE_ROOT; };
 		bbca857da9c5f92bf720a6c8461c0c07 /* b2Contact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Contact.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2Contact.cpp; sourceTree = SOURCE_ROOT; };
-		bc5fdf942ef23b018476c65036ae9e36 /* object_call.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = object_call.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/object_call.hpp; sourceTree = SOURCE_ROOT; };
 		bc6931447de6c359dddf21f174e83978 /* ofxUIMultiImageButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIMultiImageButton.h; path = ../../../addons/ofxUI/src/ofxUIMultiImageButton.h; sourceTree = SOURCE_ROOT; };
 		bc8881b3c8c0a1c45f042e7a9e7b92cc /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscPrintReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
 		bccd69f7be28da5483cc6db59fca798a /* b2World.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2World.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2World.cpp; sourceTree = SOURCE_ROOT; };
 		bd0e7ac8be205034d5b377a6857d8a76 /* ofxMidiMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMidiMessage.h; path = ../../../addons/ofxMidi/src/ofxMidiMessage.h; sourceTree = SOURCE_ROOT; };
 		be670472564c21a1e5c7cb605fc1b216 /* stripfilename.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = stripfilename.c; path = src/externals/iemlib/stripfilename.c; sourceTree = SOURCE_ROOT; };
-		be6c43b3bdcad7790ef16c7217222f81 /* primitives.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = primitives.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/primitives.hpp; sourceTree = SOURCE_ROOT; };
 		bfc74d9d7d9b55f4b6c21724c58830f0 /* x_list.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_list.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_list.c"; sourceTree = SOURCE_ROOT; };
 		bfd309cdca00f95be8620b3734ca989a /* s_stuff.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = s_stuff.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_stuff.h"; sourceTree = SOURCE_ROOT; };
 		c0d30bc2db9b439ead5ee77788af93da /* assert.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = assert.hpp; path = ../../../addons/ofxBox2d/libs/triangle/assert.hpp; sourceTree = SOURCE_ROOT; };
 		c0e7eda67edf213fc0e83d171edad9b5 /* ofxMidiMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMidiMessage.cpp; path = ../../../addons/ofxMidi/src/ofxMidiMessage.cpp; sourceTree = SOURCE_ROOT; };
-		c1869441def0f388417dffbc6c0e2339 /* copy_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = copy_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/copy_policy.hpp; sourceTree = SOURCE_ROOT; };
 		c2613e67c51fde6f55873e38ed6e52f0 /* ofxBox2dRect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBox2dRect.cpp; path = ../../../addons/ofxBox2d/src/ofxBox2dRect.cpp; sourceTree = SOURCE_ROOT; };
 		c27603b5292682d378ee1ae6c0ec0a54 /* CHANGES.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = CHANGES.txt; path = src/externals/iemlib/CHANGES.txt; sourceTree = SOURCE_ROOT; };
 		c2fac65c491d4231379f3298ec59c6e9 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscReceiver.cpp; path = ../../../addons/ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
@@ -911,7 +934,6 @@
 		c38d6dcc3ab9aae213a64015b75adbd4 /* ofxUIScrollableCanvas.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIScrollableCanvas.h; path = ../../../addons/ofxUI/src/ofxUIScrollableCanvas.h; sourceTree = SOURCE_ROOT; };
 		c3f4a4cad349c1d2b2a55d156987007a /* ldblib.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = ldblib.c; path = ../../../addons/ofxLua/src/lua/ldblib.c; sourceTree = SOURCE_ROOT; };
 		c46cf12628167b2400faf0ad2cde38d5 /* m_pd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_pd.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_pd.c"; sourceTree = SOURCE_ROOT; };
-		c507a9035ae0bf2a105cd2155e4156cf /* scope.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = scope.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/scope.hpp; sourceTree = SOURCE_ROOT; };
 		c5100bdc923a494e2e26848e8aa73585 /* lstate.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lstate.c; path = ../../../addons/ofxLua/src/lua/lstate.c; sourceTree = SOURCE_ROOT; };
 		c58862c6d212c8e8a83810f4246811b1 /* ofxOscMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscMessage.h; path = ../../../addons/ofxOsc/src/ofxOscMessage.h; sourceTree = SOURCE_ROOT; };
 		c5ba6f0b85a67fe0d5e8b7581c259782 /* b2Body.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2Body.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2Body.h; sourceTree = SOURCE_ROOT; };
@@ -919,14 +941,11 @@
 		c6937888e126badc8777423bd27cc7c8 /* OscTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscTypes.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h; sourceTree = SOURCE_ROOT; };
 		c695be819a5d90d40d93fd156ca2c92e /* templates.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = templates.txt; path = "../../../addons/ofxPd/src/pd/pure-data/extra/bonk~/templates.txt"; sourceTree = SOURCE_ROOT; };
 		c7b4b8ad9464a693a3683d0fd1a7b1fb /* ofxUISpacer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUISpacer.h; path = ../../../addons/ofxUI/src/ofxUISpacer.h; sourceTree = SOURCE_ROOT; };
-		c82eea5da952182b001c53b5b084e5fa /* enum_maker.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = enum_maker.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/enum_maker.hpp; sourceTree = SOURCE_ROOT; };
-		c8535bb8483b3a3749379176dc12f01d /* has_get_pointer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = has_get_pointer.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/has_get_pointer.hpp; sourceTree = SOURCE_ROOT; };
 		c88f1e3304a9320e8efe049db1373a23 /* main.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = main.mm; path = src/ios/main.mm; sourceTree = SOURCE_ROOT; };
 		c98dfd9c0143227ae69e956910445f06 /* b2ContactSolver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2ContactSolver.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2ContactSolver.h; sourceTree = SOURCE_ROOT; };
 		c9bfe4f546d4853070c31b2fcd39d583 /* rev2~.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev2~.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev2~.pd"; sourceTree = SOURCE_ROOT; };
 		ca4ab6b52e7cd8e55809fc2e63b4228a /* ofxPGMidiDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = ofxPGMidiDelegate.mm; path = ../../../addons/ofxMidi/src/ios/ofxPGMidiDelegate.mm; sourceTree = SOURCE_ROOT; };
 		cac00e4e3472f94b20c0af00f7a20dfb /* s_audio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = s_audio.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/s_audio.c"; sourceTree = SOURCE_ROOT; };
-		cb37cae8b685fe4f626e42d083c30736 /* out_value_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = out_value_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/out_value_policy.hpp; sourceTree = SOURCE_ROOT; };
 		cb7df98beb9799c72b5070a794040877 /* x_time.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_time.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_time.c"; sourceTree = SOURCE_ROOT; };
 		cbf31cb9622e9c4c7cf08c2f77918eaf /* b2CircleContact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2CircleContact.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2CircleContact.h; sourceTree = SOURCE_ROOT; };
 		cc3fcae32b28b52708484dc5d6cfcbb1 /* b2PolygonShape.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2PolygonShape.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/Shapes/b2PolygonShape.cpp; sourceTree = SOURCE_ROOT; };
@@ -935,40 +954,31 @@
 		cd075c09d0d8961848c84c143dcdc251 /* lrshift~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "lrshift~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/lrshift~/lrshift~-help.pd"; sourceTree = SOURCE_ROOT; };
 		cd30569c0a3d10447b8bbf9107c7d6af /* x_acoustics.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_acoustics.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_acoustics.c"; sourceTree = SOURCE_ROOT; };
 		cdae5c35d5c2894a51376a834feec528 /* b2TimeOfImpact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2TimeOfImpact.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2TimeOfImpact.h; sourceTree = SOURCE_ROOT; };
-		ce67ad7033880d77ec821a1e644d36c2 /* object_funs.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = object_funs.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/object_funs.hpp; sourceTree = SOURCE_ROOT; };
 		cf73e1af93352cf515e7c9f200d2542b /* ofxUIEventArgs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIEventArgs.h; path = ../../../addons/ofxUI/src/ofxUIEventArgs.h; sourceTree = SOURCE_ROOT; };
-		cfbc372f486bb3cafeb16773dc74321f /* object.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = object.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/object.hpp; sourceTree = SOURCE_ROOT; };
 		cfe9ee9d8e455627cea7347f341c5157 /* ofxTransformer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxTransformer.h; path = ../../../addons/ofxAppUtils/src/ofxTransformer.h; sourceTree = SOURCE_ROOT; };
 		d0103c21d539ed0e9bf073b77886ef80 /* lvm.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lvm.c; path = ../../../addons/ofxLua/src/lua/lvm.c; sourceTree = SOURCE_ROOT; };
 		d076ae88707eb12c68725aaeeda59896 /* m2f~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "m2f~.c"; path = "src/externals/iemlib/m2f~.c"; sourceTree = SOURCE_ROOT; };
 		d0e58363a990e17286a45137e4a779f5 /* g_toggle.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_toggle.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_toggle.c"; sourceTree = SOURCE_ROOT; };
-		d1aec233a4326eb443d3e248fe28bb21 /* scope.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = scope.cpp; path = ../../../addons/ofxLua/src/luabind/src/scope.cpp; sourceTree = SOURCE_ROOT; };
 		d1c4e6ba769718a192765c07d49a7102 /* b2BroadPhase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2BroadPhase.h; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2BroadPhase.h; sourceTree = SOURCE_ROOT; };
 		d2da2c0437707d689dac0667ba4eec9a /* iem_sel_any.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = iem_sel_any.c; path = src/externals/iemlib/iem_sel_any.c; sourceTree = SOURCE_ROOT; };
 		d307392f3f50e30959e20ebaaedef3c2 /* b2MouseJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2MouseJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2MouseJoint.cpp; sourceTree = SOURCE_ROOT; };
 		d347cdc656ddd323f5839c3947b1e9a3 /* rev1~.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev1~.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev1~.pd"; sourceTree = SOURCE_ROOT; };
 		d3504a489669607540b9cbe6ab22efb8 /* m_atom.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_atom.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_atom.c"; sourceTree = SOURCE_ROOT; };
-		d3b81ea46668274061f805ec78edf1b2 /* adopt_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = adopt_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/adopt_policy.hpp; sourceTree = SOURCE_ROOT; };
 		d469947df4b5b02b7f0a11df69a5ceca /* triangle_impl.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = triangle_impl.hpp; path = ../../../addons/ofxBox2d/libs/triangle/triangle_impl.hpp; sourceTree = SOURCE_ROOT; };
 		d64612145ad4033fae0b9b166996201f /* udpreceive.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = udpreceive.c; path = src/externals/mrpeach/udpreceive.c; sourceTree = SOURCE_ROOT; };
-		d65163fc52fd08776132a184c4b53e30 /* class_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = class_info.cpp; path = ../../../addons/ofxLua/src/luabind/src/class_info.cpp; sourceTree = SOURCE_ROOT; };
 		d66e735be796bc0675320dc8741a5a55 /* ofxUIImageSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIImageSlider.h; path = ../../../addons/ofxUI/src/ofxUIImageSlider.h; sourceTree = SOURCE_ROOT; };
 		d682a69e3679f18bc6c7f4ef32d31c0f /* d_ctl.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_ctl.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_ctl.c"; sourceTree = SOURCE_ROOT; };
 		d6b259bfbb78ea4071802b0aa3ac4783 /* g_all_guis.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = g_all_guis.h; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_all_guis.h"; sourceTree = SOURCE_ROOT; };
 		d7008b5e1f8258f64d52374a413ac3df /* stdout-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "stdout-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/stdout/stdout-help.pd"; sourceTree = SOURCE_ROOT; };
-		d7178129a75a1b5e9d16909cd6fc39e5 /* policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/policy.hpp; sourceTree = SOURCE_ROOT; };
 		d718635a57678dae537f874728c8c897 /* tcpsend.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = tcpsend.c; path = src/externals/mrpeach/tcpsend.c; sourceTree = SOURCE_ROOT; };
 		d9bffbbf4cc43dee890b3c3e8f7d792c /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
-		da5b2381c04ead156500bf0ae29d5f0f /* object_rep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = object_rep.cpp; path = ../../../addons/ofxLua/src/luabind/src/object_rep.cpp; sourceTree = SOURCE_ROOT; };
 		da6e114d6063f525c4e574316329a6ed /* float24.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = float24.c; path = src/externals/iemlib/float24.c; sourceTree = SOURCE_ROOT; };
 		da842efa9b5ecaf6253d2ef08f013d3a /* pre_inlet.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = pre_inlet.c; path = src/externals/iemlib/pre_inlet.c; sourceTree = SOURCE_ROOT; };
 		dab7e597235084e8aea000edc109fd3a /* rev1-final.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev1-final.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev1-final.pd"; sourceTree = SOURCE_ROOT; };
-		db09d05bb8eb0ae9ca1243e381162cd0 /* class_rep.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = class_rep.cpp; path = ../../../addons/ofxLua/src/luabind/src/class_rep.cpp; sourceTree = SOURCE_ROOT; };
 		dbc686ee86156cff8c33165a73d9bc69 /* splitfilename.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = splitfilename.c; path = src/externals/iemlib/splitfilename.c; sourceTree = SOURCE_ROOT; };
 		dc015cbf94689b99d689aa57bf534de8 /* loop~-help.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "loop~-help.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/loop~/loop~-help.pd"; sourceTree = SOURCE_ROOT; };
 		dc5362a0623314d21a9fd849238758cf /* b2DistanceJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2DistanceJoint.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2DistanceJoint.h; sourceTree = SOURCE_ROOT; };
 		dc94311c7cebbf025eab00870e4f1d06 /* ofxLua.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLua.cpp; path = ../../../addons/ofxLua/src/ofxLua.cpp; sourceTree = SOURCE_ROOT; };
-		ded5b13aea1ab23560e30fbca2d24bae /* LICENSE */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = LICENSE; path = ../../../addons/ofxLua/src/luabind/LICENSE; sourceTree = SOURCE_ROOT; };
 		deed18744d2e82c919d7d1524223a797 /* b2PulleyJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2PulleyJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2PulleyJoint.cpp; sourceTree = SOURCE_ROOT; };
 		df49d76c45d5db505a234880104e4dc7 /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscMessage.cpp; path = ../../../addons/ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
 		df74c9611d18515e5437b37bd017e542 /* list2send.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = list2send.c; path = src/externals/iemlib/list2send.c; sourceTree = SOURCE_ROOT; };
@@ -980,8 +990,6 @@
 		e1c2d36f27b67890980d22d1d450db5a /* bonk~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "bonk~.c"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/bonk~/bonk~.c"; sourceTree = SOURCE_ROOT; };
 		e238ccde032640e0febfad824b8e459b /* ofxMidi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMidi.cpp; path = ../../../addons/ofxMidi/src/ofxMidi.cpp; sourceTree = SOURCE_ROOT; };
 		e255244694da0ac95fc3e8a60ab1e087 /* sigmund~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "sigmund~.c"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/sigmund~/sigmund~.c"; sourceTree = SOURCE_ROOT; };
-		e2cef1c5a606a4c466aebf3d163049cc /* weak_ref.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = weak_ref.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/weak_ref.hpp; sourceTree = SOURCE_ROOT; };
-		e343dcdc08610b888b244622fff40c32 /* most_derived.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = most_derived.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/most_derived.hpp; sourceTree = SOURCE_ROOT; };
 		e4af3f64cac776d23849712f960cf972 /* ofxBox2dPolygon.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2dPolygon.h; path = ../../../addons/ofxBox2d/src/ofxBox2dPolygon.h; sourceTree = SOURCE_ROOT; };
 		e5922cf5578d5431f2ab941d1d16a7a0 /* b2CollideCircle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2CollideCircle.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2CollideCircle.cpp; sourceTree = SOURCE_ROOT; };
 		e59ffad985bd0b9cba6da37a4044651e /* d_filter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = d_filter.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/d_filter.c"; sourceTree = SOURCE_ROOT; };
@@ -994,11 +1002,9 @@
 		e69cd4f287f8c5a2f8be209d9b3c7b22 /* ltm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ltm.h; path = ../../../addons/ofxLua/src/lua/ltm.h; sourceTree = SOURCE_ROOT; };
 		e6def695b88ba5faaceaa93785a12fd9 /* UdpSocket.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = UdpSocket.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/UdpSocket.cpp; sourceTree = SOURCE_ROOT; };
 		e79cfff29754bb0f9b74123a28a580b2 /* udpreceive~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "udpreceive~.c"; path = "src/externals/mrpeach/udpreceive~.c"; sourceTree = SOURCE_ROOT; };
-		e7c5724e2c65500aa7cbbfbe427b8d37 /* get_pointer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = get_pointer.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/get_pointer.hpp; sourceTree = SOURCE_ROOT; };
 		e80b80e821969027378f6b36822dc49e /* ofxPd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPd.h; path = ../../../addons/ofxPd/src/ofxPd.h; sourceTree = SOURCE_ROOT; };
 		e81103ebddcafc22cde1beda080a5e2d /* m_sched.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = m_sched.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/m_sched.c"; sourceTree = SOURCE_ROOT; };
 		e83dbe901c4b79b39c15dc4657fcbe23 /* b2Distance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Distance.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Collision/b2Distance.cpp; sourceTree = SOURCE_ROOT; };
-		e87f8d44ac11170b4aa41d19671f37c6 /* decorate_type.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = decorate_type.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/decorate_type.hpp; sourceTree = SOURCE_ROOT; };
 		e932d4ae38cbbeb093294c7269ca683d /* g_array.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = g_array.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/g_array.c"; sourceTree = SOURCE_ROOT; };
 		ea11f25c2eedd0cc8b994e63023aab87 /* ofxParticle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxParticle.h; path = ../../../addons/ofxAppUtils/src/ofxParticle.h; sourceTree = SOURCE_ROOT; };
 		ea6867e1325c02f567cc5745fd4ee614 /* unsymbol.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = unsymbol.c; path = src/externals/iemlib/unsymbol.c; sourceTree = SOURCE_ROOT; };
@@ -1012,16 +1018,12 @@
 		eea3960032df0a093cee699048c3fc3d /* b2World.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2World.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2World.h; sourceTree = SOURCE_ROOT; };
 		f0470d1543962fec83bb4973548f6d2a /* b2ContactSolver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2ContactSolver.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Contacts/b2ContactSolver.cpp; sourceTree = SOURCE_ROOT; };
 		f05c296ff123b83dff7a2cf95d8ed52c /* Physics.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Physics.h; path = src/Physics.h; sourceTree = SOURCE_ROOT; };
-		f05c9f55d6acaf4e0646e7b1da0d1195 /* garbage_collector.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = garbage_collector.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/garbage_collector.hpp; sourceTree = SOURCE_ROOT; };
-		f1715ee6ff6f3925d94faf2a1337ec7c /* make_function.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = make_function.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/make_function.hpp; sourceTree = SOURCE_ROOT; };
 		f227b3b3966bde2777fc48c5b93d8994 /* x_qlist.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_qlist.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_qlist.c"; sourceTree = SOURCE_ROOT; };
 		f23a5411f24089d7577898a9f6b0b902 /* b2Joint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2Joint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2Joint.cpp; sourceTree = SOURCE_ROOT; };
 		f26e25f3872c0799d6433b99d59bdde1 /* ofxUILabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUILabel.h; path = ../../../addons/ofxUI/src/ofxUILabel.h; sourceTree = SOURCE_ROOT; };
 		f285363fc341b5c7fb87927934ae68d7 /* lvm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lvm.h; path = ../../../addons/ofxLua/src/lua/lvm.h; sourceTree = SOURCE_ROOT; };
 		f2a71de81f9b2c533d62588ceb445ede /* lrshift~.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = "lrshift~.c"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/lrshift~/lrshift~.c"; sourceTree = SOURCE_ROOT; };
-		f32c160f55363b2660106a8e2d524c25 /* ref.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ref.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/ref.hpp; sourceTree = SOURCE_ROOT; };
 		f3392d405a715a07dcc8fac21d1cac32 /* ofxBox2dPolygon.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBox2dPolygon.cpp; path = ../../../addons/ofxBox2d/src/ofxBox2dPolygon.cpp; sourceTree = SOURCE_ROOT; };
-		f350362b4e2a2dabfafb8bab3c9fa5da /* iterator_policy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = iterator_policy.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/iterator_policy.hpp; sourceTree = SOURCE_ROOT; };
 		f3e1d907dbabd5389f61c51cd910a193 /* x_libpdreceive.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = x_libpdreceive.h; path = ../../../addons/ofxPd/src/pd/libpd_wrapper/x_libpdreceive.h; sourceTree = SOURCE_ROOT; };
 		f4b51e6f303e7cff1c9150fac5480e98 /* b2FrictionJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = b2FrictionJoint.cpp; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2FrictionJoint.cpp; sourceTree = SOURCE_ROOT; };
 		f4f5b6b8ba2bd52c646ed9087d6ed9cf /* OscException.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscException.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscException.h; sourceTree = SOURCE_ROOT; };
@@ -1034,19 +1036,16 @@
 		f7d2102660e69cda6d15b64a01767ca3 /* ofxBox2d.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBox2d.h; path = ../../../addons/ofxBox2d/src/ofxBox2d.h; sourceTree = SOURCE_ROOT; };
 		f7fbc56859535e597b24bb914dbc8313 /* NetworkingUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NetworkingUtils.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h; sourceTree = SOURCE_ROOT; };
 		f8fb3a9e742b29c34a103d1c1564c853 /* parentdollarzero.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = parentdollarzero.c; path = src/externals/iemlib/parentdollarzero.c; sourceTree = SOURCE_ROOT; };
-		f9232b8c877a7e23d9a626398f79cb7b /* inheritance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = inheritance.cpp; path = ../../../addons/ofxLua/src/luabind/src/inheritance.cpp; sourceTree = SOURCE_ROOT; };
 		fa60eb6838024b87283d24f3e3c9f5c8 /* lundump.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lundump.c; path = ../../../addons/ofxLua/src/lua/lundump.c; sourceTree = SOURCE_ROOT; };
 		fa784162b6a8e3a77bbe4d6cc2a8e30f /* b2TimeStep.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2TimeStep.h; path = ../../../addons/ofxBox2d/libs/Box2D/Dynamics/b2TimeStep.h; sourceTree = SOURCE_ROOT; };
 		faeec6ca007666f6e8cf076337b4a733 /* rev1-stage.pd */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "rev1-stage.pd"; path = "../../../addons/ofxPd/src/pd/pure-data/extra/rev1-stage.pd"; sourceTree = SOURCE_ROOT; };
 		fbe1b379902b3c585dc8f7a21175a71f /* ofxUILabelButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUILabelButton.h; path = ../../../addons/ofxUI/src/ofxUILabelButton.h; sourceTree = SOURCE_ROOT; };
-		fc12abefb8915d90af8cdcc7960d612e /* call_function.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = call_function.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/call_function.hpp; sourceTree = SOURCE_ROOT; };
 		fc7e9b4a22d8921421c51e3c083de4a1 /* ofxScene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxScene.cpp; path = ../../../addons/ofxAppUtils/src/ofxScene.cpp; sourceTree = SOURCE_ROOT; };
 		fccbdb55b98da36682809f0348522eab /* ofxUIWaveform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIWaveform.h; path = ../../../addons/ofxUI/src/ofxUIWaveform.h; sourceTree = SOURCE_ROOT; };
 		fd671a8a1eb397a37dc0dbb74e12cc6b /* x_arithmetic.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = x_arithmetic.c; path = "../../../addons/ofxPd/src/pd/pure-data/src/x_arithmetic.c"; sourceTree = SOURCE_ROOT; };
 		fda2832e78cfa22beec74160a7a68606 /* ofxUIFPS.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIFPS.h; path = ../../../addons/ofxUI/src/ofxUIFPS.h; sourceTree = SOURCE_ROOT; };
 		fe0bb0ae7acee74e66183b4b91573616 /* CONTENT.txt */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = CONTENT.txt; path = src/externals/iemlib/CONTENT.txt; sourceTree = SOURCE_ROOT; };
 		fec73aa4a3e2c769ab418c21083567e7 /* App.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = App.mm; path = src/ios/App.mm; sourceTree = SOURCE_ROOT; };
-		ff9ba0d8dcece4ce8d1f395af312ce31 /* inheritance.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = inheritance.hpp; path = ../../../addons/ofxLua/src/luabind/luabind/detail/inheritance.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1479,6 +1478,134 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		30C8E28916298F17003BF750 /* luabind */ = {
+			isa = PBXGroup;
+			children = (
+				30C8E28A16298F17003BF750 /* LICENSE */,
+				30C8E28B16298F17003BF750 /* luabind */,
+				30C8E2DB16298F17003BF750 /* src */,
+			);
+			name = luabind;
+			path = ../../../addons/ofxLua/src/luabind;
+			sourceTree = "<group>";
+		};
+		30C8E28B16298F17003BF750 /* luabind */ = {
+			isa = PBXGroup;
+			children = (
+				30C8E28C16298F17003BF750 /* adopt_policy.hpp */,
+				30C8E28D16298F17003BF750 /* back_reference.hpp */,
+				30C8E28E16298F17003BF750 /* back_reference_fwd.hpp */,
+				30C8E28F16298F17003BF750 /* class.hpp */,
+				30C8E29016298F17003BF750 /* class_info.hpp */,
+				30C8E29116298F17003BF750 /* config.hpp */,
+				30C8E29216298F17003BF750 /* container_policy.hpp */,
+				30C8E29316298F17003BF750 /* copy_policy.hpp */,
+				30C8E29416298F17003BF750 /* dependency_policy.hpp */,
+				30C8E29516298F17003BF750 /* detail */,
+				30C8E2BC16298F17003BF750 /* discard_result_policy.hpp */,
+				30C8E2BD16298F17003BF750 /* error.hpp */,
+				30C8E2BE16298F17003BF750 /* exception_handler.hpp */,
+				30C8E2BF16298F17003BF750 /* from_stack.hpp */,
+				30C8E2C016298F17003BF750 /* function.hpp */,
+				30C8E2C116298F17003BF750 /* get_main_thread.hpp */,
+				30C8E2C216298F17003BF750 /* get_pointer.hpp */,
+				30C8E2C316298F17003BF750 /* handle.hpp */,
+				30C8E2C416298F17003BF750 /* iterator_policy.hpp */,
+				30C8E2C516298F17003BF750 /* lua_include.hpp */,
+				30C8E2C616298F17003BF750 /* luabind.hpp */,
+				30C8E2C716298F17003BF750 /* make_function.hpp */,
+				30C8E2C816298F17003BF750 /* nil.hpp */,
+				30C8E2C916298F17003BF750 /* no_dependency.hpp */,
+				30C8E2CA16298F17003BF750 /* object.hpp */,
+				30C8E2CB16298F17003BF750 /* open.hpp */,
+				30C8E2CC16298F17003BF750 /* operator.hpp */,
+				30C8E2CD16298F17003BF750 /* out_value_policy.hpp */,
+				30C8E2CE16298F17003BF750 /* prefix.hpp */,
+				30C8E2CF16298F17003BF750 /* raw_policy.hpp */,
+				30C8E2D016298F17003BF750 /* return_reference_to_policy.hpp */,
+				30C8E2D116298F17003BF750 /* scope.hpp */,
+				30C8E2D216298F17003BF750 /* shared_ptr_converter.hpp */,
+				30C8E2D316298F17003BF750 /* tag_function.hpp */,
+				30C8E2D416298F17003BF750 /* typeid.hpp */,
+				30C8E2D516298F17003BF750 /* value_wrapper.hpp */,
+				30C8E2D616298F17003BF750 /* vector.hpp */,
+				30C8E2D716298F17003BF750 /* version.hpp */,
+				30C8E2D816298F17003BF750 /* weak_ref.hpp */,
+				30C8E2D916298F17003BF750 /* wrapper_base.hpp */,
+				30C8E2DA16298F17003BF750 /* yield_policy.hpp */,
+			);
+			path = luabind;
+			sourceTree = "<group>";
+		};
+		30C8E29516298F17003BF750 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				30C8E29616298F17003BF750 /* call.hpp */,
+				30C8E29716298F17003BF750 /* call_0x.hpp */,
+				30C8E29816298F17003BF750 /* call_function.hpp */,
+				30C8E29916298F17003BF750 /* call_member.hpp */,
+				30C8E29A16298F17003BF750 /* call_operator_iterate.hpp */,
+				30C8E29B16298F17003BF750 /* class_registry.hpp */,
+				30C8E29C16298F17003BF750 /* class_rep.hpp */,
+				30C8E29D16298F17003BF750 /* constructor.hpp */,
+				30C8E29E16298F17003BF750 /* conversion_storage.hpp */,
+				30C8E29F16298F17003BF750 /* convert_to_lua.hpp */,
+				30C8E2A016298F17003BF750 /* debug.hpp */,
+				30C8E2A116298F17003BF750 /* decorate_type.hpp */,
+				30C8E2A216298F17003BF750 /* deduce_signature.hpp */,
+				30C8E2A316298F17003BF750 /* enum_maker.hpp */,
+				30C8E2A416298F17003BF750 /* format_signature.hpp */,
+				30C8E2A516298F17003BF750 /* garbage_collector.hpp */,
+				30C8E2A616298F17003BF750 /* has_get_pointer.hpp */,
+				30C8E2A716298F17003BF750 /* inheritance.hpp */,
+				30C8E2A816298F17003BF750 /* instance_holder.hpp */,
+				30C8E2A916298F17003BF750 /* link_compatibility.hpp */,
+				30C8E2AA16298F17003BF750 /* make_instance.hpp */,
+				30C8E2AB16298F17003BF750 /* most_derived.hpp */,
+				30C8E2AC16298F17003BF750 /* object_call.hpp */,
+				30C8E2AD16298F17003BF750 /* object_rep.hpp */,
+				30C8E2AE16298F17003BF750 /* open.hpp */,
+				30C8E2AF16298F17003BF750 /* operator_id.hpp */,
+				30C8E2B016298F17003BF750 /* other.hpp */,
+				30C8E2B116298F17003BF750 /* pcall.hpp */,
+				30C8E2B216298F17003BF750 /* pointee_sizeof.hpp */,
+				30C8E2B316298F17003BF750 /* pointee_typeid.hpp */,
+				30C8E2B416298F17003BF750 /* policy.hpp */,
+				30C8E2B516298F17003BF750 /* primitives.hpp */,
+				30C8E2B616298F17003BF750 /* property.hpp */,
+				30C8E2B716298F17003BF750 /* ref.hpp */,
+				30C8E2B816298F17003BF750 /* signature_match.hpp */,
+				30C8E2B916298F17003BF750 /* stack_utils.hpp */,
+				30C8E2BA16298F17003BF750 /* typetraits.hpp */,
+				30C8E2BB16298F17003BF750 /* yes_no.hpp */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		30C8E2DB16298F17003BF750 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				30C8E2DC16298F17003BF750 /* class.cpp */,
+				30C8E2DD16298F17003BF750 /* class_info.cpp */,
+				30C8E2DE16298F17003BF750 /* class_registry.cpp */,
+				30C8E2DF16298F17003BF750 /* class_rep.cpp */,
+				30C8E2E016298F17003BF750 /* create_class.cpp */,
+				30C8E2E116298F17003BF750 /* error.cpp */,
+				30C8E2E216298F17003BF750 /* exception_handler.cpp */,
+				30C8E2E316298F17003BF750 /* function.cpp */,
+				30C8E2E416298F17003BF750 /* inheritance.cpp */,
+				30C8E2E516298F17003BF750 /* link_compatibility.cpp */,
+				30C8E2E616298F17003BF750 /* object_rep.cpp */,
+				30C8E2E716298F17003BF750 /* open.cpp */,
+				30C8E2E816298F17003BF750 /* pcall.cpp */,
+				30C8E2E916298F17003BF750 /* scope.cpp */,
+				30C8E2EA16298F17003BF750 /* stack_content_by_name.cpp */,
+				30C8E2EB16298F17003BF750 /* weak_ref.cpp */,
+				30C8E2EC16298F17003BF750 /* wrapper_base.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		30cb364908817057b430d52805394cbc /* osc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1715,55 +1842,6 @@
 			name = Contacts;
 			sourceTree = "<group>";
 		};
-		96e25152578e253f77755a8502315260 /* detail */ = {
-			isa = PBXGroup;
-			children = (
-				8a84dfdde51ab0af0080d485ba2a55db /* calc_arity.hpp */,
-				abe2661aeee5baf66d61df70c1806986 /* call.hpp */,
-				fc12abefb8915d90af8cdcc7960d612e /* call_function.hpp */,
-				5763acf048b7cbef7098ab52294776e9 /* call_member.hpp */,
-				76e1af0f6594cab3133adeb5c7b10f29 /* call_operator_iterate.hpp */,
-				ae3135cae6bd0e4f2a18b9381dede505 /* class_cache.hpp */,
-				a601a407db1c0fd75b4d4ef7d27d84be /* class_registry.hpp */,
-				4a57b6f533f14083c5d4ac24a8adcda9 /* class_rep.hpp */,
-				0cf44d4d044c76d4ac83aa0cc5df85d8 /* compute_score.hpp */,
-				2611ceb12b1b9b4d962e4593b5abad46 /* constructor.hpp */,
-				8b8daefa2e35215bd1e4cf26dca32b98 /* conversion_storage.hpp */,
-				46ed7b2cc54334aafc909280fdad5932 /* convert_to_lua.hpp */,
-				9f5a4811f572d572d4855d65d2594633 /* debug.hpp */,
-				e87f8d44ac11170b4aa41d19671f37c6 /* decorate_type.hpp */,
-				787277aa2bb952c2507f70a48c7f1baa /* deduce_signature.hpp */,
-				c82eea5da952182b001c53b5b084e5fa /* enum_maker.hpp */,
-				b1c477df3306ebe410b57d9a71715959 /* format_signature.hpp */,
-				f05c9f55d6acaf4e0646e7b1da0d1195 /* garbage_collector.hpp */,
-				c8535bb8483b3a3749379176dc12f01d /* has_get_pointer.hpp */,
-				ff9ba0d8dcece4ce8d1f395af312ce31 /* inheritance.hpp */,
-				651217de2471918d2b329224eb9c5600 /* instance_holder.hpp */,
-				1b091f5ce9f45182df2013084d6edffc /* is_indirect_const.hpp */,
-				5f597d44a91ca471cb6f973038f36644 /* link_compatibility.hpp */,
-				99a95f083512305cbe9db82f39a0ff29 /* make_instance.hpp */,
-				e343dcdc08610b888b244622fff40c32 /* most_derived.hpp */,
-				bc5fdf942ef23b018476c65036ae9e36 /* object_call.hpp */,
-				ce67ad7033880d77ec821a1e644d36c2 /* object_funs.hpp */,
-				25c5d0953a5bad60b3f86003cd867e33 /* object_rep.hpp */,
-				547246e494faa622bc3619b09910a6b8 /* open.hpp */,
-				7478c52b936d8edb7ba11f31863c320c /* operator_id.hpp */,
-				ae80dd804f4d9057a8e19c6b3cda9b58 /* other.hpp */,
-				378830770e5e13604e3432d78335d66a /* pcall.hpp */,
-				5203b3f3dc8e47c23415872c5287a327 /* pointee_sizeof.hpp */,
-				8fa011ed327d11f7bec1c5715338c8e7 /* pointee_typeid.hpp */,
-				d7178129a75a1b5e9d16909cd6fc39e5 /* policy.hpp */,
-				be6c43b3bdcad7790ef16c7217222f81 /* primitives.hpp */,
-				6627857f9006f334bf7becbc2a1829cc /* property.hpp */,
-				f32c160f55363b2660106a8e2d524c25 /* ref.hpp */,
-				7a34e0f1d2a9aea468d53b0ce9f0de21 /* signature_match.hpp */,
-				6f9ddd71785243db03a3aff6b5585b43 /* stack_utils.hpp */,
-				35cd2f4073825acb30d238c1d6cdfb26 /* typetraits.hpp */,
-				84cf045ee26378a1809c741b32a59241 /* yes_no.hpp */,
-			);
-			name = detail;
-			sourceTree = "<group>";
-		};
 		996b4d5c136f618539a2c28df10937a2 /* triangle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1901,52 +1979,6 @@
 				96a8c4f434efea54cb325092aa71df17 /* PdTypes.hpp */,
 			);
 			name = cpp;
-			sourceTree = "<group>";
-		};
-		b0f4d2a9bee38117d31a89770ed1070d /* luabind */ = {
-			isa = PBXGroup;
-			children = (
-				d3b81ea46668274061f805ec78edf1b2 /* adopt_policy.hpp */,
-				79d663df0839fdfeed47c2f1fd6b4f55 /* back_reference.hpp */,
-				a3c88df4a6198c4c08fa1a462f4d4fa6 /* back_reference_fwd.hpp */,
-				52a8ef24ce3d62cc4dc50e66983a86c6 /* class.hpp */,
-				8e026e13a6d41c277bed568b71e0bb31 /* class_info.hpp */,
-				39fea4aefb9d7ebefda6421ae676aead /* config.hpp */,
-				a59d2dfccc7b2cd6ca563d24d476cf6b /* container_policy.hpp */,
-				c1869441def0f388417dffbc6c0e2339 /* copy_policy.hpp */,
-				573b20d54e030c33ef1ccbbb3cae29f6 /* dependency_policy.hpp */,
-				96e25152578e253f77755a8502315260 /* detail */,
-				a4ccdf97c94dc2876510a0320b2464f8 /* discard_result_policy.hpp */,
-				59fd9806beb27e71f5f39785204729ae /* error.hpp */,
-				6267260f5e18f3b9bea0be314f0b886e /* exception_handler.hpp */,
-				023de0d47941c90873bc18bc6a8d1a79 /* from_stack.hpp */,
-				0a4b125ba724c9b6fc18cc68629fb3b8 /* function.hpp */,
-				99ff496335c710255f5a4fab17b96f84 /* get_main_thread.hpp */,
-				e7c5724e2c65500aa7cbbfbe427b8d37 /* get_pointer.hpp */,
-				5ed06bba12e1c1a1ab4b53e78a976b8d /* handle.hpp */,
-				f350362b4e2a2dabfafb8bab3c9fa5da /* iterator_policy.hpp */,
-				b97281b9e3708a975b5425d02926246d /* lua_include.hpp */,
-				0ca72e1b03dbf980fe5ea72679e5bd86 /* luabind.hpp */,
-				f1715ee6ff6f3925d94faf2a1337ec7c /* make_function.hpp */,
-				b64200311bc15a7037d22d56618045de /* nil.hpp */,
-				cfbc372f486bb3cafeb16773dc74321f /* object.hpp */,
-				2a190d6e419edc1d4ff5d1c78e6a6f33 /* open.hpp */,
-				1a212f1eb11eb1ca870abc70a3c33d97 /* operator.hpp */,
-				cb37cae8b685fe4f626e42d083c30736 /* out_value_policy.hpp */,
-				9bdda8d1beafe596344202ab2485deee /* prefix.hpp */,
-				1817fc3b8661b54b359b8c60d04731bd /* raw_policy.hpp */,
-				89be337f47c464c89e8f8fd617d471f3 /* return_reference_to_policy.hpp */,
-				c507a9035ae0bf2a105cd2155e4156cf /* scope.hpp */,
-				243a92ea4e2379fc01bfe70e4343ce03 /* shared_ptr_converter.hpp */,
-				44c29c514c57e8409e094e81c1427359 /* tag_function.hpp */,
-				5a8ea58dc4d0ef427535f39f5dfc7c22 /* typeid.hpp */,
-				6739769281ea0cc335bd3333fa866a92 /* value_wrapper.hpp */,
-				8cd4b6371463f68e632d0b3f7af0a353 /* version.hpp */,
-				e2cef1c5a606a4c466aebf3d163049cc /* weak_ref.hpp */,
-				a7527d5e160b5b6d4e24e74bfb299d58 /* wrapper_base.hpp */,
-				46fba186d35a813d08175147f1ba3e69 /* yield_policy.hpp */,
-			);
-			name = luabind;
 			sourceTree = "<group>";
 		};
 		b950fbf3ae43d9ee9bc61ff53e244b11 /* Dynamics */ = {
@@ -2308,30 +2340,6 @@
 			name = "pd~";
 			sourceTree = "<group>";
 		};
-		e5c797836a6e8395a1982f547c1332b3 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				856bdbd4f02c1c848ea2e5102c9314dc /* class.cpp */,
-				d65163fc52fd08776132a184c4b53e30 /* class_info.cpp */,
-				09d3213a9940ad9fb8875a1d916f3772 /* class_registry.cpp */,
-				db09d05bb8eb0ae9ca1243e381162cd0 /* class_rep.cpp */,
-				4ff3c1a3c98be02ffca7720da2d59f6e /* create_class.cpp */,
-				7f742b5ccd6492b0d8729abd85e16a19 /* error.cpp */,
-				63a3baa3f674b5fbad55d9316510f239 /* exception_handler.cpp */,
-				314f3fba7f709698498672ccba9054ea /* function.cpp */,
-				f9232b8c877a7e23d9a626398f79cb7b /* inheritance.cpp */,
-				526a5595fe595c43803c1765e204acbe /* link_compatibility.cpp */,
-				da5b2381c04ead156500bf0ae29d5f0f /* object_rep.cpp */,
-				8c02e6988e83175240e52f8353f38db9 /* open.cpp */,
-				18be9dc5379d7bc799fad27af3660e3a /* pcall.cpp */,
-				d1aec233a4326eb443d3e248fe28bb21 /* scope.cpp */,
-				935e4b45c46d937839e07939e2141ab9 /* stack_content_by_name.cpp */,
-				6e10fbba3300a18b00da65cbde852974 /* weak_ref.cpp */,
-				1ba878c81289178f7bf6e44359ac8218 /* wrapper_base.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
 		e6053ab7fec63d5f83825b880ce53c41 /* ofxOsc */ = {
 			isa = PBXGroup;
 			children = (
@@ -2339,16 +2347,6 @@
 				38871a5825686ae018ec2bf0e450fdae /* libs */,
 			);
 			name = ofxOsc;
-			sourceTree = "<group>";
-		};
-		e89cefa1b64655856a16372d35afd917 /* luabind */ = {
-			isa = PBXGroup;
-			children = (
-				ded5b13aea1ab23560e30fbca2d24bae /* LICENSE */,
-				b0f4d2a9bee38117d31a89770ed1070d /* luabind */,
-				e5c797836a6e8395a1982f547c1332b3 /* src */,
-			);
-			name = luabind;
 			sourceTree = "<group>";
 		};
 		e964bc1ac23ebd6ada41da1af0093aba /* Common */ = {
@@ -2370,7 +2368,7 @@
 			isa = PBXGroup;
 			children = (
 				168d18319a5efcda18c26654656f01c9 /* lua */,
-				e89cefa1b64655856a16372d35afd917 /* luabind */,
+				30C8E28916298F17003BF750 /* luabind */,
 				dc94311c7cebbf025eab00870e4f1d06 /* ofxLua.cpp */,
 				654d9d3fd3248efa16d6ddfbd6f4188c /* ofxLua.h */,
 				9bccba18fa85c5a2a68dc1e510a4dca9 /* ofxLuaFileWriter.cpp */,
@@ -2484,6 +2482,7 @@
 				306251D9161FC3E4003D5BA9 /* README.txt in Resources */,
 				3062579F1620FCC1003D5BA9 /* data in Resources */,
 				30DFA457162289B10094270D /* Documents in Resources */,
+				30C8E2ED16298F17003BF750 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2656,23 +2655,6 @@
 				a9fd1a53eb297012cc4b8d1fd79158c5 /* lvm.c in Sources */,
 				a84241e7eda642b44d4f4375ce68c690 /* lzio.c in Sources */,
 				9d8309d734b4c4773f4e2c3b4ff39eac /* print.c in Sources */,
-				243f84d22d1ddd3f19b4ac039ffc49dd /* class.cpp in Sources */,
-				06566b3965c3d35acd76cbb1f6c707a0 /* class_info.cpp in Sources */,
-				935b8668671d0f5c7f51e98d92975442 /* class_registry.cpp in Sources */,
-				8976c203fbe7b7520051bcde772dabef /* class_rep.cpp in Sources */,
-				ddeb456962f57d85a6664c7cb3f8ce3a /* create_class.cpp in Sources */,
-				6070cfa70b0569c6c3a9f581ac854525 /* error.cpp in Sources */,
-				cf038e70832d08743ae3111e3eacde47 /* exception_handler.cpp in Sources */,
-				4c5ba54e82f62b1f0ab8347374d17161 /* function.cpp in Sources */,
-				c0bc9f4227f9b5d1a1f2cfad01264632 /* inheritance.cpp in Sources */,
-				f27ed89be04830b09c1dcd5b73b7b5ad /* link_compatibility.cpp in Sources */,
-				ab0260e6d8d14a324b832f33f6079337 /* object_rep.cpp in Sources */,
-				49585df09aec0c42a77c2ec101fe865e /* open.cpp in Sources */,
-				0cad8abb9d2e8eb89695a0ea0307ef42 /* pcall.cpp in Sources */,
-				99e6b6062af77dd1d863263994e958d8 /* scope.cpp in Sources */,
-				59e15068dbd6923fd525adba411fe31b /* stack_content_by_name.cpp in Sources */,
-				0cbe22e1c353d7bc318e3a9bdb4c7c8d /* weak_ref.cpp in Sources */,
-				fb7cb213a286b67f18db38b478cdb9e0 /* wrapper_base.cpp in Sources */,
 				cb6daea8ee562cffa503375d20b01742 /* ofxLua.cpp in Sources */,
 				2991d66a82b2af8f0df2bbfd8c0b342f /* ofxLuaFileWriter.cpp in Sources */,
 				b5e63eb7547183befc4b65a79523c5bd /* ofxPGMidiContext.mm in Sources */,
@@ -2810,6 +2792,23 @@
 				306251D7161FC3E4003D5BA9 /* ContextFilterLogFormatter.m in Sources */,
 				306251D8161FC3E4003D5BA9 /* DispatchQueueLogFormatter.m in Sources */,
 				306251DF161FC830003D5BA9 /* WebServer.mm in Sources */,
+				30C8E2EE16298F17003BF750 /* class.cpp in Sources */,
+				30C8E2EF16298F17003BF750 /* class_info.cpp in Sources */,
+				30C8E2F016298F17003BF750 /* class_registry.cpp in Sources */,
+				30C8E2F116298F17003BF750 /* class_rep.cpp in Sources */,
+				30C8E2F216298F17003BF750 /* create_class.cpp in Sources */,
+				30C8E2F316298F17003BF750 /* error.cpp in Sources */,
+				30C8E2F416298F17003BF750 /* exception_handler.cpp in Sources */,
+				30C8E2F516298F17003BF750 /* function.cpp in Sources */,
+				30C8E2F616298F17003BF750 /* inheritance.cpp in Sources */,
+				30C8E2F716298F17003BF750 /* link_compatibility.cpp in Sources */,
+				30C8E2F816298F17003BF750 /* object_rep.cpp in Sources */,
+				30C8E2F916298F17003BF750 /* open.cpp in Sources */,
+				30C8E2FA16298F17003BF750 /* pcall.cpp in Sources */,
+				30C8E2FB16298F17003BF750 /* scope.cpp in Sources */,
+				30C8E2FC16298F17003BF750 /* stack_content_by_name.cpp in Sources */,
+				30C8E2FD16298F17003BF750 /* weak_ref.cpp in Sources */,
+				30C8E2FE16298F17003BF750 /* wrapper_base.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

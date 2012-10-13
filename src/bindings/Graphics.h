@@ -266,7 +266,7 @@ class Graphics {
 					.def("simplify", &ofPolyline::simplify)
 					.def("getPoint", &polylineGetPoint)
 					.def("setPoint", &polylineSetPoint)
-					.def("resize", &ofPolyline::resize) // needed? too low level?
+					.def("resize", &ofPolyline::resize) // TODO: needed? too low level?
 					.def("setClosed", &ofPolyline::setClosed)
 					.def("isClosed", &ofPolyline::isClosed)
 					.def("close", &ofPolyline::close)
@@ -289,6 +289,7 @@ class Graphics {
 					// TODO: make these globals, although they are class functions
 					//def("insidePolyline", (bool(ofPolyline::*)(const ofPoint&,const ofPolyline&)) &ofPolyline::inside),
 					//def("insidePolyline", (bool(ofPolyline::*)(float,float,const ofPolyline&)) &ofPolyline::inside),
+					//def("polylineFromRect", &ofPolyline::fromRectangle),
 					
 				///////////////////////////////
 				/// \section Path
@@ -451,20 +452,66 @@ class Graphics {
 				class_<ofRectangle>("rectangle")
 					.def(constructor<>())
 					.def(constructor<const ofRectangle&>())
-					.def(constructor<ofPoint,float,float>())
+					.def(constructor<const ofPoint&,const ofPoint&>())
+					.def(constructor<const ofPoint&,float,float>())
 					.def(constructor<float,float,float,float>())
 					.def("set", (void(ofRectangle::*)(const ofRectangle&)) &ofRectangle::set)
-					.def("set", (void(ofRectangle::*)(ofPoint,float,float)) &ofRectangle::set)
+					.def("set", (void(ofRectangle::*)(const ofPoint&,const ofPoint&)) &ofRectangle::set)
+					.def("set", (void(ofRectangle::*)(const ofPoint&,float,float)) &ofRectangle::set)
 					.def("set", (void(ofRectangle::*)(float,float,float,float)) &ofRectangle::set)
-					.def("setFromCenter", (void(ofRectangle::*)(ofPoint,float,float)) &ofRectangle::setFromCenter)
+					.def("setFromCenter", (void(ofRectangle::*)(const ofPoint&,float,float)) &ofRectangle::setFromCenter)
 					.def("setFromCenter", (void(ofRectangle::*)(float,float,float,float)) &ofRectangle::setFromCenter)
-					.def("getCenter", &ofRectangle::getCenter)
-					.def("inside", (bool(ofRectangle::*)(ofPoint)) &ofRectangle::inside)
-					.def("inside", (bool(ofRectangle::*)(float,float)) &ofRectangle::inside)
+					.def("translate", (void(ofRectangle::*)(const ofPoint&)) &ofRectangle::translate)
+					.def("translate", (void(ofRectangle::*)(float,float)) &ofRectangle::translate)
+					.def("translateX", &ofRectangle::translateX)
+					.def("translateY", &ofRectangle::translateY)
+					.def("scale", (void(ofRectangle::*)(float)) &ofRectangle::scale)
+					.def("scale", (void(ofRectangle::*)(const ofPoint&)) &ofRectangle::scale)
+					.def("scale", (void(ofRectangle::*)(float,float)) &ofRectangle::scale)
+					.def("scaleWidth", &ofRectangle::scaleWidth)
+					.def("scaleHeight", &ofRectangle::scaleHeight)
+					.def("scaleFromCenter", (void(ofRectangle::*)(float)) &ofRectangle::scaleFromCenter)
+					.def("scaleFromCenter", (void(ofRectangle::*)(const ofPoint&)) &ofRectangle::scaleFromCenter)
+					.def("scaleFromCenter", (void(ofRectangle::*)(float,float)) &ofRectangle::scaleFromCenter)
+					/// TODO: maybe add all those alignment functions ...
+					.def("inside", &rectInside1Point)
+					.def("inside", &rectInside1Rect)
+					.def("inside", &rectInside2)
+					.def("inside", &rectInside2Points)
+					.def("intersects", &rectIntersects1Rect)
+					.def("intersects", &rectIntersects2Points)
+					.def("growToInclude", (void(ofRectangle::*)(const ofPoint&)) &ofRectangle::growToInclude)
+					.def("growToInclude", (void(ofRectangle::*)(const ofRectangle&)) &ofRectangle::growToInclude)
+					.def("growToInclude", (void(ofRectangle::*)(float,float)) &ofRectangle::growToInclude)
+					.def("growToInclude", (void(ofRectangle::*)(const ofPoint&,const ofPoint&)) &ofRectangle::growToInclude)
+					.def("getIntersection", &ofRectangle::getIntersection)
+					.def("getUnion", &ofRectangle::getUnion)
+					/// TODO: add standardized functions? probably not needed in lua
+					.def("getArea", &ofRectangle::getArea)
+					.def("getPerimeter", &ofRectangle::getPerimeter)
+					.def("getAspectRatio", &ofRectangle::getAspectRatio)
+					.def("isEmpty", &ofRectangle::isEmpty)
+					.def("getMin", &ofRectangle::getMin)
+					.def("getMax", &ofRectangle::getMax)
+					.def("getMinX", &ofRectangle::getMinX)
+					.def("getMaxX", &ofRectangle::getMaxX)
+					.def("getMinY", &ofRectangle::getMinY)
+					.def("getMaxY", &ofRectangle::getMaxY)
+					.def("getLeft", &ofRectangle::getLeft)
+					.def("getRight", &ofRectangle::getRight)
+					.def("getTop", &ofRectangle::getTop)
+					.def("getBottom", &ofRectangle::getBottom)
+					.def("getTopLeft", &ofRectangle::getTopLeft)
+					.def("getTopRight", &ofRectangle::getTopRight)
+					.def("getBottomLeft", &ofRectangle::getBottomLeft)
+					.def("getBottomRight", &ofRectangle::getBottomRight)
+					/// TODO: add anchor gets
 					.def(self == other<const ofRectangle&>())
 					.def(self + other<const ofPoint&>())
-					.def_readwrite("x", &ofRectangle::x)
-					.def_readwrite("y", &ofRectangle::y)
+					.def("getCenter", &ofRectangle::getCenter)
+					.def_readwrite("position", &ofRectangle::position)
+					.property("x", &ofRectangle::getX, &ofRectangle::setX)
+					.property("y", &ofRectangle::getY, &ofRectangle::setY)
 					.def_readwrite("width", &ofRectangle::width)
 					.def_readwrite("height", &ofRectangle::height)
                     .enum_("mode")
@@ -968,6 +1015,26 @@ class Graphics {
 		}
 		static void meshSave1(ofMesh* mesh, string path) {
 			mesh->save(path);
+		}
+		
+		/// rectangle
+		static bool rectInside1Point(ofRectangle* rect, const ofPoint& p) {
+			return rect->inside(p);
+		}
+		static bool rectInside1Rect(ofRectangle* rect, const ofRectangle& r) {
+			return rect->inside(r);
+		}
+		static bool rectInside2(ofRectangle* rect, float px, float py) {
+			return rect->inside(px, py);
+		}
+		static bool rectInside2Points(ofRectangle* rect, const ofPoint& p1, const ofPoint& p2) {
+			return rect->inside(p1, p2);
+		}
+		static bool rectIntersects1Rect(ofRectangle* rect, const ofRectangle& r) {
+			return rect->intersects(r);
+		}
+		static bool rectIntersects2Points(ofRectangle* rect, const ofPoint& p1, const ofPoint& p2) {
+			return rect->intersects(p1, p2);
 		}
 
 		/// color

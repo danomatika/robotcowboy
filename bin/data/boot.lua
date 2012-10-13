@@ -7,6 +7,9 @@
  
  See https://github.com/danomatika/robotcowboy for documentation
 
+ This file is called whenever a scene is loaded and is used to setup
+ any extra lua variables, etc needed by the state.
+
  Adapted/inspired from LOVE: https://love2d.org/
 --]]
 

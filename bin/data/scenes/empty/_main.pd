@@ -1,0 +1,5 @@
+#N canvas 0 22 450 300 10;
+#X obj 50 172 dac~;
+#X obj 50 55 adc~;
+#X obj 214 52 r OSC_IN;
+#X obj 211 171 s OSC_OUT;

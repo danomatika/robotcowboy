@@ -45,9 +45,6 @@ void App::update() {
 //--------------------------------------------------------------
 void App::draw() {
 	core.draw();
-	if(core.sceneManager.getCurrentSceneIndex() > -1) {
-		ofDrawBitmapString(core.sceneManager.getCurrentSceneName(), 100, 100);
-	}
 }
 
 //--------------------------------------------------------------

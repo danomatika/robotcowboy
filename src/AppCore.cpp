@@ -22,8 +22,8 @@
 #include "Scene.h"
 #include "Global.h"
 
-AppCore::AppCore() :
-	global(Global::instance()) {
+//--------------------------------------------------------------
+AppCore::AppCore() : global(Global::instance()) {
 
 	mouseButton = 1;
 	bMousePressed = false;
@@ -34,6 +34,7 @@ AppCore::AppCore() :
 	bShiftPressed = false;
 	bControlPressed = false;
 
+	// set global pointer to app core
 	Global::instance().core = this;
 }
 
@@ -129,7 +130,7 @@ void AppCore::keyPressed(int key) {
 		switch(key) {
 		
 			case 'f':
-				//ofToggleFullscreen();
+				ofToggleFullscreen();
 				break;
 			
 			case 'r':
