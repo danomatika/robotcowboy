@@ -55,7 +55,10 @@ class Global {
 		
 		/// \section Functions
 		
-		/// load settings from a lua script
+		/// load settings from the main lua script
+		///
+		/// this is in ~/.robotcowboy/settings.lua on desktop,
+		/// app/Documents/settings.lua on iOS
 		bool loadSettings(string path);
 		
 		/// setup objects
@@ -87,11 +90,19 @@ class Global {
 			bErrorOcurred = false;
 			errorMessage = "";
 		}
+		
+		/// \section Util
+		
+		/// print the current settings
+		void print();
 
     private:
     
 		bool bErrorOcurred; //< did some sort of error in the app ocurr?
 		string errorMessage; ///< the error message
+		
+		// read settings from a lua instance, everything but the main folder
+		bool readSettings(ofxLua& lua);
 		
         // hide all the constructors, copy functions here
         Global(); 							// singleton constructor

@@ -123,6 +123,7 @@ class Graphics {
 				def("noAutoBackground", &noAutoBackground),
 				def("usingAutoBackground", &ofbClearBg),
 				
+				def("clear", (void(*)(const ofColor&)) &ofClear),
 				def("clear", (void(*)(float)) &clear),
 				def("clear", (void(*)(float,float)) &ofClear),
 				def("clear", (void(*)(float,float,float,float)) &ofClear),

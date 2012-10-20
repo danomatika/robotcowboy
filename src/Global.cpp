@@ -56,13 +56,13 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 	
 	// load settings
 	if(!loadSettings(settingsFile.path())) {
-		// bail if problem laoding settings
+		// bail if problem loading settings
 		return false;
 	}
 	
 	// documents & scene paths
 	#ifndef TARGET_OF_IPHONE
-		// set absolute paths from give nrealitve paths
+		// set absolute paths from given realitve paths
 		if(!ofFilePath::isAbsolute(docsPath)) {
 			docsPath = ofFilePath::join(ofFilePath::getUserHomeDir(), docsPath); 
 		}
@@ -91,8 +91,7 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 		}
 	}
 	
-	ofLogVerbose() << "Global: docsPath is " << docsPath;
-	ofLogVerbose() << "Global: scenePath is " << scenePath;
+	print();
 	
 	// setup modules
 	audioEngine.setup(numOutChannels, numInChannels,
@@ -135,11 +134,50 @@ bool Global::loadSettings(string path) {
 	
 	lua.pushTable("rc");
 	lua.pushTable("settings");
-
 	docsPath = lua.getString("docsPath", docsPath);
-	scenePath = lua.getString("scenePath", scenePath);
-	logLevel = (ofLogLevel) ((int) lua.getFloat("logLevel", (int) logLevel));
+	lua.popAllTables();
+	
+	readSettings(lua);
+	
+	lua.pushTable("rc");
+	ofLogNotice() << "Loaded settings:";
+	lua.printTable(); // print settings
+	
+	lua.popAllTables();
+	
+	return true;
+}
 
+//--------------------------------------------------------------
+void Global::resetGraphics() {
+	ofSetupGraphicDefaults();
+	ofSetBackgroundAuto(true);
+	ofSetVerticalSync(true);
+	ofBackground(100, 100, 100);
+	ofSetFrameRate(60);
+	ofShowCursor();
+}
+
+//--------------------------------------------------------------
+void Global::print() {
+	ofLogNotice() << "Settings:";
+	ofLogNotice() << "	dataPath: " << dataPath;
+	ofLogNotice() << "	settingsPath: " << settingsPath;
+	ofLogNotice() << "	docsPath: " << docsPath;
+	ofLogNotice() << "	scenePath: " << scenePath;
+	ofLogNotice() << "	logLevel: " << logLevel;
+}
+
+// PRIVATE
+
+//--------------------------------------------------------------
+bool Global::readSettings(ofxLua& lua) {
+	
+	lua.pushTable("rc");
+	
+	lua.pushTable("settings");
+	scenePath = lua.getString("scenePath", scenePath);
+	
 	lua.pushTable("osc");
 	osc.sendAddress = lua.getString("sendAddress", osc.sendAddress);
 	osc.sendPort = lua.getFloat("sendPort", osc.sendPort);
@@ -159,26 +197,10 @@ bool Global::loadSettings(string path) {
 	lua.getStringVector("outputs", midi.outputNames);
 	lua.popTable();
 	
-	lua.popTable();
-	ofLogNotice() << "Loaded settings:";
-	lua.printTable(); // print settings
+	logLevel = (ofLogLevel) ((int) lua.getFloat("logLevel", (int) logLevel));
 	
 	lua.popAllTables();
-	
-	return true;
 }
-
-//--------------------------------------------------------------
-void Global::resetGraphics() {
-	ofSetupGraphicDefaults();
-	ofSetBackgroundAuto(true);
-	ofSetVerticalSync(true);
-	ofBackground(100, 100, 100);
-	ofSetFrameRate(60);
-	ofShowCursor();
-}
-
-// PRIVATE
 
 //--------------------------------------------------------------
 Global::Global() {

@@ -179,6 +179,9 @@ void Midi::newMidiMessage(ofxMidiMessage& msg) {
 		case MIDI_POLY_AFTERTOUCH:
 			audioEngine.pd.sendPolyAftertouch(msg.channel, msg.pitch, msg.value);
 			break;
+			
+		default:
+			break;
 	}
 }
 

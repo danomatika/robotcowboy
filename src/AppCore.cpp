@@ -47,7 +47,7 @@ void AppCore::setup(const int numOutChannels, const int numInChannels,
 	//ofSetLogLevel(OF_LOG_VERBOSE);
 	//ofSetLogLevel("Pd", OF_LOG_WARNING);
 	//ofSetLogLevel("ofxLua", OF_LOG_VERBOSE);
-	ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE);
+	//ofSetLogLevel("ofxSceneManager", OF_LOG_VERBOSE);
 	
 	#ifdef TARGET_OF_IPHONE
 		ofSetDataPathRoot(ofToDataPath("data/", true));
