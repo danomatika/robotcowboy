@@ -1,6 +1,6 @@
 
 -- variables
-world = physics.world()
+world = physics.World()
 
 -- arrays
 circles = {}
@@ -23,7 +23,7 @@ function update()
 
 	-- add circles now and then
 	if app.frame()%100 == 0 then
-		local c = physics.circle()
+		local c = physics.Circle()
 		c:setPhysics(1, 0.5, 0.1)
 		c:setup(world, app.width()/2+math.random(-50, 50), -20, math.random(3, 20))
 		table.insert(circles, c)
@@ -61,7 +61,7 @@ end
 
 ----------------------------------------------------
 function mousePressed(x, y, button)
-	local p = physics.polygon()
+	local p = physics.Polygon()
 	p:addVertex(x, y)
 	table.insert(polygons, p)
 end
@@ -83,7 +83,7 @@ end
 
 ----------------------------------------------------
 function touchDown(touch)
-	local p = physics.polygon()
+	local p = physics.Polygon()
 	p:addVertex(touch.x, touch.y)
 	table.insert(polygons, p)
 end
@@ -115,7 +115,7 @@ function keyPressed(key)
 	
 	if key == string.byte("n") then	
 		-- add a new circle
-		local c = physics.circle()
+		local c = physics.Circle()
 		c:setPhysics(1.0, 0.5, 0.5)
 		c:setup(world, app.mouseX(), app.mouseY(), 10, 10)
 		table.insert(circles, c)

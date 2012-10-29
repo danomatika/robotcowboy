@@ -41,7 +41,7 @@ class Osc {
 				///////////////////////////////
 				/// \section Message
 				
-				class_<ofxOscMessage>("message")
+				class_<ofxOscMessage>("Message")
 					.def(constructor<>())
 					.def("clear", &ofxOscMessage::clear)
 					.def("setAddress", &ofxOscMessage::setAddress)
@@ -72,7 +72,7 @@ class Osc {
 				///////////////////////////////
 				/// \section Bundle
 				
-				class_<ofxOscBundle>("bundle")
+				class_<ofxOscBundle>("Bundle")
 					.def(constructor<>())
 					.def("clear", &ofxOscBundle::clear)
 					.def("addMessage", &ofxOscBundle::addMessage)

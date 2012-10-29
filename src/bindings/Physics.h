@@ -31,7 +31,7 @@ class Physics {
 				///////////////////////////////
 				/// \section World
 				
-				class_<ofxBox2d>("world")
+				class_<ofxBox2d>("World")
 					.def(constructor<>())
 					.def("setup", &ofxBox2d::init)
 					.def("frameRate", &ofxBox2d::setFPS)
@@ -58,7 +58,7 @@ class Physics {
 				///////////////////////////////
 				/// \section Shape
 				
-				class_<ofxBox2dBaseShape>("shape")
+				class_<ofxBox2dBaseShape>("Shape")
 					.def(constructor<>())
 					.def("clear", &ofxBox2dBaseShape::destroy)
 					.def("isBody", &ofxBox2dBaseShape::isBody)
@@ -88,7 +88,7 @@ class Physics {
 				///////////////////////////////
 				/// \section Circle
 				
-				class_<ofxBox2dCircle,ofxBox2dBaseShape>("circle")
+				class_<ofxBox2dCircle,ofxBox2dBaseShape>("Circle")
 					.def(constructor<>())
 					.def("setup", &circleSetup2)
 					.def("setup", &circleSetup3)
@@ -126,7 +126,7 @@ class Physics {
 				///////////////////////////////
 				/// \section Rectangle
 				
-				class_<ofxBox2dRect,ofxBox2dBaseShape>("rectangle")
+				class_<ofxBox2dRect,ofxBox2dBaseShape>("Rectangle")
 					.def(constructor<>())
 					.def("setup", &rectSetup1)
 					.def("setup", &rectSetup4)
@@ -166,7 +166,7 @@ class Physics {
 				///////////////////////////////
 				/// \section Polygon
 				
-				class_<ofxBox2dPolygon, bases<ofxBox2dBaseShape,ofPolyline> >("polygon")
+				class_<ofxBox2dPolygon, bases<ofxBox2dBaseShape,ofPolyline> >("Polygon")
 					.def(constructor<>())
 					.def("setup", &polygonSetup)
 					.def("addTriangle", &polygonAddTriangle)
@@ -280,7 +280,7 @@ class Physics {
 					///////////////////////////////
 					/// \section Joint
 					
-					class_<ofxBox2dJoint>("joint")
+					class_<ofxBox2dJoint>("Joint")
 						.def(constructor<>())
 						.def("setup", &jointSetup2)
 						.def("setup", &jointSetup5)
@@ -300,7 +300,7 @@ class Physics {
 				///////////////////////////////
 				/// \section b2Body
 				
-				class_<b2Body>("body")
+				class_<b2Body>("Body")
 			];
 		}
 		

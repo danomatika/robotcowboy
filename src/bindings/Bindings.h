@@ -33,6 +33,7 @@
 // * try to associate enums with pertinent classes -> app.mouse.LEFT
 //
 // class binding:
+// * class names start with upper case letters -> math.Point not math.point
 // * getters keep "get" prepend, unless they are for simple sizes/lengths/nums
 //   -> pixels.size() & msg.numArgs() instead of pixels.getSize() msg.getNumArgs()
 // * setters keep "set" prepend

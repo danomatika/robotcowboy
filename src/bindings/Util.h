@@ -52,7 +52,7 @@ class Util {
 				///////////////////////////////
 				/// \section Timer
 				
-				class_<ofxTimer>("timer")
+				class_<ofxTimer>("Timer")
 					.def(constructor<>())
 					.def(constructor<unsigned int>())
 					.def("set", &ofxTimer::set)

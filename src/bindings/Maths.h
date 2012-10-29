@@ -17,6 +17,7 @@
 namespace lua {
 
 // so named to avoid pd compilation issues due to math.h include ...
+// and maybe a nod to a certian island nation
 class Maths {
 
 	public:
@@ -88,7 +89,7 @@ class Maths {
 				///////////////////////////////
 				/// \section Point
 				
-				class_<ofPoint>("point")
+				class_<ofPoint>("Point")
 					.def(constructor<>())
 					.def(constructor<const ofPoint&>())
 					.def(constructor<float,float>())

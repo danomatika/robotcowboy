@@ -92,7 +92,7 @@ class Graphics {
                 def("getStyle", &ofGetStyle),
 				def("setStyle", &ofSetStyle),
 				def("pushStyle", &ofPushStyle),
-				class_<ofStyle>("style")
+				class_<ofStyle>("Style")
 					.def(constructor<>())
 					.def_readwrite("color", &ofStyle::color)
 					.def_readwrite("background", &ofStyle::bgColor)
@@ -212,7 +212,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section PolyLine
 				
-				class_<ofPolyline>("polyline")
+				class_<ofPolyline>("Polyline")
 					.def(constructor<>())
 					.def("clear", &ofPolyline::clear)
 					.def("addVertex", (void(ofPolyline::*)(const ofPoint&)) &ofPolyline::addVertex)
@@ -295,7 +295,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Path
 				
-				class_<ofPath>("path")
+				class_<ofPath>("Path")
 					.def(constructor<>())
 					.def("clear", &ofPath::clear)
 					.def("newSubPath", &ofPath::newSubPath)
@@ -374,7 +374,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Mesh
 				
-				class_<ofMesh>("mesh")
+				class_<ofMesh>("Mesh")
 					.def(constructor<>())
 					//.def(constructor<ofPrimitiveMode,vector<ofPoint>&>()) // TODO: needs vector
 					.def("clear", &ofMesh::clear)
@@ -450,7 +450,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Rectangle
 				
-				class_<ofRectangle>("rectangle")
+				class_<ofRectangle>("Rectangle")
 					.def(constructor<>())
 					.def(constructor<const ofRectangle&>())
 					.def(constructor<const ofPoint&,const ofPoint&>())
@@ -524,7 +524,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Color
 				
-				class_<ofColor>("color")
+				class_<ofColor>("Color")
 					.def(constructor<>())
 					.def(constructor<ofColor&>())
 					.def(constructor<ofColor&,float>())
@@ -590,7 +590,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Pixels
 				
-				class_<ofPixels>("pixels")
+				class_<ofPixels>("Pixels")
 					.def(constructor<>())
 					.def(constructor<const ofPixels&>())
 					.def("allocate", (void(ofPixels::*)(int,int,int)) &ofPixels::allocate)
@@ -647,7 +647,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Texture
 				
-				class_<ofTexture>("texture")
+				class_<ofTexture>("Texture")
 					.def(constructor<>())
 					.def(constructor<const ofTexture&>())
 					.def("allocate", (void(ofTexture::*)(const ofPixels&)) &ofTexture::allocate)
@@ -696,7 +696,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Image
 				
-				class_<ofImage>("image")
+				class_<ofImage>("Image")
 					.def(constructor<>())
 					.def("allocate", &ofImage::allocate)
 					.def("clear", &ofImage::clear)
@@ -754,7 +754,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Font
 				
-				class_<ofTrueTypeFont>("font")
+				class_<ofTrueTypeFont>("Font")
 					.def(constructor<>())
 					.def("loadFont", &fontLoadFont2)
 					.def("loadFont", &fontLoadFont4)
@@ -784,7 +784,7 @@ class Graphics {
 				///////////////////////////////
 				/// \section Light
 				
-				class_<ofLight>("light")
+				class_<ofLight>("Light")
 					.def(constructor<>())
 					.def(constructor<const ofLight&>())
 					.def("clear", &ofLight::destroy)
@@ -834,11 +834,11 @@ class Graphics {
 						value("DIRECTIONAL", OF_LIGHT_DIRECTIONAL)
 					],
 					
-				def("enableLighting", &ofEnableLighting),
-				def("disableLighting", &ofDisableLighting),
+				def("lighting", &ofEnableLighting),
+				def("noLighting", &ofDisableLighting),
 				def("isLightingEnabled", &ofGetLightingEnabled),
-				def("enableSeparateSpecularLight", &ofEnableSeparateSpecularLight),
-				def("disableSeparateSpecularLight", &ofDisableSeparateSpecularLight),
+				def("separateSpecularLight", &ofEnableSeparateSpecularLight),
+				def("noSeparateSpecularLight", &ofDisableSeparateSpecularLight),
 				def("smoothLighting", &smoothLighting),
 				def("noSmoothLighting", &noSmoothLighting),
 				def("setGlobalAmbientColor", &ofSetGlobalAmbientColor),

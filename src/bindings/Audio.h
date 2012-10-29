@@ -31,7 +31,7 @@ class Audio {
 			
 				///////////////////////////////
 				/// \section Sound
-				class_<ofSoundPlayer>("sound")
+				class_<ofSoundPlayer>("Sound")
 					.def(constructor<>())
 					.def("loadSound", &ofSoundPlayer::loadSound)
 					.def("clear", &ofSoundPlayer::unloadSound)
@@ -61,7 +61,7 @@ class Audio {
 				
 				///////////////////////////////
 				/// \section Patch
-				class_<pd::Patch>("patch")
+				class_<pd::Patch>("Patch")
 					.def(constructor<>())
 					.def(constructor<const string&,const string&>())
 					.def("clear", &pd::Patch::clear)

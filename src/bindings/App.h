@@ -140,7 +140,7 @@ class App {
 				///////////////////////////////
 				/// \section Touch Event
 				
-				class_<TouchEvent>("touch")
+				class_<TouchEvent>("Touch")
 					.def(constructor<>())
 					.def_readonly("id", &TouchEvent::id)
 					.def_readonly("time", &TouchEvent::time)

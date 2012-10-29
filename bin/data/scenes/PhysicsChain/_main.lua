@@ -1,7 +1,7 @@
 
 -- variables
-world = physics.world()
-anchor = physics.circle()
+world = physics.World()
+anchor = physics.Circle()
 circles = {} -- array
 joints = {} -- array
 
@@ -19,7 +19,7 @@ function setup()
 	
 	-- add some circles
 	for i=1,3 do
-		local c = physics.circle()
+		local c = physics.Circle()
 		c:setPhysics(3.0, 0.53, 0.1)
 		c:setup(world, app.width()/2, 100+(i*20), 8)
 		circles[i] = c
@@ -27,7 +27,7 @@ function setup()
 	
 	-- now connect each circle with a joint
 	for i=1,#circles do
-		local j = physics.joint()
+		local j = physics.Joint()
 		-- if this is the first point, connect to top anchor
 		if i == 1 then
 			j:setup(world, anchor.body, circles[i].body)
@@ -85,7 +85,7 @@ function keyPressed(key)
 	if key == string.byte("n") then
 		
 		-- add a new circle
-		local c = physics.circle()
+		local c = physics.Circle()
 		c:setPhysics(3.0, 0.53, 0.1)
 		local p = circles[#circles].position
 		c:setup(world, p.x + math.random(-30, 30), p.y - 30, 8)
@@ -96,7 +96,7 @@ function keyPressed(key)
 		local b = #circles
 		
 		-- now connect the circle with a joint
-		local j = physics.joint()
+		local j = physics.Joint()
 		j:setup(world, circles[a].body, circles[b].body)
 		j.length = 25
 		table.insert(joints, j)
