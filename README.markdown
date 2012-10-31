@@ -19,7 +19,9 @@ robotcowboy is an audio/visual environment for performance. It features:
 * inter-app OSC communication
 * 2d physics using Box2d
 
-It's directly inspired by the original RjDj app and Love2d. I decided to write my own app in order to add the features I needed for a live performance focus.
+It's directly inspired by the original [RjDj](http://www.rjdj.me/) app and [Love2d](https://love2d.org/). I decided to write my own app in order to add the features I needed for a live performance focus.
+
+The idea is that I want a single environment focused on performance with an easy workflow that doesn't involve compilation (ala C++ & OpenFrameworks). This way, I can get in the flow, make some scenes, upload them to my iPad, and go play a show.
 
 NOTE: THIS IS CURRENTLY IN ALPHA DEVELOPMENT. BETA COMING SOON.
 
