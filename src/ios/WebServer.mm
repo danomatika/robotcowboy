@@ -39,7 +39,6 @@ void WebServer::start(std::string webFolder) {
 	// start DAV server
 	NSError* error = nil;
 	if(![server start:&error]) {
-		//DDLogError(@"Error starting HTTP Server: %@", error);
 		ofLogError() << "WebServer: error starting server: " << [[error localizedDescription] UTF8String];
 	}
 	ofLogVerbose() << "WebServer: started server, port: " << [server port];

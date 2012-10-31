@@ -25,7 +25,7 @@ void App::setup() {
 //	ofxiPhoneAlerts.addListener(this);
 	
 	// if you want a landscape orientation 
-	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
 	
 	// setup OF sound stream
 	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512

@@ -1,13 +1,13 @@
 
 -- variables
-pos = math.point() -- point class
+pos = math.Point() -- point class
 vel = 20.0 -- float
 
 ----------------------------------------------------
 function setup()
 
 	graphics.background(127)
-	graphics.setRectMode(graphics.rectangle.CENTER)
+	graphics.setRectMode(graphics.Rectangle.CENTER)
 	
 	-- set ball pos
 	pos:set(app.width()/2, app.height()/2)
@@ -47,7 +47,7 @@ function mousePressed(x, y, button)
 	print("script mousePressed "..x.." "..y.." "..button)
 	
 	-- send the current mouse position using a message
-	msg = osc.message()
+	msg = osc.Message()
 	msg:addInt(x)
 	msg:addInt(y)
 	msg:addInt(button)

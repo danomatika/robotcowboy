@@ -27,12 +27,13 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 	#ifndef TARGET_OF_IPHONE
 		ofDirectory settingsDir(ofFilePath::join(ofFilePath::getUserHomeDir(), ".robotcowboy"));
 	#else
-		ofDirectory settingsDir("Documents"); // should be relative to app root
+		// should be relative to app root
+		ofDirectory settingsDir(ofFilePath::join(ofFilePath::getCurrentExeDir(), "Documents"));
+		ofLog() << "Global: settings directory is " << settingsDir.path();
 	#endif
 	if(!settingsDir.exists()) {
 		ofLogNotice() << "Global: settings directory dosen't exist, creating ...";
 		if(!settingsDir.create()) {
-			ofLogError() << "Global: couldn't create settings directory";
 			return false;
 		}
 	}
@@ -44,12 +45,18 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 	
 	// settings file: ~/.robotcowboy/settings.lua
 	ofFile settingsFile(ofFilePath::join(settingsDir.path(), "settings.lua"));
+	ofLog() << "Global: settings file is " << settingsFile.path();
 	if(!settingsFile.exists()) {
-		// copy defaults file
-		if(!ofFile::copyFromTo(ofFilePath::join(dataPath, "defaults.lua"), // src
-						   settingsFile.path(), // dest
+		ofLogNotice() << "Global: copying default settings file ...";
+		
+		ofFile defaultsFile(ofFilePath::join(dataPath, "defaults.lua"));
+		ofLog() << "defaults: " << ofFilePath::join(dataPath, "defaults.lua");
+		ofLog() << "file exists: " << ofFile::doesFileExist(ofFilePath::join(dataPath, "defaults.lua"));
+		ofLog() << "writable: " << defaultsFile.canRead();
+		
+		if(!//ofFile::copyFromTo(ofFilePath::join(dataPath, "defaults.lua"), // src
+			defaultsFile.copyTo(			   settingsFile.path(), // dest
 						   false, false)) { // not relative to data, don't overwrite
-			ofLogError() << "Global: couldn't copy default settings file";
 			return false;
 		}
 	}
@@ -62,7 +69,7 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 	
 	// documents & scene paths
 	#ifndef TARGET_OF_IPHONE
-		// set absolute paths from given realitve paths
+		// set absolute paths from given relative paths
 		if(!ofFilePath::isAbsolute(docsPath)) {
 			docsPath = ofFilePath::join(ofFilePath::getUserHomeDir(), docsPath); 
 		}
@@ -71,14 +78,13 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 		}
 	#else
 		// these are hardcoded on iOS since the dirs will not change
-		docsPath = "Documents";
-		scenePath = "Documents/scenes";
+		docsPath = settingsPath;
+		scenePath = ofFilePath::join(settingsPath, "scenes");
 	#endif
 	ofDirectory docsDir(docsPath);
 	if(!docsDir.exists()) {
 		ofLogNotice() << "Global: document directory doesn't exist, creating ...";
 		if(!docsDir.create()) {
-			ofLogError() << "Global: couldn't create documents directory";
 			return false;
 		}
 	}
@@ -86,7 +92,6 @@ bool Global::setup(const int numOutChannels, const int numInChannels,
 	if(!sceneDir.exists()) {
 		ofLogNotice() << "Global: scene directory doesn't exist, creating ...";
 		if(!sceneDir.create()) {
-			ofLogError() << "Global: couldn't create scene directory";
 			return false;
 		}
 	}

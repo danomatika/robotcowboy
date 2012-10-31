@@ -107,6 +107,9 @@ end
 function touchDoubleTap(touch)
 	-- clear by setting an empty table
 	circles = {}
+	for i=1,#polygons do
+		polygons[i]:clear()
+	end
 	polygons = {}
 end
 
