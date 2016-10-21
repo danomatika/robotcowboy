@@ -1,6 +1,8 @@
 robotcowboy
 ===========
 
+<span style="color: F00"><p>This project is dead. See <a href="https://github.com/danomatika/PdParty">PdParty</a>, <a href="https://github.com/danomatika/Visual">Visual</a>, &amp; <a href="https://github.com/danomatika/joyosc">joyosc</a> instead</span> 
+
 the software framework for the [robotcowboy project](http://robotcowboy.com)
 
 Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011-2012
