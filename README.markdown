@@ -1,7 +1,7 @@
 robotcowboy
 ===========
 
-**_This project is dead. See [PdParty](https://github.com/danomatika/PdParty"), [Visual](https://github.com/danomatika/Visual), &amp; [joyosc](https://github.com/danomatika/joyosc) instead._**
+**_This project is dead. See [PdParty](https://github.com/danomatika/PdParty"), [loaf](https://github.com/danomatika/loaf), &amp; [joyosc](https://github.com/danomatika/joyosc) instead._**
 
 the software framework for the [robotcowboy project](http://robotcowboy.com)
 
